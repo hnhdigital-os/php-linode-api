@@ -1,0 +1,29 @@
+endpoint: linode/instances/%s/configs
+url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/configs
+load-method: get
+
+parameters:
+
+    linode_id: 
+      type: integer
+
+get:
+
+  get:
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/configs#GET
+    description: Returns a list of configs for a given Linode.
+    endpoint: 
+
+post:
+
+  update:
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/configs#POST
+    description: Creates a new config for a given Linode.
+    endpoint: 
+
+    optional-parameters:
+
+      kernel:
+        type: string
+        default: "linode/latest-64bit"
+        description: A kernel ID to boot this Linode with. Defaults to "linode/latest-64bit".

@@ -1,0 +1,223 @@
+endpoint: linode/instances/%s
+url: https://developers.linode.com/v4/reference/linode
+load-method: get
+
+parameters:
+
+    linode_id:
+      type: integer
+
+get:
+
+  get:
+    description: Manage a particular Linode your account may access.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id
+    endpoint: 
+
+  volumes:
+    description: View Block Storage Volumes attached to this Linode.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/volumes
+    endpoint: /volumes
+
+  backups:
+    description: Returns information about this Linode's available backups.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/backups
+    model: Backups
+
+    parameters:      
+      linode_id:
+        self: true
+
+    optional-parameters:      
+      load:
+        type: boolean
+        default: false
+
+  disks:
+    description: Returns a list of disks.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/disks
+    model: Disks
+
+    parameters:
+      
+      linode_id:
+        self: true
+
+    optional-parameters:
+      
+      load:
+        type: boolean
+        default: false
+
+put:
+
+  update:
+    description: Edits this Linode.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id#PUT
+    endpoint: 
+
+delete:
+
+  delete:
+    description: Deletes this Linode. This action cannot be undone.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id#DELETE
+    endpoint: 
+
+post:
+
+  boot:
+    description: Boots a Linode.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/boot
+    endpoint: /boot
+
+    optional-parameters:
+      
+      config_id:
+        type: integer
+        default: 0
+
+  clone:
+    description: Clones a Linode to a new or existing Linode.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/clone
+    endpoint: /clone
+
+    parameters:
+      
+      region:
+        type: string
+        description: A region ID to provision this Linode in. Required when cloning to a new Linode.
+      
+      type:
+        type: string
+        description: A Linode type ID to use for this Linode. Required when cloning to a new Linode.
+
+    optional:
+      
+      linode_id:
+        type: string
+        default: null
+        description: An existing Linode can be a target clone location.
+      
+      label:
+        type: string
+        default: linode
+        description: The label to assign this Linode when cloning to a new Linode. Defaults to "linode".
+      
+      group:
+        type: string
+        default: empty
+        description: The group to assign this Linode when cloning to a new Linode. Defaults to "empty".
+      
+      backups_enabled:
+        type: boolean
+        default: false
+        description: Subscribes this Linode with the Backup service when cloning to a new Linode. (Additional charges apply.) Defaults to "false".
+      
+      disks:
+        type: array
+        description: A list of disk ID's to include in the clone process. All disks attached to configs will be cloned from the source Linode if not provided.
+
+      configs:
+        type: array
+        description: A list of config ID's to include in the clone process. All configs will be cloned from the source Linode if not provided.
+
+  kvmify: 
+    description: Changes a Linode's hypervisor from Xen (legacy) to KVM (modern). Doing this restarts and migrates your Linode, and can take several minutes depending on the size of the Linode. Upgrading to KVM has significant performance improvements. This endpoint will only work for Linodes currently running on the Xen hypervisor.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/kvmify
+    endpoint: /kvmify
+
+  mutate:
+    description: Upgrades a Linode to its next generation.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/mutate
+    endpoint: /mutate
+
+  reboot:
+    description: Reboots a Linode.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/reboot
+    endpoint: /reboot
+    
+    optional-parameters:
+      
+      config_id:
+        type: integer
+        default: 0
+
+  rebuild:
+    description: Deletes all Disks and Configs on this Linode, then deploys a new Distribution or Image to this Linode with the given attributes. Returns a JSON object representation of the Linode's disks and configs.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/rebuild
+    endpoint: /rebuild
+    
+    parameters:
+      
+      root_pass:
+        type: string
+        description: The root password for the new deployment.
+    
+    optional:
+      
+      image:
+        type: string
+        default: null
+        description: The gold-master image to use for this Linode. May not be included if 'distribution' is sent. Official images start with "linode/", while your own images start with "private/"
+      
+      authorized_keys:
+        type: array
+        description: An array of public SSH keys to be installed into the distribution's default user's `authorized_keys` file when rebuilding a Linode.
+      
+      stackscript_id:
+        type: integer
+        description: The stackscript ID to deploy with this disk. Must provide a distribution. Distribution must be one that the stackscript can be deployed to.
+      
+      stackscript_data:
+        type: json
+        description: UDF (user-defined fields) for this stackscript. Defaults to "{}". Must match UDFs required by stackscript.
+      
+      booted:
+        type: boolean
+        default: true
+        description: Whether the instance should be booted upon completion of rebuild. This defaults to true.
+
+  rescue:
+    description: Reboots a Linode in Rescue Mode.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/rescue
+    endpoint: /rescue
+    
+    parameters:
+      
+      devices:
+        type: json
+        description: Disks and volumes attached to this Linode config. Note that "sdh" is reserved and unavailable for rescue.
+
+  resize:
+    description: Resizes a Linode to a new Linode type.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/resize
+    endpoint: /resize
+    
+    parameters:
+      
+      devices:
+        type: string
+        description: A Linode type to use for this Linode.
+
+  restore:
+    description: Restores a backup to a Linode.
+    endpoint: /backups/$backup_id/restore
+
+    parameters:
+
+      backup_id:
+        type: integer
+        description: The ID of the backup.
+
+    optional-parameters:
+
+      overwrite:
+        type: boolean
+        default: false
+        description: If true, deletes all disks and configs on the target linode before restoring.
+
+
+  shutdown:
+    description: Shuts down a Linode.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/shutdown
+    endpoint: /shutdown

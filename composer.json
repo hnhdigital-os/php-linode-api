@@ -1,0 +1,39 @@
+{
+    "name": "hnhdigital-os/php-linode-api",
+    "description": "Linode v4 API",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rocco Howard",
+            "email": "rocco@hnh.digital"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "require-dev": {
+        "symfony/yaml": "~3.0",
+        "illuminate/support": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "HnhDigital\\LinodeApi\\": "src/endpoints/",
+            "HnhDigital\\LinodeApi\\": "src/"
+        }
+    },
+    "scripts": {
+        "test": [
+            "composer phpunit && composer phpcs && composer phpmd"
+        ],
+        "phpunit": [
+            "phpunit"
+        ],
+        "phpcs": [
+            "phpcs -p -s --standard=PSR2 ./src ./tests"
+        ],
+        "phpmd": [
+            "phpmd ./src phpmd.xml"
+        ]
+    }
+}

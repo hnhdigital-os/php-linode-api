@@ -1,0 +1,81 @@
+endpoint: domains/%s
+description: Manage the collection of Domain Records your account may access.
+url: https://developers.linode.com/v4/reference/endpoints/domains/$id/records
+load-method: all
+
+parameters:
+
+    domain_id:
+      type: integer
+
+values:
+
+  type:
+    - A
+    - AAAA
+    - NS
+    - MX
+    - CNAME
+    - TXT
+    - SRV
+    - PTR
+    - CAA
+
+get:
+
+  all:
+    description: Returns a list of Domain Records.
+    url: https://developers.linode.com/v4/reference/endpoints/domains/$id/records#GET
+    endpoint: 
+    search: true
+
+post:
+
+  create:
+    description: Create a Domain Record.
+    url: https://developers.linode.com/v4/reference/endpoints/domains/$id/records#POST
+    endpoint:
+
+    parameters:
+
+      type:
+        type: string
+        description: Type of record. Can be one of "A", "AAAA", "NS", "MX", "CNAME", "TXT", "SRV", "PTR", or "CAA".
+
+    optional:
+
+      name:
+        type: String
+        description: The hostname or FQDN. When type=MX the subdomain to delegate to the Target MX server.
+
+      target:
+        type: String
+        description: When Type=MX the hostname. When Type=CNAME the target of the alias. When Type=TXT or CAA the value of the record. When Type=A or AAAA the token of '[remote_addr]' will be substituted with the IP address of the request.
+      
+      priority:
+        type: integer
+        description: Priority for MX and SRV records.
+      
+      weight:
+        type: integer
+        description: A relative weight for records with the same priority, higher value means more preferred.
+      
+      port:
+        type: integer
+        description: The TCP or UDP port on which the service is to be found.
+      
+      service:
+        type: String
+        description: The service to append to an SRV record.
+      
+      protocol:
+        type: String
+        description: The protocol to append to an SRV record.
+      
+      tag:
+        type: Enum
+        description: The tag attribute for a CAA record. One of "issue", "issuewild", or "iodef". Ignored on other record types.
+      
+      ttl:
+        type: integer
+        description: Time interval that the resource record may be cached before it should be discarded. In seconds. Leave as 0 to accept our default.

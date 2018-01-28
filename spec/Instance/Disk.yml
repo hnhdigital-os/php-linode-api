@@ -1,0 +1,37 @@
+endpoint: linode/instances/%s/disks/%s
+url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/disks/$id
+load-method: get
+
+parameters:
+
+    linode_id:
+      type: integer
+
+    disk_id:
+      type: integer
+
+get:
+
+  get:
+    description: Returns information about this disk.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/disks/$id#GET
+    endpoint: 
+
+put:
+
+  update:
+    description: Updates a disk's metadata.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/disks/$id#PUT
+    endpoint: 
+
+    optional:
+
+      label:
+        type: string
+
+delete:
+
+  delete:
+    description: Deletes this disk. This action cannot be undone.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/disks/$id#DELETE
+    endpoint: 

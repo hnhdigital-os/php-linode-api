@@ -1,0 +1,78 @@
+endpoint: instances
+description: Manage the collection of Linodes your account may access.
+url: https://developers.linode.com/v4/reference/endpoints/linode/instances
+load-method: all
+
+get:
+
+  all:
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances#GET
+    description: Returns a list of Linodes.
+    endpoint: 
+
+    filterable:
+      country:
+        type: string
+
+post:
+
+  create:
+    description: Creates a new Linode.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances#POST
+    endpoint: 
+
+    parameters:
+
+      region:
+        type: string
+        description: A region ID to provision this Linode in.
+      
+      type:
+        type: string
+        description: A Linode type ID to use for this Linode.
+
+    optional:
+      
+      label:
+        type: string
+        default: linode
+        description: The label to assign this Linode. Defaults to "linode".
+      
+      group:
+        type: string
+        default: empty
+        description: The group to assign this Linode. Defaults to "empty".
+
+      configs:
+        type: array
+        description: A list of config ID's to include in the clone process. All configs will be cloned from the source Linode if not provided.
+      
+      root_pass:
+        type: string
+        description:  The root password to use when sourcing this Linode from a distribution.
+
+      authorized_keys:
+        type: array
+        description: An array of public SSH keys to be installed into the distribution's default user's `authorized_keys` file when rebuilding a Linode.
+      
+      stackscript_id:
+        type: integer
+        description: The stackscript ID to deploy with this disk. Must provide a distribution. Distribution must be one that the stackscript can be deployed to.
+      
+      stackscript_data:
+        type: json
+        description: UDF (user-defined fields) for this stackscript. Defaults to "{}". Must match UDFs required by stackscript.
+
+      image:
+        type: string
+        description: The gold-master image to use for the newly created Linode. May not be included if 'backup_id' is sent. Official images start with "linode/", while your own images start with "private/"
+      
+      backups_enabled:
+        type: boolean
+        default: false
+        description: Subscribes this Linode with the Backup service. (Additional charges apply.) Defaults to "false".
+
+      booted:
+        type: boolean
+        default: true
+        description:  Whether the instance should be booted upon completion of creation. This defaults to true if created with a distribution.

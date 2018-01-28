@@ -1,0 +1,30 @@
+endpoint: linode/instances/%s/ips
+description: View networking information for this Linode.
+url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/ips
+load-method: get
+
+parameters:
+
+    linode_id: 
+      type: integer
+
+get:
+
+  get:
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/ips#GET
+    description: Returns a Linode Networking Object.
+    endpoint: 
+
+post:
+
+  add:
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/ips#POST
+    description: Allocates a new IP Address for this Linode.
+    endpoint: 
+
+    optional-parameters:
+
+      type:
+        type: string
+        default: "private"
+        description: The type of IP Address this is, can be one of "public" or "private". Public IP Addresses, over and above the one included with each Linode, incur an additional monthly charge. If you need an additional Public IP Address you must request one - please open a ticket.

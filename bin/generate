@@ -1,0 +1,66 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Yaml\Yaml;
+
+require __DIR__.'/../vendor/autoload.php';
+require __DIR__.'/helpers.php';
+
+// Path to spec definitions.
+$spec_path = realpath(__DIR__.'/../spec');
+
+// Path to where classes will be generated to.
+$output_path = realpath(__DIR__.'/../src/endpoints');
+
+// Find all spec definitions.
+$rii = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($spec_path));
+
+$files = [];
+
+foreach ($rii as $file) {
+    if ($file->isDir()) { 
+        continue;
+    }
+
+    $files[] = $file->getPathname(); 
+}
+
+// Remove currently generated endpoints.
+exec('rm -rf '.$output_path);
+
+// Process each defined spec.
+foreach ($files as $model_yml_path) {
+    // Path generation.s
+    $model_pathinfo = pathinfo($model_yml_path);
+    $model_pathinfo['dirname'] = str_replace($spec_path, '', $model_pathinfo['dirname']);
+
+    // Namespacing for this class.
+    $namespace = str_replace('/', '\\', $model_pathinfo['dirname']);
+
+    // Class name.
+    $class_name = $model_pathinfo['filename'];
+
+    // Get the defined spec.
+    $model_spec = Yaml::parse(file_get_contents($model_yml_path));
+
+    // Data for the class tmeplate.
+    $placeholders = [
+        'namespace' => $namespace,
+        'class'     => $class_name,
+        'spec'      => $model_spec,
+    ];
+
+    // Generate the class.
+    $contents = "<?php\n".generateClass($placeholders);
+
+    // Destination path for this class.
+    $model_output_path = $output_path.$model_pathinfo['dirname'];
+
+    // Create folder(s).
+    if (!file_exists($model_output_path)) {
+        mkdir($model_output_path, 0755, true);
+    }
+
+    // Create the class file.
+    file_put_contents($model_output_path.'/'.$class_name.'.php', $contents);
+}

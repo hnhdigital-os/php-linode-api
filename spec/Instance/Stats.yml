@@ -1,0 +1,29 @@
+endpoint: linode/instances/%s/stats
+description: Returns CPU, IO, IPv4, and IPv6 stats for the last 24 hours.
+url: https://developers.linode.com/v4/reference/linode#stats
+auto-load: false
+
+parameters:
+
+    linode_id: 
+      type: integer
+
+get:
+
+  current:
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/stats
+    description: Returns statistics for the last 24 hours.
+    endpoint: 
+
+  period:
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/stats/$year/$month
+    description: Returns CPU, IO, IPv4, and IPv6 stats for a specific month.
+    endpoint: /$year/$month
+
+    parameters:
+
+      year:
+        type: integer
+
+      month:
+        type: integer

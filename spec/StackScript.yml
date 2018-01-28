@@ -1,0 +1,35 @@
+endpoint: linode/stackscripts//%s
+description: Return a particular region.
+url: https://developers.linode.com/v4/reference/endpoints/linode/stackscripts
+load-method: get
+
+parameters:
+
+    stackscript_id:
+      type: integer
+
+get:
+
+  get:
+    url: https://developers.linode.com/v4/reference/endpoints/linode/stackscripts/$id#GET
+    description: Returns information about this StackScript.
+    endpoint: 
+
+put:
+
+  update:
+    description: Edits this StackScript.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/stackscripts/$id#PUT
+    endpoint: 
+
+    optional:
+
+      label:
+        type: string
+
+delete:
+
+  delete:
+    description: Deletes this StackScript. This action cannot be undone.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/stackscripts/$id#DELETE
+    endpoint: 

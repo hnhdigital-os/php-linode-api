@@ -1,0 +1,62 @@
+endpoint: linode/stackscripts
+description: View public StackScripts.
+url: https://developers.linode.com/v4/reference/endpoints/linode/stackscripts
+load-method: all
+
+get:
+
+  all:
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/stackscripts#GET
+    description: "Returns a list of public StackScripts. Results can be filtered. Include '\"mine\": true' in the filter dict to see only StackScripts you created."
+    endpoint:
+    search: true
+
+    filterable:
+
+      label:
+        type: string
+
+      description:
+        type: string
+
+      images:
+        type: string
+
+      is_public:
+        type: boolean
+
+post:
+
+  update:
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/stackscripts#POST
+    description: Creates a new config for a given Linode.
+    endpoint: 
+
+    parameters:
+
+      label:
+        type: string
+        description: Label of StackScript.
+
+      images:
+        type: array
+        description: A list of official images compatible with StackScript. Official images' creator is "linode".
+
+      script:
+        type: string
+        description: The shell script to run on boot.
+
+    optional:
+
+      description:
+        type: string
+        description: Description of the StackScript.
+
+      is_public:
+        type: boolean
+        default: false
+        description: If true, this StackScript will be publicly visible in the Linode StackScript library. Defaults to False.
+
+      rev_note:
+        type: string
+        description: Release notes for this revision.

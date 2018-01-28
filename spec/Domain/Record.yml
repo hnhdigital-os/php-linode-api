@@ -1,0 +1,89 @@
+endpoint: domains/%s/records/%s
+description: Manage a particular Domain Record your account may access.
+url: https://developers.linode.com/v4/reference/endpoints/domains/$id/records/$id
+load-method: get
+
+parameters:
+
+    domain_id:
+      type: integer
+
+    record_id:
+      type: integer
+
+values:
+
+  type:
+    - A
+    - AAAA
+    - NS
+    - MX
+    - CNAME
+    - TXT
+    - SRV
+    - PTR
+    - CAA
+
+get:
+
+  get:
+    description: Returns information for the Domain Record identified by ":id".
+    url: https://developers.linode.com/v4/reference/endpoints/domains/$id/records/$id#GET
+    endpoint: 
+
+put:
+
+  update:
+    description: Modifies a given Domain Record.
+    url: https://developers.linode.com/v4/reference/endpoints/domains/$id/records/$id#PUT
+    endpoint: 
+
+    optional:
+
+      type:
+        type: string
+        description: Type of record. Can be one of "A", "AAAA", "NS", "MX", "CNAME", "TXT", "SRV", "PTR", or "CAA".
+
+      name:
+        type: String
+        description: The hostname or FQDN. When type=MX the subdomain to delegate to the Target MX server.
+
+      target:
+        type: String
+        description: When Type=MX the hostname. When Type=CNAME the target of the alias. When Type=TXT or CAA the value of the record. When Type=A or AAAA the token of '[remote_addr]' will be substituted with the IP address of the request.
+      
+      priority:
+        type: integer
+        description: Priority for MX and SRV records.
+      
+      weight:
+        type: integer
+        description: A relative weight for records with the same priority, higher value means more preferred.
+      
+      port:
+        type: integer
+        description: The TCP or UDP port on which the service is to be found.
+      
+      service:
+        type: String
+        description: The service to append to an SRV record.
+      
+      protocol:
+        type: String
+        description: The protocol to append to an SRV record.
+      
+      tag:
+        type: Enum
+        description: The tag attribute for a CAA record. One of "issue", "issuewild", or "iodef". Ignored on other record types.
+      
+      ttl:
+        type: integer
+        description: Time interval that the resource record may be cached before it should be discarded. In seconds. Leave as 0 to accept our default.
+
+
+delete:
+
+  delete:
+    description: Deletes the Domain Record. This action cannot be undone.
+    url: https://developers.linode.com/v4/reference/endpoints/domains/$id/records/$id#DELETE
+    endpoint: 

@@ -1,0 +1,84 @@
+endpoint: domains
+description: Manage the collection of Domains your account may access.
+url: https://developers.linode.com/v4/reference/endpoints/domains
+load-method: all
+
+values:
+
+  type:
+    - master
+    - slave
+
+  status:
+    - disabled
+    - active
+    - edit_mode
+
+get:
+
+  all:
+    url: https://developers.linode.com/v4/reference/endpoints/domains#GET
+    description: Returns a list of Domains.
+    endpoint: 
+    search: true
+
+post:
+
+  create:
+    description: Create a Domain.
+    url: https://developers.linode.com/v4/reference/endpoints/domains#POST
+    endpoint: 
+
+    parameters:
+
+      domain:
+        type: string
+        description: The Domain name.
+
+      type:
+        type: string
+        default: master
+        description: Domain type. Can be "master" or "slave".
+
+    optional:
+      
+      soa_email:
+        type: string
+        description: Start of Authority (SOA) contact email.
+
+      description:
+        type: string
+        description: A description to keep track of this Domain.
+
+      refresh_sec:
+        type: integer
+        description: Time interval before the Domain should be refreshed, in seconds.
+
+      retry_sec:
+        type: integer
+        description: Time interval that should elapse before a failed refresh should be retried, in seconds.
+
+      expire_sec:
+        type: integer
+        description: Time value that specifies the upper limit on the time interval that can elapse before the Domain is no longer authoritative, in seconds.
+
+      ttl_sec:
+        type: integer
+        description: Time interval that the resource record may be cached before it should be discarded, in seconds.
+
+      status:
+        type: string
+        default: active
+        description: The status of the Domain. Can be "disabled", "active", or "edit_mode".
+
+      master_ips:
+        type: array
+        description: An array of IP addresses for this Domain.
+
+      axfr_ips:
+        type: array
+        description: An array of IP addresses allowed to AXFR the entire Domain.
+
+      group:
+        type: string
+        description: A display group to keep track of this Domain.
