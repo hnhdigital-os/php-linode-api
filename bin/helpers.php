@@ -60,28 +60,30 @@ function generate_parameter_comments($method_settings)
 
     // Required parameters.
     foreach (array_get($method_settings, 'parameters', []) as $name => $settings) {
-        $entries['     * @param '.array_get($settings, 'type')] = "\$$name ".array_get($settings, 'description');
+        $entries[] = ['     * @param '.array_get($settings, 'type'), "\$$name ".array_get($settings, 'description')];
         $count++;
     }
 
     // Optional parameters with default values.
     foreach (array_get($method_settings, 'optional-parameters', []) as $name => $settings) {
         $default_value = get_default_value($settings, ['with-equal' => true, 'exclude-null' => true]);
-        $entries['     * @param '.array_get($settings, 'type')] = "\$$name".$default_value.' (optional)'.array_get($settings, 'description');
+        $entries[] = ['     * @param '.array_get($settings, 'type'), "\$$name".$default_value.' (optional)'.array_get($settings, 'description')];
         $count++;
     }
-
-    $result = code_alignment($entries, ['raw' => true]);
 
     // Really optional paramters provided via array.
     $optional = array_get($method_settings, 'optional', []);
     if (is_array($optional) && count($optional) > 0) {
-        $result .= "     * @param array \$optional\n";
+        $entries[] = ['     * @param array', "\$optional"];
+    }
 
+    [$max_length, $result] = code_alignment($entries, ['raw' => true]);
+
+    if (is_array($optional) && count($optional) > 0) {
         foreach ($optional as $name => $settings) {
             $default_value = get_default_value($settings, ['with-equal' => true, 'exclude-null' => true]);
 
-            $result .= "     *                        - [$name".$default_value.'] ('.array_get($settings, 'type').') '.array_get($settings, 'description');
+            $result .= '     *'.str_repeat(' ', $max_length+5)."- [$name".$default_value.'] ('.array_get($settings, 'type').') '.array_get($settings, 'description');
             $result .= "\n";
         }
     }
@@ -278,20 +280,27 @@ function code_alignment($data, $options = [])
     $max_length = 0;
 
     foreach ($data as $key => $value) {
+        if (is_array($value)) {
+            $key = $value[0];
+        }
+
         if (($length = strlen($key)) > $max_length) {
             $max_length = $length;
         }
     }
 
-    $max_length++;
-
     foreach ($data as $key => $value) {
+        if (is_array($value)) {
+            $key = $value[0];
+            $value = $value[1];
+        }
+
         if (array_has($options, 'raw')) {
-            $result .= "$key".str_repeat(' ', $max_length-strlen($key))."$value\n";
+            $result .= "$key".str_repeat(' ', $max_length-strlen($key))." $value\n";
         } else {
-            $result .= "        '$key'".str_repeat(' ', $max_length-strlen($key))."=> '$value',\n";
+            $result .= "        '$key'".str_repeat(' ', $max_length-strlen($key))." => '$value',\n";
         }
     }
 
-    return $result;
+    return [$max_length, $result];
 }
