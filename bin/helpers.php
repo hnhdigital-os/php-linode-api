@@ -11,7 +11,7 @@ function generateClass($placeholders)
 {
     ob_start();
     extract($placeholders);
-    include('class.tpl.php');
+    include 'class.tpl.php';
     $render = ob_get_contents();
     ob_clean();
 
@@ -34,7 +34,7 @@ function generate_constructor_parameters($spec, $endpoint_placholders = false)
     }
 
     if (array_has($spec, 'fillable')) {
-        $name = "\$fill";
+        $name = '$fill';
         if (!$endpoint_placholders) {
             $name .= ' = []';
         }
@@ -57,13 +57,13 @@ function generate_parameter_comments($method_settings)
     $count = 0;
 
     foreach (array_get($method_settings, 'parameters', []) as $name => $settings) {
-        $result .= "     * @param ".array_get($settings, 'type')." \$$name ".array_get($settings, 'description');
+        $result .= '     * @param '.array_get($settings, 'type')." \$$name ".array_get($settings, 'description');
         $result .= "\n";
         $count++;
     }
 
     foreach (array_get($method_settings, 'optional-parameters', []) as $name => $settings) {
-        $result .= "     * @param ".array_get($settings, 'type')." \$$name (optional) ".array_get($settings, 'description');
+        $result .= '     * @param '.array_get($settings, 'type')." \$$name (optional) ".array_get($settings, 'description');
         $result .= "\n";
         $count++;
     }
@@ -79,7 +79,7 @@ function generate_parameter_comments($method_settings)
                 $default_value = '='.$default_value;
             }
 
-            $result .= "     *      - [$name".$default_value."] (".array_get($settings, 'type').") ".array_get($settings, 'description');
+            $result .= "     *      - [$name".$default_value.'] ('.array_get($settings, 'type').') '.array_get($settings, 'description');
             $result .= "\n";
         }
     }
@@ -111,7 +111,7 @@ function generate_parameter_list($method_settings)
     }
 
     foreach (array_get($method_settings, 'optional-parameters', []) as $name => $settings) {
-        $default_value = array_get($settings, 'default', "null");
+        $default_value = array_get($settings, 'default', 'null');
         
         $no_quotes = false;
 
@@ -121,14 +121,14 @@ function generate_parameter_list($method_settings)
                 $no_quotes = true;
                 break;
             case 'boolean':
-                $default_value = $default_value ? "true" : "false";
+                $default_value = $default_value ? 'true' : 'false';
                 $no_quotes = true;
                 break;
         }
 
         if (!$no_quotes && empty($default_value)) {
-            $default_value = "null";
-                $no_quotes = true;
+            $default_value = 'null';
+            $no_quotes = true;
         }
 
         if (!$no_quotes && !is_numeric($default_value) && is_string($default_value)) {
@@ -140,7 +140,7 @@ function generate_parameter_list($method_settings)
 
     $optional = array_get($method_settings, 'optional', []);
     if (is_array($optional) && count($optional) > 0) {
-        $result[] = "\$optional = []";
+        $result[] = '$optional = []';
     }
 
     return implode(', ', $result);
@@ -181,6 +181,13 @@ function generate_new_class_parameter_list($method_settings)
     return implode(', ', $result);
 }
 
+/**
+ * Generate the payload for a function.
+ *
+ * @param array $method_settings
+ *
+ * @return string
+ */
 function generate_function_payload($method_settings)
 {
     $parameters = array_get($method_settings, 'parameters', []);
