@@ -118,5 +118,4 @@ class Domain extends Base
     {
         return $this->call('delete', "");
     }
-
 }

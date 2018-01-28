@@ -102,5 +102,4 @@ class Record extends Base
     {
         return $this->call('delete', "");
     }
-
 }

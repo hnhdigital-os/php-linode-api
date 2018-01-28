@@ -155,7 +155,7 @@ foreach (array_get($spec, 'post', []) as $name => $settings) {
 <?= generate_parameter_comments($settings) ?>
      * @link <?= array_get($settings, 'url', array_get($spec, 'url')) ?>
 
-     * 
+     *
      * @return bool
      */
     public function <?= $name ?>(<?= generate_parameter_list($settings) ?>)
@@ -183,7 +183,6 @@ foreach (array_get($spec, 'delete', []) as $name => $settings) {
     {
         return $this->call('delete', "<?= array_get($settings, 'endpoint', '') ?>");
     }
-
 <?php
 }
 ?>

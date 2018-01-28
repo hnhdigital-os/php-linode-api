@@ -86,5 +86,4 @@ class StackScript extends Base
     {
         return $this->call('delete', "");
     }
-
 }

@@ -65,7 +65,7 @@ class StackScripts extends Base
      *                        - [rev_note] (string) Release notes for this revision.
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/stackscripts#POST
-     * 
+     *
      * @return bool
      */
     public function update($label, $images, $script, $optional = [])

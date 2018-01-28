@@ -93,5 +93,4 @@ class Disk extends Base
     {
         return $this->call('delete', "");
     }
-
 }

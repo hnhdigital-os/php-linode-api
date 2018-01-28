@@ -93,7 +93,7 @@ class Records extends Base
      *                        - [ttl] (int) Time interval that the resource record may be cached before it should be discarded. In seconds. Leave as 0 to accept our default.
      *
      * @link https://developers.linode.com/v4/reference/endpoints/domains/$id/records#POST
-     * 
+     *
      * @return bool
      */
     public function create($type, $optional = [])

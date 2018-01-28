@@ -92,7 +92,7 @@ class Domains extends Base
      *                        - [group] (string) A display group to keep track of this Domain.
      *
      * @link https://developers.linode.com/v4/reference/endpoints/domains#POST
-     * 
+     *
      * @return bool
      */
     public function create($domain, $type, $optional = [])

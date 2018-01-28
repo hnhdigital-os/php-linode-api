@@ -164,7 +164,7 @@ class Instance extends Base
      * @param int $config_id (optional)
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/boot
-     * 
+     *
      * @return bool
      */
     public function boot($config_id = null)
@@ -186,7 +186,7 @@ class Instance extends Base
      *                        - [configs] (array) A list of config ID's to include in the clone process. All configs will be cloned from the source Linode if not provided.
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/clone
-     * 
+     *
      * @return bool
      */
     public function clone($region, $type, $optional = [])
@@ -198,7 +198,7 @@ class Instance extends Base
      * Changes a Linode's hypervisor from Xen (legacy) to KVM (modern). Doing this restarts and migrates your Linode, and can take several minutes depending on the size of the Linode. Upgrading to KVM has significant performance improvements. This endpoint will only work for Linodes currently running on the Xen hypervisor.
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/kvmify
-     * 
+     *
      * @return bool
      */
     public function kvmify()
@@ -210,7 +210,7 @@ class Instance extends Base
      * Upgrades a Linode to its next generation.
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/mutate
-     * 
+     *
      * @return bool
      */
     public function mutate()
@@ -224,7 +224,7 @@ class Instance extends Base
      * @param int $config_id (optional)
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/reboot
-     * 
+     *
      * @return bool
      */
     public function reboot($config_id = null)
@@ -244,7 +244,7 @@ class Instance extends Base
      *                        - [booted=1] (boolean) Whether the instance should be booted upon completion of rebuild. This defaults to true.
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/rebuild
-     * 
+     *
      * @return bool
      */
     public function rebuild($root_pass, $optional = [])
@@ -258,7 +258,7 @@ class Instance extends Base
      * @param json $devices Disks and volumes attached to this Linode config. Note that "sdh" is reserved and unavailable for rescue.
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/rescue
-     * 
+     *
      * @return bool
      */
     public function rescue($devices)
@@ -272,7 +272,7 @@ class Instance extends Base
      * @param string $devices A Linode type to use for this Linode.
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/resize
-     * 
+     *
      * @return bool
      */
     public function resize($devices)
@@ -287,7 +287,7 @@ class Instance extends Base
      * @param boolean $overwrite (optional)If true, deletes all disks and configs on the target linode before restoring.
      *
      * @link https://developers.linode.com/v4/reference/linode
-     * 
+     *
      * @return bool
      */
     public function restore($backup_id, $overwrite = false)
@@ -299,7 +299,7 @@ class Instance extends Base
      * Shuts down a Linode.
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/shutdown
-     * 
+     *
      * @return bool
      */
     public function shutdown()
@@ -318,5 +318,4 @@ class Instance extends Base
     {
         return $this->call('delete', "");
     }
-
 }

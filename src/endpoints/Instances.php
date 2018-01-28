@@ -97,7 +97,7 @@ class Instances extends Base
      *                        - [booted=1] (boolean) Whether the instance should be booted upon completion of creation. This defaults to true if created with a distribution.
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances#POST
-     * 
+     *
      * @return bool
      */
     public function create($region, $type, $optional = [])
