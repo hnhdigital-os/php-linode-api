@@ -87,17 +87,17 @@ class Domain extends Base
      * Modifies a given Domain.
      *
      * @param array $optional 
-     *                        - [domain] (string) The name of the domain.
-     *                        - [description] (string) A description to keep track of this Domain.
-     *                        - [display_group] (string) A display group to keep track of this Domain.
-     *                        - [status=active] (string) The status of the Domain. Can be "disabled", "active", or "edit_mode".
-     *                        - [soa_email] (string) Start of Authority (SOA) contact email.
-     *                        - [refresh_sec] (int) Time interval before the Domain should be refreshed, in seconds.
-     *                        - [retry_sec] (int) Time interval that should elapse before a failed refresh should be retried, in seconds.
-     *                        - [expire_sec] (int) Time value that specifies the upper limit on the time interval that can elapse before the Domain is no longer authoritative, in seconds.
-     *                        - [ttl_sec] (int) Time interval that the resource record may be cached before it should be discarded, in seconds.
-     *                        - [master_ips] (array) An array of IP addresses for this Domain.
-     *                        - [axfr_ips] (array) An array of IP addresses allowed to AXFR the entire Domain.
+     *                         - [domain] (string) The name of the domain.
+     *                         - [description] (string) A description to keep track of this Domain.
+     *                         - [display_group] (string) A display group to keep track of this Domain.
+     *                         - [status=active] (string) The status of the Domain. Can be "disabled", "active", or "edit_mode".
+     *                         - [soa_email] (string) Start of Authority (SOA) contact email.
+     *                         - [refresh_sec] (int) Time interval before the Domain should be refreshed, in seconds.
+     *                         - [retry_sec] (int) Time interval that should elapse before a failed refresh should be retried, in seconds.
+     *                         - [expire_sec] (int) Time value that specifies the upper limit on the time interval that can elapse before the Domain is no longer authoritative, in seconds.
+     *                         - [ttl_sec] (int) Time interval that the resource record may be cached before it should be discarded, in seconds.
+     *                         - [master_ips] (array) An array of IP addresses for this Domain.
+     *                         - [axfr_ips] (array) An array of IP addresses allowed to AXFR the entire Domain.
      * 
      * @link https://developers.linode.com/v4/reference/endpoints/domains/$id#PUT
      *
