@@ -65,6 +65,7 @@ class Ips extends Base
      *
      * @param string $type='private' (optional)The type of IP Address this is, can be one of "public" or "private". Public IP Addresses, over and above the one included with each Linode, incur an additional monthly charge. If you need an additional Public IP Address you must request one - please open a ticket.
      *
+     *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/ips#POST
      *
      * @return bool

@@ -61,7 +61,6 @@ trait ApiRequestTrait
                 $endpoint_url,
                 $payload
             ));
-
         } catch (\Exception $exception) {
             // Throw an error if the request fails
             throw new LinodeApiException($exception->getMessage());
