@@ -67,7 +67,7 @@ post:
         description: An array of public SSH keys to be installed into the distribution's default user's `authorized_keys` file when rebuilding a Linode.
       
       stackscript_id:
-        type: integer
+        type: int
         description: The stackscript ID to deploy with this disk. Must provide a distribution. Distribution must be one that the stackscript can be deployed to.
       
       stackscript_data:

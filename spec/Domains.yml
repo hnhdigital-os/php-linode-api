@@ -51,19 +51,19 @@ post:
         description: A description to keep track of this Domain.
 
       refresh_sec:
-        type: integer
+        type: int
         description: Time interval before the Domain should be refreshed, in seconds.
 
       retry_sec:
-        type: integer
+        type: int
         description: Time interval that should elapse before a failed refresh should be retried, in seconds.
 
       expire_sec:
-        type: integer
+        type: int
         description: Time value that specifies the upper limit on the time interval that can elapse before the Domain is no longer authoritative, in seconds.
 
       ttl_sec:
-        type: integer
+        type: int
         description: Time interval that the resource record may be cached before it should be discarded, in seconds.
 
       status:

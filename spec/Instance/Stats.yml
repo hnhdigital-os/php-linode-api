@@ -6,7 +6,7 @@ auto-load: false
 parameters:
 
     linode_id: 
-      type: integer
+      type: int
 
 get:
 
@@ -23,7 +23,7 @@ get:
     parameters:
 
       year:
-        type: integer
+        type: int
 
       month:
-        type: integer
+        type: int

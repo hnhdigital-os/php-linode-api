@@ -5,10 +5,10 @@ load-method: get
 parameters:
 
     linode_id:
-      type: integer
+      type: int
 
     disk_id:
-      type: integer
+      type: int
 
 get:
 

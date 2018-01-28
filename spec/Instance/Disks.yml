@@ -6,7 +6,7 @@ load-method: all
 parameters:
 
     linode_id:
-      type: integer
+      type: int
 
 get:
 
@@ -26,7 +26,7 @@ post:
     parameters:
 
       size:
-        type: integer
+        type: int
         description: Size in MB for this disk.
 
       label:
@@ -58,7 +58,7 @@ post:
         description: If true, this disk is read-only.
       
       stackscript_id:
-        type: integer
+        type: int
         description: The stackscript ID to deploy with this disk. Must provide a distribution. Distribution must be one that the stackscript can be deployed to.
 
       stackscript_data:

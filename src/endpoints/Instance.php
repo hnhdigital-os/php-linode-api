@@ -33,7 +33,7 @@ class Instance extends Base
     /**
      * linode_id.
      *
-     * @var integer
+     * @var int
      */
     protected $linode_id;
 
@@ -162,7 +162,7 @@ class Instance extends Base
     /**
      * Boots a Linode.
      *
-     * @param integer $config_id (optional) 
+     * @param int $config_id (optional) 
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/boot
      * 
@@ -222,7 +222,7 @@ class Instance extends Base
     /**
      * Reboots a Linode.
      *
-     * @param integer $config_id (optional) 
+     * @param int $config_id (optional) 
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/reboot
      * 
@@ -240,7 +240,7 @@ class Instance extends Base
      * @param array $optional 
      *      - [image] (string) The gold-master image to use for this Linode. May not be included if 'distribution' is sent. Official images start with "linode/", while your own images start with "private/"
      *      - [authorized_keys] (array) An array of public SSH keys to be installed into the distribution's default user's `authorized_keys` file when rebuilding a Linode.
-     *      - [stackscript_id] (integer) The stackscript ID to deploy with this disk. Must provide a distribution. Distribution must be one that the stackscript can be deployed to.
+     *      - [stackscript_id] (int) The stackscript ID to deploy with this disk. Must provide a distribution. Distribution must be one that the stackscript can be deployed to.
      *      - [stackscript_data] (json) UDF (user-defined fields) for this stackscript. Defaults to "{}". Must match UDFs required by stackscript.
      *      - [booted=1] (boolean) Whether the instance should be booted upon completion of rebuild. This defaults to true.
      *
@@ -284,7 +284,7 @@ class Instance extends Base
     /**
      * Restores a backup to a Linode.
      *
-     * @param integer $backup_id The ID of the backup.
+     * @param int $backup_id The ID of the backup.
      * @param boolean $overwrite (optional) If true, deletes all disks and configs on the target linode before restoring.
      *
      * @link https://developers.linode.com/v4/reference/linode

@@ -7,7 +7,7 @@ fillable: true
 parameters:
 
     region_id:
-      type: integer
+      type: int
 
 get:
 

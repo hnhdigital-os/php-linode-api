@@ -6,7 +6,7 @@ fillable: true
 parameters:
 
     linode_id:
-      type: integer
+      type: int
 
 get:
 
@@ -86,10 +86,10 @@ get:
         self: true
 
       year:
-        type: integer
+        type: int
 
       month:
-        type: integer
+        type: int
 
 put:
 
@@ -115,7 +115,7 @@ post:
     optional-parameters:
       
       config_id:
-        type: integer
+        type: int
         default: 0
 
   clone:
@@ -181,7 +181,7 @@ post:
     optional-parameters:
       
       config_id:
-        type: integer
+        type: int
         default: 0
 
   rebuild:
@@ -207,7 +207,7 @@ post:
         description: An array of public SSH keys to be installed into the distribution's default user's `authorized_keys` file when rebuilding a Linode.
       
       stackscript_id:
-        type: integer
+        type: int
         description: The stackscript ID to deploy with this disk. Must provide a distribution. Distribution must be one that the stackscript can be deployed to.
       
       stackscript_data:
@@ -248,7 +248,7 @@ post:
     parameters:
 
       backup_id:
-        type: integer
+        type: int
         description: The ID of the backup.
 
     optional-parameters:

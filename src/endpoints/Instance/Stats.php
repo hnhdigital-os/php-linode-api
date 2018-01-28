@@ -33,7 +33,7 @@ class Stats extends Base
     /**
      * linode_id.
      *
-     * @var integer
+     * @var int
      */
     protected $linode_id;
 

@@ -33,13 +33,13 @@ class Disk extends Base
     /**
      * linode_id.
      *
-     * @var integer
+     * @var int
      */
     protected $linode_id;
     /**
      * disk_id.
      *
-     * @var integer
+     * @var int
      */
     protected $disk_id;
 

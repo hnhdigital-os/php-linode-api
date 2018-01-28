@@ -62,10 +62,10 @@ class Domains extends Base
      * @param array $optional 
      *      - [soa_email] (string) Start of Authority (SOA) contact email.
      *      - [description] (string) A description to keep track of this Domain.
-     *      - [refresh_sec] (integer) Time interval before the Domain should be refreshed, in seconds.
-     *      - [retry_sec] (integer) Time interval that should elapse before a failed refresh should be retried, in seconds.
-     *      - [expire_sec] (integer) Time value that specifies the upper limit on the time interval that can elapse before the Domain is no longer authoritative, in seconds.
-     *      - [ttl_sec] (integer) Time interval that the resource record may be cached before it should be discarded, in seconds.
+     *      - [refresh_sec] (int) Time interval before the Domain should be refreshed, in seconds.
+     *      - [retry_sec] (int) Time interval that should elapse before a failed refresh should be retried, in seconds.
+     *      - [expire_sec] (int) Time value that specifies the upper limit on the time interval that can elapse before the Domain is no longer authoritative, in seconds.
+     *      - [ttl_sec] (int) Time interval that the resource record may be cached before it should be discarded, in seconds.
      *      - [status=active] (string) The status of the Domain. Can be "disabled", "active", or "edit_mode".
      *      - [master_ips] (array) An array of IP addresses for this Domain.
      *      - [axfr_ips] (array) An array of IP addresses allowed to AXFR the entire Domain.

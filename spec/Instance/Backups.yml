@@ -5,7 +5,7 @@ load-method: all
 parameters:
 
     linode_id:
-      type: integer
+      type: int
 
 get:
 

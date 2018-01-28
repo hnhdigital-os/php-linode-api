@@ -33,7 +33,7 @@ class Region extends Base
     /**
      * region_id.
      *
-     * @var integer
+     * @var int
      */
     protected $region_id;
 
