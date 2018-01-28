@@ -161,7 +161,7 @@ class Instance extends Base
     /**
      * Boots a Linode.
      *
-     * @param int $config_id (optional)
+     * @param int $config_id=null (optional)
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/boot
      *
@@ -178,12 +178,12 @@ class Instance extends Base
      * @param string $region A region ID to provision this Linode in. Required when cloning to a new Linode.
      * @param string $type A Linode type ID to use for this Linode. Required when cloning to a new Linode.
      * @param array $optional 
-     *                        - [linode_id] (string) An existing Linode can be a target clone location.
-     *                        - [label=linode] (string) The label to assign this Linode when cloning to a new Linode. Defaults to "linode".
-     *                        - [group=empty] (string) The group to assign this Linode when cloning to a new Linode. Defaults to "empty".
-     *                        - [backups_enabled=0] (boolean) Subscribes this Linode with the Backup service when cloning to a new Linode. (Additional charges apply.) Defaults to "false".
-     *                        - [disks] (array) A list of disk ID's to include in the clone process. All disks attached to configs will be cloned from the source Linode if not provided.
-     *                        - [configs] (array) A list of config ID's to include in the clone process. All configs will be cloned from the source Linode if not provided.
+     *                        - [linode_id=null] (string) An existing Linode can be a target clone location.
+     *                        - [label='linode'] (string) The label to assign this Linode when cloning to a new Linode. Defaults to "linode".
+     *                        - [group='empty'] (string) The group to assign this Linode when cloning to a new Linode. Defaults to "empty".
+     *                        - [backups_enabled=false] (boolean) Subscribes this Linode with the Backup service when cloning to a new Linode. (Additional charges apply.) Defaults to "false".
+     *                        - [disks=[]] (array) A list of disk ID's to include in the clone process. All disks attached to configs will be cloned from the source Linode if not provided.
+     *                        - [configs=[]] (array) A list of config ID's to include in the clone process. All configs will be cloned from the source Linode if not provided.
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/clone
      *
@@ -221,7 +221,7 @@ class Instance extends Base
     /**
      * Reboots a Linode.
      *
-     * @param int $config_id (optional)
+     * @param int $config_id=null (optional)
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/reboot
      *
@@ -237,11 +237,11 @@ class Instance extends Base
      *
      * @param string $root_pass The root password for the new deployment.
      * @param array $optional 
-     *                        - [image] (string) The gold-master image to use for this Linode. May not be included if 'distribution' is sent. Official images start with "linode/", while your own images start with "private/"
-     *                        - [authorized_keys] (array) An array of public SSH keys to be installed into the distribution's default user's `authorized_keys` file when rebuilding a Linode.
+     *                        - [image=null] (string) The gold-master image to use for this Linode. May not be included if 'distribution' is sent. Official images start with "linode/", while your own images start with "private/"
+     *                        - [authorized_keys=[]] (array) An array of public SSH keys to be installed into the distribution's default user's `authorized_keys` file when rebuilding a Linode.
      *                        - [stackscript_id] (int) The stackscript ID to deploy with this disk. Must provide a distribution. Distribution must be one that the stackscript can be deployed to.
      *                        - [stackscript_data] (json) UDF (user-defined fields) for this stackscript. Defaults to "{}". Must match UDFs required by stackscript.
-     *                        - [booted=1] (boolean) Whether the instance should be booted upon completion of rebuild. This defaults to true.
+     *                        - [booted=true] (boolean) Whether the instance should be booted upon completion of rebuild. This defaults to true.
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/rebuild
      *
@@ -284,7 +284,7 @@ class Instance extends Base
      * Restores a backup to a Linode.
      *
      * @param int $backup_id The ID of the backup.
-     * @param boolean $overwrite (optional)If true, deletes all disks and configs on the target linode before restoring.
+     * @param boolean $overwrite=false (optional)If true, deletes all disks and configs on the target linode before restoring.
      *
      * @link https://developers.linode.com/v4/reference/linode
      *

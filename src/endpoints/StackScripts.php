@@ -61,7 +61,7 @@ class StackScripts extends Base
      * @param string $script The shell script to run on boot.
      * @param array $optional 
      *                        - [description] (string) Description of the StackScript.
-     *                        - [is_public=0] (boolean) If true, this StackScript will be publicly visible in the Linode StackScript library. Defaults to False.
+     *                        - [is_public=false] (boolean) If true, this StackScript will be publicly visible in the Linode StackScript library. Defaults to False.
      *                        - [rev_note] (string) Release notes for this revision.
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/stackscripts#POST

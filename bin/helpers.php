@@ -56,34 +56,35 @@ function generate_parameter_comments($method_settings)
     $result = '';
     $count = 0;
 
+    // Required parameters.
     foreach (array_get($method_settings, 'parameters', []) as $name => $settings) {
         $result .= '     * @param '.array_get($settings, 'type')." \$$name ".array_get($settings, 'description');
         $result .= "\n";
         $count++;
     }
 
+    // Optional parameters with default values.
     foreach (array_get($method_settings, 'optional-parameters', []) as $name => $settings) {
-        $result .= '     * @param '.array_get($settings, 'type')." \$$name (optional)".array_get($settings, 'description');
+        $default_value = get_default_value($settings, ['with-equal' => true, 'exclude-null' => true]);
+        $result .= '     * @param '.array_get($settings, 'type')." \$$name".$default_value.' (optional)'.array_get($settings, 'description');
         $result .= "\n";
         $count++;
     }
 
+    // Really optional paramters provided via array.
     $optional = array_get($method_settings, 'optional', []);
     if (is_array($optional) && count($optional) > 0) {
         $result .= "     * @param array \$optional \n";
 
         foreach ($optional as $name => $settings) {
-            $default_value = array_get($settings, 'default', '');
-            $default_value = array_get($settings, 'type') == 'boolean' ? (int) $default_value : $default_value;
-            if (strlen($default_value)) {
-                $default_value = '='.$default_value;
-            }
+            $default_value = get_default_value($settings, ['with-equal' => true, 'exclude-null' => true]);
 
             $result .= "     *                        - [$name".$default_value.'] ('.array_get($settings, 'type').') '.array_get($settings, 'description');
             $result .= "\n";
         }
     }
 
+    // Add a new comment line if we have parameters.
     if ($count) {
         $result .= "     *\n";
     }
@@ -102,6 +103,7 @@ function generate_parameter_list($method_settings)
 {
     $result = [];
 
+    // Required parameters.
     foreach (array_get($method_settings, 'parameters', []) as $name => $settings) {
         if (array_has($settings, 'self', false)) {
             continue;
@@ -110,32 +112,9 @@ function generate_parameter_list($method_settings)
         $result[] = "\$$name";
     }
 
+    // Optional parameters with default values.
     foreach (array_get($method_settings, 'optional-parameters', []) as $name => $settings) {
-        $default_value = array_get($settings, 'default', 'null');
-        
-        $no_quotes = false;
-
-        switch (array_get($settings, 'type')) {
-            case 'array':
-                $default_value = '[]';
-                $no_quotes = true;
-                break;
-            case 'boolean':
-                $default_value = $default_value ? 'true' : 'false';
-                $no_quotes = true;
-                break;
-        }
-
-        if (!$no_quotes && empty($default_value)) {
-            $default_value = 'null';
-            $no_quotes = true;
-        }
-
-        if (!$no_quotes && !is_numeric($default_value) && is_string($default_value)) {
-            $default_value = "'$default_value'";
-        }
-
-        $result[] = "\$$name = ".$default_value;
+        $result[] = "\$$name = ".get_default_value($settings);
     }
 
     $optional = array_get($method_settings, 'optional', []);
@@ -144,6 +123,54 @@ function generate_parameter_list($method_settings)
     }
 
     return implode(', ', $result);
+}
+
+/**
+ * Get the default value.
+ *
+ * @param array $parameter_setting
+ * @param array $options
+ *
+ * @return mixed
+ */
+function get_default_value($parameter_setting, $options = [])
+{
+    $default_value = array_get($parameter_setting, 'default', 'null');
+        
+    $no_quotes = false;
+
+    switch (array_get($parameter_setting, 'type')) {
+        case 'array':
+            $default_value = '[]';
+            $no_quotes = true;
+            break;
+        case 'boolean':
+            $default_value = $default_value ? 'true' : 'false';
+            $no_quotes = true;
+            break;
+    }
+
+    if (!$no_quotes && empty($default_value)) {
+        $default_value = 'null';
+        $no_quotes = true;
+    }
+
+    if (!$no_quotes && !is_numeric($default_value) && is_string($default_value)) {
+        $default_value = "'$default_value'";
+    }
+
+    if (array_has($options, 'with-equal')) {
+        // Exclude null values
+        if (array_has($options, 'exclude-null') && $default_value == "'null'") {
+            $default_value = '';
+
+        // Add the equal sign.
+        } elseif (strlen($default_value)) {
+            $default_value = '='.$default_value;
+        }
+    }
+
+    return $default_value;
 }
 
 function api_search_factory($method_settings)

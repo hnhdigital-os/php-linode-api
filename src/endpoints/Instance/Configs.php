@@ -63,7 +63,7 @@ class Configs extends Base
     /**
      * Creates a new config for a given Linode.
      *
-     * @param string $kernel (optional)A kernel ID to boot this Linode with. Defaults to "linode/latest-64bit".
+     * @param string $kernel='linode/latest-64bit' (optional)A kernel ID to boot this Linode with. Defaults to "linode/latest-64bit".
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/configs#POST
      *
