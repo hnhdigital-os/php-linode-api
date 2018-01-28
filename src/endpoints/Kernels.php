@@ -52,5 +52,4 @@ class Kernels extends Base
     {
         return $this->apiSearch($this->endpoint);
     }
-
 }

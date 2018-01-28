@@ -60,5 +60,4 @@ class Region extends Base
     {
         return $this->apiCall('get', '');
     }
-
 }

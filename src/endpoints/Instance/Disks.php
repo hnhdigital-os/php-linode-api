@@ -85,5 +85,4 @@ class Disks extends Base
             'label' => $label,
         ], $optional));
     }
-
 }

@@ -102,5 +102,4 @@ class Domains extends Base
             'type' => $type,
         ], $optional));
     }
-
 }

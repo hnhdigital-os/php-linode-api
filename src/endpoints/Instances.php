@@ -107,5 +107,4 @@ class Instances extends Base
             'type' => $type,
         ], $optional));
     }
-
 }

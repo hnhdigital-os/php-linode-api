@@ -102,5 +102,4 @@ class Records extends Base
             'type' => $type,
         ], $optional));
     }
-
 }

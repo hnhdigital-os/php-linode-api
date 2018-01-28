@@ -52,5 +52,4 @@ class Types extends Base
     {
         return $this->apiSearch($this->endpoint);
     }
-
 }

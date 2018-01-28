@@ -76,5 +76,4 @@ class StackScripts extends Base
             'script' => $script,
         ], $optional));
     }
-
 }

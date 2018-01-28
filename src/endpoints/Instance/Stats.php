@@ -71,5 +71,4 @@ class Stats extends Base
     {
         return $this->apiCall('get', '/$year/$month');
     }
-
 }

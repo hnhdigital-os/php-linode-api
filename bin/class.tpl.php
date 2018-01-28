@@ -88,10 +88,10 @@ if (array_has($spec, 'fillable')) {
 ?>
         parent::__construct(<?= generate_constructor_parameters($spec, true) ?>);
     }
-
 <?php
 foreach (array_get($spec, 'get', []) as $name => $settings) {
 ?>
+
     /**
      * <?= array_get($settings, 'description', '@todo Add description') ?>
 
@@ -119,13 +119,13 @@ if (array_has($settings, 'endpoint') && !array_has($settings, 'search')) {
 }
 ?>
     }
-
 <?php
 }
 ?>
 <?php
 foreach (array_get($spec, 'put', []) as $name => $settings) {
 ?>
+
     /**
      * <?= array_get($settings, 'description', '@todo Add description') ?>
 
@@ -141,13 +141,13 @@ foreach (array_get($spec, 'put', []) as $name => $settings) {
     {
         return $this->call('put', <?= generate_endpoint_entry($settings) ?>, <?= generate_put_function_payload($settings) ?>);
     }
-
 <?php
 }
 ?>
 <?php
 foreach (array_get($spec, 'post', []) as $name => $settings) {
 ?>
+
     /**
      * <?= array_get($settings, 'description', '@todo Add description') ?>
 
@@ -162,13 +162,13 @@ foreach (array_get($spec, 'post', []) as $name => $settings) {
     {
         return $this->call('post', <?= generate_endpoint_entry($settings) ?>, <?= generate_post_function_payload($settings) ?>);
     }
-
 <?php
 }
 ?>
 <?php
 foreach (array_get($spec, 'delete', []) as $name => $settings) {
 ?>
+
     /**
      * <?= array_get($settings, 'description', '@todo Add description') ?>
 

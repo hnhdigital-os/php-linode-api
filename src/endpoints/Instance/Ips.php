@@ -75,5 +75,4 @@ class Ips extends Base
             'type' => $type,
         ], $optional));
     }
-
 }

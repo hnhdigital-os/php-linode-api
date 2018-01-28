@@ -52,5 +52,4 @@ class Regions extends Base
     {
         return $this->apiSearch($this->endpoint, ['class' => 'Region', 'parameters' => ['id']]);
     }
-
 }
