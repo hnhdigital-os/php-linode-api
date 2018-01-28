@@ -79,7 +79,7 @@ function generate_parameter_comments($method_settings)
                 $default_value = '='.$default_value;
             }
 
-            $result .= "     *      - [$name".$default_value.'] ('.array_get($settings, 'type').') '.array_get($settings, 'description');
+            $result .= "     *                        - [$name".$default_value.'] ('.array_get($settings, 'type').') '.array_get($settings, 'description');
             $result .= "\n";
         }
     }
