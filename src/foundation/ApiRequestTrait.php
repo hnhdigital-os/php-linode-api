@@ -59,8 +59,8 @@ trait ApiRequestTrait
                 $payload
             ));
 
-        // Throw an error if the request fails
         } catch (\Exception $exception) {
+        // Throw an error if the request fails
             throw new LinodeApiException($exception->getMessage());
         }
     }
