@@ -23,32 +23,23 @@ get:
   backups:
     description: Returns information about this Linode's available backups.
     url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/backups
-    model: Backups
+    model: Instance/Backups
+    model-load-method: all
 
     parameters:      
       linode_id:
         self: true
 
-    optional-parameters:      
-      load:
-        type: boolean
-        default: false
-
   disks:
     description: Returns a list of disks.
     url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/disks
-    model: Disks
+    model: Instance/Disks
+    model-load-method: all
 
     parameters:
       
       linode_id:
         self: true
-
-    optional-parameters:
-      
-      load:
-        type: boolean
-        default: false
 
 put:
 

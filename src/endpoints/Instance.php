@@ -82,9 +82,9 @@ class Instance extends Base
      *
      * @return array
      */
-    public function backups($load = false)
+    public function backups()
     {
-        return new Backups($this->linode_id, $load);
+        return new Instance/Backups($this->linode_id);
     }
 
     /**
@@ -94,9 +94,9 @@ class Instance extends Base
      *
      * @return array
      */
-    public function disks($load = false)
+    public function disks()
     {
-        return new Disks($this->linode_id, $load);
+        return new Instance/Disks($this->linode_id);
     }
 
     /**
