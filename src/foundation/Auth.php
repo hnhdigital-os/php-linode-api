@@ -21,6 +21,8 @@ class Auth
 {
     /**
      * Using the token method.
+     *
+     * @var int
      */
     const METHOD_TOKEN = 1;
 
@@ -32,12 +34,14 @@ class Auth
     private static $base_endpoint = 'https://api.linode.com/v4/';
 
     /**
-     * Method
+     * Method that is being used.
+     *
+     * @var int
      */
     private static $method;
 
     /**
-     * Token.
+     * Token being used for authorization.
      *
      * @var string
      */
