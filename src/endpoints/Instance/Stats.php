@@ -30,9 +30,8 @@ class Stats extends Base
      * @var string
      */
     protected $endpoint = 'linode/instances/%s/stats';
-
     /**
-     * linode_id.
+     * Linode Id.
      *
      * @var int
      */
@@ -46,7 +45,6 @@ class Stats extends Base
     public function __construct($linode_id)
     {
         $this->linode_id = $linode_id;
-
         parent::__construct($linode_id);
     }
 

@@ -30,9 +30,8 @@ class Backups extends Base
      * @var string
      */
     protected $endpoint = 'linode/instances/%s/backups';
-
     /**
-     * linode_id.
+     * Linode Id.
      *
      * @var int
      */
@@ -46,7 +45,6 @@ class Backups extends Base
     public function __construct($linode_id)
     {
         $this->linode_id = $linode_id;
-
         parent::__construct($linode_id);
     }
 

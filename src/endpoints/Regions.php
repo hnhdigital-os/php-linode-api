@@ -31,7 +31,6 @@ class Regions extends Base
      */
     protected $endpoint = 'regions';
 
-
     /**
      * Constructor.
      *
@@ -39,7 +38,6 @@ class Regions extends Base
      */
     public function __construct()
     {
-
         parent::__construct();
     }
 

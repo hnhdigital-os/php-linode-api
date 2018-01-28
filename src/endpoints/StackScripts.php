@@ -31,7 +31,6 @@ class StackScripts extends Base
      */
     protected $endpoint = 'linode/stackscripts';
 
-
     /**
      * Constructor.
      *
@@ -39,7 +38,6 @@ class StackScripts extends Base
      */
     public function __construct()
     {
-
         parent::__construct();
     }
 

@@ -31,6 +31,26 @@ class Domains extends Base
      */
     protected $endpoint = 'domains';
 
+    /**
+     * Type.
+     *
+     * @var array
+     */
+    public $type = [
+        'master' => 'Master',
+        'slave' => 'Slave',
+    ];
+
+    /**
+     * Status.
+     *
+     * @var array
+     */
+    public $status = [
+        'disabled' => 'Disabled',
+        'active' => 'Active',
+        'edit_mode' => 'Edit mode',
+    ];
 
     /**
      * Constructor.
@@ -39,7 +59,6 @@ class Domains extends Base
      */
     public function __construct()
     {
-
         parent::__construct();
     }
 

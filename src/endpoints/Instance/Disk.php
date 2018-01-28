@@ -30,15 +30,14 @@ class Disk extends Base
      * @var string
      */
     protected $endpoint = 'linode/instances/%s/disks/%s';
-
     /**
-     * linode_id.
+     * Linode Id.
      *
      * @var int
      */
     protected $linode_id;
     /**
-     * disk_id.
+     * Disk Id.
      *
      * @var int
      */
@@ -53,7 +52,6 @@ class Disk extends Base
     {
         $this->linode_id = $linode_id;
         $this->disk_id = $disk_id;
-
         parent::__construct($linode_id, $disk_id);
     }
 

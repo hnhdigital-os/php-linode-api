@@ -11,15 +11,15 @@ parameters:
 lists:
 
   type:
-    - A
-    - AAAA
-    - NS
-    - MX
-    - CNAME
-    - TXT
-    - SRV
-    - PTR
-    - CAA
+    A: A
+    AAAA: AAAA
+    NS: NS
+    MX: MX
+    CNAME: CNAME
+    TXT: TXT
+    SRV: SRV
+    PTR: PTR
+    CAA: CAA
 
 get:
 

@@ -6,13 +6,13 @@ load-method: search
 lists:
 
   type:
-    - master
-    - slave
+    master: Master
+    slave: Slave
 
   status:
-    - disabled
-    - active
-    - edit_mode
+    disabled: Disabled
+    active: Active
+    edit_mode: Edit mode
 
 get:
 

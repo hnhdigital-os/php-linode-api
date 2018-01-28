@@ -30,13 +30,29 @@ class Records extends Base
      * @var string
      */
     protected $endpoint = 'domains/%s';
-
     /**
-     * domain_id.
+     * Domain Id.
      *
      * @var int
      */
     protected $domain_id;
+
+    /**
+     * Type.
+     *
+     * @var array
+     */
+    public $type = [
+        'A' => 'A',
+        'AAAA' => 'AAAA',
+        'NS' => 'NS',
+        'MX' => 'MX',
+        'CNAME' => 'CNAME',
+        'TXT' => 'TXT',
+        'SRV' => 'SRV',
+        'PTR' => 'PTR',
+        'CAA' => 'CAA',
+    ];
 
     /**
      * Constructor.
@@ -46,7 +62,6 @@ class Records extends Base
     public function __construct($domain_id)
     {
         $this->domain_id = $domain_id;
-
         parent::__construct($domain_id);
     }
 

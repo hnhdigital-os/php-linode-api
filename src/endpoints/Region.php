@@ -30,9 +30,8 @@ class Region extends Base
      * @var string
      */
     protected $endpoint = 'regions/%s';
-
     /**
-     * region_id.
+     * Region Id.
      *
      * @var int
      */
@@ -47,7 +46,6 @@ class Region extends Base
     {
         $this->region_id = $region_id;
         $this->fillable = true;
-
         parent::__construct($region_id, $fill);
     }
 

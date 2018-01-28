@@ -30,15 +30,14 @@ class Record extends Base
      * @var string
      */
     protected $endpoint = 'domains/%s/records/%s';
-
     /**
-     * domain_id.
+     * Domain Id.
      *
      * @var int
      */
     protected $domain_id;
     /**
-     * record_id.
+     * Record Id.
      *
      * @var int
      */
@@ -53,7 +52,6 @@ class Record extends Base
     {
         $this->domain_id = $domain_id;
         $this->record_id = $record_id;
-
         parent::__construct($domain_id, $record_id);
     }
 

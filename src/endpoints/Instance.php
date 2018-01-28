@@ -30,9 +30,8 @@ class Instance extends Base
      * @var string
      */
     protected $endpoint = 'linode/instances/%s';
-
     /**
-     * linode_id.
+     * Linode Id.
      *
      * @var int
      */
@@ -47,7 +46,6 @@ class Instance extends Base
     {
         $this->linode_id = $linode_id;
         $this->fillable = true;
-
         parent::__construct($linode_id, $fill);
     }
 

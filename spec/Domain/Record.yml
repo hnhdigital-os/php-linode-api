@@ -11,19 +11,6 @@ parameters:
     record_id:
       type: int
 
-lists:
-
-  type:
-    - A
-    - AAAA
-    - NS
-    - MX
-    - CNAME
-    - TXT
-    - SRV
-    - PTR
-    - CAA
-
 get:
 
   get:

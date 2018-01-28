@@ -30,15 +30,14 @@ class Domain extends Base
      * @var string
      */
     protected $endpoint = 'domains/%s';
-
     /**
-     * linode_id.
+     * Linode Id.
      *
      * @var int
      */
     protected $linode_id;
     /**
-     * domain_id.
+     * Domain Id.
      *
      * @var int
      */
@@ -53,7 +52,6 @@ class Domain extends Base
     {
         $this->linode_id = $linode_id;
         $this->domain_id = $domain_id;
-
         parent::__construct($linode_id, $domain_id);
     }
 

@@ -32,12 +32,11 @@ class <?= $class ?> extends Base
      * @var string
      */
     protected $endpoint = '<?= array_get($spec, 'endpoint') ?>';
-
 <?php
 foreach (array_get($spec, 'parameters', []) as $name => $settings) {
 ?>
     /**
-     * <?= $name ?>.
+     * <?= title_case(str_replace('_', ' ', $name)) ?>.
      *
      * @var <?= array_get($settings, 'type') ?>
 
@@ -47,6 +46,27 @@ foreach (array_get($spec, 'parameters', []) as $name => $settings) {
 }
 ?>
 
+<?php
+foreach (array_get($spec, 'lists', []) as $name => $list) {
+?>
+    /**
+     * <?= title_case(str_replace('_', ' ', $name)) ?>.
+     *
+     * @var array
+     */
+    public $<?= $name ?> = [
+<?php
+    foreach ($list as $key => $value) {
+?>
+        '<?= $key ?>' => '<?= $value ?>',
+<?php
+    }
+?>
+    ];
+
+<?php
+}
+?>
     /**
      * Constructor.
      *
@@ -66,7 +86,6 @@ if (array_has($spec, 'fillable')) {
 <?php
 }
 ?>
-
         parent::__construct(<?= generate_constructor_parameters($spec, true) ?>);
     }
 

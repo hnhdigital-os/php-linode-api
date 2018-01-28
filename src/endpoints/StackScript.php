@@ -30,9 +30,8 @@ class StackScript extends Base
      * @var string
      */
     protected $endpoint = 'linode/stackscripts//%s';
-
     /**
-     * stackscript_id.
+     * Stackscript Id.
      *
      * @var int
      */
@@ -46,7 +45,6 @@ class StackScript extends Base
     public function __construct($stackscript_id)
     {
         $this->stackscript_id = $stackscript_id;
-
         parent::__construct($stackscript_id);
     }
 
