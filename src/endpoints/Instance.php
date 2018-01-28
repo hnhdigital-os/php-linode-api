@@ -179,7 +179,7 @@ class Instance extends Base
      *
      * @param string $region A region ID to provision this Linode in. Required when cloning to a new Linode.
      * @param string $type A Linode type ID to use for this Linode. Required when cloning to a new Linode.
-     * @param array $optional 
+     * @param array $optional
      *                        - [linode_id=null] (string) An existing Linode can be a target clone location.
      *                        - [label='linode'] (string) The label to assign this Linode when cloning to a new Linode. Defaults to "linode".
      *                        - [group='empty'] (string) The group to assign this Linode when cloning to a new Linode. Defaults to "empty".
@@ -245,7 +245,7 @@ class Instance extends Base
      * Deletes all Disks and Configs on this Linode, then deploys a new Distribution or Image to this Linode with the given attributes. Returns a JSON object representation of the Linode's disks and configs.
      *
      * @param string $root_pass The root password for the new deployment.
-     * @param array $optional 
+     * @param array $optional
      *                        - [image=null] (string) The gold-master image to use for this Linode. May not be included if 'distribution' is sent. Official images start with "linode/", while your own images start with "private/"
      *                        - [authorized_keys=[]] (array) An array of public SSH keys to be installed into the distribution's default user's `authorized_keys` file when rebuilding a Linode.
      *                        - [stackscript_id] (int) The stackscript ID to deploy with this disk. Must provide a distribution. Distribution must be one that the stackscript can be deployed to.

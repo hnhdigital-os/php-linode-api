@@ -70,7 +70,7 @@ class Record extends Base
     /**
      * Modifies a given Domain Record.
      *
-     * @param array $optional 
+     * @param array $optional
      *                        - [type] (string) Type of record. Can be one of "A", "AAAA", "NS", "MX", "CNAME", "TXT", "SRV", "PTR", or "CAA".
      *                        - [name] (string) The hostname or FQDN. When type=MX the subdomain to delegate to the Target MX server.
      *                        - [target] (string) When Type=MX the hostname. When Type=CNAME the target of the alias. When Type=TXT or CAA the value of the record. When Type=A or AAAA the token of '[remote_addr]' will be substituted with the IP address of the request.

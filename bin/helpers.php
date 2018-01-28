@@ -74,7 +74,7 @@ function generate_parameter_comments($method_settings)
     // Really optional paramters provided via array.
     $optional = array_get($method_settings, 'optional', []);
     if (is_array($optional) && count($optional) > 0) {
-        $result .= "     * @param array \$optional \n";
+        $result .= "     * @param array \$optional\n";
 
         foreach ($optional as $name => $settings) {
             $default_value = get_default_value($settings, ['with-equal' => true, 'exclude-null' => true]);

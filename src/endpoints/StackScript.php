@@ -63,7 +63,7 @@ class StackScript extends Base
     /**
      * Edits this StackScript.
      *
-     * @param array $optional 
+     * @param array $optional
      *                        - [label] (string) 
      * 
      * @link https://developers.linode.com/v4/reference/endpoints/linode/stackscripts/$id#PUT

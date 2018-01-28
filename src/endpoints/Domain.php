@@ -85,7 +85,7 @@ class Domain extends Base
     /**
      * Modifies a given Domain.
      *
-     * @param array $optional 
+     * @param array $optional
      *                        - [domain] (string) The name of the domain.
      *                        - [description] (string) A description to keep track of this Domain.
      *                        - [display_group] (string) A display group to keep track of this Domain.

@@ -84,7 +84,7 @@ class Instances extends Base
      *
      * @param string $region A region ID to provision this Linode in.
      * @param string $type A Linode type ID to use for this Linode.
-     * @param array $optional 
+     * @param array $optional
      *                        - [label='linode'] (string) The label to assign this Linode. Defaults to "linode".
      *                        - [group='empty'] (string) The group to assign this Linode. Defaults to "empty".
      *                        - [configs=[]] (array) A list of config ID's to include in the clone process. All configs will be cloned from the source Linode if not provided.

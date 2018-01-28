@@ -79,7 +79,7 @@ class Domains extends Base
      *
      * @param string $domain The Domain name.
      * @param string $type Domain type. Can be "master" or "slave".
-     * @param array $optional 
+     * @param array $optional
      *                        - [soa_email] (string) Start of Authority (SOA) contact email.
      *                        - [description] (string) A description to keep track of this Domain.
      *                        - [refresh_sec] (int) Time interval before the Domain should be refreshed, in seconds.

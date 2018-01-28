@@ -65,7 +65,7 @@ class Disks extends Base
      *
      * @param int $size Size in MB for this disk.
      * @param string $label User-friendly string to name this disk.
-     * @param array $optional 
+     * @param array $optional
      *                        - [image] (string) Optional image id to deploy the disk from. You may not provide image if distribution is provided. Official images start with "linode/", while your images start with "private/"
      *                        - [root_pass] (string) Root password to deploy distribution with.
      *                        - [authorized_keys=[]] (array) An array of public SSH keys to be installed into the distribution's default user's `authorized_keys` file when creating a new disk from a Linode provided distribution.
