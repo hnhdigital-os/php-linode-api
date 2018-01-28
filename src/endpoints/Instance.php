@@ -12,7 +12,6 @@ namespace HnhDigital\LinodeApi;
  */
 
 use HnhDigital\LinodeApi\Foundation\Base;
-use HnhDigital\LinodeApi\Foundation\ApiSearch;
 
 /**
  * This is the Instance class.
@@ -130,7 +129,7 @@ class Instance extends Base
      *
      * @return array
      */
-    public function currentStats()
+    public function statsCurrent()
     {
         return (new Instance/Stats($this->linode_id))->current();
     }
@@ -142,7 +141,7 @@ class Instance extends Base
      *
      * @return array
      */
-    public function satsForPeriod($year, $month)
+    public function statsForPeriod($year, $month)
     {
         return (new Instance/Stats($this->linode_id, $year, $month))->period();
     }

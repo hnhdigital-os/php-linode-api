@@ -12,7 +12,6 @@ namespace HnhDigital\LinodeApi\Domain;
  */
 
 use HnhDigital\LinodeApi\Foundation\Base;
-use HnhDigital\LinodeApi\Foundation\ApiSearch;
 
 /**
  * This is the Record class.
