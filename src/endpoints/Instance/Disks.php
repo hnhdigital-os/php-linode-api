@@ -63,7 +63,7 @@ class Disks extends Base
     /**
      * Creates a new disk.
      *
-     * @param int $size Size in MB for this disk.
+     * @param int    $size Size in MB for this disk.
      * @param string $label User-friendly string to name this disk.
      * @param array $optional
      *                        - [image] (string) Optional image id to deploy the disk from. You may not provide image if distribution is provided. Official images start with "linode/", while your images start with "private/"

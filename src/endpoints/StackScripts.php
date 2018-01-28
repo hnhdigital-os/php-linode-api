@@ -56,9 +56,8 @@ class StackScripts extends Base
     /**
      * Creates a new config for a given Linode.
      *
-     * @param string $label Label of StackScript.
-     * @param array $images A list of official images compatible with StackScript. Official images' creator is "linode".
      * @param string $script The shell script to run on boot.
+     * @param array  $images A list of official images compatible with StackScript. Official images' creator is "linode".
      * @param array $optional
      *                        - [description] (string) Description of the StackScript.
      *                        - [is_public=false] (boolean) If true, this StackScript will be publicly visible in the Linode StackScript library. Defaults to False.

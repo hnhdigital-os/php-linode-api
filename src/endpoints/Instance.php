@@ -178,7 +178,6 @@ class Instance extends Base
     /**
      * Clones a Linode to a new or existing Linode.
      *
-     * @param string $region A region ID to provision this Linode in. Required when cloning to a new Linode.
      * @param string $type A Linode type ID to use for this Linode. Required when cloning to a new Linode.
      * @param array $optional
      *                        - [linode_id=null] (string) An existing Linode can be a target clone location.
@@ -306,7 +305,7 @@ class Instance extends Base
     /**
      * Restores a backup to a Linode.
      *
-     * @param int $backup_id The ID of the backup.
+     * @param int     $backup_id The ID of the backup.
      * @param boolean $overwrite=false (optional)If true, deletes all disks and configs on the target linode before restoring.
      *
      *

@@ -56,20 +56,22 @@ function generate_parameter_comments($method_settings)
     $result = '';
     $count = 0;
 
+    $entries = [];
+
     // Required parameters.
     foreach (array_get($method_settings, 'parameters', []) as $name => $settings) {
-        $result .= '     * @param '.array_get($settings, 'type')." \$$name ".array_get($settings, 'description');
-        $result .= "\n";
+        $entries['     * @param '.array_get($settings, 'type')] = "\$$name ".array_get($settings, 'description');
         $count++;
     }
 
     // Optional parameters with default values.
     foreach (array_get($method_settings, 'optional-parameters', []) as $name => $settings) {
         $default_value = get_default_value($settings, ['with-equal' => true, 'exclude-null' => true]);
-        $result .= '     * @param '.array_get($settings, 'type')." \$$name".$default_value.' (optional)'.array_get($settings, 'description');
-        $result .= "\n";
+        $entries['     * @param '.array_get($settings, 'type')] = "\$$name".$default_value.' (optional)'.array_get($settings, 'description');
         $count++;
     }
+
+    $result = code_alignment($entries, ['raw' => true]);
 
     // Really optional paramters provided via array.
     $optional = array_get($method_settings, 'optional', []);
@@ -270,7 +272,7 @@ function generate_post_function_payload($method_settings)
     return $result.'        ], $optional)';
 }
 
-function code_alignment($data)
+function code_alignment($data, $options = [])
 {
     $result = '';
     $max_length = 0;
@@ -284,7 +286,11 @@ function code_alignment($data)
     $max_length++;
 
     foreach ($data as $key => $value) {
-        $result .= "        '$key'".str_repeat(' ', $max_length-strlen($key))."=> '$value',\n";
+        if (array_has($options, 'raw')) {
+            $result .= "$key".str_repeat(' ', $max_length-strlen($key))."$value\n";
+        } else {
+            $result .= "        '$key'".str_repeat(' ', $max_length-strlen($key))."=> '$value',\n";
+        }
     }
 
     return $result;

@@ -82,7 +82,6 @@ class Instances extends Base
     /**
      * Creates a new Linode.
      *
-     * @param string $region A region ID to provision this Linode in.
      * @param string $type A Linode type ID to use for this Linode.
      * @param array $optional
      *                        - [label='linode'] (string) The label to assign this Linode. Defaults to "linode".
