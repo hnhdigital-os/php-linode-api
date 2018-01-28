@@ -56,7 +56,7 @@ foreach (array_get($spec, 'lists', []) as $name => $list) {
      */
     public $<?= $name ?> = [
 <?php
-    echo code_alignment($list)[1];
+    echo code_alignment($list)[2];
 ?>
     ];
 

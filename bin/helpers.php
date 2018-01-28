@@ -60,30 +60,38 @@ function generate_parameter_comments($method_settings)
 
     // Required parameters.
     foreach (array_get($method_settings, 'parameters', []) as $name => $settings) {
-        $entries[] = ['     * @param '.array_get($settings, 'type'), "\$$name ".array_get($settings, 'description')];
+        $entries[] = [
+            '     * @param '.array_get($settings, 'type'),
+            "\$$name",
+            array_get($settings, 'description')
+        ];
         $count++;
     }
 
     // Optional parameters with default values.
     foreach (array_get($method_settings, 'optional-parameters', []) as $name => $settings) {
         $default_value = get_default_value($settings, ['with-equal' => true, 'exclude-null' => true]);
-        $entries[] = ['     * @param '.array_get($settings, 'type'), "\$$name".$default_value.' (optional)'.array_get($settings, 'description')];
+        $entries[] = [
+            '     * @param '.array_get($settings, 'type'),
+            "\$$name".$default_value,
+            '(optional)'.array_get($settings, 'description')
+        ];
         $count++;
     }
 
     // Really optional paramters provided via array.
     $optional = array_get($method_settings, 'optional', []);
     if (is_array($optional) && count($optional) > 0) {
-        $entries[] = ['     * @param array', "\$optional"];
+        $entries[] = ['     * @param array', "\$optional", ''];
     }
 
-    [$max_length, $result] = code_alignment($entries, ['raw' => true]);
+    [$part1_length, $part2_length, $result] = code_alignment($entries, ['raw' => true]);
 
     if (is_array($optional) && count($optional) > 0) {
         foreach ($optional as $name => $settings) {
             $default_value = get_default_value($settings, ['with-equal' => true, 'exclude-null' => true]);
 
-            $result .= '     *'.str_repeat(' ', $max_length+5)."- [$name".$default_value.'] ('.array_get($settings, 'type').') '.array_get($settings, 'description');
+            $result .= '     *'.str_repeat(' ', $part1_length+$part2_length-4)."- [$name".$default_value.'] ('.array_get($settings, 'type').') '.array_get($settings, 'description');
             $result .= "\n";
         }
     }
@@ -277,30 +285,48 @@ function generate_post_function_payload($method_settings)
 function code_alignment($data, $options = [])
 {
     $result = '';
-    $max_length = 0;
+    $part1_length = 0;
+    $part2_length = 0;
 
     foreach ($data as $key => $value) {
         if (is_array($value)) {
             $key = $value[0];
         }
 
-        if (($length = strlen($key)) > $max_length) {
-            $max_length = $length;
+        if (($length = strlen($key)) > $part1_length) {
+            $part1_length = $length;
+        }
+
+        if (isset($value[1])) {
+            if (($length = strlen($value[1])) > $part2_length) {
+                $part2_length = $length;
+            }
         }
     }
 
     foreach ($data as $key => $value) {
-        if (is_array($value)) {
-            $key = $value[0];
-            $value = $value[1];
-        }
-
         if (array_has($options, 'raw')) {
-            $result .= "$key".str_repeat(' ', $max_length-strlen($key))." $value\n";
+            $total_part1 = $part1_length - strlen($value[0]);
+            $total_part2 =  $part2_length - strlen($value[1]);
+
+            $total_part1 = $total_part1 < 0 ? 0 : $total_part1;
+            $total_part2 = $total_part2 < 0 ? 0 : $total_part2;
+
+            $result .= $value[0];
+            $result .= str_repeat(' ', $total_part1).' ';
+            $result .= $value[1];
+            if (!empty($value[2])) {
+                $result .= ' '.str_repeat(' ', $total_part2).$value[2];
+            }
+            $result .= "\n";
         } else {
-            $result .= "        '$key'".str_repeat(' ', $max_length-strlen($key))." => '$value',\n";
+            $result .= "        '$key'".str_repeat(' ', $part1_length-strlen($key))." => '$value',\n";
         }
     }
 
-    return [$max_length, $result];
+    return [
+        $part1_length,
+        $part2_length,
+        $result
+    ];
 }

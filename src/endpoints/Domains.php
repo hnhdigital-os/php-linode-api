@@ -77,8 +77,8 @@ class Domains extends Base
     /**
      * Create a Domain.
      *
-     * @param string $domain The Domain name.
-     * @param string $type Domain type. Can be "master" or "slave".
+     * @param string $domain   The Domain name.
+     * @param string $type     Domain type. Can be "master" or "slave".
      * @param array  $optional
      *                         - [soa_email] (string) Start of Authority (SOA) contact email.
      *                         - [description] (string) A description to keep track of this Domain.
