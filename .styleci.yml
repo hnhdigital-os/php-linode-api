@@ -1,3 +1,4 @@
+
 finder:
-  exclude:
+  not-path:
     - "bin/class.tpl.php"
