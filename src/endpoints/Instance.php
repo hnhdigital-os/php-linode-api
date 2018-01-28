@@ -84,7 +84,7 @@ class Instance extends Base
      */
     public function backups()
     {
-        return new Instance/Backups($this->linode_id);
+        return (new Instance/Backups($this->linode_id))->all();
     }
 
     /**
@@ -96,7 +96,7 @@ class Instance extends Base
      */
     public function disks()
     {
-        return new Instance/Disks($this->linode_id);
+        return (new Instance/Disks($this->linode_id))->all();
     }
 
     /**
