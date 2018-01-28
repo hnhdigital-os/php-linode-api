@@ -53,12 +53,12 @@ trait ApiRequestTrait
         try {
 
             // Add the placeholders.
-            $full_uri = sprintf($this->endpoint.$uri, ...$this->endpoint_placeholders);
+            $endpoint_url = sprintf($this->endpoint.$uri, ...$this->endpoint_placeholders);
 
             // Request to the given endpoint, and process the response.
             return $this->processResponse($method, $this->client->request(
                 $method,
-                $full_uri,
+                $endpoint_url,
                 $payload
             ));
 
