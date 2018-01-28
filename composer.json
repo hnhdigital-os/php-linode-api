@@ -1,6 +1,6 @@
 {
     "name": "hnhdigital-os/php-linode-api",
-    "description": "Linode v4 API",
+    "description": "The v4 Linode API for PHP [BETA].",
     "type": "library",
     "license": "MIT",
     "authors": [

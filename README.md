@@ -8,7 +8,7 @@
 
 ```
 
-The v4 Linode API for PHP.
+The v4 Linode API for PHP [BETA].
 
 [![Latest Stable Version](https://poser.pugx.org/hnhdigital-os/php-linode-api/v/stable.svg)](https://packagist.org/packages/hnhdigital-os/php-linode-api) [![Total Downloads](https://poser.pugx.org/hnhdigital-os/php-linode-api/downloads.svg)](https://packagist.org/packages/hnhdigital-os/php-linode-api) [![Latest Unstable Version](https://poser.pugx.org/hnhdigital-os/php-linode-api/v/unstable.svg)](https://packagist.org/packages/hnhdigital-os/php-linode-api) [![License](https://poser.pugx.org/hnhdigital-os/php-linode-api/license.svg)](https://packagist.org/packages/hnhdigital-os/php-linode-api) [![Donate to this project using Patreon](https://img.shields.io/badge/patreon-donate-yellow.svg)](https://patreon.com/RoccoHoward)
 
