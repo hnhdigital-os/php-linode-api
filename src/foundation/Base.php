@@ -21,7 +21,7 @@ class Base
     use ApiRequestTrait;
 
     /**
-     * Endpoint URI
+     * Endpoint URI.
      *
      * @var string
      */
@@ -132,15 +132,13 @@ class Base
         if (isset($this->attributes[$key])) {
             return $this->attributes[$key];
         }
-
-        return null;
     }
 
     /**
      * Set the value for this key.
      *
      * @param string $key
-     * @param mixed $value
+     * @param mixed  $value
      *
      * @return $this
      */
