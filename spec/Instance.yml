@@ -1,6 +1,7 @@
 endpoint: linode/instances/%s
 url: https://developers.linode.com/v4/reference/linode
 load-method: get
+fillable: true
 
 parameters:
 

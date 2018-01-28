@@ -11,7 +11,8 @@ namespace HnhDigital\LinodeApi;
  * file that was distributed with this source code.
  */
 
-use HnhDigital\LinodeApi\Api;
+use HnhDigital\LinodeApi\Foundation\Base;
+use HnhDigital\LinodeApi\Foundation\ApiSearch;
 
 /**
  * This is the Instance class.
@@ -21,7 +22,7 @@ use HnhDigital\LinodeApi\Api;
  * @link https://developers.linode.com/v4/reference/linode
  * @author Rocco Howard <rocco@hnh.digital>
  */
-class Instance extends Api
+class Instance extends Base
 {
     /**
      * Endpoint.
@@ -29,13 +30,6 @@ class Instance extends Api
      * @var string
      */
     protected $endpoint = 'linode/instances/%s';
-
-    /**
-     * Endpoint placeholders.
-     *
-     * @var array
-     */
-    protected $endpoint_placeholders = [];
 
     /**
      * linode_id.
@@ -49,10 +43,12 @@ class Instance extends Api
      *
      * @return void
      */
-    public function __construct($linode_id, $load = true)
+    public function __construct($linode_id, $fill = [])
     {
         $this->linode_id = $linode_id;
-        $this->endpoint_placeholders = [$linode_id];
+        $this->fillable = true;
+
+        parent::__construct($linode_id, $fill);
     }
 
     /**
@@ -64,7 +60,7 @@ class Instance extends Api
      */
     public function get()
     {
-        return $this->call('get', '');
+        return $this->apiCall('get', '');
     }
 
     /**
@@ -76,7 +72,7 @@ class Instance extends Api
      */
     public function volumes()
     {
-        return $this->call('get', '/volumes');
+        return $this->apiCall('get', '/volumes');
     }
 
     /**

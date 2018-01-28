@@ -6,11 +6,13 @@ use Symfony\Component\Yaml\Yaml;
 require __DIR__.'/../vendor/autoload.php';
 require __DIR__.'/helpers.php';
 
+$root_path = realpath(__DIR__.'/..');
+
 // Path to spec definitions.
-$spec_path = realpath(__DIR__.'/../spec');
+$spec_path = "$root_path/spec";
 
 // Path to where classes will be generated to.
-$output_path = realpath(__DIR__.'/../src/endpoints');
+$output_path = "$root_path/src/endpoints";
 
 // Find all spec definitions.
 $rii = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($spec_path));
@@ -30,6 +32,7 @@ exec('rm -rf '.$output_path);
 
 // Process each defined spec.
 foreach ($files as $model_yml_path) {
+
     // Path generation.s
     $model_pathinfo = pathinfo($model_yml_path);
     $model_pathinfo['dirname'] = str_replace($spec_path, '', $model_pathinfo['dirname']);
@@ -40,8 +43,17 @@ foreach ($files as $model_yml_path) {
     // Class name.
     $class_name = $model_pathinfo['filename'];
 
+    echo "Processing $namespace\\$class_name\n";
+
+    // Defined spec document.
+    $model_spec_contents = file_get_contents($model_yml_path);
+
+    if (empty($model_spec_contents)) {
+        continue;
+    }
+
     // Get the defined spec.
-    $model_spec = Yaml::parse(file_get_contents($model_yml_path));
+    $model_spec = Yaml::parse($model_spec_contents);
 
     // Data for the class tmeplate.
     $placeholders = [

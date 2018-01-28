@@ -2,6 +2,7 @@ endpoint: regions/%s
 description: Return a particular region.
 url: https://developers.linode.com/v4/reference/endpoints/regions
 load-method: get
+fillable: true
 
 parameters:
 
@@ -14,4 +15,3 @@ get:
     url: https://developers.linode.com/v4/reference/endpoints/regions/$id#GET
     description: Returns information about this region.
     endpoint: 
-    search: true

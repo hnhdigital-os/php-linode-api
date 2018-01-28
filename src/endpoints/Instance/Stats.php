@@ -11,7 +11,8 @@ namespace HnhDigital\LinodeApi\Instance;
  * file that was distributed with this source code.
  */
 
-use HnhDigital\LinodeApi\Api;
+use HnhDigital\LinodeApi\Foundation\Base;
+use HnhDigital\LinodeApi\Foundation\ApiSearch;
 
 /**
  * This is the Stats class.
@@ -21,7 +22,7 @@ use HnhDigital\LinodeApi\Api;
  * @link https://developers.linode.com/v4/reference/linode#stats
  * @author Rocco Howard <rocco@hnh.digital>
  */
-class Stats extends Api
+class Stats extends Base
 {
     /**
      * Endpoint.
@@ -29,13 +30,6 @@ class Stats extends Api
      * @var string
      */
     protected $endpoint = 'linode/instances/%s/stats';
-
-    /**
-     * Endpoint placeholders.
-     *
-     * @var array
-     */
-    protected $endpoint_placeholders = [];
 
     /**
      * linode_id.
@@ -52,7 +46,8 @@ class Stats extends Api
     public function __construct($linode_id)
     {
         $this->linode_id = $linode_id;
-        $this->endpoint_placeholders = [$linode_id];
+
+        parent::__construct($linode_id);
     }
 
     /**
@@ -64,7 +59,7 @@ class Stats extends Api
      */
     public function current()
     {
-        return $this->call('get', '');
+        return $this->apiCall('get', '');
     }
 
     /**
@@ -76,7 +71,7 @@ class Stats extends Api
      */
     public function period($year, $month)
     {
-        return $this->call('get', '/$year/$month');
+        return $this->apiCall('get', '/$year/$month');
     }
 
 }

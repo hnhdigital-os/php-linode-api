@@ -11,7 +11,8 @@ namespace HnhDigital\LinodeApi;
  * file that was distributed with this source code.
  */
 
-use HnhDigital\LinodeApi\Api;
+use HnhDigital\LinodeApi\Foundation\Base;
+use HnhDigital\LinodeApi\Foundation\ApiSearch;
 
 /**
  * This is the Domain class.
@@ -21,7 +22,7 @@ use HnhDigital\LinodeApi\Api;
  * @link https://developers.linode.com/v4/reference/endpoints/domains/$id
  * @author Rocco Howard <rocco@hnh.digital>
  */
-class Domain extends Api
+class Domain extends Base
 {
     /**
      * Endpoint.
@@ -29,13 +30,6 @@ class Domain extends Api
      * @var string
      */
     protected $endpoint = 'domains/%s';
-
-    /**
-     * Endpoint placeholders.
-     *
-     * @var array
-     */
-    protected $endpoint_placeholders = [];
 
     /**
      * linode_id.
@@ -55,11 +49,12 @@ class Domain extends Api
      *
      * @return void
      */
-    public function __construct($linode_id, $domain_id, $load = true)
+    public function __construct($linode_id, $domain_id)
     {
         $this->linode_id = $linode_id;
         $this->domain_id = $domain_id;
-        $this->endpoint_placeholders = [$linode_id, $domain_id];
+
+        parent::__construct($linode_id, $domain_id);
     }
 
     /**
@@ -71,7 +66,7 @@ class Domain extends Api
      */
     public function get()
     {
-        return $this->call('get', '');
+        return $this->apiCall('get', '');
     }
 
     /**

@@ -12,7 +12,8 @@ namespace HnhDigital\LinodeApi<?= $namespace ?>;
  * file that was distributed with this source code.
  */
 
-use HnhDigital\LinodeApi\Api;
+use HnhDigital\LinodeApi\Foundation\Base;
+use HnhDigital\LinodeApi\Foundation\ApiSearch;
 
 /**
  * This is the <?= $class ?> class.
@@ -23,7 +24,7 @@ use HnhDigital\LinodeApi\Api;
 
  * @author Rocco Howard <rocco@hnh.digital>
  */
-class <?= $class ?> extends Api
+class <?= $class ?> extends Base
 {
     /**
      * Endpoint.
@@ -31,13 +32,6 @@ class <?= $class ?> extends Api
      * @var string
      */
     protected $endpoint = '<?= array_get($spec, 'endpoint') ?>';
-
-    /**
-     * Endpoint placeholders.
-     *
-     * @var array
-     */
-    protected $endpoint_placeholders = [];
 
 <?php
 foreach (array_get($spec, 'parameters', []) as $name => $settings) {
@@ -66,8 +60,14 @@ foreach (array_get($spec, 'parameters', []) as $name => $settings) {
         $this-><?= $name ?> = $<?= $name ?>;
 <?php
 }
+if (array_has($spec, 'fillable')) {
 ?>
-        $this->endpoint_placeholders = [<?= generate_constructor_parameters($spec, true) ?>];
+        $this->fillable = true;
+<?php
+}
+?>
+
+        parent::__construct(<?= generate_constructor_parameters($spec, true) ?>);
     }
 
 <?php
@@ -85,9 +85,13 @@ foreach (array_get($spec, 'get', []) as $name => $settings) {
     public function <?= $name ?>(<?= generate_parameter_list($settings) ?>)
     {
 <?php
-if (array_has($settings, 'endpoint')) {
+if (array_has($settings, 'endpoint') && !array_has($settings, 'search')) {
 ?>
-        return $this->call('get', '<?= array_get($settings, 'endpoint', '') ?>');
+        return $this->apiCall('get', '<?= array_get($settings, 'endpoint', '') ?>');
+<?php
+} elseif (array_has($settings, 'endpoint') && array_has($settings, 'search')) {
+?>
+        return $this->apiSearch($this->endpoint<?= array_get($settings, 'endpoint', '') != '' ? ".'".array_get($settings, 'endpoint', '')."'" : '' ?><?= api_search_factory($settings) ?>);
 <?php
 } elseif (array_has($settings, 'model')) {
 ?>

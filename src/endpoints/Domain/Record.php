@@ -11,7 +11,8 @@ namespace HnhDigital\LinodeApi\Domain;
  * file that was distributed with this source code.
  */
 
-use HnhDigital\LinodeApi\Api;
+use HnhDigital\LinodeApi\Foundation\Base;
+use HnhDigital\LinodeApi\Foundation\ApiSearch;
 
 /**
  * This is the Record class.
@@ -21,7 +22,7 @@ use HnhDigital\LinodeApi\Api;
  * @link https://developers.linode.com/v4/reference/endpoints/domains/$id/records/$id
  * @author Rocco Howard <rocco@hnh.digital>
  */
-class Record extends Api
+class Record extends Base
 {
     /**
      * Endpoint.
@@ -29,13 +30,6 @@ class Record extends Api
      * @var string
      */
     protected $endpoint = 'domains/%s/records/%s';
-
-    /**
-     * Endpoint placeholders.
-     *
-     * @var array
-     */
-    protected $endpoint_placeholders = [];
 
     /**
      * domain_id.
@@ -55,11 +49,12 @@ class Record extends Api
      *
      * @return void
      */
-    public function __construct($domain_id, $record_id, $load = true)
+    public function __construct($domain_id, $record_id)
     {
         $this->domain_id = $domain_id;
         $this->record_id = $record_id;
-        $this->endpoint_placeholders = [$domain_id, $record_id];
+
+        parent::__construct($domain_id, $record_id);
     }
 
     /**
@@ -71,7 +66,7 @@ class Record extends Api
      */
     public function get()
     {
-        return $this->call('get', '');
+        return $this->apiCall('get', '');
     }
 
     /**

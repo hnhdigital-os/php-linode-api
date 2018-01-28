@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-        "php": ">=7.1.0"
+        "php": ">=7.1.0",
+        "guzzlehttp/guzzle": "^6.3"
     },
     "require-dev": {
         "symfony/yaml": "~3.0",
@@ -19,7 +20,7 @@
     "autoload": {
         "psr-4": {
             "HnhDigital\\LinodeApi\\": "src/endpoints/",
-            "HnhDigital\\LinodeApi\\": "src/"
+            "HnhDigital\\LinodeApi\\Foundation\\": "src/foundation/"
         }
     },
     "scripts": {

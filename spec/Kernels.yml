@@ -1,11 +1,11 @@
 endpoint: linode/kernels
 description: Returns collection of kernels.
 url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/kernels
-load-method: all
+load-method: search
 
 get:
 
-  all:
+  search:
     url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/kernels#GET
     description: Returns list of kernels.
     endpoint: 

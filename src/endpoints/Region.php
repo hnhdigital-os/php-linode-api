@@ -11,7 +11,8 @@ namespace HnhDigital\LinodeApi;
  * file that was distributed with this source code.
  */
 
-use HnhDigital\LinodeApi\Api;
+use HnhDigital\LinodeApi\Foundation\Base;
+use HnhDigital\LinodeApi\Foundation\ApiSearch;
 
 /**
  * This is the Region class.
@@ -21,7 +22,7 @@ use HnhDigital\LinodeApi\Api;
  * @link https://developers.linode.com/v4/reference/endpoints/regions
  * @author Rocco Howard <rocco@hnh.digital>
  */
-class Region extends Api
+class Region extends Base
 {
     /**
      * Endpoint.
@@ -29,13 +30,6 @@ class Region extends Api
      * @var string
      */
     protected $endpoint = 'regions/%s';
-
-    /**
-     * Endpoint placeholders.
-     *
-     * @var array
-     */
-    protected $endpoint_placeholders = [];
 
     /**
      * region_id.
@@ -49,10 +43,12 @@ class Region extends Api
      *
      * @return void
      */
-    public function __construct($region_id, $load = true)
+    public function __construct($region_id, $fill = [])
     {
         $this->region_id = $region_id;
-        $this->endpoint_placeholders = [$region_id];
+        $this->fillable = true;
+
+        parent::__construct($region_id, $fill);
     }
 
     /**
@@ -64,7 +60,7 @@ class Region extends Api
      */
     public function get()
     {
-        return $this->call('get', '');
+        return $this->apiCall('get', '');
     }
 
 }

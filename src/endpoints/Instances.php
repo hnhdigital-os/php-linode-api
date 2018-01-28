@@ -11,7 +11,8 @@ namespace HnhDigital\LinodeApi;
  * file that was distributed with this source code.
  */
 
-use HnhDigital\LinodeApi\Api;
+use HnhDigital\LinodeApi\Foundation\Base;
+use HnhDigital\LinodeApi\Foundation\ApiSearch;
 
 /**
  * This is the Instances class.
@@ -21,21 +22,14 @@ use HnhDigital\LinodeApi\Api;
  * @link https://developers.linode.com/v4/reference/endpoints/linode/instances
  * @author Rocco Howard <rocco@hnh.digital>
  */
-class Instances extends Api
+class Instances extends Base
 {
     /**
      * Endpoint.
      *
      * @var string
      */
-    protected $endpoint = 'instances';
-
-    /**
-     * Endpoint placeholders.
-     *
-     * @var array
-     */
-    protected $endpoint_placeholders = [];
+    protected $endpoint = 'linode/instances';
 
 
     /**
@@ -43,9 +37,10 @@ class Instances extends Api
      *
      * @return void
      */
-    public function __construct($load = true)
+    public function __construct()
     {
-        $this->endpoint_placeholders = [];
+
+        parent::__construct();
     }
 
     /**
@@ -55,9 +50,9 @@ class Instances extends Api
      *
      * @return array
      */
-    public function all()
+    public function search()
     {
-        return $this->call('get', '');
+        return $this->apiSearch($this->endpoint, ['class' => 'Instance', 'parameters' => ['id']]);
     }
 
     /**

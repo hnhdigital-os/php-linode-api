@@ -11,7 +11,7 @@ parameters:
     record_id:
       type: integer
 
-values:
+lists:
 
   type:
     - A

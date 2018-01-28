@@ -1,14 +1,20 @@
-endpoint: instances
+endpoint: linode/instances
 description: Manage the collection of Linodes your account may access.
 url: https://developers.linode.com/v4/reference/endpoints/linode/instances
-load-method: all
+load-method: search
 
 get:
 
-  all:
+  search:
     url: https://developers.linode.com/v4/reference/endpoints/linode/instances#GET
     description: Returns a list of Linodes.
     endpoint: 
+    search: true
+
+    factory:
+      class: Instance
+      parameters:
+        - id
 
     filterable:
       country:
@@ -20,6 +26,11 @@ post:
     description: Creates a new Linode.
     url: https://developers.linode.com/v4/reference/endpoints/linode/instances#POST
     endpoint: 
+
+    factory:
+      class: Instance
+      parameters:
+        - id
 
     parameters:
 

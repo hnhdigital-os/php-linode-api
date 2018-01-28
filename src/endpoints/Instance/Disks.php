@@ -11,7 +11,8 @@ namespace HnhDigital\LinodeApi\Instance;
  * file that was distributed with this source code.
  */
 
-use HnhDigital\LinodeApi\Api;
+use HnhDigital\LinodeApi\Foundation\Base;
+use HnhDigital\LinodeApi\Foundation\ApiSearch;
 
 /**
  * This is the Disks class.
@@ -21,7 +22,7 @@ use HnhDigital\LinodeApi\Api;
  * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/disks
  * @author Rocco Howard <rocco@hnh.digital>
  */
-class Disks extends Api
+class Disks extends Base
 {
     /**
      * Endpoint.
@@ -29,13 +30,6 @@ class Disks extends Api
      * @var string
      */
     protected $endpoint = 'linode/instances/%s/disks';
-
-    /**
-     * Endpoint placeholders.
-     *
-     * @var array
-     */
-    protected $endpoint_placeholders = [];
 
     /**
      * linode_id.
@@ -49,10 +43,11 @@ class Disks extends Api
      *
      * @return void
      */
-    public function __construct($linode_id, $load = true)
+    public function __construct($linode_id)
     {
         $this->linode_id = $linode_id;
-        $this->endpoint_placeholders = [$linode_id];
+
+        parent::__construct($linode_id);
     }
 
     /**
@@ -64,7 +59,7 @@ class Disks extends Api
      */
     public function all()
     {
-        return $this->call('get', '');
+        return $this->apiSearch($this->endpoint);
     }
 
     /**

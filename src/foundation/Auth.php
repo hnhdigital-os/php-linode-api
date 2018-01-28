@@ -1,6 +1,6 @@
 <?php
 
-namespace HnhDigital\LinodeApi;
+namespace HnhDigital\LinodeApi\Foundation;
 
 /*
  * This file is part of the PHP Linode API.
@@ -22,16 +22,47 @@ class Auth
     const METHOD_TOKEN = 1;
 
     /**
+     * Base endpoint URI.
+     *
+     * @var string
+     */
+    private static $base_endpoint = 'https://api.linode.com/v4/';
+
+    /**
      * Method
      */
-    private $method;
+    private static $method;
 
     /**
      * Token.
      *
      * @var string
      */
-    private $token;
+    private static $token;
+
+    /**
+     * Set the base endpoint.
+     *
+     * @param string $base_endpoint
+     *
+     * @return void
+     */
+    public static function setBaseEndpoint($base_endpoint)
+    {
+        self::$base_endpoint = $base_endpoint;
+    }
+
+    /**
+     * Get the base endpoint.
+     *
+     * @param string $token
+     *
+     * @return void
+     */
+    public static function getBaseEndpoint()
+    {
+        return self::$base_endpoint;
+    }
 
     /**
      * Set the token.
@@ -53,7 +84,7 @@ class Auth
      *
      * @return void
      */
-    public static function getToken($token)
+    public static function getToken()
     {
         return self::$token;
     }

@@ -1,11 +1,11 @@
 endpoint: linode/types
 description: Returns collection of Linode types, including pricing and specifications for each type. These are used when creating or resizing Linodes.
 url: https://developers.linode.com/v4/reference/endpoints/linode/types
-load-method: all
+load-method: search
 
 get:
 
-  all:
+  search:
     url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/types#GET
     description: Returns a list of types for a given Linode.
     endpoint: 

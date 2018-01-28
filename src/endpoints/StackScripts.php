@@ -11,7 +11,8 @@ namespace HnhDigital\LinodeApi;
  * file that was distributed with this source code.
  */
 
-use HnhDigital\LinodeApi\Api;
+use HnhDigital\LinodeApi\Foundation\Base;
+use HnhDigital\LinodeApi\Foundation\ApiSearch;
 
 /**
  * This is the StackScripts class.
@@ -21,7 +22,7 @@ use HnhDigital\LinodeApi\Api;
  * @link https://developers.linode.com/v4/reference/endpoints/linode/stackscripts
  * @author Rocco Howard <rocco@hnh.digital>
  */
-class StackScripts extends Api
+class StackScripts extends Base
 {
     /**
      * Endpoint.
@@ -30,22 +31,16 @@ class StackScripts extends Api
      */
     protected $endpoint = 'linode/stackscripts';
 
-    /**
-     * Endpoint placeholders.
-     *
-     * @var array
-     */
-    protected $endpoint_placeholders = [];
-
 
     /**
      * Constructor.
      *
      * @return void
      */
-    public function __construct($load = true)
+    public function __construct()
     {
-        $this->endpoint_placeholders = [];
+
+        parent::__construct();
     }
 
     /**
@@ -55,9 +50,9 @@ class StackScripts extends Api
      *
      * @return array
      */
-    public function all()
+    public function search()
     {
-        return $this->call('get', '');
+        return $this->apiSearch($this->endpoint);
     }
 
     /**

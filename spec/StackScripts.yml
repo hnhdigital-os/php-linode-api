@@ -1,11 +1,11 @@
 endpoint: linode/stackscripts
 description: View public StackScripts.
 url: https://developers.linode.com/v4/reference/endpoints/linode/stackscripts
-load-method: all
+load-method: search
 
 get:
 
-  all:
+  search:
     url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/stackscripts#GET
     description: "Returns a list of public StackScripts. Results can be filtered. Include '\"mine\": true' in the filter dict to see only StackScripts you created."
     endpoint:

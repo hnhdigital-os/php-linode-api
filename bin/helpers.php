@@ -33,8 +33,12 @@ function generate_constructor_parameters($spec, $endpoint_placholders = false)
         $result[] = "\$$name";
     }
 
-    if (!$endpoint_placholders && !array_has($spec, 'auto-load')) {
-        $result[] = "\$load = true";
+    if (array_has($spec, 'fillable')) {
+        $name = "\$fill";
+        if (!$endpoint_placholders) {
+            $name .= ' = []';
+        }
+        $result[] = $name;
     }
 
     return implode(', ', $result);
@@ -142,6 +146,26 @@ function generate_parameter_list($method_settings)
     return implode(', ', $result);
 }
 
+function api_search_factory($method_settings)
+{
+    $result = '';
+
+    if (array_has($method_settings, 'factory')) {
+        $class = array_get($method_settings, 'factory.class');
+        $parameters = implode("', '", array_get($method_settings, 'factory.parameters'));
+        $result = ", ['class' => '$class', 'parameters' => ['$parameters']]";
+    }
+
+    return $result;
+}
+
+/**
+ * Generate a parameter list for creating a new class.
+ *
+ * @param array $method_settings
+ *
+ * @return string
+ */
 function generate_new_class_parameter_list($method_settings)
 {
     $result = [];

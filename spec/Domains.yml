@@ -1,9 +1,9 @@
 endpoint: domains
 description: Manage the collection of Domains your account may access.
 url: https://developers.linode.com/v4/reference/endpoints/domains
-load-method: all
+load-method: search
 
-values:
+lists:
 
   type:
     - master
@@ -16,7 +16,7 @@ values:
 
 get:
 
-  all:
+  search:
     url: https://developers.linode.com/v4/reference/endpoints/domains#GET
     description: Returns a list of Domains.
     endpoint: 
