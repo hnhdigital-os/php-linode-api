@@ -70,9 +70,9 @@ class StackScript extends Base
      *
      * @return void
      */
-    public function update($optional)
+    public function update($optional = [])
     {
-        return $this->call('put', "", $optional);
+        return $this->call('put', '', $this->getDirty($optional));
     }
 
     /**
@@ -84,6 +84,6 @@ class StackScript extends Base
      */
     public function delete()
     {
-        return $this->call('delete', "");
+        return $this->call('delete', '');
     }
 }

@@ -77,9 +77,9 @@ class Domain extends Base
      *
      * @return void
      */
-    public function clone($optional)
+    public function clone($optional = [])
     {
-        return $this->call('put', "/clone", $optional);
+        return $this->call('put', '/clone', $this->getDirty($optional));
     }
 
     /**
@@ -102,9 +102,9 @@ class Domain extends Base
      *
      * @return void
      */
-    public function update($optional)
+    public function update($optional = [])
     {
-        return $this->call('put', "", $optional);
+        return $this->call('put', '', $optional);
     }
 
     /**
@@ -116,6 +116,6 @@ class Domain extends Base
      */
     public function delete()
     {
-        return $this->call('delete', "");
+        return $this->call('delete', '');
     }
 }

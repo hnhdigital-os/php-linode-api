@@ -24,6 +24,7 @@ put:
     description: Modifies a given Domain Record.
     url: https://developers.linode.com/v4/reference/endpoints/domains/$id/records/$id#PUT
     endpoint: 
+    attributes: true
 
     optional:
 

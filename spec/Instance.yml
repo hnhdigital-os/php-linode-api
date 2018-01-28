@@ -97,6 +97,7 @@ put:
     description: Edits this Linode.
     url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id#PUT
     endpoint: 
+    attributes: true
 
 delete:
 

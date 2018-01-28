@@ -1,6 +1,6 @@
 endpoint: linode/instances/%s/configs
 url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/configs
-load-method: get
+load-method: all
 
 parameters:
 
@@ -9,7 +9,7 @@ parameters:
 
 get:
 
-  get:
+  all:
     url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/configs#GET
     description: Returns a list of configs for a given Linode.
     endpoint: 

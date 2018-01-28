@@ -89,6 +89,32 @@ class Base
     }
 
     /**
+     * Get an array of changed attributes.
+     *
+     * @param array $data
+     *
+     * @return void
+     */
+    protected function getDirty($data = [])
+    {
+        // Allocate provided values, so these can appear dirty.
+        foreach ($data as $key => $value) {
+            $this->attributes[$key] = $value;
+        }
+
+        $dirty = [];
+
+        // Check attributes against the original attributes array.
+        foreach ($this->attributes as $key => $value) {
+            if (!isset($this->original_attributes[$key]) || $value != $this->original_attributes[$key]) {
+                $dirty[$key] = $value;
+            }
+        }
+
+        return $dirty;
+    }
+
+    /**
      * Search.
      *
      * @param string $endpoint

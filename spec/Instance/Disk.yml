@@ -23,6 +23,7 @@ put:
     description: Updates a disk's metadata.
     url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/disks/$id#PUT
     endpoint: 
+    attributes: true
 
     optional:
 

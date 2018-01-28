@@ -23,6 +23,7 @@ put:
   clone:
     description: Clones the provided Domain into a new Domain. You must provide a new domain for the cloned domain as Domains must be unique.
     endpoint: /clone
+    attributes: true
 
     parameters:
 

@@ -1,7 +1,7 @@
 endpoint: linode/instances/%s/ips
 description: View networking information for this Linode.
 url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/ips
-load-method: get
+load-method: all
 
 parameters:
 
@@ -10,7 +10,7 @@ parameters:
 
 get:
 
-  get:
+  all:
     url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/ips#GET
     description: Returns a Linode Networking Object.
     endpoint: 

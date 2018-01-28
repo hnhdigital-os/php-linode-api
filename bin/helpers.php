@@ -209,19 +209,63 @@ function generate_new_class_parameter_list($method_settings)
 }
 
 /**
- * Generate the payload for a function.
+ * Generate the endpoint entry. This is simply for the correct code style.
  *
  * @param array $method_settings
  *
  * @return string
  */
-function generate_function_payload($method_settings)
+function generate_endpoint_entry($method_settings)
 {
-    $parameters = array_get($method_settings, 'parameters', []);
-    $optional_paramters = array_get($method_settings, 'optional-parameters', []);
+    $entry = array_get($method_settings, 'endpoint', '');
+
+    if (stripos($entry, '$') !== false) {
+        return '"$entry"';
+    }
+
+    return "'$entry'";
+}
+
+/**
+ * Generate the payload for the put function.
+ *
+ * @param array $method_settings
+ *
+ * @return string
+ */
+function generate_put_function_payload($method_settings)
+{
+    // Uses the attributes array but also takes
+    // the optional array to update the attributes
+    // before checking the dirty ones.
+    if (array_has($method_settings, 'attributes')) {
+        return '$this->getDirty($optional)';
+    }
+
+    return '$optional';
+}
+
+/**
+ * Generate the payload for the post function.
+ *
+ * @param array $method_settings
+ *
+ * @return string
+ */
+function generate_post_function_payload($method_settings)
+{
+    $result = "array_merge([\n";
+
+    foreach (array_get($method_settings, 'parameters', []) as $name => $settings) {
+        $result .= "            '".$name."' => \$".$name.",\n";
+    }
+
+    foreach (array_get($method_settings, 'optional-parameters', []) as $name => $settings) {
+        $result .= "            '".$name."' => \$".$name.",\n";
+    }
+
+
     $optional = array_get($method_settings, 'optional', []);
 
-    $result = '[]';
-
-    return $result;
+    return $result."        ], \$optional)";
 }

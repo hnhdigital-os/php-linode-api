@@ -21,6 +21,7 @@ put:
     description: Edits this StackScript.
     url: https://developers.linode.com/v4/reference/endpoints/linode/stackscripts/$id#PUT
     endpoint: 
+    attributes: true
 
     optional:
 
