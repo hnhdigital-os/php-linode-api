@@ -19,6 +19,9 @@ namespace HnhDigital\LinodeApi\Foundation;
 
 class Auth
 {
+    /**
+     * Using the token method.
+     */
     const METHOD_TOKEN = 1;
 
     /**
@@ -87,5 +90,17 @@ class Auth
     public static function getToken()
     {
         return self::$token;
+    }
+
+    /**
+     * Attach the right header to the request.
+     *
+     * @param arra &$headers
+     *
+     * @return void
+     */
+    public static function getHeader(&$headers)
+    {
+        $headers['Authorization'] = 'Bearer '.self::getToken();
     }
 }

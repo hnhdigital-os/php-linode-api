@@ -11,8 +11,6 @@ namespace HnhDigital\LinodeApi\Foundation;
  * file that was distributed with this source code.
  */
 
-use GuzzleHttp\Client as Guzzle;
-
 /**
  * This is the API Search class.
  *
@@ -53,7 +51,7 @@ class ApiSearch implements \Iterator, \Countable
     /**
      * Total number of requests made.
      *
-     * @var integer
+     * @var int
      */
     private $request_count = 0;
 
@@ -67,49 +65,49 @@ class ApiSearch implements \Iterator, \Countable
     /**
      * Total pages in result.
      *
-     * @var integer
+     * @var int
      */
     private $result_total_pages = 0;
 
     /**
      * Total books in result.
      *
-     * @var integer
+     * @var int
      */
     private $result_total_count = 0;
 
     /**
      * Total records per page.
      *
-     * @var integer
+     * @var int
      */
     private $result_records_per_page = 10;
 
     /**
      * Current page.
      *
-     * @var integer
+     * @var int
      */
     private $current_page = 1;
 
     /**
      * Current record.
      *
-     * @var integer
+     * @var int
      */
     private $current_record = 1;
 
     /**
      * Current result.
      *
-     * @var integer
+     * @var int
      */
     private $current_result = [];
 
     /**
      * API call had an error.
      *
-     * @var integer
+     * @var int
      */
     private $had_error = false;
 
@@ -181,8 +179,6 @@ class ApiSearch implements \Iterator, \Countable
         if (count($this->current_result)) {
             return $this->current_result[0];
         }
-
-        return null;
     }
 
     /**
@@ -206,7 +202,7 @@ class ApiSearch implements \Iterator, \Countable
     /**
      * Most recent query failed.
      *
-     * @return boolean
+     * @return bool
      */
     public function error()
     {
@@ -248,9 +244,9 @@ class ApiSearch implements \Iterator, \Countable
     /**
      * Get the row key.
      *
-     * @return integer
+     * @return int
      */
-    public function key() 
+    public function key()
     {
         return (($this->current_page - 1) * $this->result_records_per_page) + $this->current_record;
     }
@@ -276,7 +272,7 @@ class ApiSearch implements \Iterator, \Countable
     /**
      * Return the count of results.
      *
-     * @return integer
+     * @return int
      */
     public function count()
     {
@@ -290,7 +286,7 @@ class ApiSearch implements \Iterator, \Countable
     /**
      * Return the total pages.
      *
-     * @return integer
+     * @return int
      */
     public function totalPages()
     {
@@ -304,7 +300,7 @@ class ApiSearch implements \Iterator, \Countable
     /**
      * Has results.
      *
-     * @return boolean
+     * @return bool
      */
     public function valid()
     {

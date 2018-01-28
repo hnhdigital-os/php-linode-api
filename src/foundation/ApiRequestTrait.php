@@ -45,7 +45,7 @@ trait ApiRequestTrait
         }
 
         // Authorization.
-        $headers['Authorization'] = 'Bearer '.Auth::getToken();
+        Auth::getHeader($headers);
 
         // Add headers to the payload.
         $payload['headers'] = $headers;
