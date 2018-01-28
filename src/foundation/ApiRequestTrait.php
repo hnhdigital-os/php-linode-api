@@ -30,7 +30,7 @@ trait ApiRequestTrait
     /**
      * Make an api call.
      *
-     * @param string $method 
+     * @param string $method
      * @param string $uri
      * @param string $payload
      *
@@ -60,7 +60,7 @@ trait ApiRequestTrait
             ));
 
         } catch (\Exception $exception) {
-        // Throw an error if the request fails
+            // Throw an error if the request fails
             throw new LinodeApiException($exception->getMessage());
         }
     }

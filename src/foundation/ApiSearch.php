@@ -131,10 +131,11 @@ class ApiSearch implements \Iterator, \Countable
      * @return $this
      */
     private function get()
-    {        
+    {
         // Return cached results for this page.
         if (isset($this->page_results[$this->current_page])) {
             $this->current_result = $this->page_results[$this->current_page];
+
             return $this;
         }
 
@@ -237,8 +238,6 @@ class ApiSearch implements \Iterator, \Countable
         if (isset($this->current_result[$this->current_record])) {
             return $this->current_result[$this->current_record];
         }
-
-        return null;
     }
 
     /**
@@ -311,5 +310,4 @@ class ApiSearch implements \Iterator, \Countable
         return !$this->error()
             && ((($this->current_page - 1) * $this->result_records_per_page) + $this->current_record) < $this->result_total_count;
     }
-
 }

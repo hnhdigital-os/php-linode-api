@@ -16,7 +16,6 @@ namespace HnhDigital\LinodeApi\Foundation;
  *
  * @author Rocco Howard <rocco@hnh.digital>
  */
-
 class Auth
 {
     /**
