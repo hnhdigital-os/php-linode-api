@@ -152,7 +152,7 @@ post:
         description: The group to assign this Linode when cloning to a new Linode. Defaults to "empty".
       
       backups_enabled:
-        type: boolean
+        type: bool
         default: false
         description: Subscribes this Linode with the Backup service when cloning to a new Linode. (Additional charges apply.) Defaults to "false".
       

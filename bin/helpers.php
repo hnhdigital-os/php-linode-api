@@ -63,7 +63,7 @@ function generate_parameter_comments($method_settings)
         $entries[] = [
             '     * @param '.array_get($settings, 'type'),
             "\$$name",
-            array_get($settings, 'description')
+            array_get($settings, 'description'),
         ];
         $count++;
     }
@@ -74,7 +74,7 @@ function generate_parameter_comments($method_settings)
         $entries[] = [
             '     * @param '.array_get($settings, 'type'),
             "\$$name".$default_value,
-            '(optional)'.array_get($settings, 'description')
+            '(optional)'.array_get($settings, 'description'),
         ];
         $count++;
     }
@@ -82,7 +82,7 @@ function generate_parameter_comments($method_settings)
     // Really optional paramters provided via array.
     $optional = array_get($method_settings, 'optional', []);
     if (is_array($optional) && count($optional) > 0) {
-        $entries[] = ['     * @param array', "\$optional", ''];
+        $entries[] = ['     * @param array', '$optional', ''];
     }
 
     [$part1_length, $part2_length, $result] = code_alignment($entries, ['raw' => true]);
@@ -91,7 +91,7 @@ function generate_parameter_comments($method_settings)
         foreach ($optional as $name => $settings) {
             $default_value = get_default_value($settings, ['with-equal' => true, 'exclude-null' => true]);
 
-            $result .= '     *'.str_repeat(' ', $part1_length+$part2_length-4)."- [$name".$default_value.'] ('.array_get($settings, 'type').') '.array_get($settings, 'description');
+            $result .= '     *'.str_repeat(' ', $part1_length + $part2_length - 4)."- [$name".$default_value.'] ('.array_get($settings, 'type').') '.array_get($settings, 'description');
             $result .= "\n";
         }
     }
@@ -156,7 +156,7 @@ function get_default_value($parameter_setting, $options = [])
             $default_value = '[]';
             $no_quotes = true;
             break;
-        case 'boolean':
+        case 'bool':
             $default_value = $default_value ? 'true' : 'false';
             $no_quotes = true;
             break;
@@ -307,7 +307,7 @@ function code_alignment($data, $options = [])
     foreach ($data as $key => $value) {
         if (array_has($options, 'raw')) {
             $total_part1 = $part1_length - strlen($value[0]);
-            $total_part2 =  $part2_length - strlen($value[1]);
+            $total_part2 = $part2_length - strlen($value[1]);
 
             $total_part1 = $total_part1 < 0 ? 0 : $total_part1;
             $total_part2 = $total_part2 < 0 ? 0 : $total_part2;
@@ -320,13 +320,13 @@ function code_alignment($data, $options = [])
             }
             $result .= "\n";
         } else {
-            $result .= "        '$key'".str_repeat(' ', $part1_length-strlen($key))." => '$value',\n";
+            $result .= "        '$key'".str_repeat(' ', $part1_length - strlen($key))." => '$value',\n";
         }
     }
 
     return [
         $part1_length,
         $part2_length,
-        $result
+        $result,
     ];
 }

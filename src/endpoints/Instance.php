@@ -184,7 +184,7 @@ class Instance extends Base
      *                         - [linode_id=null] (string) An existing Linode can be a target clone location.
      *                         - [label='linode'] (string) The label to assign this Linode when cloning to a new Linode. Defaults to "linode".
      *                         - [group='empty'] (string) The group to assign this Linode when cloning to a new Linode. Defaults to "empty".
-     *                         - [backups_enabled=false] (boolean) Subscribes this Linode with the Backup service when cloning to a new Linode. (Additional charges apply.) Defaults to "false".
+     *                         - [backups_enabled=false] (bool) Subscribes this Linode with the Backup service when cloning to a new Linode. (Additional charges apply.) Defaults to "false".
      *                         - [disks=[]] (array) A list of disk ID's to include in the clone process. All disks attached to configs will be cloned from the source Linode if not provided.
      *                         - [configs=[]] (array) A list of config ID's to include in the clone process. All configs will be cloned from the source Linode if not provided.
      *
@@ -255,7 +255,7 @@ class Instance extends Base
      *                          - [authorized_keys=[]] (array) An array of public SSH keys to be installed into the distribution's default user's `authorized_keys` file when rebuilding a Linode.
      *                          - [stackscript_id] (int) The stackscript ID to deploy with this disk. Must provide a distribution. Distribution must be one that the stackscript can be deployed to.
      *                          - [stackscript_data] (json) UDF (user-defined fields) for this stackscript. Defaults to "{}". Must match UDFs required by stackscript.
-     *                          - [booted=true] (boolean) Whether the instance should be booted upon completion of rebuild. This defaults to true.
+     *                          - [booted] (boolean) Whether the instance should be booted upon completion of rebuild. This defaults to true.
      *
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/rebuild
@@ -306,15 +306,15 @@ class Instance extends Base
     /**
      * Restores a backup to a Linode.
      *
-     * @param int     $backup_id       The ID of the backup.
-     * @param boolean $overwrite=false (optional)If true, deletes all disks and configs on the target linode before restoring.
+     * @param int     $backup_id      The ID of the backup.
+     * @param boolean $overwrite=null (optional)If true, deletes all disks and configs on the target linode before restoring.
      *
      *
      * @link https://developers.linode.com/v4/reference/linode
      *
      * @return bool
      */
-    public function restore($backup_id, $overwrite = false)
+    public function restore($backup_id, $overwrite = null)
     {
         return $this->call('post', "$entry", array_merge([
             'backup_id' => $backup_id,

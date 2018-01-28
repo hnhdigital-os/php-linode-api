@@ -93,8 +93,8 @@ class Instances extends Base
      *                         - [stackscript_id] (int) The stackscript ID to deploy with this disk. Must provide a distribution. Distribution must be one that the stackscript can be deployed to.
      *                         - [stackscript_data] (json) UDF (user-defined fields) for this stackscript. Defaults to "{}". Must match UDFs required by stackscript.
      *                         - [image] (string) The gold-master image to use for the newly created Linode. May not be included if 'backup_id' is sent. Official images start with "linode/", while your own images start with "private/"
-     *                         - [backups_enabled=false] (boolean) Subscribes this Linode with the Backup service. (Additional charges apply.) Defaults to "false".
-     *                         - [booted=true] (boolean) Whether the instance should be booted upon completion of creation. This defaults to true if created with a distribution.
+     *                         - [backups_enabled=null] (boolean) Subscribes this Linode with the Backup service. (Additional charges apply.) Defaults to "false".
+     *                         - [booted] (boolean) Whether the instance should be booted upon completion of creation. This defaults to true if created with a distribution.
      *
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances#POST

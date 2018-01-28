@@ -70,7 +70,7 @@ class Disks extends Base
      *                         - [root_pass] (string) Root password to deploy distribution with.
      *                         - [authorized_keys=[]] (array) An array of public SSH keys to be installed into the distribution's default user's `authorized_keys` file when creating a new disk from a Linode provided distribution.
      *                         - [filesystem='ext4'] (string) A filesystem for this disk. Defaults to "ext4".
-     *                         - [read_only=false] (boolean) If true, this disk is read-only.
+     *                         - [read_only=null] (boolean) If true, this disk is read-only.
      *                         - [stackscript_id] (int) The stackscript ID to deploy with this disk. Must provide a distribution. Distribution must be one that the stackscript can be deployed to.
      *                         - [stackscript_data] (json) UDF (user-defined fields) for this stackscript. Defaults to "{}". Must match UDFs required by stackscript.
      *
