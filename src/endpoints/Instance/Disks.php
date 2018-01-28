@@ -67,13 +67,13 @@ class Disks extends Base
      * @param int $size Size in MB for this disk.
      * @param string $label User-friendly string to name this disk.
      * @param array $optional 
-     *                         - [image] (string) Optional image id to deploy the disk from. You may not provide image if distribution is provided. Official images start with "linode/", while your images start with "private/"
-     *                         - [root_pass] (string) Root password to deploy distribution with.
-     *                         - [authorized_keys] (array) An array of public SSH keys to be installed into the distribution's default user's `authorized_keys` file when creating a new disk from a Linode provided distribution.
-     *                         - [filesystem=ext4] (string) A filesystem for this disk. Defaults to "ext4".
-     *                         - [read_only=0] (boolean) If true, this disk is read-only.
-     *                         - [stackscript_id] (int) The stackscript ID to deploy with this disk. Must provide a distribution. Distribution must be one that the stackscript can be deployed to.
-     *                         - [stackscript_data] (json) UDF (user-defined fields) for this stackscript. Defaults to "{}". Must match UDFs required by stackscript.
+     *                        - [image] (string) Optional image id to deploy the disk from. You may not provide image if distribution is provided. Official images start with "linode/", while your images start with "private/"
+     *                        - [root_pass] (string) Root password to deploy distribution with.
+     *                        - [authorized_keys] (array) An array of public SSH keys to be installed into the distribution's default user's `authorized_keys` file when creating a new disk from a Linode provided distribution.
+     *                        - [filesystem=ext4] (string) A filesystem for this disk. Defaults to "ext4".
+     *                        - [read_only=0] (boolean) If true, this disk is read-only.
+     *                        - [stackscript_id] (int) The stackscript ID to deploy with this disk. Must provide a distribution. Distribution must be one that the stackscript can be deployed to.
+     *                        - [stackscript_data] (json) UDF (user-defined fields) for this stackscript. Defaults to "{}". Must match UDFs required by stackscript.
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/backups#POST
      * 

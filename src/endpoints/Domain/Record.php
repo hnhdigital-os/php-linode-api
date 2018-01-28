@@ -72,16 +72,16 @@ class Record extends Base
      * Modifies a given Domain Record.
      *
      * @param array $optional 
-     *                         - [type] (string) Type of record. Can be one of "A", "AAAA", "NS", "MX", "CNAME", "TXT", "SRV", "PTR", or "CAA".
-     *                         - [name] (string) The hostname or FQDN. When type=MX the subdomain to delegate to the Target MX server.
-     *                         - [target] (string) When Type=MX the hostname. When Type=CNAME the target of the alias. When Type=TXT or CAA the value of the record. When Type=A or AAAA the token of '[remote_addr]' will be substituted with the IP address of the request.
-     *                         - [priority] (int) Priority for MX and SRV records.
-     *                         - [weight] (int) A relative weight for records with the same priority, higher value means more preferred.
-     *                         - [port] (int) The TCP or UDP port on which the service is to be found.
-     *                         - [service] (string) The service to append to an SRV record.
-     *                         - [protocol] (string) The protocol to append to an SRV record.
-     *                         - [tag] (string) The tag attribute for a CAA record. One of "issue", "issuewild", or "iodef". Ignored on other record types.
-     *                         - [ttl] (integer) Time interval that the resource record may be cached before it should be discarded. In seconds. Leave as 0 to accept our default.
+     *                        - [type] (string) Type of record. Can be one of "A", "AAAA", "NS", "MX", "CNAME", "TXT", "SRV", "PTR", or "CAA".
+     *                        - [name] (string) The hostname or FQDN. When type=MX the subdomain to delegate to the Target MX server.
+     *                        - [target] (string) When Type=MX the hostname. When Type=CNAME the target of the alias. When Type=TXT or CAA the value of the record. When Type=A or AAAA the token of '[remote_addr]' will be substituted with the IP address of the request.
+     *                        - [priority] (int) Priority for MX and SRV records.
+     *                        - [weight] (int) A relative weight for records with the same priority, higher value means more preferred.
+     *                        - [port] (int) The TCP or UDP port on which the service is to be found.
+     *                        - [service] (string) The service to append to an SRV record.
+     *                        - [protocol] (string) The protocol to append to an SRV record.
+     *                        - [tag] (string) The tag attribute for a CAA record. One of "issue", "issuewild", or "iodef". Ignored on other record types.
+     *                        - [ttl] (integer) Time interval that the resource record may be cached before it should be discarded. In seconds. Leave as 0 to accept our default.
      * 
      * @link https://developers.linode.com/v4/reference/endpoints/domains/$id/records/$id#PUT
      *
