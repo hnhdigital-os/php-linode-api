@@ -136,7 +136,7 @@ function generate_parameter_list($method_settings)
 function get_default_value($parameter_setting, $options = [])
 {
     $default_value = array_get($parameter_setting, 'default', 'null');
-        
+
     $no_quotes = false;
 
     switch (array_get($parameter_setting, 'type')) {
@@ -198,7 +198,7 @@ function generate_new_class_parameter_list($method_settings)
     $result = [];
 
     foreach (array_get($method_settings, 'parameters', []) as $name => $settings) {
-        $result[] = "\$".(array_get($settings, 'self', false) ? 'this->' : '')."$name";
+        $result[] = '$'.(array_get($settings, 'self', false) ? 'this->' : '')."$name";
     }
 
     foreach (array_get($method_settings, 'optional-parameters', []) as $name => $settings) {
@@ -267,5 +267,5 @@ function generate_post_function_payload($method_settings)
 
     $optional = array_get($method_settings, 'optional', []);
 
-    return $result."        ], \$optional)";
+    return $result.'        ], $optional)';
 }
