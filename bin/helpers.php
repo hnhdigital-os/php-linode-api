@@ -269,3 +269,23 @@ function generate_post_function_payload($method_settings)
 
     return $result.'        ], $optional)';
 }
+
+function code_alignment($data)
+{
+    $result = '';
+    $max_length = 0;
+
+    foreach ($data as $key => $value) {
+        if (($length = strlen($key)) > $max_length) {
+            $max_length = $length;
+        }
+    }
+
+    $max_length++;
+
+    foreach ($data as $key => $value) {
+        $result .= "        '$key'".str_repeat(' ', $max_length-strlen($key))."=> '$value',\n";
+    }
+
+    return $result;
+}

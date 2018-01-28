@@ -47,14 +47,14 @@ class Instances extends Base
      * @var array
      */
     public $status = [
-        'offline' => 'The Linode is powered off.',
-        'booting' => 'The Linode is currently booting up.',
-        'running' => 'The Linode is currently running.',
+        'offline'       => 'The Linode is powered off.',
+        'booting'       => 'The Linode is currently booting up.',
+        'running'       => 'The Linode is currently running.',
         'shutting_down' => 'The Linode is currently shutting down.',
-        'rebooting' => 'The Linode is rebooting.',
-        'provisioning' => 'The Linode is being created.',
-        'deleting' => 'The Linode is being deleted.',
-        'migrating' => 'The Linode is being migrated to a new host/region.',
+        'rebooting'     => 'The Linode is rebooting.',
+        'provisioning'  => 'The Linode is being created.',
+        'deleting'      => 'The Linode is being deleted.',
+        'migrating'     => 'The Linode is being migrated to a new host/region.',
     ];
 
     /**

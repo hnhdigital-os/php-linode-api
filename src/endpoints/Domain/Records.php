@@ -43,15 +43,15 @@ class Records extends Base
      * @var array
      */
     public $type = [
-        'A' => 'A',
-        'AAAA' => 'AAAA',
-        'NS' => 'NS',
-        'MX' => 'MX',
+        'A'     => 'A',
+        'AAAA'  => 'AAAA',
+        'NS'    => 'NS',
+        'MX'    => 'MX',
         'CNAME' => 'CNAME',
-        'TXT' => 'TXT',
-        'SRV' => 'SRV',
-        'PTR' => 'PTR',
-        'CAA' => 'CAA',
+        'TXT'   => 'TXT',
+        'SRV'   => 'SRV',
+        'PTR'   => 'PTR',
+        'CAA'   => 'CAA',
     ];
 
     /**

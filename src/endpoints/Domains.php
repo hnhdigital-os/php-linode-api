@@ -38,7 +38,7 @@ class Domains extends Base
      */
     public $type = [
         'master' => 'Master',
-        'slave' => 'Slave',
+        'slave'  => 'Slave',
     ];
 
     /**
@@ -47,8 +47,8 @@ class Domains extends Base
      * @var array
      */
     public $status = [
-        'disabled' => 'Disabled',
-        'active' => 'Active',
+        'disabled'  => 'Disabled',
+        'active'    => 'Active',
         'edit_mode' => 'Edit mode',
     ];
 
