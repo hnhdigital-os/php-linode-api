@@ -21,6 +21,7 @@ use HnhDigital\LinodeApi\Foundation\Base;
  *
  * @link <?= array_get($spec, 'url') ?>
 
+ *
  * @author Rocco Howard <rocco@hnh.digital>
  */
 class <?= $class ?> extends Base
