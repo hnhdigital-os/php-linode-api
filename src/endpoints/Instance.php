@@ -88,6 +88,30 @@ class Instance extends Base
     }
 
     /**
+     * Returns a list of configs.
+     *
+     * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/configs
+     *
+     * @return array
+     */
+    public function configs()
+    {
+        return (new Instance/Configs($this->linode_id))->all();
+    }
+
+    /**
+     * View networking information for this Linode.
+     *
+     * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/ips
+     *
+     * @return array
+     */
+    public function ips()
+    {
+        return (new Instance/Ips($this->linode_id))->all();
+    }
+
+    /**
      * Returns a list of disks.
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/disks
@@ -97,6 +121,30 @@ class Instance extends Base
     public function disks()
     {
         return (new Instance/Disks($this->linode_id))->all();
+    }
+
+    /**
+     * Returns CPU, IO, IPv4, and IPv6 stats for the last 24 hours.
+     *
+     * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/stats
+     *
+     * @return array
+     */
+    public function currentStats()
+    {
+        return (new Instance/Stats($this->linode_id))->current();
+    }
+
+    /**
+     * Returns CPU, IO, IPv4, and IPv6 stats for a specific month.
+     *
+     * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/stats/$year/$month
+     *
+     * @return array
+     */
+    public function satsForPeriod($year, $month)
+    {
+        return (new Instance/Stats($this->linode_id, $year, $month))->period();
     }
 
     /**

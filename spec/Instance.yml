@@ -26,7 +26,29 @@ get:
     model: Instance/Backups
     model-load-method: all
 
-    parameters:      
+    parameters:
+      linode_id:
+        self: true
+
+  configs:
+    description: Returns a list of configs.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/configs
+    model: Instance/Configs
+    model-load-method: all
+
+    parameters:
+
+      linode_id:
+        self: true
+
+  ips:
+    description: View networking information for this Linode.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/ips
+    model: Instance/Ips
+    model-load-method: all
+
+    parameters:
+
       linode_id:
         self: true
 
@@ -37,9 +59,37 @@ get:
     model-load-method: all
 
     parameters:
-      
+
       linode_id:
         self: true
+
+  statsCurrent:
+    description: Returns CPU, IO, IPv4, and IPv6 stats for the last 24 hours.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/stats
+    model: Instance/Stats
+    model-load-method: current
+
+    parameters:
+
+      linode_id:
+        self: true
+
+  statsForPeriod:
+    description: Returns CPU, IO, IPv4, and IPv6 stats for a specific month.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/stats/$year/$month
+    model: Instance/Stats
+    model-load-method: period
+
+    parameters:
+
+      linode_id:
+        self: true
+
+      year:
+        type: integer
+
+      month:
+        type: integer
 
 put:
 
