@@ -63,7 +63,7 @@ function generate_parameter_comments($method_settings)
     }
 
     foreach (array_get($method_settings, 'optional-parameters', []) as $name => $settings) {
-        $result .= '     * @param '.array_get($settings, 'type')." \$$name (optional) ".array_get($settings, 'description');
+        $result .= '     * @param '.array_get($settings, 'type')." \$$name (optional)".array_get($settings, 'description');
         $result .= "\n";
         $count++;
     }

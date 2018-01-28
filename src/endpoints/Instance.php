@@ -162,7 +162,7 @@ class Instance extends Base
     /**
      * Boots a Linode.
      *
-     * @param int $config_id (optional) 
+     * @param int $config_id (optional)
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/boot
      * 
@@ -222,7 +222,7 @@ class Instance extends Base
     /**
      * Reboots a Linode.
      *
-     * @param int $config_id (optional) 
+     * @param int $config_id (optional)
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/reboot
      * 
@@ -285,7 +285,7 @@ class Instance extends Base
      * Restores a backup to a Linode.
      *
      * @param int $backup_id The ID of the backup.
-     * @param boolean $overwrite (optional) If true, deletes all disks and configs on the target linode before restoring.
+     * @param boolean $overwrite (optional)If true, deletes all disks and configs on the target linode before restoring.
      *
      * @link https://developers.linode.com/v4/reference/linode
      * 
