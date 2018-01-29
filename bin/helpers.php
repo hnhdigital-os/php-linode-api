@@ -283,7 +283,7 @@ function generate_post_function_payload($method_settings)
 
     $optional = array_get($method_settings, 'optional', []);
 
-    return "[\n".$result.'        ], $optional)';
+    return "array_merge([\n".$result.'        ], $optional)';
 }
 
 function code_alignment($data, $options = [])
