@@ -1,0 +1,25 @@
+endpoint: networking/ipv4
+description: View and manage IPv4 Addresses you own.
+url: https://developers.linode.com/v4/reference/endpoints/networking/ipv4
+load-method: search
+
+get:
+
+  search:
+    url: https://developers.linode.com/v4/reference/endpoints/networking/ipv4#GET
+    description: Returns a list of IPv4 Addresses.
+    endpoint: 
+    search: true
+
+post:
+
+  create:
+    description: Create a new Public IPv4 Address.
+    url: https://developers.linode.com/v4/reference/endpoints/networking/ipv4#POST
+    endpoint: 
+
+    parameters:
+
+      linode_id:
+        type: int
+        description: The Linode ID to assign this IP to.

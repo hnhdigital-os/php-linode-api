@@ -1,0 +1,38 @@
+endpoint: networking/ipv4/%s
+description: Manage a particular Domain Record your account may access.
+url: https://developers.linode.com/v4/reference/endpoints/networking/ipv4/$address
+load-method: get
+
+parameters:
+
+    address:
+      type: string
+
+get:
+
+  get:
+    description: Returns a single IPv4 Address.
+    url: https://developers.linode.com/v4/reference/endpoints/networking/ipv4/$address#GET
+    endpoint: 
+
+put:
+
+  update:
+    description: Update RDNS on one IPv4 Address. Set RDNS to null to reset.
+    url: https://developers.linode.com/v4/reference/endpoints/networking/ipv4/$address#PUT
+    endpoint: 
+
+    parameters:
+
+      domain:
+        type: string
+        validation:
+            nullable: true
+        description: Domain name or null.
+
+delete:
+
+  delete:
+    description: Delete a public IPv4 address
+    url: https://developers.linode.com/v4/reference/endpoints/networking/ipv4/$address#DELETE
+    endpoint: 

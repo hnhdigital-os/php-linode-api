@@ -1,0 +1,20 @@
+endpoint: networking
+description: Manage the IPv4 and IPv6 addresses
+url: https://developers.linode.com/v4/reference/networking
+
+post:
+
+  assign:
+    description: Assigns an IPv4 address to a Linode.
+    url: https://developers.linode.com/v4/reference/endpoints/networking/ip-assign
+    endpoint: ip-assign
+
+    parameters:
+
+      region:
+        type: string
+        description: The region where the IPv4 address and Linode are located.
+
+      assignments:
+        type: json
+        description: An array of IPv4 addresses and the Linode IDs they will be assigned to

@@ -1,0 +1,31 @@
+endpoint: networking/ipv6/%s
+description: Manage a single IPv6 Address. Address in URL can be as compressed as you want.
+url: https://developers.linode.com/v4/reference/endpoints/networking/ipv6/$address
+load-method: get
+
+parameters:
+
+    address:
+      type: string
+
+get:
+
+  get:
+    description: Return a single IPv6 Address.
+    url: https://developers.linode.com/v4/reference/endpoints/networking/ipv6/$address#GET
+    endpoint: 
+
+put:
+
+  update:
+    description: Update RDNS on one IPv6 Address. Set RDNS to null to reset.
+    url: https://developers.linode.com/v4/reference/endpoints/networking/ipv6/$address#PUT
+    endpoint: 
+
+    parameters:
+
+      domain:
+        type: string
+        validation:
+            nullable: true
+        description: Domain name or null.

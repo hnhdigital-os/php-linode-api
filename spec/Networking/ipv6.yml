@@ -1,0 +1,13 @@
+endpoint: networking/ipv6
+description: View and manage IPv6 Addresses you own.
+url: https://developers.linode.com/v4/reference/endpoints/networking/ipv6
+load-method: search
+
+get:
+
+  search:
+    url: https://developers.linode.com/v4/reference/endpoints/networking/ipv6#GET
+    description: Returns a list of IPv6 Addresses.
+    endpoint: 
+    search: true
+
