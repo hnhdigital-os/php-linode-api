@@ -27,6 +27,7 @@ put:
 
       label:
         type: string
+        description: Label of the stackscript.
 
 delete:
 

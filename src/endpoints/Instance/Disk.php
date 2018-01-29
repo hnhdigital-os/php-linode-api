@@ -71,7 +71,7 @@ class Disk extends Base
      * Updates a disk's metadata.
      *
      * @param array $optional
-     *                        - [label] (string) 
+     *                        - [label] (string) Label of the disk.
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/disks/$id#PUT
      *
      * @return void

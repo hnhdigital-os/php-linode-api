@@ -216,7 +216,7 @@ post:
         description: UDF (user-defined fields) for this stackscript. Defaults to "{}". Must match UDFs required by stackscript.
       
       booted:
-        type: boolean
+        type: bool
         default: true
         description: Whether the instance should be booted upon completion of rebuild. This defaults to true.
 
@@ -255,7 +255,7 @@ post:
     optional-parameters:
 
       overwrite:
-        type: boolean
+        type: bool
         default: false
         description: If true, deletes all disks and configs on the target linode before restoring.
 
