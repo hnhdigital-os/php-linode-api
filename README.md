@@ -39,7 +39,7 @@ Via composer:
 
 ## Examples
 
-### Get all the Linode regions:
+### Regions
 
 * Calling the `search` method only will load the page as it reaches the end of the page of results.
 * Calling the `all` method automatically loads every page of results.
@@ -53,7 +53,7 @@ foreach ((new Regions())->search() as $region) {
 $regions = (new Regions())->search()->all();
 ```
 
-### Get a specific region.
+### Region
 
 * Creating a new Region instance provides a model with attributes automatically loaded from the endpoint.
 * Calling the get method directly returns an array from the endpoint.
