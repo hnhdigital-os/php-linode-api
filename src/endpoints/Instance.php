@@ -172,7 +172,7 @@ class Instance extends Base
     {
         return $this->call('post', '/boot', array_merge([
             'config_id' => $config_id
-        ], $optional));
+        , $optional]));
     }
 
     /**
@@ -198,7 +198,7 @@ class Instance extends Base
         return $this->call('post', '/clone', array_merge([
             'region' => $region
             'type'   => $type
-        ], $optional));
+        , $optional]));
     }
 
     /**
@@ -212,7 +212,7 @@ class Instance extends Base
     public function kvmify()
     {
         return $this->call('post', '/kvmify', array_merge([
-        ], $optional));
+        , $optional]));
     }
 
     /**
@@ -226,7 +226,7 @@ class Instance extends Base
     public function mutate()
     {
         return $this->call('post', '/mutate', array_merge([
-        ], $optional));
+        , $optional]));
     }
 
     /**
@@ -243,7 +243,7 @@ class Instance extends Base
     {
         return $this->call('post', '/reboot', array_merge([
             'config_id' => $config_id
-        ], $optional));
+        , $optional]));
     }
 
     /**
@@ -266,7 +266,7 @@ class Instance extends Base
     {
         return $this->call('post', '/rebuild', array_merge([
             'root_pass' => $root_pass
-        ], $optional));
+        , $optional]));
     }
 
     /**
@@ -283,7 +283,7 @@ class Instance extends Base
     {
         return $this->call('post', '/rescue', array_merge([
             'devices' => $devices
-        ], $optional));
+        , $optional]));
     }
 
     /**
@@ -300,7 +300,7 @@ class Instance extends Base
     {
         return $this->call('post', '/resize', array_merge([
             'devices' => $devices
-        ], $optional));
+        , $optional]));
     }
 
     /**
@@ -319,7 +319,7 @@ class Instance extends Base
         return $this->call('post', "$entry", array_merge([
             'backup_id' => $backup_id
             'overwrite' => $overwrite
-        ], $optional));
+        , $optional]));
     }
 
     /**
@@ -333,7 +333,7 @@ class Instance extends Base
     public function shutdown()
     {
         return $this->call('post', '/shutdown', array_merge([
-        ], $optional));
+        , $optional]));
     }
 
     /**

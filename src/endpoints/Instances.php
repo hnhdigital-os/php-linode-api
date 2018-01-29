@@ -106,6 +106,6 @@ class Instances extends Base
         return $this->call('post', '', array_merge([
             'region' => $region
             'type'   => $type
-        ], $optional));
+        , $optional]));
     }
 }

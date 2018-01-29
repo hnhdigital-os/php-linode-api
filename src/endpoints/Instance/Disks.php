@@ -84,6 +84,6 @@ class Disks extends Base
         return $this->call('post', '', array_merge([
             'size'  => $size
             'label' => $label
-        ], $optional));
+        , $optional]));
     }
 }

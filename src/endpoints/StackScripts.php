@@ -75,6 +75,6 @@ class StackScripts extends Base
             'label'  => $label
             'images' => $images
             'script' => $script
-        ], $optional));
+        , $optional]));
     }
 }
