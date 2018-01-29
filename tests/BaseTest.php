@@ -10,21 +10,41 @@ abstract class BaseTest extends TestCase
 {
     use HttpMockTrait;
 
+    /**
+     * Setup the http mock.
+     *
+     * @return void
+     */
     public static function setUpBeforeClass()
     {
         static::setUpHttpMockBeforeClass('8082', 'localhost');
     }
 
+    /**
+     * Tear down the http mock.
+     *
+     * @return void
+     */
     public static function tearDownAfterClass()
     {
         static::tearDownHttpMockAfterClass();
     }
 
+    /**
+     * Setup the http mock.
+     *
+     * @return void
+     */
     public function setUp()
     {
         $this->setUpHttpMock();
     }
 
+    /**
+     * Tear down the http mock.
+     *
+     * @return void
+     */
     public function tearDown()
     {
         $this->tearDownHttpMock();
@@ -32,6 +52,12 @@ abstract class BaseTest extends TestCase
 
     /**
      * Mock a GET request.
+     *
+     * @param string $method
+     * @param string $path
+     * @param array  $data
+     *
+     * @return void
      */
     protected function mockRequest($method, $path, $data)
     {
