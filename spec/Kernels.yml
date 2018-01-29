@@ -10,3 +10,15 @@ get:
     description: Returns list of kernels.
     endpoint: 
     search: true
+
+    filterable:
+      xen:
+        type: bool
+      kvm:
+        type: bool
+      label:
+        type: string
+      version:
+        type: string
+      pvops:
+        type: bool

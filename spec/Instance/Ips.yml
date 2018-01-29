@@ -20,7 +20,7 @@ post:
   add:
     url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/ips#POST
     description: Allocates a new IP Address for this Linode.
-    endpoint: 
+    endpoint:
 
     optional-parameters:
 
@@ -28,3 +28,15 @@ post:
         type: string
         default: "private"
         description: The type of IP Address this is, can be one of "public" or "private". Public IP Addresses, over and above the one included with each Linode, incur an additional monthly charge. If you need an additional Public IP Address you must request one - please open a ticket.
+
+  sharing:
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/ips/sharing
+    description: Sets IP Sharing for this Linode.
+    endpoint: /sharing
+
+    parameters:
+
+      ips:
+        type: array
+        description: A list of IP Addresses this Linode will share.
+

@@ -1,0 +1,17 @@
+endpoint: linode/types/%s
+description: Returns information about a specific Linode type, including pricing and specifications. This is used when creating or resizing a Linode.
+url: https://developers.linode.com/v4/reference/endpoints/linode/types/$id
+load-method: get
+fillable: true
+
+parameters:
+
+    type_id:
+      type: int
+
+get:
+
+  get:
+    url: https://developers.linode.com/v4/reference/endpoints/linode/types/$id#GET
+    description: Returns information about this type.
+    endpoint: 

@@ -1,0 +1,17 @@
+endpoint: linode/kernels/%s
+description: Return a particular kernel.
+url: https://developers.linode.com/v4/reference/endpoints/kernels/$id
+load-method: get
+fillable: true
+
+parameters:
+
+    kernel_id:
+      type: int
+
+get:
+
+  get:
+    url: https://developers.linode.com/v4/reference/endpoints/kernels/$id#GET
+    description: Returns information about this kernel.
+    endpoint: 

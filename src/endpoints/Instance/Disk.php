@@ -83,6 +83,38 @@ class Disk extends Base
     }
 
     /**
+     * Resets the root password of a disk.
+     *
+     * @param string $password New root password for the OS installed on this disk.
+     *
+     * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/disks/$id/password
+     *
+     * @return bool
+     */
+    public function password($password)
+    {
+        return $this->call('post', '/password', array_merge([
+            'password' => $password,
+        ], $optional));
+    }
+
+    /**
+     * Resizes the disk. The Linode this disk is attached to must be shut down for resizing to take effect.
+     *
+     * @param int $size The desired size of the disk in MB.
+     *
+     * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/disks/$id/resize
+     *
+     * @return bool
+     */
+    public function resize($size)
+    {
+        return $this->call('post', '/resize', array_merge([
+            'size' => $size,
+        ], $optional));
+    }
+
+    /**
      * Deletes this disk. This action cannot be undone.
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/disks/$id#DELETE

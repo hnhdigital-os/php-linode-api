@@ -75,4 +75,20 @@ class Ips extends Base
             'type' => $type,
         ], $optional));
     }
+
+    /**
+     * Sets IP Sharing for this Linode.
+     *
+     * @param array $ips A list of IP Addresses this Linode will share.
+     *
+     * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/ips/sharing
+     *
+     * @return bool
+     */
+    public function sharing($ips)
+    {
+        return $this->call('post', '/sharing', array_merge([
+            'ips' => $ips,
+        ], $optional));
+    }
 }

@@ -31,6 +31,30 @@ put:
         type: string
         description: Label of the disk.
 
+post:
+
+  password:
+    description: Resets the root password of a disk.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/disks/$id/password
+    endpoint: /password
+
+    parameters:
+
+      password:
+        type: string
+        description: New root password for the OS installed on this disk.
+
+  resize:
+    description: Resizes the disk. The Linode this disk is attached to must be shut down for resizing to take effect.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/disks/$id/resize
+    endpoint: /resize
+
+    parameters:
+
+      size:
+        type: int
+        description: The desired size of the disk in MB.
+
 delete:
 
   delete:
