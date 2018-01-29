@@ -41,13 +41,13 @@ class RegionsEndpointTest extends BaseTest
     }
 
     /**
-     * Test GET region/$region_id.
+     * Test GET regions/$region_id.
      *
      * @return void
      */
     public function testGetRegion()
     {
-        // Regions data.
+        // Region data.
         $data = [
             'id'      => 'us-east-1a',
             'country' => 'US',
