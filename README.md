@@ -41,26 +41,32 @@ Via composer:
 
 ### Regions
 
-* Calling the `search` method only will load the page as it reaches the end of the page of results.
-* Calling the `all` method automatically loads every page of results.
-* Results from any search based endpoint are provided as an instance of that type. This allows you to call any endpoints immediately.
+Results returned from any search based endpoint are provided as an instance of that type. This allows you to call any endpoints immediately.
+
+Calling the `search` method only will load the page as it reaches the end of the page of results.
 
 ```php
 foreach ((new Regions())->search() as $region) {
     // Do something with the region data (returned as an instance of Region)
 }
+```
 
+Calling the `all` method automatically loads every page of results.
+```php
 $regions = (new Regions())->search()->all();
 ```
 
 ### Region
 
-* Creating a new Region instance provides a model with attributes automatically loaded from the endpoint.
-* Calling the get method directly returns an array from the endpoint.
+Creating a new Region instance provides a model with attributes automatically loaded from the endpoint.
 
 ```php
 $region = new Region('us-east-1a', true);
+```
 
+Calling the get method directly returns an array from the endpoint.
+
+```php
 $result = (new Region('us-east-1a'))->get();
 ```
 
