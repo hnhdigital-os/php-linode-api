@@ -55,5 +55,20 @@ class RegionsEndpointTest extends BaseTest
 
         // Setup test server at path and with response data.
         $this->mockRequest('GET', '/regions/us-east-1a', $data);
+
+        // Create the same object that it should return.
+        $region = new Region('us-east-1a');
+
+        // Data.
+        $result = $region->get();
+
+        // Create the same object that it should return.
+        $populated_region = new Region('us-east-1a', $data);
+
+        // Compare.
+        $this->assertEquals($data, $result);
+
+        // Compare the populated attributes.
+        $this->assertEquals($populated_region->getAttributes(), $region->getAttributes());
     }
 }
