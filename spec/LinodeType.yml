@@ -15,3 +15,4 @@ get:
     url: https://developers.linode.com/v4/reference/endpoints/linode/types/$id#GET
     description: Returns information about this type.
     endpoint: 
+    auto-fill: true

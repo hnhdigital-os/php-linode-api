@@ -10,3 +10,8 @@ get:
     description: Returns a list of types for a given Linode.
     endpoint: 
     search: true
+
+    factory:
+      class: LinodeType
+      parameters:
+        - id
