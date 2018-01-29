@@ -365,18 +365,47 @@ function generate_post_function_payload($method_settings)
     return "array_merge([\n".$result.'        ], $optional)';
 }
 
+/**
+ * Generate list.
+ *
+ * @param array $data
+ *
+ * @return array
+ */
+function generate_list($data)
+{
+    $result = '';
+    $max_length = 0;
+
+    foreach ($data as $key => $value) {
+        if (($length = strlen($key)) > $max_length) {
+            $max_length = $length;
+        }
+    }
+
+    foreach ($data as $key => $value) {
+        $result .= "        '$key'".str_repeat(' ', $max_length - strlen($key))." => '$value',\n";
+    }
+
+    return $result;
+}
+
+/**
+ * Align provided code.
+ *
+ * @param array $data
+ * @param array $options
+ *
+ * @return array
+ */
 function code_alignment($data, $options = [])
 {
     $result = '';
     $part1_length = 0;
     $part2_length = 0;
 
-    foreach ($data as $key => $value) {
-        if (is_array($value)) {
-            $key = $value[0];
-        }
-
-        if (($length = strlen($key)) > $part1_length) {
+    foreach ($data as $value) {
+        if (($length = strlen($value[0])) > $part1_length) {
             $part1_length = $length;
         }
 
@@ -388,23 +417,19 @@ function code_alignment($data, $options = [])
     }
 
     foreach ($data as $key => $value) {
-        if (array_has($options, 'raw')) {
-            $total_part1 = $part1_length - strlen($value[0]);
-            $total_part2 = $part2_length - strlen($value[1]);
+        $total_part1 = $part1_length - strlen($value[0]);
+        $total_part2 = $part2_length - strlen($value[1]);
 
-            $total_part1 = $total_part1 < 0 ? 0 : $total_part1;
-            $total_part2 = $total_part2 < 0 ? 0 : $total_part2;
+        $total_part1 = $total_part1 < 0 ? 0 : $total_part1;
+        $total_part2 = $total_part2 < 0 ? 0 : $total_part2;
 
-            $result .= $value[0];
-            $result .= str_repeat(' ', $total_part1).' ';
-            $result .= $value[1];
-            if (!empty($value[2])) {
-                $result .= ' '.str_repeat(' ', $total_part2).$value[2];
-            }
-            $result .= "\n";
-        } else {
-            $result .= "        '$key'".str_repeat(' ', $part1_length - strlen($key))." => '$value',\n";
+        $result .= $value[0];
+        $result .= str_repeat(' ', $total_part1).' ';
+        $result .= $value[1];
+        if (!empty($value[2])) {
+            $result .= ' '.str_repeat(' ', $total_part2).$value[2];
         }
+        $result .= "\n";
     }
 
     return [

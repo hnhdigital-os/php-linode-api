@@ -57,7 +57,7 @@ foreach (array_get($spec, 'lists', []) as $name => $list) {
      */
     public $<?= $name ?> = [
 <?php
-    echo code_alignment($list)[2];
+    echo generate_list($list);
 ?>
     ];
 
@@ -133,7 +133,7 @@ foreach (array_get($spec, 'put', []) as $name => $settings) {
      *
      * @return void
      */
-    public function <?= $name ?>($optional = [])
+    public function <?= $name ?>(<?= generate_parameter_list($settings) ?>)
     {
         return $this->call('put', <?= generate_endpoint_entry($settings) ?>, <?= generate_put_function_payload($settings) ?>);
     }
