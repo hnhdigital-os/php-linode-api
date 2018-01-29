@@ -2,8 +2,8 @@
 
 namespace HnhDigital\LinodeApi\Tests;
 
-use HnhDigital\LinodeApi\Regions;
 use HnhDigital\LinodeApi\Region;
+use HnhDigital\LinodeApi\Regions;
 use HnhDigital\LinodeApi\Foundation\Auth;
 
 class RegionsTest extends BaseTest
