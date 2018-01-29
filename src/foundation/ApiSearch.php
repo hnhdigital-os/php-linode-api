@@ -28,6 +28,13 @@ class ApiSearch implements \Iterator, \Countable
     protected $endpoint;
 
     /**
+     * Endpoint.
+     *
+     * @var string
+     */
+    protected $endpoint_placeholders;
+
+    /**
      * Is factory.
      *
      * @var bool
@@ -114,9 +121,10 @@ class ApiSearch implements \Iterator, \Countable
     /**
      * Start a search.
      */
-    public function __construct($endpoint, $factory_settings = [])
+    public function __construct($endpoint, $endpoint_placeholders, $factory_settings = [])
     {
         $this->endpoint = $endpoint;
+        $this->endpoint_placeholders = $endpoint_placeholders;
 
         if (isset($factory_settings['class'])) {
             $this->is_factory = true;
@@ -173,8 +181,6 @@ class ApiSearch implements \Iterator, \Countable
      */
     public function first()
     {
-        $this->limit(1);
-
         $this->rewind();
 
         if (count($this->current_result)) {

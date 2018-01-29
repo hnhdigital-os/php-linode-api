@@ -123,7 +123,7 @@ class Base
      */
     protected function apiSearch($endpoint, $factory_settings)
     {
-        return new ApiSearch($endpoint, $factory_settings);
+        return new ApiSearch($endpoint, $this->endpoint_placeholders, $factory_settings);
     }
 
     /**
@@ -133,7 +133,7 @@ class Base
      */
     public static function endpoint($base_endpoint)
     {
-        self::$base_endpoint = $base_endpoint;
+        Auth::setBaseEndpoint($base_endpoint);
     }
 
     /**
