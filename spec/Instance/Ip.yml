@@ -21,7 +21,7 @@ get:
 put:
 
   update:
-    description: Update this IP Address
+    description: Update this IP Address.
     url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/ips/$ip_address#PUT
     endpoint: 
     attributes: true
@@ -29,6 +29,6 @@ put:
 delete:
 
   delete:
-    description: Delete a public IPv4 address associated with this Linode
+    description: Delete a public IPv4 address associated with this Linode.
     url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/ips/$ip_address#DELETE
     endpoint: 

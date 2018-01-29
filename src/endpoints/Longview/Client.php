@@ -76,7 +76,7 @@ class Client extends Base
     }
 
     /**
-     * Deletes this Longview client. This action cannot be undone
+     * Deletes this Longview client. This action cannot be undone.
      *
      * @link https://developers.linode.com/v4/reference/endpoints/longview/clients/$id#DELETE
      *

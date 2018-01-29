@@ -68,7 +68,7 @@ class Ip extends Base
     }
 
     /**
-     * Update this IP Address
+     * Update this IP Address.
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/ips/$ip_address#PUT
      *
@@ -80,7 +80,7 @@ class Ip extends Base
     }
 
     /**
-     * Delete a public IPv4 address associated with this Linode
+     * Delete a public IPv4 address associated with this Linode.
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/ips/$ip_address#DELETE
      *

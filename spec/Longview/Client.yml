@@ -31,6 +31,6 @@ put:
 delete:
 
   delete:
-    description: Deletes this Longview client. This action cannot be undone
+    description: Deletes this Longview client. This action cannot be undone.
     url: https://developers.linode.com/v4/reference/endpoints/longview/clients/$id#DELETE
     endpoint: 
