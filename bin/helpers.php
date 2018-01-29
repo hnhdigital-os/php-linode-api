@@ -18,11 +18,11 @@ function get_spec_files($spec_path)
 
     foreach ($rii as $file) {
         // Skip directories or incomplete specs.
-        if ($file->isDir() || stripos($file->getPathname(), 'incomplete')) { 
+        if ($file->isDir() || stripos($file->getPathname(), 'incomplete')) {
             continue;
         }
 
-        $files[] = $file->getPathname(); 
+        $files[] = $file->getPathname();
     }
 
     return $files;

@@ -2,9 +2,9 @@
 
 namespace HnhDigital\LinodeApi\Tests;
 
+use HnhDigital\LinodeApi\Foundation\Auth;
 use HnhDigital\LinodeApi\Region;
 use HnhDigital\LinodeApi\Regions;
-use HnhDigital\LinodeApi\Foundation\Auth;
 
 class RegionsTest extends BaseTest
 {
@@ -12,13 +12,13 @@ class RegionsTest extends BaseTest
     {
         // Regions data.
         $regions_data = [
-            'pages' => 1,
+            'pages'   => 1,
             'results' => 1,
-            'data' => [
+            'data'    => [
                 [
-                    "id"      => "us-east-1a",
-                    "country" => "US"
-                ]
+                    'id'      => 'us-east-1a',
+                    'country' => 'US',
+                ],
             ],
             'page' => 1,
         ];

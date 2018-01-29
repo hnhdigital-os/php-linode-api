@@ -33,6 +33,6 @@ put:
 delete:
 
   delete:
-    description: Delete a public IPv4 address
+    description: Delete a public IPv4 address.
     url: https://developers.linode.com/v4/reference/endpoints/networking/ipv4/$address#DELETE
     endpoint: 
