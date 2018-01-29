@@ -171,7 +171,7 @@ class Instance extends Base
     public function boot($config_id = null)
     {
         return $this->call('post', '/boot', array_merge([
-            'config_id' => $config_id
+            'config_id' => $config_id,
         ], $optional));
     }
 
@@ -196,8 +196,8 @@ class Instance extends Base
     public function clone($region, $type, $optional = [])
     {
         return $this->call('post', '/clone', array_merge([
-            'region' => $region
-            'type'   => $type
+            'region' => $region,
+            'type'   => $type,
         ], $optional));
     }
 
@@ -242,7 +242,7 @@ class Instance extends Base
     public function reboot($config_id = null)
     {
         return $this->call('post', '/reboot', array_merge([
-            'config_id' => $config_id
+            'config_id' => $config_id,
         ], $optional));
     }
 
@@ -265,7 +265,7 @@ class Instance extends Base
     public function rebuild($root_pass, $optional = [])
     {
         return $this->call('post', '/rebuild', array_merge([
-            'root_pass' => $root_pass
+            'root_pass' => $root_pass,
         ], $optional));
     }
 
@@ -282,7 +282,7 @@ class Instance extends Base
     public function rescue($devices)
     {
         return $this->call('post', '/rescue', array_merge([
-            'devices' => $devices
+            'devices' => $devices,
         ], $optional));
     }
 
@@ -299,7 +299,7 @@ class Instance extends Base
     public function resize($devices)
     {
         return $this->call('post', '/resize', array_merge([
-            'devices' => $devices
+            'devices' => $devices,
         ], $optional));
     }
 
@@ -317,8 +317,8 @@ class Instance extends Base
     public function restore($backup_id, $overwrite = null)
     {
         return $this->call('post', "$entry", array_merge([
-            'backup_id' => $backup_id
-            'overwrite' => $overwrite
+            'backup_id' => $backup_id,
+            'overwrite' => $overwrite,
         ], $optional));
     }
 

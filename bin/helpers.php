@@ -271,11 +271,11 @@ function generate_post_function_payload($method_settings)
     $entries = [];
 
     foreach (array_get($method_settings, 'parameters', []) as $name => $settings) {
-        $entries[] = ["            '".$name."'", "=> \$$name"];
+        $entries[] = ["            '".$name."'", "=> \$$name,"];
     }
 
     foreach (array_get($method_settings, 'optional-parameters', []) as $name => $settings) {
-        $entries[] = ["            '".$name."'", "=> \$$name"];
+        $entries[] = ["            '".$name."'", "=> \$$name,"];
     }
 
     [$part1_length, $part2_length, $result] = code_alignment($entries, ['raw' => true]);
