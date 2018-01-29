@@ -28,15 +28,23 @@ foreach (get_spec_files($spec_path) as $model_yml_path) {
     $endpoint = sprintf(array_get($info, 'spec.endpoint'), ...$endpoint_parameters);
 
     foreach (['get', 'put', 'post', 'delete'] as $method) {
-        foreach (array_get($info, 'spec.'.$method, []) as $method => $settings) {
-            $endpoints[sprintf('%s%s', $endpoint, array_get($settings, 'endpoint'))] = [];
+        foreach (array_get($info, 'spec.'.$method, []) as $function_name => $settings) {
+            if (array_has($settings, 'endpoint')) {
+                $url = sprintf('%s%s', $endpoint, array_get($settings, 'endpoint'));
+
+                $methods = array_get($endpoints, $url, []);
+                $methods[] = strtoupper($method);
+
+                array_set($endpoints, $url, $methods);
+            }
         }
     }
-    
 }
 
 ksort($endpoints);
 
-foreach ($endpoints as $endpoint => $details) {
-    console_output($endpoint);
+foreach ($endpoints as $endpoint => $methods) {
+    foreach ($methods as $method) {
+        console_output(' %s %s', str_pad($method, 6, ' '), $endpoint);
+    }
 }
