@@ -41,16 +41,16 @@ Via composer:
 
 ### Get all the Linode regions:
 
-* Calling the `all` method automatically loads every page of results.
 * Calling the `search` method only will load the page as it reaches the end of the page of results.
+* Calling the `all` method automatically loads every page of results.
 * Results from any search based endpoint are provided as an instance of that type. This allows you to call any endpoints immediately.
 
 ```php
-$regions = (new Regions())->search()->all();
-
 foreach ((new Regions())->search() as $region) {
     // Do something with the region data (returned as an instance of Region)
 }
+
+$regions = (new Regions())->search()->all();
 ```
 
 ### Get a specific region.
@@ -61,7 +61,7 @@ foreach ((new Regions())->search() as $region) {
 ```php
 $region = new Region('us-east-1a', true);
 
-$result = $region->get();
+$result = (new Region('us-east-1a'))->get();
 ```
 
 ## Contributing
