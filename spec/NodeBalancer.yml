@@ -32,7 +32,8 @@ put:
       label:
         type: string
         description: The label to assign this NodeBalancer. Defaults to "nodebalancer" followed by its ID.
-        validation-regex: "^(?!.*(__|--).*)([A-Za-z])([a-zA-Z0-9_-]{1,30})([A-Za-z])$"
+        validation:
+          regex: "^(?!.*(__|--).*)([A-Za-z])([a-zA-Z0-9_-]{1,30})([A-Za-z])$"
 
       client_conn_throttle:
         type: string
