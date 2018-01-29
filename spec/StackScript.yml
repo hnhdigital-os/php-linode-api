@@ -1,4 +1,4 @@
-endpoint: linode/stackscripts//%s
+endpoint: linode/stackscripts/%s
 description: Return a particular region.
 url: https://developers.linode.com/v4/reference/endpoints/linode/stackscripts
 load-method: get

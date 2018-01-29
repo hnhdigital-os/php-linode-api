@@ -29,7 +29,7 @@ class StackScript extends Base
      *
      * @var string
      */
-    protected $endpoint = 'linode/stackscripts//%s';
+    protected $endpoint = 'linode/stackscripts/%s';
     /**
      * Stackscript Id.
      *
