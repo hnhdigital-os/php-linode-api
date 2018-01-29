@@ -30,3 +30,5 @@ plugins:
         enabled: false
 exclude_patterns:
 - "tests/"
+- "bin/"
+- "spec/"
