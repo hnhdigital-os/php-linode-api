@@ -2,6 +2,13 @@
 
 use Symfony\Component\Yaml\Yaml;
 
+/**
+ * Get spec files from the given path.
+ *
+ * @param string $spec_path
+ *
+ * @return array
+ */
 function get_spec_files($spec_path)
 {
     // Find all spec definitions.
@@ -21,6 +28,14 @@ function get_spec_files($spec_path)
     return $files;
 }
 
+/**
+ * Parse the given spec file.
+ *
+ * @param string $source_path
+ * @param string $yml_path
+ *
+ * @return array
+ */
 function parse_spec_file($source_path, $yml_path)
 {
     // Path generation.s
@@ -47,10 +62,18 @@ function parse_spec_file($source_path, $yml_path)
     ];
 }
 
+/**
+ * Output text to the console.
+ *
+ * @param string $text
+ *
+ * @return void
+ */
 function console_output(...$text)
 {
-    if (sizeof($text) > 1) {
+    if (count($text) > 1) {
         echo sprintf(...$text)."\n";
+
         return;
     }
 
@@ -355,7 +378,7 @@ function generate_put_function_payload($method_settings)
         }
     } elseif (array_has($method_settings, 'optional', [])) {
         return '$optional';
-    }   
+    }
 
     return "[\n".$result.'        ]';
 }
