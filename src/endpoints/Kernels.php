@@ -50,6 +50,6 @@ class Kernels extends Base
      */
     public function search()
     {
-        return $this->apiSearch($this->endpoint);
+        return $this->apiSearch($this->endpoint, ['class' => 'Kernel', 'parameters' => ['id']]);
     }
 }
