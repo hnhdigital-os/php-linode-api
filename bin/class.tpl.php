@@ -12,8 +12,8 @@ namespace HnhDigital\LinodeApi<?= $namespace ?>;
  * file that was distributed with this source code.
  */
 
-use HnhDigital\LinodeApi\Foundation\Base;
-<?= generate_class_aliases($namespace, $spec) ?>
+<?= generate_class_aliases(['use HnhDigital\LinodeApi\Foundation\Base;' => true], $namespace, $spec) ?>
+
 
 /**
  * This is the <?= $class ?> class.

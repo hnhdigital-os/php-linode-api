@@ -22,21 +22,22 @@ function generateClass($placeholders)
  * Generate class aliases.
  *
  * @param string $namespace
- * @param array $spec
+ * @param array  $spec
  *
  * @return string
  */
-function generate_class_aliases($namespace, $spec)
+function generate_class_aliases($result, $namespace, $spec)
 {
-    $result = [];
-
     foreach (array_get($spec, 'get', []) as $name => $settings) {
         if (array_has($settings, 'model')) {
-            $result['use '.$namespace.array_get($settings, 'model').";"] = true;
+            $result['use '.$namespace.array_get($settings, 'model').';'] = true;
         }
     }
 
-    return implode("\n", array_keys($result));
+    $result = array_keys($result);
+    sort($result);
+
+    return implode("\n", $result);
 }
 
 /**

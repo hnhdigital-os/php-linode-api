@@ -14,9 +14,10 @@ namespace HnhDigital\LinodeApi;
 use HnhDigital\LinodeApi\Foundation\Base;
 use HnhDigital\LinodeApi\Instance\Backups;
 use HnhDigital\LinodeApi\Instance\Configs;
-use HnhDigital\LinodeApi\Instance\Ips;
 use HnhDigital\LinodeApi\Instance\Disks;
+use HnhDigital\LinodeApi\Instance\Ips;
 use HnhDigital\LinodeApi\Instance\Stats;
+
 /**
  * This is the Instance class.
  *
