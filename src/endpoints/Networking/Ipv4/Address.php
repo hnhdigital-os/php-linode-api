@@ -77,7 +77,7 @@ class Address extends Base
     }
 
     /**
-     * Delete a public IPv4 address
+     * Delete a public IPv4 address.
      *
      * @link https://developers.linode.com/v4/reference/endpoints/networking/ipv4/$address#DELETE
      *
