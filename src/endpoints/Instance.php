@@ -148,7 +148,6 @@ class Instance extends Base
     /**
      * Edits this Linode.
      *
-     * 
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id#PUT
      *
      * @return void
