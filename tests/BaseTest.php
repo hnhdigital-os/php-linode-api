@@ -73,7 +73,7 @@ abstract class BaseTest extends TestCase
                 ->body($encoded_data)
             ->end();
 
-        $this->http->setUp();        
+        $this->http->setUp();
 
         // Set the Linode API to this local server.
         Auth::setBaseEndpoint('http://localhost:8082/');
