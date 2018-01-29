@@ -58,7 +58,7 @@ $regions = (new Regions())->search()->all();
 
 ### Region
 
-Creating a new Region instance with the last parameter set to `true`, will provide a model populated with the endpoint's result.
+Creating a new Region instance with the last parameter set to `true` will provide a model populated with the endpoint's result.
 
 ```php
 $region = new Region('us-east-1a', true);
