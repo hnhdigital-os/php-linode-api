@@ -165,7 +165,7 @@ function generate_parameter_comments($method_settings)
         $count++;
     }
 
-    [$part1_length, $part2_length, $result] = code_alignment($entries, ['raw' => true]);
+    [$part1_length, $part2_length, $result] = code_alignment($entries);
 
     if (is_array($optional) && count($optional) > 0) {
         foreach ($optional as $name => $settings) {
@@ -358,7 +358,7 @@ function generate_post_function_payload($method_settings)
         $entries[] = ["            '".$name."'", "=> \$$name,"];
     }
 
-    [$part1_length, $part2_length, $result] = code_alignment($entries, ['raw' => true]);
+    [$part1_length, $part2_length, $result] = code_alignment($entries);
 
     $optional = array_get($method_settings, 'optional', []);
 
@@ -394,11 +394,10 @@ function generate_list($data)
  * Align provided code.
  *
  * @param array $data
- * @param array $options
  *
  * @return array
  */
-function code_alignment($data, $options = [])
+function code_alignment($data)
 {
     $result = '';
     $part1_length = 0;
