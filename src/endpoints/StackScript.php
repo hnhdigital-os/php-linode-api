@@ -65,6 +65,7 @@ class StackScript extends Base
      *
      * @param array $optional
      *                        - [label] (string) Label of the stackscript.
+     *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/stackscripts/$id#PUT
      *
      * @return void

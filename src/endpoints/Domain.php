@@ -96,6 +96,7 @@ class Domain extends Base
      *                        - [ttl_sec] (int) Time interval that the resource record may be cached before it should be discarded, in seconds.
      *                        - [master_ips=[]] (array) An array of IP addresses for this Domain.
      *                        - [axfr_ips=[]] (array) An array of IP addresses allowed to AXFR the entire Domain.
+     *
      * @link https://developers.linode.com/v4/reference/endpoints/domains/$id#PUT
      *
      * @return void

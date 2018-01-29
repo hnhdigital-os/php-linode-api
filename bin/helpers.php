@@ -83,6 +83,7 @@ function generate_parameter_comments($method_settings)
     $optional = array_get($method_settings, 'optional', []);
     if (is_array($optional) && count($optional) > 0) {
         $entries[] = ['     * @param array', '$optional', ''];
+        $count++;
     }
 
     [$part1_length, $part2_length, $result] = code_alignment($entries, ['raw' => true]);

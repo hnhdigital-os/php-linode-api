@@ -72,6 +72,7 @@ class Disk extends Base
      *
      * @param array $optional
      *                        - [label] (string) Label of the disk.
+     *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/disks/$id#PUT
      *
      * @return void
