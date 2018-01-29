@@ -66,7 +66,7 @@ class Base
             $fill = array_pop($args);
 
             if (count($fill)) {
-                $this->assign($fill);
+                $this->setAttributes($fill);
             }
         }
 
@@ -74,18 +74,42 @@ class Base
     }
 
     /**
-     * Assign data to this object.
+     * Assign data to the attributes of this model.
      *
-     * @param array $fill
+     * @param array $attributes
      *
      * @return void
      */
-    private function assign($fill)
+    private function setAttributes($attributes)
     {
-        foreach ($fill as $key => $value) {
+        foreach ($attributes as $key => $value) {
             $this->attributes[$key] = $value;
             $this->original_attributes[$key] = $value;
         }
+    }
+
+    /**
+     * Get an array of attributes.
+     *
+     * @param array $data
+     *
+     * @return void
+     */
+    public function getAttributes()
+    {
+        return $this->attributes;
+    }
+
+    /**
+     * Get an array of attributes.
+     *
+     * @param array $data
+     *
+     * @return void
+     */
+    public function getOriginalAttributes()
+    {
+        return $this->original_attributes;
     }
 
     /**
@@ -95,7 +119,7 @@ class Base
      *
      * @return void
      */
-    protected function getDirty($data = [])
+    public function getDirty($data = [])
     {
         // Allocate provided values, so these can appear dirty.
         foreach ($data as $key => $value) {
@@ -115,13 +139,35 @@ class Base
     }
 
     /**
+     * Make an API call.
+     *
+     * @param string $method
+     * @param string $uri
+     * @param string $payload
+     * @param string $settings
+     *
+     * @return array
+     */
+    protected function apiCall($method, $uri = '', $payload = [], $settings = [])
+    {
+        $result = $this->makeApiCall($method, $uri, $payload, $settings);
+
+        // Fill this model with the returned data.
+        if (isset($settings['auto-fill']) && $settings['auto-fill'] == true) {
+            $this->setAttributes($result);
+        }
+
+        return $result;
+    }
+
+    /**
      * Search.
      *
      * @param string $endpoint
      *
      * @return ApiSearch
      */
-    protected function apiSearch($endpoint, $factory_settings)
+    protected function apiSearch($endpoint, $factory_settings = [])
     {
         return new ApiSearch($endpoint, $this->endpoint_placeholders, $factory_settings);
     }

@@ -288,6 +288,25 @@ function get_default_value($parameter_setting, $options = [])
 }
 
 /**
+ * API Call parameters.
+ *
+ * @param array $method_settings
+ *
+ * @return string
+ */
+function api_call_parameters($method_settings)
+{
+    $result = '';
+
+    // Search returns a model as the result.
+    if (array_has($method_settings, 'auto-fill')) {
+        $result = ", [], ['auto-fill' => true]";
+    }
+
+    return $result;
+}
+
+/**
  * API Search parameters.
  *
  * @param array $method_settings

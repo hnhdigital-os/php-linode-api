@@ -103,7 +103,7 @@ foreach (array_get($spec, 'get', []) as $name => $settings) {
 <?php
 if (array_has($settings, 'endpoint') && !array_has($settings, 'search')) {
 ?>
-        return $this->apiCall('get', '<?= array_get($settings, 'endpoint', '') ?>');
+        return $this->apiCall('get', '<?= array_get($settings, 'endpoint', '') ?>'<?= api_call_parameters($settings) ?>);
 <?php
 } elseif (array_has($settings, 'endpoint') && array_has($settings, 'search')) {
 ?>

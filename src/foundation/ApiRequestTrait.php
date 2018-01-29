@@ -30,19 +30,24 @@ trait ApiRequestTrait
     /**
      * Make an api call.
      *
-     * @param string $method
+     * @param string $method   The method to be used. One of GET, PUT, POST, DELETE.
      * @param string $uri
      * @param string $payload
+     * @param string $settings
+     *                         - headers An array of headers to be sent with this request.
      *
      * @return mixed
      */
-    protected function apiCall($method, $uri, $payload = [], $headers = [])
+    protected function makeApiCall($method, $uri = '', $payload = [], $settings = [])
     {
         if (is_null($this->client)) {
             $this->client = new Guzzle([
                 'base_uri' => Auth::getBaseEndpoint(),
             ]);
         }
+
+        // Get the headers from the settings.
+        $headers = isset($settings['headers']) ? $settings['headers'] : [];
 
         // Authorization.
         Auth::getHeader($headers);

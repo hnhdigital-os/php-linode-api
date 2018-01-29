@@ -147,7 +147,7 @@ class ApiSearch implements \Iterator, \Countable
             return $this;
         }
 
-        $current_result = $this->apiCall('get', '?page='.$this->current_page);
+        $current_result = $this->makeApiCall('get', '?page='.$this->current_page);
 
         $this->result_total_count = intval($current_result['results']);
         $this->result_total_pages = intval($current_result['pages']);

@@ -42,10 +42,11 @@ class StackScript extends Base
      *
      * @return void
      */
-    public function __construct($stackscript_id)
+    public function __construct($stackscript_id, $fill = [])
     {
         $this->stackscript_id = $stackscript_id;
-        parent::__construct($stackscript_id);
+        $this->fillable = true;
+        parent::__construct($stackscript_id, $fill);
     }
 
     /**
@@ -57,7 +58,7 @@ class StackScript extends Base
      */
     public function get()
     {
-        return $this->apiCall('get', '');
+        return $this->apiCall('get', '', [], ['auto-fill' => true]);
     }
 
     /**

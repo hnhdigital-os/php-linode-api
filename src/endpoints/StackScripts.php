@@ -50,7 +50,7 @@ class StackScripts extends Base
      */
     public function search()
     {
-        return $this->apiSearch($this->endpoint);
+        return $this->apiSearch($this->endpoint, ['class' => 'StackScript', 'parameters' => ['id']]);
     }
 
     /**
