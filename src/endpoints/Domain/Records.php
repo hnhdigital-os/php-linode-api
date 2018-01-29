@@ -99,8 +99,8 @@ class Records extends Base
      */
     public function create($type, $optional = [])
     {
-        return $this->call('post', '', array_merge([
-            'type' => $type,
+        return $this->call('post', '', [
+            'type' => $type
         ], $optional));
     }
 }

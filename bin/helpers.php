@@ -268,18 +268,22 @@ function generate_post_function_payload($method_settings)
 {
     $result = "array_merge([\n";
 
+    $entries = [];
+
     foreach (array_get($method_settings, 'parameters', []) as $name => $settings) {
-        $result .= "            '".$name."' => \$".$name.",\n";
+        $entries[] = ["            '".$name."'", "=> \$$name"];
     }
 
     foreach (array_get($method_settings, 'optional-parameters', []) as $name => $settings) {
-        $result .= "            '".$name."' => \$".$name.",\n";
+        $entries[] = ["            '".$name."'", "=> \$$name"];
     }
+
+    [$part1_length, $part2_length, $result] = code_alignment($entries, ['raw' => true]);
 
 
     $optional = array_get($method_settings, 'optional', []);
 
-    return $result.'        ], $optional)';
+    return "[\n".$result.'        ], $optional)';
 }
 
 function code_alignment($data, $options = [])

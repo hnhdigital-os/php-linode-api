@@ -170,8 +170,8 @@ class Instance extends Base
      */
     public function boot($config_id = null)
     {
-        return $this->call('post', '/boot', array_merge([
-            'config_id' => $config_id,
+        return $this->call('post', '/boot', [
+            'config_id' => $config_id
         ], $optional));
     }
 
@@ -195,9 +195,9 @@ class Instance extends Base
      */
     public function clone($region, $type, $optional = [])
     {
-        return $this->call('post', '/clone', array_merge([
-            'region' => $region,
-            'type' => $type,
+        return $this->call('post', '/clone', [
+            'region' => $region
+            'type'   => $type
         ], $optional));
     }
 
@@ -211,7 +211,7 @@ class Instance extends Base
      */
     public function kvmify()
     {
-        return $this->call('post', '/kvmify', array_merge([
+        return $this->call('post', '/kvmify', [
         ], $optional));
     }
 
@@ -225,7 +225,7 @@ class Instance extends Base
      */
     public function mutate()
     {
-        return $this->call('post', '/mutate', array_merge([
+        return $this->call('post', '/mutate', [
         ], $optional));
     }
 
@@ -241,8 +241,8 @@ class Instance extends Base
      */
     public function reboot($config_id = null)
     {
-        return $this->call('post', '/reboot', array_merge([
-            'config_id' => $config_id,
+        return $this->call('post', '/reboot', [
+            'config_id' => $config_id
         ], $optional));
     }
 
@@ -264,8 +264,8 @@ class Instance extends Base
      */
     public function rebuild($root_pass, $optional = [])
     {
-        return $this->call('post', '/rebuild', array_merge([
-            'root_pass' => $root_pass,
+        return $this->call('post', '/rebuild', [
+            'root_pass' => $root_pass
         ], $optional));
     }
 
@@ -281,8 +281,8 @@ class Instance extends Base
      */
     public function rescue($devices)
     {
-        return $this->call('post', '/rescue', array_merge([
-            'devices' => $devices,
+        return $this->call('post', '/rescue', [
+            'devices' => $devices
         ], $optional));
     }
 
@@ -298,8 +298,8 @@ class Instance extends Base
      */
     public function resize($devices)
     {
-        return $this->call('post', '/resize', array_merge([
-            'devices' => $devices,
+        return $this->call('post', '/resize', [
+            'devices' => $devices
         ], $optional));
     }
 
@@ -316,9 +316,9 @@ class Instance extends Base
      */
     public function restore($backup_id, $overwrite = null)
     {
-        return $this->call('post', "$entry", array_merge([
-            'backup_id' => $backup_id,
-            'overwrite' => $overwrite,
+        return $this->call('post', "$entry", [
+            'backup_id' => $backup_id
+            'overwrite' => $overwrite
         ], $optional));
     }
 
@@ -332,7 +332,7 @@ class Instance extends Base
      */
     public function shutdown()
     {
-        return $this->call('post', '/shutdown', array_merge([
+        return $this->call('post', '/shutdown', [
         ], $optional));
     }
 

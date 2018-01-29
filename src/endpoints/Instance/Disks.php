@@ -81,9 +81,9 @@ class Disks extends Base
      */
     public function create($size, $label, $optional = [])
     {
-        return $this->call('post', '', array_merge([
-            'size' => $size,
-            'label' => $label,
+        return $this->call('post', '', [
+            'size'  => $size
+            'label' => $label
         ], $optional));
     }
 }

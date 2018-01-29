@@ -72,8 +72,8 @@ class Ips extends Base
      */
     public function add($type = 'private')
     {
-        return $this->call('post', '', array_merge([
-            'type' => $type,
+        return $this->call('post', '', [
+            'type' => $type
         ], $optional));
     }
 }
