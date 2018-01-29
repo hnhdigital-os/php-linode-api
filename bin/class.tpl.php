@@ -149,7 +149,6 @@ foreach (array_get($spec, 'post', []) as $name => $settings) {
 
      *
 <?= generate_parameter_comments($settings) ?>
-     *
      * @link <?= array_get($settings, 'url', array_get($spec, 'url')) ?>
 
      *

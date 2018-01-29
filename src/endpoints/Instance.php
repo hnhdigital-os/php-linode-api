@@ -163,7 +163,6 @@ class Instance extends Base
      *
      * @param int $config_id=null (optional)
      *
-     *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/boot
      *
      * @return bool
@@ -188,7 +187,6 @@ class Instance extends Base
      *                         - [disks=[]] (array) A list of disk ID's to include in the clone process. All disks attached to configs will be cloned from the source Linode if not provided.
      *                         - [configs=[]] (array) A list of config ID's to include in the clone process. All configs will be cloned from the source Linode if not provided.
      *
-     *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/clone
      *
      * @return bool
@@ -204,7 +202,6 @@ class Instance extends Base
     /**
      * Changes a Linode's hypervisor from Xen (legacy) to KVM (modern). Doing this restarts and migrates your Linode, and can take several minutes depending on the size of the Linode. Upgrading to KVM has significant performance improvements. This endpoint will only work for Linodes currently running on the Xen hypervisor.
      *
-     *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/kvmify
      *
      * @return bool
@@ -217,7 +214,6 @@ class Instance extends Base
 
     /**
      * Upgrades a Linode to its next generation.
-     *
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/mutate
      *
@@ -233,7 +229,6 @@ class Instance extends Base
      * Reboots a Linode.
      *
      * @param int $config_id=null (optional)
-     *
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/reboot
      *
@@ -257,7 +252,6 @@ class Instance extends Base
      *                          - [stackscript_data] (json) UDF (user-defined fields) for this stackscript. Defaults to "{}". Must match UDFs required by stackscript.
      *                          - [booted] (boolean) Whether the instance should be booted upon completion of rebuild. This defaults to true.
      *
-     *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/rebuild
      *
      * @return bool
@@ -274,7 +268,6 @@ class Instance extends Base
      *
      * @param json $devices Disks and volumes attached to this Linode config. Note that "sdh" is reserved and unavailable for rescue.
      *
-     *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/rescue
      *
      * @return bool
@@ -290,7 +283,6 @@ class Instance extends Base
      * Resizes a Linode to a new Linode type.
      *
      * @param string $devices A Linode type to use for this Linode.
-     *
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/resize
      *
@@ -309,7 +301,6 @@ class Instance extends Base
      * @param int     $backup_id      The ID of the backup.
      * @param boolean $overwrite=null (optional)If true, deletes all disks and configs on the target linode before restoring.
      *
-     *
      * @link https://developers.linode.com/v4/reference/linode
      *
      * @return bool
@@ -324,7 +315,6 @@ class Instance extends Base
 
     /**
      * Shuts down a Linode.
-     *
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/shutdown
      *
