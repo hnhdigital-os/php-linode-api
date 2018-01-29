@@ -12,7 +12,11 @@ namespace HnhDigital\LinodeApi;
  */
 
 use HnhDigital\LinodeApi\Foundation\Base;
-
+use HnhDigital\LinodeApi\Instance\Backups;
+use HnhDigital\LinodeApi\Instance\Configs;
+use HnhDigital\LinodeApi\Instance\Ips;
+use HnhDigital\LinodeApi\Instance\Disks;
+use HnhDigital\LinodeApi\Instance\Stats;
 /**
  * This is the Instance class.
  *
@@ -82,7 +86,7 @@ class Instance extends Base
      */
     public function backups()
     {
-        return (new Instance/Backups($this->linode_id))->all();
+        return (new Backups($this->linode_id))->all();
     }
 
     /**
@@ -94,7 +98,7 @@ class Instance extends Base
      */
     public function configs()
     {
-        return (new Instance/Configs($this->linode_id))->all();
+        return (new Configs($this->linode_id))->all();
     }
 
     /**
@@ -106,7 +110,7 @@ class Instance extends Base
      */
     public function ips()
     {
-        return (new Instance/Ips($this->linode_id))->all();
+        return (new Ips($this->linode_id))->all();
     }
 
     /**
@@ -118,7 +122,7 @@ class Instance extends Base
      */
     public function disks()
     {
-        return (new Instance/Disks($this->linode_id))->all();
+        return (new Disks($this->linode_id))->all();
     }
 
     /**
@@ -130,7 +134,7 @@ class Instance extends Base
      */
     public function statsCurrent()
     {
-        return (new Instance/Stats($this->linode_id))->current();
+        return (new Stats($this->linode_id))->current();
     }
 
     /**
@@ -142,7 +146,7 @@ class Instance extends Base
      */
     public function statsForPeriod($year, $month)
     {
-        return (new Instance/Stats($this->linode_id, $year, $month))->period();
+        return (new Stats($this->linode_id, $year, $month))->period();
     }
 
     /**

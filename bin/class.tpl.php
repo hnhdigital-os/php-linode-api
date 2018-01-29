@@ -13,6 +13,7 @@ namespace HnhDigital\LinodeApi<?= $namespace ?>;
  */
 
 use HnhDigital\LinodeApi\Foundation\Base;
+<?= generate_class_aliases($namespace, $spec) ?>
 
 /**
  * This is the <?= $class ?> class.
@@ -110,7 +111,7 @@ if (array_has($settings, 'endpoint') && !array_has($settings, 'search')) {
 <?php
 } elseif (array_has($settings, 'model')) {
 ?>
-        return (new <?= array_get($settings, 'model') ?>(<?= generate_new_class_parameter_list($settings) ?>))-><?= array_get($settings, 'model-load-method', 'all') ?>();
+        return (new <?= str_replace(['HnhDigital\LinodeApi'.$namespace.'\\', $class.'\\'], '', array_get($settings, 'model')) ?>(<?= generate_new_class_parameter_list($settings) ?>))-><?= array_get($settings, 'model-load-method', 'all') ?>();
 <?php
 }
 ?>
