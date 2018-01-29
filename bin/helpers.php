@@ -1,5 +1,62 @@
 <?php
 
+use Symfony\Component\Yaml\Yaml;
+
+function get_spec_files($spec_path)
+{
+    // Find all spec definitions.
+    $rii = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($spec_path));
+
+    $files = [];
+
+    foreach ($rii as $file) {
+        // Skip directories or incomplete specs.
+        if ($file->isDir() || stripos($file->getPathname(), 'incomplete')) { 
+            continue;
+        }
+
+        $files[] = $file->getPathname(); 
+    }
+
+    return $files;
+}
+
+function parse_spec_file($source_path, $yml_path)
+{
+    // Path generation.s
+    $model_pathinfo = pathinfo($yml_path);
+    $model_pathinfo['dirname'] = str_replace($source_path, '', $model_pathinfo['dirname']);
+
+    // Namespacing for this class.
+    $namespace = str_replace('/', '\\', $model_pathinfo['dirname']);
+
+    // Class name.
+    $class_name = $model_pathinfo['filename'];
+
+    // Defined spec document.
+    $model_spec_contents = file_get_contents($yml_path);
+
+    // Get the defined spec.
+    $spec = Yaml::parse($model_spec_contents);
+
+    return [
+        'path'       => $model_pathinfo['dirname'],
+        'namespace'  => $namespace,
+        'class_name' => $class_name,
+        'spec'       => $spec,
+    ];
+}
+
+function console_output(...$text)
+{
+    if (sizeof($text) > 1) {
+        echo sprintf(...$text)."\n";
+        return;
+    }
+
+    echo $text[0]."\n";
+}
+
 /**
  * Generate the class using the supplied placeholders.
  *
@@ -7,7 +64,7 @@
  *
  * @return string
  */
-function generateClass($placeholders)
+function generate_class_content($placeholders)
 {
     ob_start();
     extract($placeholders);

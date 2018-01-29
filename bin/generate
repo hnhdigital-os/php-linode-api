@@ -1,8 +1,6 @@
 #!/usr/bin/env php
 <?php
 
-use Symfony\Component\Yaml\Yaml;
-
 require __DIR__.'/../vendor/autoload.php';
 require __DIR__.'/helpers.php';
 
@@ -14,59 +12,28 @@ $spec_path = "$root_path/spec";
 // Path to where classes will be generated to.
 $output_path = "$root_path/src/endpoints";
 
-// Find all spec definitions.
-$rii = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($spec_path));
-
-$files = [];
-
-foreach ($rii as $file) {
-    if ($file->isDir()) { 
-        continue;
-    }
-
-    $files[] = $file->getPathname(); 
-}
-
 // Remove currently generated endpoints.
 exec('rm -rf '.$output_path);
 
 // Process each defined spec.
-foreach ($files as $model_yml_path) {
+foreach (get_spec_files($spec_path) as $model_yml_path) {
 
-    // Path generation.s
-    $model_pathinfo = pathinfo($model_yml_path);
-    $model_pathinfo['dirname'] = str_replace($spec_path, '', $model_pathinfo['dirname']);
+    // Get info about this is spec.
+    $info = parse_spec_file($spec_path, $model_yml_path);
 
-    // Namespacing for this class.
-    $namespace = str_replace('/', '\\', $model_pathinfo['dirname']);
+    console_output('%s\\%s', $info['namespace'], $info['class_name']);
 
-    // Class name.
-    $class_name = $model_pathinfo['filename'];
-
-    echo "Processing $namespace\\$class_name\n";
-
-    // Defined spec document.
-    $model_spec_contents = file_get_contents($model_yml_path);
-
-    if (empty($model_spec_contents)) {
+    // No data.
+    if (empty($info['spec'])) {
+        console_output('...skipped.');
         continue;
     }
 
-    // Get the defined spec.
-    $model_spec = Yaml::parse($model_spec_contents);
-
-    // Data for the class tmeplate.
-    $placeholders = [
-        'namespace' => $namespace,
-        'class'     => $class_name,
-        'spec'      => $model_spec,
-    ];
-
     // Generate the class.
-    $contents = "<?php\n".generateClass($placeholders);
+    $contents = "<?php\n".generate_class_content($info);
 
     // Destination path for this class.
-    $model_output_path = $output_path.$model_pathinfo['dirname'];
+    $model_output_path = $output_path.$info['path'];
 
     // Create folder(s).
     if (!file_exists($model_output_path)) {
@@ -74,5 +41,5 @@ foreach ($files as $model_yml_path) {
     }
 
     // Create the class file.
-    file_put_contents($model_output_path.'/'.$class_name.'.php', $contents);
+    file_put_contents($model_output_path.'/'.$info['class_name'].'.php', $contents);
 }

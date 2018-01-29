@@ -1,0 +1,42 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Yaml\Yaml;
+
+require __DIR__.'/../vendor/autoload.php';
+require __DIR__.'/helpers.php';
+
+$root_path = realpath(__DIR__.'/..');
+
+// Path to spec definitions.
+$spec_path = "$root_path/spec";
+
+$endpoints = [];
+
+// Process each defined spec.
+foreach (get_spec_files($spec_path) as $model_yml_path) {
+
+    // Get info about this is spec.
+    $info = parse_spec_file($spec_path, $model_yml_path);
+
+    $endpoint_parameters = array_keys(array_get($info, 'spec.parameters', []));
+
+    array_walk($endpoint_parameters, function(&$value, $key) {
+        $value = '$'.$value;
+    });
+
+    $endpoint = sprintf(array_get($info, 'spec.endpoint'), ...$endpoint_parameters);
+
+    foreach (['get', 'put', 'post', 'delete'] as $method) {
+        foreach (array_get($info, 'spec.'.$method, []) as $method => $settings) {
+            $endpoints[sprintf('%s%s', $endpoint, array_get($settings, 'endpoint'))] = [];
+        }
+    }
+    
+}
+
+ksort($endpoints);
+
+foreach ($endpoints as $endpoint => $details) {
+    console_output($endpoint);
+}
