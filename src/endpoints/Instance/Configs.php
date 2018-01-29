@@ -74,6 +74,6 @@ class Configs extends Base
     {
         return $this->call('post', '', array_merge([
             'kernel' => $kernel
-        , $optional]));
+        ], $optional));
     }
 }

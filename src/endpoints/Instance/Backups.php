@@ -74,6 +74,6 @@ class Backups extends Base
     {
         return $this->call('post', '', array_merge([
             'label' => $label
-        , $optional]));
+        ], $optional));
     }
 }

@@ -280,10 +280,9 @@ function generate_post_function_payload($method_settings)
 
     [$part1_length, $part2_length, $result] = code_alignment($entries, ['raw' => true]);
 
-
     $optional = array_get($method_settings, 'optional', []);
 
-    return "array_merge([\n".$result.'        , $optional])';
+    return "array_merge([\n".$result.'        ], $optional)';
 }
 
 function code_alignment($data, $options = [])

@@ -101,6 +101,6 @@ class Domains extends Base
         return $this->call('post', '', array_merge([
             'domain' => $domain
             'type'   => $type
-        , $optional]));
+        ], $optional));
     }
 }

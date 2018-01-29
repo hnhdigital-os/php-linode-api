@@ -101,6 +101,6 @@ class Records extends Base
     {
         return $this->call('post', '', array_merge([
             'type' => $type
-        , $optional]));
+        ], $optional));
     }
 }
