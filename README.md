@@ -58,16 +58,30 @@ $regions = (new Regions())->search()->all();
 
 ### Region
 
-Creating a new Region instance provides a model with attributes automatically loaded from the endpoint.
+Creating a new Region instance with the parameter set to `true`, will provide a model populated with the endpoint's result.
 
 ```php
 $region = new Region('us-east-1a', true);
+
+echo $region->id.' ('.$region->country.')';
+```
+```
+us-east-1a (US)
 ```
 
-Calling the get method directly returns an array from the endpoint.
+Calling the `get` method directly returns an array from the endpoint.
 
 ```php
 $result = (new Region('us-east-1a'))->get();
+
+print_r($result);
+```
+```
+Array
+(
+    [id] => us-east-1a
+    [country] => US
+)
 ```
 
 ## Contributing
