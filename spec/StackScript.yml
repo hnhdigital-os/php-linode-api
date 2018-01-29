@@ -2,6 +2,7 @@ endpoint: linode/stackscripts/%s
 description: Return a particular region.
 url: https://developers.linode.com/v4/reference/endpoints/linode/stackscripts
 load-method: get
+fillable: true
 
 parameters:
 
@@ -14,6 +15,7 @@ get:
     url: https://developers.linode.com/v4/reference/endpoints/linode/stackscripts/$id#GET
     description: Returns information about this StackScript.
     endpoint: 
+    auto-fill: true
 
 put:
 

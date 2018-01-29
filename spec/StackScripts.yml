@@ -11,6 +11,11 @@ get:
     endpoint:
     search: true
 
+    factory:
+      class: StackScript
+      parameters:
+        - id
+
     filterable:
 
       label:
