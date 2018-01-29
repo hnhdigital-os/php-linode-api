@@ -65,5 +65,20 @@ class LinodeKernelsEndpointTest extends BaseTest
 
         // Setup test server at path and with response data.
         $this->mockRequest('GET', '/linode/kernels/linode/latest-64bit', $data);
+
+        // Create the same object that it should return.
+        $kernel = new Kernel('linode/latest-64bit');
+
+        // Data.
+        $result = $kernel->get();
+
+        // Create the same object that it should return.
+        $populated_kernel = new Kernel('linode/latest-64bit', $data);
+
+        // Compare.
+        $this->assertEquals($data, $result);
+
+        // Compare the populated attributes.
+        $this->assertEquals($populated_kernel->getAttributes(), $kernel->getAttributes());
     }
 }
