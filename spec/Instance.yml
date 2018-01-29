@@ -119,6 +119,16 @@ post:
         type: int
         default: 0
 
+  cancelBackups:
+    description: Cancels the backup service on the given Linode.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/backups/cancel
+    endpoint: /backups/cancel
+
+  enableBackups:
+    description: Enables the backup service on the given Linode.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/backups/enable
+    endpoint: /backups/enable
+
   clone:
     description: Clones a Linode to a new or existing Linode.
     url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/clone

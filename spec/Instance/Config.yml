@@ -1,0 +1,34 @@
+endpoint: linode/instances/%s/configs/%s
+description: Manage a particular config for a given Linode.
+url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/configs/$id
+load-method: get
+
+parameters:
+
+    linode_id:
+      type: int
+
+    config_id:
+      type: int
+
+get:
+
+  get:
+    description: Returns information about this Linode config.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/configs/$id#GET
+    endpoint: 
+
+put:
+
+  update:
+    description: Modifies a given Linode config.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/configs/$id#PUT
+    endpoint: 
+    attributes: true
+
+delete:
+
+  delete:
+    description: Deletes a given Linode config.
+    url: https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/configs/$id#DELETE
+    endpoint: 

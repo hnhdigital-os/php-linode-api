@@ -179,6 +179,32 @@ class Instance extends Base
     }
 
     /**
+     * Cancels the backup service on the given Linode.
+     *
+     * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/backups/cancel
+     *
+     * @return bool
+     */
+    public function cancelBackups()
+    {
+        return $this->call('post', '/backups/cancel', array_merge([
+        ], $optional));
+    }
+
+    /**
+     * Enables the backup service on the given Linode.
+     *
+     * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/backups/enable
+     *
+     * @return bool
+     */
+    public function enableBackups()
+    {
+        return $this->call('post', '/backups/enable', array_merge([
+        ], $optional));
+    }
+
+    /**
      * Clones a Linode to a new or existing Linode.
      *
      * @param string $region   A region ID to provision this Linode in. Required when cloning to a new Linode.
