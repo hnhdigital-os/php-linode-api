@@ -26,6 +26,8 @@ put:
     endpoint: 
     attributes: true
 
+    optional:
+
 delete:
 
   delete:

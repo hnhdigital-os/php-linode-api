@@ -209,8 +209,7 @@ function generate_parameter_list($method_settings)
         $result[] = "\$$name = ".get_default_value($settings);
     }
 
-    $optional = array_get($method_settings, 'optional', []);
-    if (is_array($optional) && count($optional) > 0) {
+    if (array_has($method_settings, 'attributes') || array_has($method_settings, 'optional')) {
         $result[] = '$optional = []';
     }
 
@@ -334,7 +333,31 @@ function generate_put_function_payload($method_settings)
         return '$this->getDirty($optional)';
     }
 
-    return '$optional';
+    $result = '';
+
+    $entries = [];
+
+    foreach (array_get($method_settings, 'parameters', []) as $name => $settings) {
+        $entries[] = ["            '".$name."'", "=> \$$name,"];
+    }
+
+    foreach (array_get($method_settings, 'optional-parameters', []) as $name => $settings) {
+        $entries[] = ["            '".$name."'", "=> \$$name,"];
+    }
+
+    if (count($entries)) {
+        [$part1_length, $part2_length, $result] = code_alignment($entries);
+
+        if (array_has($method_settings, 'optional', [])) {
+            $optional = array_get($method_settings, 'optional', []);
+
+            return "array_merge([\n".$result.'        ], $optional)';
+        }
+    } elseif (array_has($method_settings, 'optional', [])) {
+        return '$optional';
+    }   
+
+    return "[\n".$result.'        ]';
 }
 
 /**

@@ -17,7 +17,7 @@ get:
 
 put:
 
-  update:
+  rdns:
     description: Update RDNS on one IPv6 Address. Set RDNS to null to reset.
     url: https://developers.linode.com/v4/reference/endpoints/networking/ipv6/$address#PUT
     endpoint: 

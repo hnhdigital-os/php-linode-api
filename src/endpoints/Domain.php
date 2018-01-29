@@ -76,9 +76,11 @@ class Domain extends Base
      *
      * @return void
      */
-    public function clone($optional = [])
+    public function clone($domain, $optional = [])
     {
-        return $this->call('put', '/clone', $this->getDirty($optional));
+        return $this->call('put', '/clone', array_merge([
+            'domain' => $domain,
+        ], $optional));
     }
 
     /**

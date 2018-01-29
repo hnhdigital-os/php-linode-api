@@ -69,8 +69,10 @@ class Address extends Base
      *
      * @return void
      */
-    public function update($optional = [])
+    public function rdns($domain)
     {
-        return $this->call('put', '', $optional);
+        return $this->call('put', '', [
+            'domain' => $domain,
+        ]);
     }
 }
