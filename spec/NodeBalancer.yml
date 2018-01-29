@@ -1,0 +1,46 @@
+endpoint: nodebalancers/%s
+description: Manage a particular NodeBalancer your account may access.
+url: https://developers.linode.com/v4/reference/endpoints/nodebalancers/$id
+load-method: get
+
+parameters:
+
+    loadbalancer_id:
+      type: int
+
+get:
+
+  get:
+    description: Returns information about this NodeBalancer.
+    url: https://developers.linode.com/v4/reference/endpoints/nodebalancers/$id#GET
+    endpoint: 
+
+put:
+
+  update:
+    description: Modifies this NodeBalancer.
+
+    url: https://developers.linode.com/v4/reference/endpoints/nodebalancers/$id#PUT
+    endpoint: 
+
+    optional:
+
+      region:
+        type: json
+        description: A region ID to provision this NodeBalancer in.
+      
+      label:
+        type: string
+        description: The label to assign this NodeBalancer. Defaults to "nodebalancer" followed by its ID.
+        validation-regex: "^(?!.*(__|--).*)([A-Za-z])([a-zA-Z0-9_-]{1,30})([A-Za-z])$"
+
+      client_conn_throttle:
+        type: string
+        description: To help mitigate abuse, throttle connections per second, per client. 0 to disable, max of 20.
+
+delete:
+
+  delete:
+    description: Deletes this NodeBalancer and all associated configs and nodes. This action cannot be undone.
+    url: https://developers.linode.com/v4/reference/endpoints/nodebalancers/$id#DELETE
+    endpoint: 

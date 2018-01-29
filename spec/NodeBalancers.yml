@@ -1,0 +1,47 @@
+endpoint: nodebalancers 
+description: Manage the collection of NodeBalancers your account may access.
+url: https://developers.linode.com/v4/reference/endpoints/nodebalancers 
+load-method: search
+
+lists:
+
+  type:
+    master: Master
+    slave: Slave
+
+  status:
+    disabled: Disabled
+    active: Active
+    edit_mode: Edit mode
+
+get:
+
+  search:
+    url: https://developers.linode.com/v4/reference/endpoints/nodebalancers#GET
+    description: Returns a list of NodeBalancers.
+    endpoint: 
+    search: true
+
+post:
+
+  create:
+    description: Creates a new NodeBalancer.
+    url: https://developers.linode.com/v4/reference/endpoints/nodebalancers#POST
+    endpoint: 
+
+    parameters:
+
+      region:
+        type: json
+        description: A region ID to provision this NodeBalancer in.
+
+    optional:
+      
+      label:
+        type: string
+        description: The label to assign this NodeBalancer. Defaults to "nodebalancer" followed by its ID.
+        validation-regex: "^(?!.*(__|--).*)([A-Za-z])([a-zA-Z0-9_-]{1,30})([A-Za-z])$"
+
+      client_conn_throttle:
+        type: string
+        description: To help mitigate abuse, throttle connections per second, per client. 0 to disable, max of 20.
