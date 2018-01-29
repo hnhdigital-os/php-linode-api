@@ -43,7 +43,7 @@ Via composer:
 
 Results returned from any search based endpoint are provided as an instance of that type. This allows you to call any endpoints immediately.
 
-Calling the `search` method only will load the page as it reaches the end of the page of results.
+Results from the `search` method are returns as an object that implements `Iterator` and `Countable`, allowing you to use this in a `foreach` and to use `count`. Linode limits search results to 25 records per page - this is overcome by automatically requesting the next page of records when the last record is reached in the current page.
 
 ```php
 foreach ((new Regions())->search() as $region) {
