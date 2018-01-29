@@ -2,11 +2,9 @@ endpoint: domains/%s
 description: Manage a particular Domain your account may access.
 url: https://developers.linode.com/v4/reference/endpoints/domains/$id
 load-method: get
+fillable: true
 
 parameters:
-
-    linode_id:
-      type: int
 
     domain_id:
       type: int
@@ -16,7 +14,8 @@ get:
   get:
     description: Returns information for the Domain identified by :id.
     url: https://developers.linode.com/v4/reference/endpoints/domains/$id#GET
-    endpoint: 
+    endpoint:
+    auto-fill: true
 
 put:
 

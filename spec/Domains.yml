@@ -22,6 +22,11 @@ get:
     endpoint: 
     search: true
 
+    factory:
+      class: Domain
+      parameters:
+        - id
+
 post:
 
   create:

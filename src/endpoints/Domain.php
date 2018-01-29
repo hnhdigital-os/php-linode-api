@@ -31,12 +31,6 @@ class Domain extends Base
      */
     protected $endpoint = 'domains/%s';
     /**
-     * Linode Id.
-     *
-     * @var int
-     */
-    protected $linode_id;
-    /**
      * Domain Id.
      *
      * @var int
@@ -48,11 +42,11 @@ class Domain extends Base
      *
      * @return void
      */
-    public function __construct($linode_id, $domain_id)
+    public function __construct($domain_id, $fill = [])
     {
-        $this->linode_id = $linode_id;
         $this->domain_id = $domain_id;
-        parent::__construct($linode_id, $domain_id);
+        $this->fillable = true;
+        parent::__construct($domain_id, $fill);
     }
 
     /**
@@ -64,7 +58,7 @@ class Domain extends Base
      */
     public function get()
     {
-        return $this->apiCall('get', '');
+        return $this->apiCall('get', '', [], ['auto-fill' => true]);
     }
 
     /**

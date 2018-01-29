@@ -71,7 +71,7 @@ class Domains extends Base
      */
     public function search()
     {
-        return $this->apiSearch($this->endpoint);
+        return $this->apiSearch($this->endpoint, ['class' => 'Domain', 'parameters' => ['id']]);
     }
 
     /**

@@ -20,26 +20,26 @@ class LinodeTypesEndpointTest extends BaseTest
             'results' => 1,
             'data'    => [
                 [
-                    'id' => 'linode2048.5',
-                    'disk' => 24576,
+                    'id'    => 'linode2048.5',
+                    'disk'  => 24576,
                     'class' => [],
                     'price' => [
-                        'hourly' => 1.44,
+                        'hourly'  => 1.44,
                         'monthly' => 1000,
                     ],
-                    'label' => 'Linode 2048',
+                    'label'  => 'Linode 2048',
                     'addons' => [
                         'backups' => [
                         'price' => [
-                                'hourly' => 0.004,
+                                'hourly'  => 0.004,
                                 'monthly' => 2.5
                             ],
                         ],
                     ],
                     'network_out' => 125,
-                    'memory' => 2048,
-                    'transfer' => 2000,
-                    'vcpus' => 2,
+                    'memory'      => 2048,
+                    'transfer'    => 2000,
+                    'vcpus'       => 2,
                 ],
             ],
             'page' => 1,
@@ -67,26 +67,26 @@ class LinodeTypesEndpointTest extends BaseTest
     {
         // Type data.
         $data = [
-            'id' => 'linode2048.5',
-            'disk' => 24576,
+            'id'    => 'linode2048.5',
+            'disk'  => 24576,
             'class' => [],
             'price' => [
-                'hourly' => 1.44,
+                'hourly'  => 1.44,
                 'monthly' => 1000,
             ],
-            'label' => 'Linode 2048',
+            'label'  => 'Linode 2048',
             'addons' => [
                 'backups' => [
                 'price' => [
-                        'hourly' => 0.004,
+                        'hourly'  => 0.004,
                         'monthly' => 2.5
                     ],
                 ],
             ],
             'network_out' => 125,
-            'memory' => 2048,
-            'transfer' => 2000,
-            'vcpus' => 2,
+            'memory'      => 2048,
+            'transfer'    => 2000,
+            'vcpus'       => 2,
         ];
 
         // Setup test server at path and with response data.
