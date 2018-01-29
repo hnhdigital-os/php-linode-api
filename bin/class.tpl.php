@@ -107,7 +107,7 @@ if (array_has($settings, 'endpoint') && !array_has($settings, 'search')) {
 <?php
 } elseif (array_has($settings, 'endpoint') && array_has($settings, 'search')) {
 ?>
-        return $this->apiSearch($this->endpoint<?= array_get($settings, 'endpoint', '') != '' ? ".'".array_get($settings, 'endpoint', '')."'" : '' ?><?= api_search_factory($settings) ?>);
+        return $this->apiSearch($this->endpoint<?= array_get($settings, 'endpoint', '') != '' ? ".'".array_get($settings, 'endpoint', '')."'" : '' ?><?= api_search_parameters($settings) ?>);
 <?php
 } elseif (array_has($settings, 'model')) {
 ?>

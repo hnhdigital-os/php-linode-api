@@ -287,14 +287,23 @@ function get_default_value($parameter_setting, $options = [])
     return $default_value;
 }
 
-function api_search_factory($method_settings)
+/**
+ * API Search parameters.
+ *
+ * @param array $method_settings
+ *
+ * @return string
+ */
+function api_search_parameters($method_settings)
 {
     $result = '';
 
+    // Search returns a model as the result.
     if (array_has($method_settings, 'factory')) {
         $class = array_get($method_settings, 'factory.class');
         $parameters = implode("', '", array_get($method_settings, 'factory.parameters'));
-        $result = ", ['class' => '$class', 'parameters' => ['$parameters']]";
+
+        return ", ['class' => '$class', 'parameters' => ['$parameters']]";
     }
 
     return $result;
