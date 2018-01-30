@@ -25,3 +25,16 @@ put:
     url: https://developers.linode.com/v4/reference/endpoints/profile#PUT
     endpoint: 
     attributes: true
+
+post:
+
+  password:
+    description: Edits your user's profile.
+    url: https://developers.linode.com/v4/reference/endpoints/profile/password
+    endpoint: /password
+
+    parameters:
+
+        password:
+            type: string
+            description: Password.

@@ -53,7 +53,6 @@ abstract class BaseTest extends TestCase
     /**
      * Mock a GET request.
      *
-     * @param string $method
      * @param string $path
      * @param array  $data
      *
@@ -85,7 +84,6 @@ abstract class BaseTest extends TestCase
     /**
      * Mock a PUT request.
      *
-     * @param string $method
      * @param string $path
      * @param array  $data
      *
@@ -100,6 +98,34 @@ abstract class BaseTest extends TestCase
         $this->http->mock
             ->when()
                 ->methodIs('PUT')
+                ->pathIs($path)
+            ->then()
+                ->body($encoded_data)
+            ->end();
+
+        $this->http->setUp();
+
+        // Set the Linode API to this local server.
+        Auth::setBaseEndpoint('http://localhost:8082/');
+    }
+
+    /**
+     * Mock a POST request.
+     *
+     * @param string $path
+     * @param array  $data
+     *
+     * @return void
+     */
+    protected function mockPostRequest($path, $data = [])
+    {
+        // Encode response.
+        $encoded_data = json_encode($data);
+
+        // Mock the API endpoint and result.
+        $this->http->mock
+            ->when()
+                ->methodIs('POST')
                 ->pathIs($path)
             ->then()
                 ->body($encoded_data)

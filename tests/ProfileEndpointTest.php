@@ -201,4 +201,29 @@ class ProfileEndpointTest extends BaseTest
 
         $this->assertEquals($profile->grants, $populated_profile->grants);
     }
+
+    /**
+     * Test changing password.
+     *
+     * @return void
+     */
+    public function testChangePassword()
+    {
+        // Setup test server at path and with response data.
+        $this->mockPostRequest('/profile/password');
+
+        $post_data = [
+            'password' => 'hunter7',
+        ];
+
+        // Get the profile data from the endpoint.
+        $profile = new Profile();
+
+        // Put the changes, get the latest model back.
+        $profile->password('hunter7');
+
+        $request_body = $this->getRequestBody();
+
+        $this->assertEquals($request_body, $post_data);
+    }
 }

@@ -97,4 +97,20 @@ class Profile extends Base
     {
         return $this->apiCall('put', '', ['json' => $this->getDirty($optional)]);
     }
+
+    /**
+     * Edits your user's profile.
+     *
+     * @param string $password Password.
+     *
+     * @link https://developers.linode.com/v4/reference/endpoints/profile/password
+     *
+     * @return bool
+     */
+    public function password($password)
+    {
+        return $this->apiCall('post', '/password', ['json' => [
+            'password' => $password,
+        ]]);
+    }
 }
