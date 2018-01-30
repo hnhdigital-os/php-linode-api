@@ -45,7 +45,10 @@ class Kernel extends Base
     public function __construct($kernel_id, $fill = [])
     {
         $this->kernel_id = $kernel_id;
+
         $this->fillable = true;
+        $this->fill_method = 'get';
+
         parent::__construct($kernel_id, $fill);
     }
 

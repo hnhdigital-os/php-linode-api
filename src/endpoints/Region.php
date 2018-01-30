@@ -45,7 +45,10 @@ class Region extends Base
     public function __construct($region_id, $fill = [])
     {
         $this->region_id = $region_id;
+
         $this->fillable = true;
+        $this->fill_method = 'get';
+
         parent::__construct($region_id, $fill);
     }
 

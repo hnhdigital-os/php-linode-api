@@ -50,7 +50,10 @@ class Instance extends Base
     public function __construct($linode_id, $fill = [])
     {
         $this->linode_id = $linode_id;
+
         $this->fillable = true;
+        $this->fill_method = 'get';
+
         parent::__construct($linode_id, $fill);
     }
 

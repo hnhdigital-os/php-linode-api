@@ -56,6 +56,13 @@ class Base
     protected $fillable = false;
 
     /**
+     * Method used to auto-fill.
+     *
+     * @var bool
+     */
+    protected $fill_method;
+
+    /**
      * Constructor.
      *
      * @return void
@@ -64,13 +71,23 @@ class Base
     {
         if ($this->fillable) {
             $fill = array_pop($args);
-
-            if (count($fill)) {
-                $this->setAttributes($fill);
-            }
         }
 
         $this->endpoint_placeholders = $args;
+
+        if ($this->fillable) {
+
+            // Fill is set to true, so we use the provided method to auto-retrieve the data.
+            if ($fill === true && is_string($this->fill_method)) {
+                $method = $this->fill_method;
+                $fill = $this->$method();
+            }
+
+            // Set attributes of the fill var is array and has data.
+            if (is_array($fill) && count($fill)) {
+                $this->setAttributes($fill);
+            }
+        }
     }
 
     /**

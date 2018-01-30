@@ -79,7 +79,10 @@ foreach (array_get($spec, 'parameters', []) as $name => $settings) {
 }
 if (array_has($spec, 'fillable')) {
 ?>
+
         $this->fillable = true;
+        $this->fill_method = '<?= array_get($settings, 'load-method', 'get') ?>';
+
 <?php
 }
 ?>

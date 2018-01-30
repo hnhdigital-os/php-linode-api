@@ -45,7 +45,10 @@ class Domain extends Base
     public function __construct($domain_id, $fill = [])
     {
         $this->domain_id = $domain_id;
+
         $this->fillable = true;
+        $this->fill_method = 'get';
+
         parent::__construct($domain_id, $fill);
     }
 
