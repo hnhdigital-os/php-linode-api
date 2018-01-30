@@ -298,9 +298,19 @@ function api_call_parameters($method_settings)
 {
     $result = '';
 
+    $options = [];
+
     // Search returns a model as the result.
     if (array_has($method_settings, 'auto-fill')) {
-        $result = ", [], ['auto-fill' => true]";
+        if (is_string(array_get($method_settings, 'auto-fill'))) {
+            $options[] = "'auto-fill' => '".array_get($method_settings, 'auto-fill')."'";
+        } else {
+            $options[] = "'auto-fill' => true";
+        }
+    }
+
+    if (count($options)) {
+        $result = ', [], ['.implode(', ', $options).']';
     }
 
     return $result;
@@ -402,13 +412,13 @@ function generate_put_function_payload($method_settings)
         if (array_has($method_settings, 'optional', [])) {
             $optional = array_get($method_settings, 'optional', []);
 
-            return "[\'json\' => array_merge([\n".$result.'        ], $optional)]';
+            return "['json' => array_merge([\n".$result.'        ], $optional)]';
         }
     } elseif (array_has($method_settings, 'optional', [])) {
         return '[\'json\' => $optional]';
     }
 
-    return "[\'json\' => [\n".$result.'        ]]';
+    return "['json' => [\n".$result.'        ]]';
 }
 
 /**
@@ -436,7 +446,7 @@ function generate_post_function_payload($method_settings)
 
     $optional = array_get($method_settings, 'optional', []);
 
-    return "[\'json\' => array_merge([\n".$result.'        ], $optional)]';
+    return "['json' => array_merge([\n".$result.'        ], $optional)]';
 }
 
 /**

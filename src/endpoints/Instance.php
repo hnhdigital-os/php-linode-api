@@ -186,7 +186,7 @@ class Instance extends Base
      */
     public function boot($config_id = null)
     {
-        return $this->apiCall('post', '/boot', [\'json\' => array_merge([
+        return $this->apiCall('post', '/boot', ['json' => array_merge([
             'config_id' => $config_id,
         ], $optional)]);
     }
@@ -200,7 +200,7 @@ class Instance extends Base
      */
     public function cancelBackups()
     {
-        return $this->apiCall('post', '/backups/cancel', [\'json\' => array_merge([
+        return $this->apiCall('post', '/backups/cancel', ['json' => array_merge([
         ], $optional)]);
     }
 
@@ -213,7 +213,7 @@ class Instance extends Base
      */
     public function enableBackups()
     {
-        return $this->apiCall('post', '/backups/enable', [\'json\' => array_merge([
+        return $this->apiCall('post', '/backups/enable', ['json' => array_merge([
         ], $optional)]);
     }
 
@@ -236,7 +236,7 @@ class Instance extends Base
      */
     public function clone($region, $type, $optional = [])
     {
-        return $this->apiCall('post', '/clone', [\'json\' => array_merge([
+        return $this->apiCall('post', '/clone', ['json' => array_merge([
             'region' => $region,
             'type'   => $type,
         ], $optional)]);
@@ -251,7 +251,7 @@ class Instance extends Base
      */
     public function kvmify()
     {
-        return $this->apiCall('post', '/kvmify', [\'json\' => array_merge([
+        return $this->apiCall('post', '/kvmify', ['json' => array_merge([
         ], $optional)]);
     }
 
@@ -264,7 +264,7 @@ class Instance extends Base
      */
     public function mutate()
     {
-        return $this->apiCall('post', '/mutate', [\'json\' => array_merge([
+        return $this->apiCall('post', '/mutate', ['json' => array_merge([
         ], $optional)]);
     }
 
@@ -279,7 +279,7 @@ class Instance extends Base
      */
     public function reboot($config_id = null)
     {
-        return $this->apiCall('post', '/reboot', [\'json\' => array_merge([
+        return $this->apiCall('post', '/reboot', ['json' => array_merge([
             'config_id' => $config_id,
         ], $optional)]);
     }
@@ -301,7 +301,7 @@ class Instance extends Base
      */
     public function rebuild($root_pass, $optional = [])
     {
-        return $this->apiCall('post', '/rebuild', [\'json\' => array_merge([
+        return $this->apiCall('post', '/rebuild', ['json' => array_merge([
             'root_pass' => $root_pass,
         ], $optional)]);
     }
@@ -317,7 +317,7 @@ class Instance extends Base
      */
     public function rescue($devices)
     {
-        return $this->apiCall('post', '/rescue', [\'json\' => array_merge([
+        return $this->apiCall('post', '/rescue', ['json' => array_merge([
             'devices' => $devices,
         ], $optional)]);
     }
@@ -333,7 +333,7 @@ class Instance extends Base
      */
     public function resize($devices)
     {
-        return $this->apiCall('post', '/resize', [\'json\' => array_merge([
+        return $this->apiCall('post', '/resize', ['json' => array_merge([
             'devices' => $devices,
         ], $optional)]);
     }
@@ -350,7 +350,7 @@ class Instance extends Base
      */
     public function restore($backup_id, $overwrite = false)
     {
-        return $this->apiCall('post', "$entry", [\'json\' => array_merge([
+        return $this->apiCall('post', "$entry", ['json' => array_merge([
             'backup_id' => $backup_id,
             'overwrite' => $overwrite,
         ], $optional)]);
@@ -365,7 +365,7 @@ class Instance extends Base
      */
     public function shutdown()
     {
-        return $this->apiCall('post', '/shutdown', [\'json\' => array_merge([
+        return $this->apiCall('post', '/shutdown', ['json' => array_merge([
         ], $optional)]);
     }
 

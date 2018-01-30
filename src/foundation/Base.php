@@ -182,8 +182,12 @@ class Base
         $result = $this->makeApiCall($method, $uri, $payload, $settings);
 
         // Fill this model with the returned data.
-        if (isset($settings['auto-fill']) && $settings['auto-fill'] == true) {
-            $this->setAttributes($result);
+        if (isset($settings['auto-fill'])) {
+            if ($settings['auto-fill'] === true) {
+                $this->setAttributes($result);
+            } elseif (strlen($var_name = $settings['auto-fill'])) {
+                $this->$var_name = $result;
+            }
         }
 
         return $result;

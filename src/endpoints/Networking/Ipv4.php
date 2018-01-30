@@ -63,7 +63,7 @@ class Ipv4 extends Base
      */
     public function create($linode_id)
     {
-        return $this->apiCall('post', '', [\'json\' => array_merge([
+        return $this->apiCall('post', '', ['json' => array_merge([
             'linode_id' => $linode_id,
         ], $optional)]);
     }

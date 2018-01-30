@@ -68,7 +68,7 @@ class Volumes extends Base
      */
     public function create($label, $region, $optional = [])
     {
-        return $this->apiCall('post', '', [\'json\' => array_merge([
+        return $this->apiCall('post', '', ['json' => array_merge([
             'label'  => $label,
             'region' => $region,
         ], $optional)]);

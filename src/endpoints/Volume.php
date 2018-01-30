@@ -98,7 +98,7 @@ class Volume extends Base
      */
     public function attach($linode_id, $config_id = null)
     {
-        return $this->apiCall('post', '/attach', [\'json\' => array_merge([
+        return $this->apiCall('post', '/attach', ['json' => array_merge([
             'linode_id' => $linode_id,
             'config_id' => $config_id,
         ], $optional)]);
@@ -115,7 +115,7 @@ class Volume extends Base
      */
     public function clone($label)
     {
-        return $this->apiCall('post', '/clone', [\'json\' => array_merge([
+        return $this->apiCall('post', '/clone', ['json' => array_merge([
             'label' => $label,
         ], $optional)]);
     }
@@ -129,7 +129,7 @@ class Volume extends Base
      */
     public function detach()
     {
-        return $this->apiCall('post', '/detach', [\'json\' => array_merge([
+        return $this->apiCall('post', '/detach', ['json' => array_merge([
         ], $optional)]);
     }
 
@@ -144,7 +144,7 @@ class Volume extends Base
      */
     public function resize($size)
     {
-        return $this->apiCall('post', '/resize', [\'json\' => array_merge([
+        return $this->apiCall('post', '/resize', ['json' => array_merge([
             'size' => $size,
         ], $optional)]);
     }
