@@ -148,9 +148,7 @@ class Base
     public function getDirty($data = [])
     {
         // Allocate provided values, so these can appear dirty.
-        foreach ($data as $key => $value) {
-            $this->attributes[$key] = $value;
-        }
+        $this->setAttributes($data);
 
         $dirty = [];
 
