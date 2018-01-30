@@ -32,6 +32,13 @@ class Profile extends Base
     protected $endpoint = 'profile';
 
     /**
+     * Grants.
+     *
+     * @var array
+     */
+    public $grants = [];
+
+    /**
      * This model is fillable.
      *
      * @type bool
@@ -65,6 +72,18 @@ class Profile extends Base
     public function get()
     {
         return $this->apiCall('get', '', [], ['auto-fill' => true]);
+    }
+
+    /**
+     * Return grants for your user. If your user is unrestricted, this returns an error. Hides entities that your user has no access to that would be visible to an unrestricted user.
+     *
+     * @link https://developers.linode.com/v4/reference/endpoints/profile/grants#GET
+     *
+     * @return array
+     */
+    public function grants()
+    {
+        return $this->apiCall('get', '/grants', [], ['auto-fill' => 'grants']);
     }
 
     /**

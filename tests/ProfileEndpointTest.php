@@ -7,6 +7,11 @@ use HnhDigital\LinodeApi\Profiles;
 
 class ProfileEndpointTest extends BaseTest
 {
+    /**
+     * Profile data.
+     *
+     * @var array
+     */
     private $data = [
         'uuid'                => 123,
         'username'            => 'example_user',
@@ -26,6 +31,75 @@ class ProfileEndpointTest extends BaseTest
         'authorized_keys'      => 'ssh-rsa AADDDDB3NzaC1yc2EAAAADAQABAAACAQDzP5sZlvUR9nZPy0WrklktNXffq+nQoEYUdVJ0hpIzZs+KqjZ3CDbsJZF0g0pn1/gpY9oSEeXzFpWasdkjlfasdf09asldf+O+y8w6rbPe8IyP1mext4cmBe6g/nHAjw/k0rS6cuUFZu++snG0qubymE9gMZ3X0ac92TP7tk0dEwq1fbjumhqNmNyqSbt5j8pLuLRhYHhVszmwnuKjeGjm9mJLJGnd5V6IdZWEIhCjrNgNr1H+fVNI87ryFE31i/i/bnHcbnkNdAmDc2EQ2gJ33vXg8D8Nf2aI+K+e3t9MiFVTJmzAILQpvZQj2YV4mfOt+GSTUJ4VdgH9dNC/3lA0yoP6YoFYw0cdTKhJ0MotmR9iZepbJfbuXxAFOECJuC1bxFtUam3fIsGqj3vXi1R6CzRzxNERqPGLiFcXH8z0VTwXA1v+iflVd4KqihnwNtU+45TXTtFY0twLQRauB9qo9slvnhYlHqQZb8SBYw5WltX3MBQpyLTSZLQLqIKZVgQRKKF413fT52vMF54zk5SpImm5qY5Q1E4od00UJ1x4kFe0fTUQWVgeYvL8AgFx/idUsVs9r3jRPVTUnQZNB2D+7Cyf9dUFjjpiuH3AMMZyRYfJbh/Chg8J6QXYZyEQCxMRa9/lm2rRCVfGbcfb5zgKsV/HRHI/O1F9cZ9JvykwQ== someguy@someplace.com',
         'two_factor_auth'      => true,
         'restricted'           => false,
+    ];
+
+    /**
+     * Grants data.
+     *
+     * @var array
+     */
+    private $grants_data = [
+        'global' => [
+            'add_linodes'           => true,
+            'add_nodebalancers'     => true,
+            'add_domains'           => true,
+            'add_longview'          => true,
+            'add_stackscripts'      => true,
+            'longview_subscription' => true,
+            'add_images'            => true,
+            'add_volumes'           => true,
+            'account_access'        => 'read_write',
+            'cancel_account'        => false,
+        ],
+        'stackscript' => [
+            [
+                'id'          => 456,
+                'label'       => 'Wordpress',
+                'permissions' => 'read_only'
+            ],
+        ],
+        'nodebalancer' => [
+            [
+                'id'          => 567,
+                'label'       => 'linode123',
+                'permissions' => 'read_only'
+            ],
+        ],
+        'linode' => [
+            [
+                'id'          => 123,
+                'label'       => 'linode123',
+                'permissions' => 'read_write'
+            ],
+        ],
+        'domain' => [
+            [
+                'id'          => 432,
+                'label'       => 'example.com',
+                'permissions' => 'read_write'
+            ],
+        ],
+        'volume' => [
+            [
+                'id'          => 987,
+                'label'       => 'example.com',
+                'permissions' => null
+            ],
+        ],
+        'image' => [
+            [
+                'id'          => 903,
+                'label'       => 'example.com',
+                'permissions' => 'read_write'
+            ],
+        ],
+        'longview' => [
+            [
+                'id'          => 231,
+                'label'       => 'example.com',
+                'permissions' => 'read_write'
+            ],
+        ]
     ];
 
     /**
@@ -88,7 +162,7 @@ class ProfileEndpointTest extends BaseTest
         // Take a snapshot of current data.
         $data = $this->data;
 
-        // Update to match what we do to the model.
+        // Update to match what we did to the model.
         $data['username'] = 'jsmith';
         $data['email'] = 'jsmith@mycompany.com';
 
@@ -103,5 +177,28 @@ class ProfileEndpointTest extends BaseTest
         // Response should match.
         $this->assertEquals($response_data, $data);
         $this->assertEquals($dirty, $request_body);
+    }
+
+    /**
+     * Test Grants for profile.
+     *
+     * @return void
+     */
+    public function testGetGrants()
+    {
+        // Setup test server at path and with response data.
+        $this->mockGetRequest('/profile/grants', $this->grants_data);
+
+        // Get the profile data from the endpoint.
+        $profile = new Profile();
+        $response_data = $profile->grants();
+
+        $this->assertEquals($response_data, $this->grants_data);
+
+        // Create the same object that it should return.
+        $populated_profile = new Profile();
+        $populated_profile->grants = $this->grants_data;
+
+        $this->assertEquals($profile->grants, $populated_profile->grants);
     }
 }

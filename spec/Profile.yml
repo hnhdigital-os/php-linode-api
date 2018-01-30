@@ -12,6 +12,12 @@ get:
     endpoint:
     auto-fill: true
 
+  grants:
+    description: Return grants for your user. If your user is unrestricted, this returns an error. Hides entities that your user has no access to that would be visible to an unrestricted user.
+    url: https://developers.linode.com/v4/reference/endpoints/profile/grants#GET
+    endpoint: /grants
+    auto-fill: grants
+
 put:
 
   update:
