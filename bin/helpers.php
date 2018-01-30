@@ -381,7 +381,7 @@ function generate_put_function_payload($method_settings)
     // the optional array to update the attributes
     // before checking the dirty ones.
     if (array_has($method_settings, 'attributes')) {
-        return '$this->getDirty($optional)';
+        return '[\'json\' => $this->getDirty($optional)]';
     }
 
     $result = '';
@@ -402,13 +402,13 @@ function generate_put_function_payload($method_settings)
         if (array_has($method_settings, 'optional', [])) {
             $optional = array_get($method_settings, 'optional', []);
 
-            return "array_merge([\n".$result.'        ], $optional)';
+            return "[\'json\' => array_merge([\n".$result.'        ], $optional)]';
         }
     } elseif (array_has($method_settings, 'optional', [])) {
-        return '$optional';
+        return '[\'json\' => $optional]';
     }
 
-    return "[\n".$result.'        ]';
+    return "[\'json\' => [\n".$result.'        ]]';
 }
 
 /**
@@ -436,7 +436,7 @@ function generate_post_function_payload($method_settings)
 
     $optional = array_get($method_settings, 'optional', []);
 
-    return "array_merge([\n".$result.'        ], $optional)';
+    return "[\'json\' => array_merge([\n".$result.'        ], $optional)]';
 }
 
 /**
