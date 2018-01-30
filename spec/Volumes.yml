@@ -45,6 +45,8 @@ post:
         type: int
         default: 20
         description: The size in GiBs that you wish to make your new volume. Defaults to 20 GiB, can be as large as 1024 GiB (1 TiB).
+        validation:
+          range: 1-1024
 
       linode_id:
         type: int

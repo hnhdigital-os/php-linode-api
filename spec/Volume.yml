@@ -11,7 +11,7 @@ parameters:
 get:
 
   get:
-    description: eturns information about this Volume.
+    description: Returns information about this Volume.
     url: https://developers.linode.com/v4/reference/endpoints/volumes/$id#GET
     endpoint: 
 
