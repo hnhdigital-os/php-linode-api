@@ -70,9 +70,9 @@ class Address extends Base
      */
     public function rdns($domain)
     {
-        return $this->apiCall('put', '', [
+        return $this->apiCall('put', '', [\'json\' => [
             'domain' => $domain,
-        ]);
+        ]]);
     }
 
     /**

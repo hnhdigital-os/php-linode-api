@@ -97,8 +97,8 @@ class Records extends Base
      */
     public function create($type, $optional = [])
     {
-        return $this->apiCall('post', '', array_merge([
+        return $this->apiCall('post', '', [\'json\' => array_merge([
             'type' => $type,
-        ], $optional));
+        ], $optional)]);
     }
 }

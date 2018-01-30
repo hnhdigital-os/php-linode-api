@@ -87,8 +87,8 @@ class NodeBalancers extends Base
      */
     public function create($region, $optional = [])
     {
-        return $this->apiCall('post', '', array_merge([
+        return $this->apiCall('post', '', [\'json\' => array_merge([
             'region' => $region,
-        ], $optional));
+        ], $optional)]);
     }
 }

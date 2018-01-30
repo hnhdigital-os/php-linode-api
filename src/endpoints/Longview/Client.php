@@ -71,7 +71,7 @@ class Client extends Base
      */
     public function update($optional = [])
     {
-        return $this->apiCall('put', '', $optional);
+        return $this->apiCall('put', '', ['json' => $optional]);
     }
 
     /**

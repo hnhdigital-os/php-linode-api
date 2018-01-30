@@ -85,9 +85,9 @@ class Domain extends Base
      */
     public function clone($domain, $optional = [])
     {
-        return $this->apiCall('put', '/clone', array_merge([
+        return $this->apiCall('put', '/clone', [\'json\' => array_merge([
             'domain' => $domain,
-        ], $optional));
+        ], $optional)]);
     }
 
     /**
@@ -112,7 +112,7 @@ class Domain extends Base
      */
     public function update($optional = [])
     {
-        return $this->apiCall('put', '', $optional);
+        return $this->apiCall('put', '', ['json' => $optional]);
     }
 
     /**

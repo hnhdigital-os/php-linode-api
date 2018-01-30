@@ -75,7 +75,7 @@ class Config extends Base
      */
     public function update($optional = [])
     {
-        return $this->apiCall('put', '', $this->getDirty($optional));
+        return $this->apiCall('put', '', ['json' => $this->getDirty($optional)]);
     }
 
     /**

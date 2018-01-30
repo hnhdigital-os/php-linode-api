@@ -69,10 +69,10 @@ class StackScripts extends Base
      */
     public function update($label, $images, $script, $optional = [])
     {
-        return $this->apiCall('post', '', array_merge([
+        return $this->apiCall('post', '', [\'json\' => array_merge([
             'label'  => $label,
             'images' => $images,
             'script' => $script,
-        ], $optional));
+        ], $optional)]);
     }
 }
