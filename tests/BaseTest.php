@@ -81,4 +81,53 @@ abstract class BaseTest extends TestCase
         // Ensure the mock server responds with the same data.
         $this->assertSame($encoded_data, file_get_contents('http://localhost:8082'.$path));
     }
+
+    /**
+     * Mock a PUT request.
+     *
+     * @param string $method
+     * @param string $path
+     * @param array  $data
+     *
+     * @return void
+     */
+    protected function mockPutRequest($path, $data)
+    {
+        // Encode response.
+        $encoded_data = json_encode($data);
+
+        // Mock the API endpoint and result.
+        $this->http->mock
+            ->when()
+                ->methodIs('PUT')
+                ->pathIs($path)
+            ->then()
+                ->body($encoded_data)
+            ->end();
+
+        $this->http->setUp();
+
+        // Set the Linode API to this local server.
+        Auth::setBaseEndpoint('http://localhost:8082/');
+    }
+
+    /**
+     * Get the request body that our test server received.
+     *
+     * @return array|string
+     */
+    protected function getRequestBody()
+    {
+        $request = $this->http->requests->last();
+
+        $contents = (string) $request->getBody();
+
+        $decoded_contents = json_decode($contents, true);
+
+        if (json_last_error() === JSON_ERROR_NONE) {
+            return $decoded_contents;
+        }
+
+        return $contents;
+    }
 }

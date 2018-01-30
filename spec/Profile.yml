@@ -1,0 +1,21 @@
+endpoint: profile
+description: Profile.
+url: https://developers.linode.com/v4/reference/profile
+load-method: get
+fillable: true
+
+get:
+
+  get:
+    description: Returns your user information.
+    url: https://developers.linode.com/v4/reference/endpoints/profile#GET
+    endpoint:
+    auto-fill: true
+
+put:
+
+  update:
+    description: Edits your user's profile.
+    url: https://developers.linode.com/v4/reference/endpoints/profile#PUT
+    endpoint: 
+    attributes: true

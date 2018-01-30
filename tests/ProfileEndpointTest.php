@@ -64,18 +64,44 @@ class ProfileEndpointTest extends BaseTest
         // Create an existing profile.
         $profile = new Profile($this->data);
 
-        // Setup test server at path and with response data.
-        //$this->mockRequest('PUT', '/profile', $this->data);
-
+        // Update the username.
         $profile->username = 'jsmith';
 
+        // Check that the change worked.
+        $this->assertEquals($profile->username, 'jsmith');
+
+        // Update email.
+        $profile->email = 'jsmith@mycompany.com';
+
+        // Check that the change worked.
+        $this->assertEquals($profile->email, 'jsmith@mycompany.com');
+
+        // This is what we expect in our dirty array.
         $dirty = [
             'username' => 'jsmith',
+            'email'    => 'jsmith@mycompany.com',
         ];
 
         // Compare.
         $this->assertEquals($dirty, $profile->getDirty());
 
-        //$profile->update();
+        // Take a snapshot of current data.
+        $data = $this->data;
+
+        // Update to match what we do to the model.
+        $data['username'] = 'jsmith';
+        $data['email'] = 'jsmith@mycompany.com';
+
+        // Setup test server at path and with response data.
+        $this->mockPutRequest('/profile', $data);
+
+        // Put the changes, get the latest model back.
+        $response_data = $profile->update();
+
+        $request_body = $this->getRequestBody();
+
+        // Response should match.
+        $this->assertEquals($response_data, $data);
+        $this->assertEquals($dirty, $request_body);
     }
 }
