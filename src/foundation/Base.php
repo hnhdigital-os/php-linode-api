@@ -69,21 +69,27 @@ class Base
      */
     public function __construct(...$args)
     {
+        // Model is set be fillable, last item is our fill data or
+        // indicator to run the fill method.
         if ($this->fillable) {
             $fill = array_pop($args);
         }
 
+        // Set the endpoint placeholders. Endpoints use sprintf to generate.
         $this->endpoint_placeholders = $args;
 
+        // Model is fillable, let's check the fill data or indicator to fill.
         if ($this->fillable) {
 
-            // Fill is set to true, so we use the provided method to auto-retrieve the data.
+            // Fill is set to true, so we use the provided method
+            // to auto-retrieve the data.
             if ($fill === true && is_string($this->fill_method)) {
                 $method = $this->fill_method;
                 $fill = $this->$method();
             }
 
-            // Set attributes of the fill var is array and has data.
+            // The fill variable is an array and has items - allocate
+            // these to the attributes array.
             if (is_array($fill) && count($fill)) {
                 $this->setAttributes($fill);
             }
@@ -99,6 +105,9 @@ class Base
      */
     private function setAttributes($attributes)
     {
+        // Allocate each key/value pair to the attributes array
+        // and the original attributes array.
+        // We compare these two array's to calculate what's dirty.
         foreach ($attributes as $key => $value) {
             $this->attributes[$key] = $value;
             $this->original_attributes[$key] = $value;
@@ -147,7 +156,8 @@ class Base
 
         // Check attributes against the original attributes array.
         foreach ($this->attributes as $key => $value) {
-            if (!isset($this->original_attributes[$key]) || $value != $this->original_attributes[$key]) {
+            if (!isset($this->original_attributes[$key])
+             || $value != $this->original_attributes[$key]) {
                 $dirty[$key] = $value;
             }
         }
@@ -167,6 +177,8 @@ class Base
      */
     protected function apiCall($method, $uri = '', $payload = [], $settings = [])
     {
+        // Make the call to the endpoint with the given method, uri,
+        // payload and any settings that we need to pass on.
         $result = $this->makeApiCall($method, $uri, $payload, $settings);
 
         // Fill this model with the returned data.
@@ -178,7 +190,8 @@ class Base
     }
 
     /**
-     * Search.
+     * This API call returns a search object that handles the more complex
+     * needs of a search based request.
      *
      * @param string $endpoint
      *
@@ -186,7 +199,11 @@ class Base
      */
     protected function apiSearch($endpoint, $factory_settings = [])
     {
-        return new ApiSearch($endpoint, $this->endpoint_placeholders, $factory_settings);
+        return new ApiSearch(
+            $endpoint,
+            $this->endpoint_placeholders,
+            $factory_settings
+        );
     }
 
     /**
