@@ -138,6 +138,34 @@ abstract class BaseTest extends TestCase
     }
 
     /**
+     * Mock a DELETE request.
+     *
+     * @param string $path
+     * @param array  $data
+     *
+     * @return void
+     */
+    protected function mockDeleteRequest($path, $data = [])
+    {
+        // Encode response.
+        $encoded_data = json_encode($data);
+
+        // Mock the API endpoint and result.
+        $this->http->mock
+            ->when()
+                ->methodIs('DELETE')
+                ->pathIs($path)
+            ->then()
+                ->body($encoded_data)
+            ->end();
+
+        $this->http->setUp();
+
+        // Set the Linode API to this local server.
+        Auth::setBaseEndpoint('http://localhost:8082/');
+    }
+
+    /**
      * Get the request body that our test server received.
      *
      * @return array|string

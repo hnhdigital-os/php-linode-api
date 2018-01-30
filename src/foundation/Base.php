@@ -103,14 +103,17 @@ class Base
      *
      * @return void
      */
-    private function setAttributes($attributes)
+    private function setAttributes($attributes, $change_only = false)
     {
         // Allocate each key/value pair to the attributes array
         // and the original attributes array.
         // We compare these two array's to calculate what's dirty.
         foreach ($attributes as $key => $value) {
             $this->attributes[$key] = $value;
-            $this->original_attributes[$key] = $value;
+
+            if (!$change_only) {
+                $this->original_attributes[$key] = $value;
+            }
         }
     }
 
@@ -148,7 +151,7 @@ class Base
     public function getDirty($data = [])
     {
         // Allocate provided values, so these can appear dirty.
-        $this->setAttributes($data);
+        $this->setAttributes($data, true);
 
         $dirty = [];
 
