@@ -63,7 +63,7 @@ class Volume extends Base
     }
 
     /**
-     * eturns information about this Volume.
+     * Returns information about this Volume.
      *
      * @link https://developers.linode.com/v4/reference/endpoints/volumes/$id#GET
      *
@@ -83,7 +83,7 @@ class Volume extends Base
      */
     public function update($optional = [])
     {
-        return $this->call('put', '', $this->getDirty($optional));
+        return $this->apiCall('put', '', $this->getDirty($optional));
     }
 
     /**
@@ -98,7 +98,7 @@ class Volume extends Base
      */
     public function attach($linode_id, $config_id = null)
     {
-        return $this->call('post', '/attach', array_merge([
+        return $this->apiCall('post', '/attach', array_merge([
             'linode_id' => $linode_id,
             'config_id' => $config_id,
         ], $optional));
@@ -115,7 +115,7 @@ class Volume extends Base
      */
     public function clone($label)
     {
-        return $this->call('post', '/clone', array_merge([
+        return $this->apiCall('post', '/clone', array_merge([
             'label' => $label,
         ], $optional));
     }
@@ -129,7 +129,7 @@ class Volume extends Base
      */
     public function detach()
     {
-        return $this->call('post', '/detach', array_merge([
+        return $this->apiCall('post', '/detach', array_merge([
         ], $optional));
     }
 
@@ -144,7 +144,7 @@ class Volume extends Base
      */
     public function resize($size)
     {
-        return $this->call('post', '/resize', array_merge([
+        return $this->apiCall('post', '/resize', array_merge([
             'size' => $size,
         ], $optional));
     }
@@ -158,6 +158,6 @@ class Volume extends Base
      */
     public function delete()
     {
-        return $this->call('delete', '');
+        return $this->apiCall('delete', '');
     }
 }

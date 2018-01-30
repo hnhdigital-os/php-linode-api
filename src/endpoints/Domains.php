@@ -96,7 +96,7 @@ class Domains extends Base
      */
     public function create($domain, $type, $optional = [])
     {
-        return $this->call('post', '', array_merge([
+        return $this->apiCall('post', '', array_merge([
             'domain' => $domain,
             'type'   => $type,
         ], $optional));

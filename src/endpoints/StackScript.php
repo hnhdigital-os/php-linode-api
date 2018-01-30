@@ -86,7 +86,7 @@ class StackScript extends Base
      */
     public function update($optional = [])
     {
-        return $this->call('put', '', $this->getDirty($optional));
+        return $this->apiCall('put', '', $this->getDirty($optional));
     }
 
     /**
@@ -98,6 +98,6 @@ class StackScript extends Base
      */
     public function delete()
     {
-        return $this->call('delete', '');
+        return $this->apiCall('delete', '');
     }
 }

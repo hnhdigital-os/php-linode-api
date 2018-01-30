@@ -64,7 +64,7 @@ class Clients extends Base
      */
     public function create($optional = [])
     {
-        return $this->call('post', '', array_merge([
+        return $this->apiCall('post', '', array_merge([
         ], $optional));
     }
 }

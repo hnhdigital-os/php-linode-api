@@ -78,7 +78,7 @@ class Disk extends Base
      */
     public function update($optional = [])
     {
-        return $this->call('put', '', $this->getDirty($optional));
+        return $this->apiCall('put', '', $this->getDirty($optional));
     }
 
     /**
@@ -92,7 +92,7 @@ class Disk extends Base
      */
     public function password($password)
     {
-        return $this->call('post', '/password', array_merge([
+        return $this->apiCall('post', '/password', array_merge([
             'password' => $password,
         ], $optional));
     }
@@ -108,7 +108,7 @@ class Disk extends Base
      */
     public function resize($size)
     {
-        return $this->call('post', '/resize', array_merge([
+        return $this->apiCall('post', '/resize', array_merge([
             'size' => $size,
         ], $optional));
     }
@@ -122,6 +122,6 @@ class Disk extends Base
      */
     public function delete()
     {
-        return $this->call('delete', '');
+        return $this->apiCall('delete', '');
     }
 }

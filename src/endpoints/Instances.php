@@ -101,7 +101,7 @@ class Instances extends Base
      */
     public function create($region, $type, $optional = [])
     {
-        return $this->call('post', '', array_merge([
+        return $this->apiCall('post', '', array_merge([
             'region' => $region,
             'type'   => $type,
         ], $optional));

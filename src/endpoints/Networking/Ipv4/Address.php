@@ -70,7 +70,7 @@ class Address extends Base
      */
     public function rdns($domain)
     {
-        return $this->call('put', '', [
+        return $this->apiCall('put', '', [
             'domain' => $domain,
         ]);
     }
@@ -84,6 +84,6 @@ class Address extends Base
      */
     public function delete()
     {
-        return $this->call('delete', '');
+        return $this->apiCall('delete', '');
     }
 }

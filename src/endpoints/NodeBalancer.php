@@ -73,7 +73,7 @@ class NodeBalancer extends Base
      */
     public function update($optional = [])
     {
-        return $this->call('put', '', $optional);
+        return $this->apiCall('put', '', $optional);
     }
 
     /**
@@ -85,6 +85,6 @@ class NodeBalancer extends Base
      */
     public function delete()
     {
-        return $this->call('delete', '');
+        return $this->apiCall('delete', '');
     }
 }

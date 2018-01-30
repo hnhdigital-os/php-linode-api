@@ -52,7 +52,7 @@ class Networking extends Base
      */
     public function assign($region, $assignments)
     {
-        return $this->call('post', 'ip-assign', array_merge([
+        return $this->apiCall('post', 'ip-assign', array_merge([
             'region'      => $region,
             'assignments' => $assignments,
         ], $optional));

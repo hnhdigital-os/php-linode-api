@@ -146,7 +146,7 @@ foreach (array_get($spec, 'put', []) as $name => $settings) {
      */
     public function <?= $name ?>(<?= generate_parameter_list($settings) ?>)
     {
-        return $this->call('put', <?= generate_endpoint_entry($settings) ?>, <?= generate_put_function_payload($settings) ?>);
+        return $this->apiCall('put', <?= generate_endpoint_entry($settings) ?>, <?= generate_put_function_payload($settings) ?>);
     }
 <?php
 }
@@ -167,7 +167,7 @@ foreach (array_get($spec, 'post', []) as $name => $settings) {
      */
     public function <?= $name ?>(<?= generate_parameter_list($settings) ?>)
     {
-        return $this->call('post', <?= generate_endpoint_entry($settings) ?>, <?= generate_post_function_payload($settings) ?>);
+        return $this->apiCall('post', <?= generate_endpoint_entry($settings) ?>, <?= generate_post_function_payload($settings) ?>);
     }
 <?php
 }
@@ -188,7 +188,7 @@ foreach (array_get($spec, 'delete', []) as $name => $settings) {
      */
     public function <?= $name ?>()
     {
-        return $this->call('delete', <?= generate_endpoint_entry($settings) ?>);
+        return $this->apiCall('delete', <?= generate_endpoint_entry($settings) ?>);
     }
 <?php
 }

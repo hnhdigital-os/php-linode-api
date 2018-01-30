@@ -70,7 +70,7 @@ class Backups extends Base
      */
     public function create($label = 'null')
     {
-        return $this->call('post', '', array_merge([
+        return $this->apiCall('post', '', array_merge([
             'label' => $label,
         ], $optional));
     }

@@ -85,7 +85,7 @@ class Domain extends Base
      */
     public function clone($domain, $optional = [])
     {
-        return $this->call('put', '/clone', array_merge([
+        return $this->apiCall('put', '/clone', array_merge([
             'domain' => $domain,
         ], $optional));
     }
@@ -112,7 +112,7 @@ class Domain extends Base
      */
     public function update($optional = [])
     {
-        return $this->call('put', '', $optional);
+        return $this->apiCall('put', '', $optional);
     }
 
     /**
@@ -124,6 +124,6 @@ class Domain extends Base
      */
     public function delete()
     {
-        return $this->call('delete', '');
+        return $this->apiCall('delete', '');
     }
 }

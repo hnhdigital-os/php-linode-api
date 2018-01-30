@@ -70,7 +70,7 @@ class Ips extends Base
      */
     public function add($type = 'private')
     {
-        return $this->call('post', '', array_merge([
+        return $this->apiCall('post', '', array_merge([
             'type' => $type,
         ], $optional));
     }
@@ -86,7 +86,7 @@ class Ips extends Base
      */
     public function sharing($ips)
     {
-        return $this->call('post', '/sharing', array_merge([
+        return $this->apiCall('post', '/sharing', array_merge([
             'ips' => $ips,
         ], $optional));
     }
