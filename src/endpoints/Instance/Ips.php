@@ -66,7 +66,7 @@ class Ips extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/ips#POST
      *
-     * @return bool
+     * @return mixed
      */
     public function add($type = 'private')
     {
@@ -82,7 +82,7 @@ class Ips extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/ips/sharing
      *
-     * @return bool
+     * @return mixed
      */
     public function sharing($ips)
     {

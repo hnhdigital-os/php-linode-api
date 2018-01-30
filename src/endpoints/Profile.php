@@ -105,7 +105,7 @@ class Profile extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/profile/password
      *
-     * @return bool
+     * @return mixed
      */
     public function password($password)
     {

@@ -65,7 +65,7 @@ class StackScripts extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/stackscripts#POST
      *
-     * @return bool
+     * @return mixed
      */
     public function update($label, $images, $script, $optional = [])
     {

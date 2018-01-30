@@ -91,6 +91,9 @@ class VolumesEndpointTest extends BaseTest
             'region' => 'us-east-1a',
         ]);
 
-        $this->assertEquals(array_get($this->data, 'data.0'), $response);
+        // Create the same object that it should return.
+        $populated_volume = new Volume(123, array_get($this->data, 'data.0'));
+
+        $this->assertEquals($populated_volume, $response);
     }
 }

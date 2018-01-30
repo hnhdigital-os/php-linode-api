@@ -212,6 +212,31 @@ class Base
     }
 
     /**
+     * Factory for returning models.
+     *
+     * @param array $result
+     *
+     * @return mixed
+     */
+    protected function factory($result, $factory_settings)
+    {
+        if (empty($result)) {
+            throw new LinodeApiException('No data provided to create '.$factory_settings['class']);
+        }
+
+        $parameters = [];
+
+        foreach ($factory_settings['parameters'] as $key) {
+            $parameters[] = $result[$key];
+        }
+
+        $class_name = 'HnhDigital\\LinodeApi\\'.$factory_settings['class'];
+        $parameters[] = $result;
+
+        return new $class_name(...$parameters);
+    }
+
+    /**
      * Set the base endpoint.
      *
      * @return void

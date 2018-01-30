@@ -329,10 +329,7 @@ function api_search_parameters($method_settings)
 
     // Search returns a model as the result.
     if (array_has($method_settings, 'factory')) {
-        $class = array_get($method_settings, 'factory.class');
-        $parameters = implode("', '", array_get($method_settings, 'factory.parameters'));
-
-        return ", ['class' => '$class', 'parameters' => ['$parameters']]";
+        return ", ".factory_parameters($method_settings);
     }
 
     return $result;
@@ -453,6 +450,29 @@ function generate_post_function_payload($method_settings)
     }
 
     return ", ['json' => ".$result.']';
+}
+
+
+/**
+ * Factory parameters.
+ *
+ * @param array $method_settings
+ *
+ * @return string
+ */
+function factory_parameters($method_settings)
+{
+    $result = '';
+
+    // Search returns a model as the result.
+    if (array_has($method_settings, 'factory')) {
+        $class = array_get($method_settings, 'factory.class');
+        $parameters = implode("', '", array_get($method_settings, 'factory.parameters'));
+
+        return "['class' => '$class', 'parameters' => ['$parameters']]";
+    }
+
+    return $result;
 }
 
 /**

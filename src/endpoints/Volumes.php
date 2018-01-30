@@ -64,13 +64,15 @@ class Volumes extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/volumes#POST
      *
-     * @return bool
+     * @return mixed
      */
     public function create($region, $label, $optional = [])
     {
-        return $this->apiCall('post', '', ['json' => array_merge([
+        $result = $this->apiCall('post', '', ['json' => array_merge([
             'region' => $region,
             'label'  => $label,
         ], $optional)]);
+
+        return $this->factory($result, ['class' => 'Volume', 'parameters' => ['id']]);
     }
 }

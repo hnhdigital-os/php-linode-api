@@ -93,12 +93,14 @@ class Records extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/domains/$id/records#POST
      *
-     * @return bool
+     * @return mixed
      */
     public function create($type, $optional = [])
     {
-        return $this->apiCall('post', '', ['json' => array_merge([
+        $result = $this->apiCall('post', '', ['json' => array_merge([
             'type' => $type,
         ], $optional)]);
+
+        return $this->factory($result, ['class' => 'Domain/Record', 'parameters' => ['id']]);
     }
 }

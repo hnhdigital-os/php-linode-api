@@ -176,11 +176,19 @@ foreach (array_get($spec, 'post', []) as $name => $settings) {
      * @link <?= array_get($settings, 'url', array_get($spec, 'url')) ?>
 
      *
-     * @return bool
+     * @return mixed
      */
     public function <?= $name ?>(<?= generate_parameter_list($settings) ?>)
     {
-        return $this->apiCall('post', <?= generate_endpoint_entry($settings) ?><?= generate_post_function_payload($settings) ?>);
+        <?= array_has($settings, 'factory') ? '$result =' : 'return' ?> $this->apiCall('post', <?= generate_endpoint_entry($settings) ?><?= generate_post_function_payload($settings) ?>);
+<?php
+if (array_has($settings, 'factory')) {
+?>
+
+        return $this->factory($result, <?= factory_parameters($settings) ?>);
+<?php
+}
+?>
     }
 <?php
 }

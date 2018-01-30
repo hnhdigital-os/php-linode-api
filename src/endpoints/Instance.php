@@ -182,7 +182,7 @@ class Instance extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/boot
      *
-     * @return bool
+     * @return mixed
      */
     public function boot($config_id = null)
     {
@@ -196,7 +196,7 @@ class Instance extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/backups/cancel
      *
-     * @return bool
+     * @return mixed
      */
     public function cancelBackups()
     {
@@ -208,7 +208,7 @@ class Instance extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/backups/enable
      *
-     * @return bool
+     * @return mixed
      */
     public function enableBackups()
     {
@@ -230,7 +230,7 @@ class Instance extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/clone
      *
-     * @return bool
+     * @return mixed
      */
     public function clone($region, $type, $optional = [])
     {
@@ -245,7 +245,7 @@ class Instance extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/kvmify
      *
-     * @return bool
+     * @return mixed
      */
     public function kvmify()
     {
@@ -257,7 +257,7 @@ class Instance extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/mutate
      *
-     * @return bool
+     * @return mixed
      */
     public function mutate()
     {
@@ -271,7 +271,7 @@ class Instance extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/reboot
      *
-     * @return bool
+     * @return mixed
      */
     public function reboot($config_id = null)
     {
@@ -293,7 +293,7 @@ class Instance extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/rebuild
      *
-     * @return bool
+     * @return mixed
      */
     public function rebuild($root_pass, $optional = [])
     {
@@ -309,7 +309,7 @@ class Instance extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/rescue
      *
-     * @return bool
+     * @return mixed
      */
     public function rescue($devices)
     {
@@ -325,7 +325,7 @@ class Instance extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/resize
      *
-     * @return bool
+     * @return mixed
      */
     public function resize($devices)
     {
@@ -342,7 +342,7 @@ class Instance extends Base
      *
      * @link https://developers.linode.com/v4/reference/linode
      *
-     * @return bool
+     * @return mixed
      */
     public function restore($backup_id, $overwrite = false)
     {
@@ -357,7 +357,7 @@ class Instance extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/shutdown
      *
-     * @return bool
+     * @return mixed
      */
     public function shutdown()
     {

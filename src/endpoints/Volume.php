@@ -94,7 +94,7 @@ class Volume extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/volumes/$id/attach
      *
-     * @return bool
+     * @return mixed
      */
     public function attach($linode_id, $config_id = null)
     {
@@ -111,7 +111,7 @@ class Volume extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/volumes/$id/attach
      *
-     * @return bool
+     * @return mixed
      */
     public function clone($label)
     {
@@ -125,7 +125,7 @@ class Volume extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/volumes/$id/detach
      *
-     * @return bool
+     * @return mixed
      */
     public function detach()
     {
@@ -139,7 +139,7 @@ class Volume extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/volumes/$id/resize
      *
-     * @return bool
+     * @return mixed
      */
     public function resize($size)
     {

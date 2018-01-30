@@ -60,11 +60,13 @@ class Clients extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/longview/clients#POST
      *
-     * @return bool
+     * @return mixed
      */
     public function create($optional = [])
     {
-        return $this->apiCall('post', '', ['json' => array_merge([
+        $result = $this->apiCall('post', '', ['json' => array_merge([
         ], $optional)]);
+
+        return $this->factory($result, ['class' => 'Client', 'parameters' => ['id']]);
     }
 }

@@ -92,7 +92,7 @@ class Domains extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/domains#POST
      *
-     * @return bool
+     * @return mixed
      */
     public function create($domain, $type, $optional = [])
     {

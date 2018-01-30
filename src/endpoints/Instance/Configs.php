@@ -66,7 +66,7 @@ class Configs extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/configs#POST
      *
-     * @return bool
+     * @return mixed
      */
     public function update($kernel = 'linode/latest-64bit')
     {

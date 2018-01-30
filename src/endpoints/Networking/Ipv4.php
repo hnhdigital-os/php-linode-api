@@ -59,7 +59,7 @@ class Ipv4 extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/networking/ipv4#POST
      *
-     * @return bool
+     * @return mixed
      */
     public function create($linode_id)
     {

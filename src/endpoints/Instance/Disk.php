@@ -88,7 +88,7 @@ class Disk extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/disks/$id/password
      *
-     * @return bool
+     * @return mixed
      */
     public function password($password)
     {
@@ -104,7 +104,7 @@ class Disk extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/disks/$id/resize
      *
-     * @return bool
+     * @return mixed
      */
     public function resize($size)
     {

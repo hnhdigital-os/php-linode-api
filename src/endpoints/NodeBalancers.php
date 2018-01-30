@@ -83,7 +83,7 @@ class NodeBalancers extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/nodebalancers#POST
      *
-     * @return bool
+     * @return mixed
      */
     public function create($region, $optional = [])
     {

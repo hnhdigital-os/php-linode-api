@@ -48,7 +48,7 @@ class Networking extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/networking/ip-assign
      *
-     * @return bool
+     * @return mixed
      */
     public function assign($region, $assignments)
     {

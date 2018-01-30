@@ -66,7 +66,7 @@ class Backups extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances/$id/backups#POST
      *
-     * @return bool
+     * @return mixed
      */
     public function create($label = 'null')
     {

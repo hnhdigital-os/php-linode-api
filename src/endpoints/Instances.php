@@ -97,13 +97,15 @@ class Instances extends Base
      *
      * @link https://developers.linode.com/v4/reference/endpoints/linode/instances#POST
      *
-     * @return bool
+     * @return mixed
      */
     public function create($region, $type, $optional = [])
     {
-        return $this->apiCall('post', '', ['json' => array_merge([
+        $result = $this->apiCall('post', '', ['json' => array_merge([
             'region' => $region,
             'type'   => $type,
         ], $optional)]);
+
+        return $this->factory($result, ['class' => 'Instance', 'parameters' => ['id']]);
     }
 }
