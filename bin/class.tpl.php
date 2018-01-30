@@ -180,7 +180,7 @@ foreach (array_get($spec, 'post', []) as $name => $settings) {
      */
     public function <?= $name ?>(<?= generate_parameter_list($settings) ?>)
     {
-        return $this->apiCall('post', <?= generate_endpoint_entry($settings) ?>, <?= generate_post_function_payload($settings) ?>);
+        return $this->apiCall('post', <?= generate_endpoint_entry($settings) ?><?= generate_post_function_payload($settings) ?>);
     }
 <?php
 }

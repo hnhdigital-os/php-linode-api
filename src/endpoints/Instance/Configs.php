@@ -70,8 +70,8 @@ class Configs extends Base
      */
     public function update($kernel = 'linode/latest-64bit')
     {
-        return $this->apiCall('post', '', ['json' => array_merge([
+        return $this->apiCall('post', '', ['json' => [
             'kernel' => $kernel,
-        ], $optional)]);
+        ]]);
     }
 }

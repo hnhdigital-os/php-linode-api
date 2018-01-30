@@ -92,9 +92,9 @@ class Disk extends Base
      */
     public function password($password)
     {
-        return $this->apiCall('post', '/password', ['json' => array_merge([
+        return $this->apiCall('post', '/password', ['json' => [
             'password' => $password,
-        ], $optional)]);
+        ]]);
     }
 
     /**
@@ -108,9 +108,9 @@ class Disk extends Base
      */
     public function resize($size)
     {
-        return $this->apiCall('post', '/resize', ['json' => array_merge([
+        return $this->apiCall('post', '/resize', ['json' => [
             'size' => $size,
-        ], $optional)]);
+        ]]);
     }
 
     /**

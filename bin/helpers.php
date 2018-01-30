@@ -430,8 +430,6 @@ function generate_put_function_payload($method_settings)
  */
 function generate_post_function_payload($method_settings)
 {
-    $result = "array_merge([\n";
-
     $entries = [];
 
     foreach (array_get($method_settings, 'parameters', []) as $name => $settings) {
@@ -444,9 +442,17 @@ function generate_post_function_payload($method_settings)
 
     [$part1_length, $part2_length, $result] = code_alignment($entries);
 
-    $optional = array_get($method_settings, 'optional', []);
+    if (array_has($method_settings, 'optional')) {
+        $result = "array_merge([\n".$result.'        ], $optional)';
+    } else {
+        $result = "[\n".$result.'        ]';
+    }
 
-    return "['json' => array_merge([\n".$result.'        ], $optional)]';
+    if (count($entries) == 0 && !array_has($method_settings, 'optional')) {
+        return '';
+    }
+
+    return ", ['json' => ".$result.']';
 }
 
 /**
