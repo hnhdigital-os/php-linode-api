@@ -55,8 +55,8 @@ class Volumes extends Base
     /**
      * Create a new Block Storage Volume
      *
-     * @param string $label    A unique label to identify your new volume with.
      * @param string $region   Which region the new volume should be created in.
+     * @param string $label    A unique label to identify your new volume with.
      * @param array  $optional
      *                         - [size=20] (int) The size in GiBs that you wish to make your new volume. Defaults to 20 GiB, can be as large as 1024 GiB (1 TiB).
      *                         - [linode_id] (int) An id to a Linode you'd like this volume to be attached to after creation. Requires an additional scope of `linode:modify` and you must have permission to access that given Linode.
@@ -66,11 +66,11 @@ class Volumes extends Base
      *
      * @return bool
      */
-    public function create($label, $region, $optional = [])
+    public function create($region, $label, $optional = [])
     {
         return $this->apiCall('post', '', ['json' => array_merge([
-            'label'  => $label,
             'region' => $region,
+            'label'  => $label,
         ], $optional)]);
     }
 }

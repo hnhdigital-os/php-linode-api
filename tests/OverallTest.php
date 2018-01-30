@@ -78,7 +78,7 @@ class OverallTest extends BaseTest
         $this->http->setUp();
 
         // Set the Linode API to this local server.
-        Auth::setBaseEndpoint('http://localhost:8082/');
+        Profile::endpoint('http://localhost:8082/');
 
         // Get the profile data from the endpoint.
         $profile = new Profile(true);

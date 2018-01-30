@@ -26,18 +26,17 @@ post:
     factory:
       class: Volume
       parameters:
-        - ids:
         - id
 
     parameters:
 
-      label:
-        type: string
-        description: A unique label to identify your new volume with.
-
       region:
         type: string
         description: Which region the new volume should be created in.
+
+      label:
+        type: string
+        description: A unique label to identify your new volume with.
 
     optional:
 
