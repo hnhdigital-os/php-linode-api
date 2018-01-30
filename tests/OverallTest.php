@@ -56,4 +56,33 @@ class OverallTest extends BaseTest
 
         $this->assertTrue($request->getHeaders()->get('authorization')->hasValue('Bearer 123456789'));
     }
+
+    /**
+     * Test that an exception occurs when the body is not json encoded.
+     *
+     * @expectedException HnhDigital\LinodeApi\Foundation\LinodeApiException
+     *
+     * @return void
+     */
+    public function testBodyNotJsonEncoded()
+    {
+        // Mock the API endpoint and result.
+        $this->http->mock
+            ->when()
+                ->methodIs('GET')
+                ->pathIs('/profile')
+            ->then()
+                ->body('This is not encoded')
+            ->end();
+
+        $this->http->setUp();
+
+        // Set the Linode API to this local server.
+        Auth::setBaseEndpoint('http://localhost:8082/');
+
+        // Get the profile data from the endpoint.
+        $profile = new Profile(true);
+
+        $this->expectExceptionMessage('Could not decode response.');
+    }
 }
