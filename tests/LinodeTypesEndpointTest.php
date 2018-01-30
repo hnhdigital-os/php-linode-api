@@ -46,7 +46,7 @@ class LinodeTypesEndpointTest extends BaseTest
         ];
 
         // Setup test server at path and with response data.
-        $this->mockRequest('GET', '/linode/types?page=1', $data);
+        $this->mockGetRequest('/linode/types?page=1', $data);
 
         // Create a new types endpoint.
         $result = (new LinodeTypes())->search()->all();
@@ -90,7 +90,7 @@ class LinodeTypesEndpointTest extends BaseTest
         ];
 
         // Setup test server at path and with response data.
-        $this->mockRequest('GET', '/linode/types/linode2048.5', $data);
+        $this->mockGetRequest('/linode/types/linode2048.5', $data);
 
         // Create the same object that it should return.
         $type = new LinodeType('linode2048.5');

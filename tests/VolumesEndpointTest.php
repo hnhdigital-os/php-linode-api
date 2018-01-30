@@ -34,7 +34,7 @@ class VolumesEndpointTest extends BaseTest
         ];
 
         // Setup test server at path and with response data.
-        $this->mockRequest('GET', '/volumes?page=1', $data);
+        $this->mockGetRequest('/volumes?page=1', $data);
 
         // Create a new volumes endpoint.
         $result = (new Volumes())->search()->all();
@@ -66,7 +66,7 @@ class VolumesEndpointTest extends BaseTest
         ];
 
         // Setup test server at path and with response data.
-        $this->mockRequest('GET', '/volumes/123', $data);
+        $this->mockGetRequest('/volumes/123', $data);
 
         // Create the same object that it should return.
         $volume = new Volume(123, true);

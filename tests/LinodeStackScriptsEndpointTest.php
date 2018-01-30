@@ -33,7 +33,7 @@ class LinodeStackScriptsEndpointTest extends BaseTest
         ];
 
         // Setup test server at path and with response data.
-        $this->mockRequest('GET', '/linode/stackscripts?page=1', $data);
+        $this->mockGetRequest('/linode/stackscripts?page=1', $data);
 
         // Create a new stackscripts endpoint.
         $result = (new StackScripts())->search()->all();
@@ -64,7 +64,7 @@ class LinodeStackScriptsEndpointTest extends BaseTest
         ];
 
         // Setup test server at path and with response data.
-        $this->mockRequest('GET', '/linode/stackscripts/linode/latest-64bit', $data);
+        $this->mockGetRequest('/linode/stackscripts/linode/latest-64bit', $data);
 
         // Create the same object that it should return.
         $stack_script = new StackScript('linode/latest-64bit');

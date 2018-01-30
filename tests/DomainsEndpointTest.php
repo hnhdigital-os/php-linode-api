@@ -49,7 +49,7 @@ class DomainsEndpointTest extends BaseTest
         ];
 
         // Setup test server at path and with response data.
-        $this->mockRequest('GET', '/domains?page=1', $data);
+        $this->mockGetRequest('/domains?page=1', $data);
 
         // Create a new domains endpoint.
         $result = (new Domains())->search()->all();
@@ -96,7 +96,7 @@ class DomainsEndpointTest extends BaseTest
         ];
 
         // Setup test server at path and with response data.
-        $this->mockRequest('GET', '/domains/357', $data);
+        $this->mockGetRequest('/domains/357', $data);
 
         // Create the same object that it should return.
         $domain = new Domain(357);

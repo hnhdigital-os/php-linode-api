@@ -59,7 +59,7 @@ abstract class BaseTest extends TestCase
      *
      * @return void
      */
-    protected function mockRequest($method, $path, $data)
+    protected function mockGetRequest($path, $data)
     {
         // Encode response.
         $encoded_data = json_encode($data);
@@ -67,7 +67,7 @@ abstract class BaseTest extends TestCase
         // Mock the API endpoint and result.
         $this->http->mock
             ->when()
-                ->methodIs($method)
+                ->methodIs('GET')
                 ->pathIs($path)
             ->then()
                 ->body($encoded_data)

@@ -28,7 +28,7 @@ class RegionsEndpointTest extends BaseTest
         ];
 
         // Setup test server at path and with response data.
-        $this->mockRequest('GET', '/regions?page=1', $data);
+        $this->mockGetRequest('/regions?page=1', $data);
 
         // Create a new regions endpoint.
         $result = (new Regions())->search()->all();
@@ -54,7 +54,7 @@ class RegionsEndpointTest extends BaseTest
         ];
 
         // Setup test server at path and with response data.
-        $this->mockRequest('GET', '/regions/us-east-1a', $data);
+        $this->mockGetRequest('/regions/us-east-1a', $data);
 
         // Create the same object that it should return.
         $region = new Region('us-east-1a', true);

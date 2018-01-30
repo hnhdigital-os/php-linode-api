@@ -33,7 +33,7 @@ class LinodeKernelsEndpointTest extends BaseTest
         ];
 
         // Setup test server at path and with response data.
-        $this->mockRequest('GET', '/linode/kernels?page=1', $data);
+        $this->mockGetRequest('/linode/kernels?page=1', $data);
 
         // Create a new regions endpoint.
         $result = (new Kernels())->search()->all();
@@ -64,7 +64,7 @@ class LinodeKernelsEndpointTest extends BaseTest
         ];
 
         // Setup test server at path and with response data.
-        $this->mockRequest('GET', '/linode/kernels/linode/latest-64bit', $data);
+        $this->mockGetRequest('/linode/kernels/linode/latest-64bit', $data);
 
         // Create the same object that it should return.
         $kernel = new Kernel('linode/latest-64bit');
