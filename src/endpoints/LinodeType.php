@@ -38,6 +38,20 @@ class LinodeType extends Base
     protected $type_id;
 
     /**
+     * This model is fillable.
+     *
+     * @type bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @type string
+     */
+    protected $fill_method = 'get';
+
+    /**
      * Constructor.
      *
      * @return void
@@ -45,10 +59,6 @@ class LinodeType extends Base
     public function __construct($type_id, $fill = [])
     {
         $this->type_id = $type_id;
-
-        $this->fillable = true;
-        $this->fill_method = 'get';
-
         parent::__construct($type_id, $fill);
     }
 

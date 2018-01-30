@@ -38,6 +38,20 @@ class Kernel extends Base
     protected $kernel_id;
 
     /**
+     * This model is fillable.
+     *
+     * @type bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @type string
+     */
+    protected $fill_method = 'get';
+
+    /**
      * Constructor.
      *
      * @return void
@@ -45,10 +59,6 @@ class Kernel extends Base
     public function __construct($kernel_id, $fill = [])
     {
         $this->kernel_id = $kernel_id;
-
-        $this->fillable = true;
-        $this->fill_method = 'get';
-
         parent::__construct($kernel_id, $fill);
     }
 

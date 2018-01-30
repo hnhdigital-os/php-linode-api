@@ -38,6 +38,20 @@ class StackScript extends Base
     protected $stackscript_id;
 
     /**
+     * This model is fillable.
+     *
+     * @type bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @type string
+     */
+    protected $fill_method = 'get';
+
+    /**
      * Constructor.
      *
      * @return void
@@ -45,10 +59,6 @@ class StackScript extends Base
     public function __construct($stackscript_id, $fill = [])
     {
         $this->stackscript_id = $stackscript_id;
-
-        $this->fillable = true;
-        $this->fill_method = 'get';
-
         parent::__construct($stackscript_id, $fill);
     }
 

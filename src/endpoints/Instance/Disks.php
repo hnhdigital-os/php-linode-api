@@ -36,7 +36,6 @@ class Disks extends Base
      * @var int
      */
     protected $linode_id;
-
     /**
      * Constructor.
      *

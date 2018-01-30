@@ -36,7 +36,6 @@ class NodeBalancer extends Base
      * @var int
      */
     protected $loadbalancer_id;
-
     /**
      * Constructor.
      *

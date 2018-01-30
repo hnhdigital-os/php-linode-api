@@ -43,6 +43,20 @@ class Instance extends Base
     protected $linode_id;
 
     /**
+     * This model is fillable.
+     *
+     * @type bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @type string
+     */
+    protected $fill_method = 'get';
+
+    /**
      * Constructor.
      *
      * @return void
@@ -50,10 +64,6 @@ class Instance extends Base
     public function __construct($linode_id, $fill = [])
     {
         $this->linode_id = $linode_id;
-
-        $this->fillable = true;
-        $this->fill_method = 'get';
-
         parent::__construct($linode_id, $fill);
     }
 

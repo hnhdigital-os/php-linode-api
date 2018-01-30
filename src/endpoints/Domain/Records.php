@@ -36,7 +36,6 @@ class Records extends Base
      * @var int
      */
     protected $domain_id;
-
     /**
      * Type.
      *

@@ -38,6 +38,20 @@ class Region extends Base
     protected $region_id;
 
     /**
+     * This model is fillable.
+     *
+     * @type bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @type string
+     */
+    protected $fill_method = 'get';
+
+    /**
      * Constructor.
      *
      * @return void
@@ -45,10 +59,6 @@ class Region extends Base
     public function __construct($region_id, $fill = [])
     {
         $this->region_id = $region_id;
-
-        $this->fillable = true;
-        $this->fill_method = 'get';
-
         parent::__construct($region_id, $fill);
     }
 

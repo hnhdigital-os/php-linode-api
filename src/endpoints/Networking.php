@@ -30,7 +30,6 @@ class Networking extends Base
      * @var string
      */
     protected $endpoint = 'networking';
-
     /**
      * Constructor.
      *

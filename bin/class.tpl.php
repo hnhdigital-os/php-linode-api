@@ -45,9 +45,25 @@ foreach (array_get($spec, 'parameters', []) as $name => $settings) {
     protected $<?= $name ?>;
 <?php
 }
+if (array_has($spec, 'fillable')) {
 ?>
 
+    /**
+     * This model is fillable.
+     *
+     * @type bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @type string
+     */
+    protected $fill_method = '<?= array_get($settings, 'load-method', 'get') ?>';
+
 <?php
+}
 foreach (array_get($spec, 'lists', []) as $name => $list) {
 ?>
     /**
@@ -75,14 +91,6 @@ foreach (array_get($spec, 'lists', []) as $name => $list) {
 foreach (array_get($spec, 'parameters', []) as $name => $settings) {
 ?>
         $this-><?= $name ?> = $<?= $name ?>;
-<?php
-}
-if (array_has($spec, 'fillable')) {
-?>
-
-        $this->fillable = true;
-        $this->fill_method = '<?= array_get($settings, 'load-method', 'get') ?>';
-
 <?php
 }
 ?>

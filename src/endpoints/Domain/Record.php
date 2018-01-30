@@ -42,7 +42,6 @@ class Record extends Base
      * @var int
      */
     protected $record_id;
-
     /**
      * Constructor.
      *

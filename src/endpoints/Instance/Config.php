@@ -42,7 +42,6 @@ class Config extends Base
      * @var int
      */
     protected $config_id;
-
     /**
      * Constructor.
      *

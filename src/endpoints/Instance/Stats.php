@@ -36,7 +36,6 @@ class Stats extends Base
      * @var int
      */
     protected $linode_id;
-
     /**
      * Constructor.
      *

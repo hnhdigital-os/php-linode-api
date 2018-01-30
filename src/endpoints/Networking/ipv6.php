@@ -30,7 +30,6 @@ class ipv6 extends Base
      * @var string
      */
     protected $endpoint = 'networking/ipv6';
-
     /**
      * Constructor.
      *

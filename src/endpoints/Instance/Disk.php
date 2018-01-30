@@ -42,7 +42,6 @@ class Disk extends Base
      * @var int
      */
     protected $disk_id;
-
     /**
      * Constructor.
      *

@@ -42,7 +42,6 @@ class Ip extends Base
      * @var string
      */
     protected $ip_address;
-
     /**
      * Constructor.
      *
