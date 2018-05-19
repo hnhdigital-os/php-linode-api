@@ -29,20 +29,20 @@ class DomainsEndpointTest extends BaseTest
                     'expire_sec'  => 604800,
                     'ttl_sec'     => 3600,
                     'status'      => 'active',
-                    'master_ips' => [
+                    'master_ips'  => [
                         '127.0.0.1',
                         '255.255.255.1',
                         '123.123.123.7',
                     ],
                     'axfr_ips' => [
-                        '44.55.66.77'
+                        '44.55.66.77',
                     ],
                     'group' => 'Example Display Group',
                     'type'  => 'master',
                     'zonefile' => [
                         'rendered' => '',
                         'status'   => 'setting_up',
-                    ]
+                    ],
                 ],
             ],
             'page' => 1,
@@ -79,20 +79,20 @@ class DomainsEndpointTest extends BaseTest
             'expire_sec'  => 604800,
             'ttl_sec'     => 3600,
             'status'      => 'active',
-            'master_ips' => [
+            'master_ips'  => [
                 '127.0.0.1',
                 '255.255.255.1',
                 '123.123.123.7',
             ],
             'axfr_ips' => [
-                '44.55.66.77'
+                '44.55.66.77',
             ],
             'group' => 'Example Display Group',
             'type'  => 'master',
             'zonefile' => [
                 'rendered' => '',
                 'status'   => 'setting_up',
-            ]
+            ],
         ];
 
         // Setup test server at path and with response data.

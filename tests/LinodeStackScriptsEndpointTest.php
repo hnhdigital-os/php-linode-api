@@ -18,23 +18,23 @@ class LinodeStackScriptsEndpointTest extends BaseTest
                 'user_gravatar_id' => '08e2a99f31420a3f38753b07e23af7d6',
                 'label'            => 'Example StackScript',
                 'description'      => 'Installs the Linode API bindings',
-                'images' => [
+                'images'           => [
                     'linode/debian8',
                     'linode/debian9',
                 ],
-                'deployments_total'  => 150,
-                'deployments_active' => 42,
-                'is_public'          => true,
-                'created'            => '2015-09-29T11:21:01',
-                'updated'            => '2015-10-15T10:02:01',
-                'rev_note'           => 'Initial import',
-                'script'             => '#!/bin/bash',
+                'deployments_total'   => 150,
+                'deployments_active'  => 42,
+                'is_public'           => true,
+                'created'             => '2015-09-29T11:21:01',
+                'updated'             => '2015-10-15T10:02:01',
+                'rev_note'            => 'Initial import',
+                'script'              => '#!/bin/bash',
                 'user_defined_fields' => [
                     [
-                        'label' => 'A question',
+                        'label'   => 'A question',
                         'example' => 'An example value',
                         'default' => 'Default value',
-                        'oneof' => 'possible,enum,values',
+                        'oneof'   => 'possible,enum,values',
                     ]
                 ],
             ],

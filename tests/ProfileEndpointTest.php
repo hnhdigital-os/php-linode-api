@@ -98,7 +98,7 @@ class ProfileEndpointTest extends BaseTest
                 'label'       => 'example.com',
                 'permissions' => 'read_write',
             ],
-        ]
+        ],
     ];
 
     /**

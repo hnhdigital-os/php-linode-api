@@ -32,7 +32,7 @@ class LinodeTypesEndpointTest extends BaseTest
                         'backups' => [
                         'price' => [
                                 'hourly'  => 0.004,
-                                'monthly' => 2.5
+                                'monthly' => 2.5,
                             ],
                         ],
                     ],
@@ -79,7 +79,7 @@ class LinodeTypesEndpointTest extends BaseTest
                 'backups' => [
                 'price' => [
                         'hourly'  => 0.004,
-                        'monthly' => 2.5
+                        'monthly' => 2.5,
                     ],
                 ],
             ],
