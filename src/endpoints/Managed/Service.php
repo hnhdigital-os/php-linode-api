@@ -49,7 +49,6 @@ class Service extends Base
 
     /**
      * Returns information about a single Managed Service on your Account.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getManagedService
      *
@@ -62,7 +61,6 @@ class Service extends Base
 
     /**
      * Updates information about a Managed Service.
-
      *
      * @param integer $service_id The ID of the Managed Service to access.
      *
@@ -79,7 +77,6 @@ class Service extends Base
 
     /**
      * Temporarily disables monitoring of a Managed Service.
-
      *
      * @param integer $service_id The ID of the Managed Service to disable.
      *
@@ -96,7 +93,6 @@ class Service extends Base
 
     /**
      * Enables monitoring of a Managed Service.
-
      *
      * @param integer $service_id The ID of the Managed Service to enable.
      *
@@ -113,7 +109,6 @@ class Service extends Base
 
     /**
      * Deletes a Managed Service.  This service will no longer be monitored by Linode Managed.
-
      *
      * @param integer $service_id The ID of the Managed Service to access.
      *

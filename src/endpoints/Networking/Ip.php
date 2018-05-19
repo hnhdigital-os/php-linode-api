@@ -49,7 +49,6 @@ class Ip extends Base
 
     /**
      * Returns information about a single IP Address on your Account.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getIP
      *
@@ -61,8 +60,8 @@ class Ip extends Base
     }
 
     /**
-     * Sets RDNS on an IP Address. Forward DNS must already be set up for reverse DNS to be applied. If you set the RDNS to `null` for public IPv4 addresses, it will be reset to the default _members.linode.com_ RDNS value.
-
+     * Sets RDNS on an IP Address. Forward DNS must already be set up for reverse DNS to be applied. If you set the RDNS to
+     * `null` for public IPv4 addresses, it will be reset to the default _members.linode.com_ RDNS value.
      *
      * @param string $address The address to operate on.
      *

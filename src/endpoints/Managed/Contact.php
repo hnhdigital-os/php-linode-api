@@ -49,7 +49,6 @@ class Contact extends Base
 
     /**
      * Returns a single Managed Contact.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getManagedContact
      *
@@ -62,7 +61,6 @@ class Contact extends Base
 
     /**
      * Updates information about a Managed Contact.
-
      *
      * @param integer $contact_id The ID of the contact to access.
      *
@@ -79,7 +77,6 @@ class Contact extends Base
 
     /**
      * Deletes a Managed Contact.
-
      *
      * @param integer $contact_id The ID of the contact to access.
      *

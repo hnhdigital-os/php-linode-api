@@ -42,7 +42,6 @@ class Tokens extends Base
 
     /**
      * Returns a paginated list of Personal Access Tokens currently active for your User.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getPersonalAccessTokens
      *
@@ -54,8 +53,9 @@ class Tokens extends Base
     }
 
     /**
-     * Creates a Personal Access Token for your User. The raw token will be returned in the response, but will never be returned again afterward so be sure to take note of it. You may create a token with _at most_ the scopes of your current token. The created token will be able to access your Account until the given expiry, or until it is revoked.
-
+     * Creates a Personal Access Token for your User. The raw token will be returned in the response, but will never be
+     * returned again afterward so be sure to take note of it. You may create a token with _at most_ the scopes of your current
+     * token. The created token will be able to access your Account until the given expiry, or until it is revoked.
      *
      * @link https://developers.linode.com/api/v4#operation/createPersonalAccessToken
      *

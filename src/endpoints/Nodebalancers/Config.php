@@ -49,7 +49,6 @@ class Config extends Base
 
     /**
      * Returns configuration information for a single port of this NodeBalancer.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getNodeBalancerConfig
      *
@@ -61,8 +60,8 @@ class Config extends Base
     }
 
     /**
-     * Returns a paginated list of NodeBalancer nodes associated with this Config. These are the backends that will be sent traffic for this port.
-
+     * Returns a paginated list of NodeBalancer nodes associated with this Config. These are the backends that will be sent
+     * traffic for this port.
      *
      * @link https://developers.linode.com/api/v4#operation/getNodeBalancerConfigNodes
      *
@@ -75,7 +74,6 @@ class Config extends Base
 
     /**
      * Updates the configuration for a single port on a NodeBalancer.
-
      *
      * @param integer $node_balancer_id The ID of the NodeBalancer to access.
      * @param integer $config_id        The ID of the config to access.
@@ -93,8 +91,8 @@ class Config extends Base
     }
 
     /**
-     * Creates a NodeBalancer Node, a backend that can accept traffic for this NodeBalancer Config. Nodes are routed requests on the configured port based on their status.
-
+     * Creates a NodeBalancer Node, a backend that can accept traffic for this NodeBalancer Config. Nodes are routed requests
+     * on the configured port based on their status.
      *
      * @param integer $node_balancer_id The ID of the NodeBalancer to access.
      * @param integer $config_id        The ID of the NodeBalancer config to access.
@@ -113,11 +111,11 @@ class Config extends Base
 
     /**
      * Deletes the Config for a port of this NodeBalancer.
-
-**This cannot be undone.**
-
-Once completed, this NodeBalancer will no longer respond to requests on the given port. This also deletes all associated NodeBalancerNodes, but the Linodes they were routing traffic to will be unchanged and will not be removed.
-
+     * 
+     * --This cannot be undone.--
+     * 
+     * Once completed, this NodeBalancer will no longer respond to requests on the given port. This also deletes all associated
+     * NodeBalancerNodes, but the Linodes they were routing traffic to will be unchanged and will not be removed.
      *
      * @param integer $node_balancer_id The ID of the NodeBalancer to access.
      * @param integer $config_id        The ID of the config to access.

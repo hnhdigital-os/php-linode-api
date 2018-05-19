@@ -42,7 +42,6 @@ class Kernels extends Base
 
     /**
      * Lists available Kernels.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getKernels
      *

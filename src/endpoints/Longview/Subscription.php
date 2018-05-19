@@ -49,7 +49,6 @@ class Subscription extends Base
 
     /**
      * Returns a single LongviewSubscription object.  This is a public endpoint and requires no authentication.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getLongviewSubscription
      *

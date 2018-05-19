@@ -42,7 +42,6 @@ class Ranges extends Base
 
     /**
      * Displays the IPv6 ranges on your Account.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getIPv6Ranges
      *

@@ -146,6 +146,21 @@ function generate_constructor_parameters($spec, $endpoint_placholders = false)
     return implode(', ', $result);
 }
 
+function generate_method_description($method_settings)
+{
+    $description = array_get($method_settings, 'description', '@todo Add description');
+
+    if (strlen($description) < 120) {
+        return '     * '.trim($description)."\n";
+    }
+
+    $result = wordwrap($description, 120)."\n";
+    $result = str_replace('*', '-', $result);
+    $result = preg_replace("/^(.*?)$/m", "     * $1", trim($result))."\n";
+
+    return $result;
+}
+
 /**
  * Generate the parameter comments for a method.
  *

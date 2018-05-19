@@ -42,7 +42,6 @@ class Credentials extends Base
 
     /**
      * Returns a paginated list of Managed Credentials on your Account.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getManagedCredentials
      *
@@ -54,8 +53,8 @@ class Credentials extends Base
     }
 
     /**
-     * Creates a Managed Credential. A Managed Credential is stored securely to allow Linode special forces to access your Managed Services and resolve issues.
-
+     * Creates a Managed Credential. A Managed Credential is stored securely to allow Linode special forces to access your
+     * Managed Services and resolve issues.
      *
      * @link https://developers.linode.com/api/v4#operation/createManagedCredential
      *

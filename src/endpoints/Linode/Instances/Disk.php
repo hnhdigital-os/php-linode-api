@@ -49,7 +49,6 @@ class Disk extends Base
 
     /**
      * View Disk information for a Disk associated with this Linode.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getLinodeDisk
      *
@@ -62,7 +61,6 @@ class Disk extends Base
 
     /**
      * Updates a Disk that you have permission to `read_write`.
-
      *
      * @param integer $linode_id ID of the Linode to look up.
      * @param integer $disk_id   ID of the Disk to look up.
@@ -81,7 +79,6 @@ class Disk extends Base
 
     /**
      * Resets the password of a Disk you have permission to `read_write`.
-
      *
      * @param integer $linode_id ID of the Linode to look up.
      * @param integer $disk_id   ID of the Disk to look up.
@@ -100,9 +97,10 @@ class Disk extends Base
 
     /**
      * Resizes a Disk you have permission to `read_write`.
-The Linode this Disk is attached to must be shut down for resizing to take effect.
-If you are resizing the Disk to a smaller size, it cannot be made smaller than what is required by the total size of the files current on the Disk. The Disk must not be in use. If the Disk is in use, the request will succeed but the resize will ultimately fail.
-
+     * The Linode this Disk is attached to must be shut down for resizing to take effect.
+     * If you are resizing the Disk to a smaller size, it cannot be made smaller than what is required by the total size of the
+     * files current on the Disk. The Disk must not be in use. If the Disk is in use, the request will succeed but the resize
+     * will ultimately fail.
      *
      * @param integer $linode_id ID of the Linode to look up.
      * @param integer $disk_id   ID of the Disk to look up.
@@ -123,7 +121,6 @@ If you are resizing the Disk to a smaller size, it cannot be made smaller than w
      * Deletes a Disk you have permission to `read_write`.
 
 **Deleting a Disk is a destructive action and cannot be undone.**
-
      *
      * @param integer $linode_id ID of the Linode to look up.
      * @param integer $disk_id   ID of the Disk to look up.

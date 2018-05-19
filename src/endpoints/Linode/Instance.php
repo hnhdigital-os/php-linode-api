@@ -61,7 +61,6 @@ class Instance extends Base
 
     /**
      * Returns information about this Linode's available backups.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getBackups
      *
@@ -74,7 +73,6 @@ class Instance extends Base
 
     /**
      * Lists Configuration profiles associated with a Linode.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getLinodeConfigs
      *
@@ -87,7 +85,6 @@ class Instance extends Base
 
     /**
      * View Disk information for Disks associated with this Linode.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getLinodeDisks
      *
@@ -100,7 +97,6 @@ class Instance extends Base
 
     /**
      * Returns networking information for a single Linode.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getLinodeIPs
      *
@@ -113,7 +109,6 @@ class Instance extends Base
 
     /**
      * Returns CPU, IO, IPv4, and IPv6 statistics for your Linode for the past 24 hours.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getLinodeStats
      *
@@ -126,7 +121,6 @@ class Instance extends Base
 
     /**
      * View Block Storage Volumes attached to this Linode.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getLinodeVolumes
      *
@@ -139,7 +133,6 @@ class Instance extends Base
 
     /**
      * Updates a Linode that you have permission to `read_write`.
-
      *
      * @param integer $linode_id ID of the Linode to look up
      *
@@ -156,8 +149,7 @@ class Instance extends Base
 
     /**
      * Creates a snapshot Backup of a Linode.
-** If you already have a snapshot of this Linode, this is a destructive action. The previous snapshot will be deleted.**
-
+     * -- If you already have a snapshot of this Linode, this is a destructive action. The previous snapshot will be deleted.--
      *
      * @param integer $linode_id The ID of the Linode the backups belong to.
      *
@@ -174,7 +166,6 @@ class Instance extends Base
 
     /**
      * Cancels the Backup service on the given Linode. Deletes all of this Linode's existing backups forever.
-
      *
      * @param integer $linode_id The ID of the Linode to cancel backup service for.
      *
@@ -191,7 +182,6 @@ class Instance extends Base
 
     /**
      * Enables backups for the specified Linode.
-
      *
      * @param integer $linode_id The ID of the Linode to enable backup service for.
      *
@@ -208,13 +198,12 @@ class Instance extends Base
 
     /**
      * Boots a Linode you have permission to modify. If no parameters are given, a Config profile
-will be chosen for this boot based on the following criteria:
-
-* If there is only one Config profile for this Linode, it will be used.
-* If there is more than one Config profile, the last booted config will be used.
-* If there is more than one Config profile and none were the last to be booted (because the
-  Linode was never booted or the last booted config was deleted) an error will be returned.
-
+     * will be chosen for this boot based on the following criteria:
+     * 
+     * - If there is only one Config profile for this Linode, it will be used.
+     * - If there is more than one Config profile, the last booted config will be used.
+     * - If there is more than one Config profile and none were the last to be booted (because the
+     *   Linode was never booted or the last booted config was deleted) an error will be returned.
      *
      * @param integer $linode_id The ID of the Linode to boot.
      *
@@ -230,9 +219,11 @@ will be chosen for this boot based on the following criteria:
     }
 
     /**
-     * You can clone your Linode's existing Disks or Configuration profiles to another Linode on your Account. In order for this request to complete successfully, your User must have the `add_linodes` grant. Cloning to a new Linode will incur a charge on your Account.
-If cloning to an existing Linode, any actions currently running or queued must be completed first before you can clone to it.
-
+     * You can clone your Linode's existing Disks or Configuration profiles to another Linode on your Account. In order for
+     * this request to complete successfully, your User must have the `add_linodes` grant. Cloning to a new Linode will incur a
+     * charge on your Account.
+     * If cloning to an existing Linode, any actions currently running or queued must be completed first before you can clone
+     * to it.
      *
      * @param integer $linode_id ID of the Linode to clone.
      *
@@ -249,7 +240,6 @@ If cloning to an existing Linode, any actions currently running or queued must b
 
     /**
      * Adds a new Configuration profile to a Linode.
-
      *
      * @param integer $linode_id ID of the Linode to look up Configuration profiles for.
      *
@@ -265,8 +255,8 @@ If cloning to an existing Linode, any actions currently running or queued must b
     }
 
     /**
-     * Adds a new Disk to a Linode. You can optionally create a Disk from an Image (see [/images](/#operation/getImages) for a list of available public images, or use one of your own), and optionally provide a StackScript to deploy with this Disk.
-
+     * Adds a new Disk to a Linode. You can optionally create a Disk from an Image (see [/images](/#operation/getImages) for a
+     * list of available public images, or use one of your own), and optionally provide a StackScript to deploy with this Disk.
      *
      * @param integer $linode_id ID of the Linode to look up.
      *
@@ -282,8 +272,9 @@ If cloning to an existing Linode, any actions currently running or queued must b
     }
 
     /**
-     * Allocates a public or private IPv4 address to a Linode. Public IP Addresses, after the one included with each Linode, incur an additional monthly charge. If you need an additional public IP Address you must request one - please [open a support ticket](/#operation/createTicket). You may not add more than one private IPv4 address to a single Linode.
-
+     * Allocates a public or private IPv4 address to a Linode. Public IP Addresses, after the one included with each Linode,
+     * incur an additional monthly charge. If you need an additional public IP Address you must request one - please [open a
+     * support ticket](/#operation/createTicket). You may not add more than one private IPv4 address to a single Linode.
      *
      * @param integer $linode_id ID of the Linode to look up.
      *
@@ -299,9 +290,10 @@ If cloning to an existing Linode, any actions currently running or queued must b
     }
 
     /**
-     * Linodes created with now-deprecated Types are entitled to a free upgrade to the next generation. A mutating Linode will be allocated any new resources the upgraded Type provides, and will be subsequently restarted if it was currently running.
-If any actions are currently running or queued, those actions must be completed first before you can initiate a mutate.
-
+     * Linodes created with now-deprecated Types are entitled to a free upgrade to the next generation. A mutating Linode will
+     * be allocated any new resources the upgraded Type provides, and will be subsequently restarted if it was currently
+     * running.
+     * If any actions are currently running or queued, those actions must be completed first before you can initiate a mutate.
      *
      * @param integer $linode_id ID of the Linode to mutate.
      *
@@ -317,8 +309,8 @@ If any actions are currently running or queued, those actions must be completed 
     }
 
     /**
-     * Reboots a Linode you have permission to modify. If any actions are currently running or queued, those actions must be completed first before you can initiate a reboot.
-
+     * Reboots a Linode you have permission to modify. If any actions are currently running or queued, those actions must be
+     * completed first before you can initiate a reboot.
      *
      * @param integer $linode_id ID of the linode to reboot.
      *
@@ -335,13 +327,13 @@ If any actions are currently running or queued, those actions must be completed 
 
     /**
      * Rebuilds a Linode you have the `read_write` permission to modify.
-A rebuild will first shut down the Linode, delete all disks and configs on the Linode, and then deploy a new `image` to the Linode with the given attributes. Additionally:
-
-  * Requires an `image` be supplied.
-  * Requires a `root_pass` be supplied to use for the root User's Account.
-  * It is recommended to supply SSH keys for the root User using the
-    `authorized_keys` field.
-
+     * A rebuild will first shut down the Linode, delete all disks and configs on the Linode, and then deploy a new `image` to
+     * the Linode with the given attributes. Additionally:
+     * 
+     *   - Requires an `image` be supplied.
+     *   - Requires a `root_pass` be supplied to use for the root User's Account.
+     *   - It is recommended to supply SSH keys for the root User using the
+     *     `authorized_keys` field.
      *
      * @param integer $linode_id ID of the Linode to rebuild.
      *
@@ -357,9 +349,11 @@ A rebuild will first shut down the Linode, delete all disks and configs on the L
     }
 
     /**
-     * Rescue Mode is a safe environment for performing many system recovery and disk management tasks. Rescue Mode is based on the Finnix recovery distribution, a self-contained and bootable Linux distribution. You can also use Rescue Mode for tasks other than disaster recovery, such as formatting disks to use different filesystems, copying data between disks, and downloading files from a disk via SSH and SFTP.
-* Note that "sdh" is reserved and unavailable during rescue.
-
+     * Rescue Mode is a safe environment for performing many system recovery and disk management tasks. Rescue Mode is based on
+     * the Finnix recovery distribution, a self-contained and bootable Linux distribution. You can also use Rescue Mode for
+     * tasks other than disaster recovery, such as formatting disks to use different filesystems, copying data between disks,
+     * and downloading files from a disk via SSH and SFTP.
+     * - Note that "sdh" is reserved and unavailable during rescue.
      *
      * @param integer $linode_id ID of the Linode to rescue.
      *
@@ -375,15 +369,16 @@ A rebuild will first shut down the Linode, delete all disks and configs on the L
     }
 
     /**
-     * Resizes a Linode you have the `read_write` permission to a different Type. If any actions are currently running or queued, those actions must be completed first before you can initiate a resize. Additionally, the following criteria must be met in order to resize a Linode:
-
-  * Any pending free upgrades to the Linode's current Type must be performed
-  before a resize can occur.
-  * The Linode must not have a pending migration.
-  * Your Account cannot have an outstanding balance.
-  * The Linode must not have more disk allocation than the new Type allows.
-    * In that situation, you must first delete or resize the disk to be smaller.
-
+     * Resizes a Linode you have the `read_write` permission to a different Type. If any actions are currently running or
+     * queued, those actions must be completed first before you can initiate a resize. Additionally, the following criteria
+     * must be met in order to resize a Linode:
+     * 
+     *   - Any pending free upgrades to the Linode's current Type must be performed
+     *   before a resize can occur.
+     *   - The Linode must not have a pending migration.
+     *   - Your Account cannot have an outstanding balance.
+     *   - The Linode must not have more disk allocation than the new Type allows.
+     *     - In that situation, you must first delete or resize the disk to be smaller.
      *
      * @param integer $linode_id ID of the Linode to resize.
      *
@@ -399,8 +394,8 @@ A rebuild will first shut down the Linode, delete all disks and configs on the L
     }
 
     /**
-     * Shuts down a Linode you have permission to modify. If any actions are currently running or queued, those actions must be completed first before you can initiate a shutdown.
-
+     * Shuts down a Linode you have permission to modify. If any actions are currently running or queued, those actions must be
+     * completed first before you can initiate a shutdown.
      *
      * @param integer $linode_id ID of the Linode to shutdown.
      *
@@ -417,16 +412,15 @@ A rebuild will first shut down the Linode, delete all disks and configs on the L
 
     /**
      * Deletes a Linode you have permission to `read_write`.
-
-**Deleting a Linode is a destructive action and cannot be undone.**
-
-Additionally, deleting a Linode:
-
-  * Gives up any IP addresses the Linode was assigned.
-  * Deletes all Disks, Backups, Configs, etc.
-  * Stops billing for the Linode and its associated services. You will be billed for time used
-    within the billing period the Linode was active.
-
+     * 
+     * --Deleting a Linode is a destructive action and cannot be undone.--
+     * 
+     * Additionally, deleting a Linode:
+     * 
+     *   - Gives up any IP addresses the Linode was assigned.
+     *   - Deletes all Disks, Backups, Configs, etc.
+     *   - Stops billing for the Linode and its associated services. You will be billed for time used
+     *     within the billing period the Linode was active.
      *
      * @param integer $linode_id ID of the Linode to look up
      *

@@ -42,8 +42,8 @@ class Credit-card extends Base
 
     /**
      * Adds/edit credit card information to your Account.
-Only one credit card can be associated with your Account, so using this endpoint will overwrite your currently active card information with the new credit card.
-
+     * Only one credit card can be associated with your Account, so using this endpoint will overwrite your currently active
+     * card information with the new credit card.
      *
      * @link https://developers.linode.com/api/v4#operation/createCreditCard
      *

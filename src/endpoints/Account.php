@@ -42,7 +42,6 @@ class Account extends Base
 
     /**
      * Returns the contact and billing information related to your Account.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getAccount
      *
@@ -55,7 +54,6 @@ class Account extends Base
 
     /**
      * Updates contact and billing information related to your Account.
-
      *
      * @link https://developers.linode.com/api/v4#operation/updateAccount
      *

@@ -49,7 +49,6 @@ class Token extends Base
 
     /**
      * Returns a single Personal Access Token.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getPersonalAccessToken
      *
@@ -62,7 +61,6 @@ class Token extends Base
 
     /**
      * Updates a Personal Access Token.
-
      *
      * @param integer $token_id The ID of the token to access.
      *
@@ -78,8 +76,9 @@ class Token extends Base
     }
 
     /**
-     * Revokes a Personal Access Token. The token will be invalidated immediately, and requests using that token will fail with a 401. It is possible to revoke access to the token making the request to revoke a token, but keep in mind that doing so could lose you access to the api and require you to create a new token through some other means.
-
+     * Revokes a Personal Access Token. The token will be invalidated immediately, and requests using that token will fail with
+     * a 401. It is possible to revoke access to the token making the request to revoke a token, but keep in mind that doing so
+     * could lose you access to the api and require you to create a new token through some other means.
      *
      * @param integer $token_id The ID of the token to access.
      *

@@ -49,7 +49,6 @@ class Record extends Base
 
     /**
      * View a single Record on this Domain.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getDomainRecord
      *
@@ -62,7 +61,6 @@ class Record extends Base
 
     /**
      * Updates a single Record on this Domain.
-
      *
      * @param integer $domain_id The ID of the Domain whose Record you are accessing.
      * @param integer $record_id The ID of the Record you are accessing.
@@ -81,7 +79,6 @@ class Record extends Base
 
     /**
      * Deletes a Record on this Domain.
-
      *
      * @param integer $domain_id The ID of the Domain whose Record you are accessing.
      * @param integer $record_id The ID of the Record you are accessing.

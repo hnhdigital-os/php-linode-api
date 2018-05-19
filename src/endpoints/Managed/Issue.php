@@ -49,7 +49,6 @@ class Issue extends Base
 
     /**
      * Returns a single Issue that is impacting or did impact one of your Managed Services.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getManagedIssue
      *

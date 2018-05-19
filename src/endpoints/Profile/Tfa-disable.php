@@ -41,8 +41,8 @@ class Tfa-disable extends Base
     }
 
     /**
-     * Disables Two Factor Authentication for your User. Once successful, login attempts from untrusted computers will only require a password before being successful. This is less secure, and is discouraged.
-
+     * Disables Two Factor Authentication for your User. Once successful, login attempts from untrusted computers will only
+     * require a password before being successful. This is less secure, and is discouraged.
      *
      * @link https://developers.linode.com/api/v4#operation/tfaDisable
      *

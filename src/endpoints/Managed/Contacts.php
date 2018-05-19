@@ -42,7 +42,6 @@ class Contacts extends Base
 
     /**
      * Returns a paginated list of Managed Contacts on your Account.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getManagedContacts
      *
@@ -54,8 +53,8 @@ class Contacts extends Base
     }
 
     /**
-     * Creates a Managed Contact.  A Managed Contact is someone Linode special forces can contact in the course of attempting to resolve an issue with a Managed Service.
-
+     * Creates a Managed Contact.  A Managed Contact is someone Linode special forces can contact in the course of attempting
+     * to resolve an issue with a Managed Service.
      *
      * @link https://developers.linode.com/api/v4#operation/createManagedContact
      *

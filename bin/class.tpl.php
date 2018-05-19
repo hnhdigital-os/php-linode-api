@@ -114,8 +114,7 @@ foreach (array_get($spec, 'get', []) as $name => $settings) {
 ?>
 
     /**
-     * <?= array_get($settings, 'description', '@todo Add description') ?>
-
+<?= generate_method_description($settings) ?>
      *
      * @link <?= array_get($settings, 'url', array_get($spec, 'url')) ?>
 
@@ -148,8 +147,7 @@ foreach (array_get($spec, 'put', []) as $name => $settings) {
 ?>
 
     /**
-     * <?= array_get($settings, 'description', '@todo Add description') ?>
-
+<?= generate_method_description($settings) ?>
      *
 <?= generate_parameter_comments($settings) ?>
      * @link <?= array_get($settings, 'url', array_get($spec, 'url')) ?>
@@ -169,8 +167,7 @@ foreach (array_get($spec, 'post', []) as $name => $settings) {
 ?>
 
     /**
-     * <?= array_get($settings, 'description', '@todo Add description') ?>
-
+<?= generate_method_description($settings) ?>
      *
 <?= generate_parameter_comments($settings) ?>
      * @link <?= array_get($settings, 'url', array_get($spec, 'url')) ?>
@@ -198,8 +195,7 @@ foreach (array_get($spec, 'delete', []) as $name => $settings) {
 ?>
 
     /**
-     * <?= array_get($settings, 'description', '@todo Add description') ?>
-
+<?= generate_method_description($settings) ?>
      *
 <?= generate_parameter_comments($settings) ?>
      * @link <?= array_get($settings, 'url', array_get($spec, 'url')) ?>

@@ -41,8 +41,8 @@ class Types extends Base
     }
 
     /**
-     * Returns collection of Linode Types, including pricing and specifications for each Type. These are used when [creating](/#operation/createLinodeInstance) or [resizing](/#operation/resizeLinodeInstance) Linodes.
-
+     * Returns collection of Linode Types, including pricing and specifications for each Type. These are used when
+     * [creating](/#operation/createLinodeInstance) or [resizing](/#operation/resizeLinodeInstance) Linodes.
      *
      * @link https://developers.linode.com/api/v4#operation/getLinodeTypes
      *

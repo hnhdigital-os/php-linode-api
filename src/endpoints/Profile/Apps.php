@@ -42,7 +42,6 @@ class Apps extends Base
 
     /**
      * This is a collection of OAuth apps that you've given access to your Account, and includes the level of access granted.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getProfileApps
      *

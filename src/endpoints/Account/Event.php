@@ -77,7 +77,6 @@ class Event extends Base
 
     /**
      * Marks all Events up to and including this Event by ID as seen.
-
      *
      * @param integer $event_id The ID of the Event to designate as seen.
      *

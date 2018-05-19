@@ -41,10 +41,10 @@ class Profile extends Base
     }
 
     /**
-     * Returns information about the current User. This can be used to see who is acting in applications where more than one token is managed. For example, in third-party OAuth applications.
-
-This endpoint is always accessible, no matter what OAuth scopes the acting token has.
-
+     * Returns information about the current User. This can be used to see who is acting in applications where more than one
+     * token is managed. For example, in third-party OAuth applications.
+     * 
+     * This endpoint is always accessible, no matter what OAuth scopes the acting token has.
      *
      * @link https://developers.linode.com/api/v4#operation/getProfile
      *
@@ -57,7 +57,6 @@ This endpoint is always accessible, no matter what OAuth scopes the acting token
 
     /**
      * Update information in your Profile.  This option is _not_ available to all third-party clients.
-
      *
      * @link https://developers.linode.com/api/v4#operation/updateProfile
      *

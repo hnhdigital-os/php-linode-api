@@ -49,7 +49,6 @@ class Stackscript extends Base
 
     /**
      * Returns all of the information about a specified StackScript, including the contents of the script.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getStackScript
      *
@@ -64,7 +63,6 @@ class Stackscript extends Base
      * Updates a StackScript.
 
 **Once a StackScript is made public, it cannot be made private.**
-
      *
      * @param string $stackscript_id The ID of the StackScript to look up.
      *
@@ -81,7 +79,6 @@ class Stackscript extends Base
 
     /**
      * Deletes a private StackScript you have permission to `read_write`. You cannot delete a public StackScript.
-
      *
      * @param string $stackscript_id The ID of the StackScript to look up.
      *

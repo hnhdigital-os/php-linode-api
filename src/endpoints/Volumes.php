@@ -42,7 +42,6 @@ class Volumes extends Base
 
     /**
      * Returns a paginated list of Volumes you have permission to view.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getVolumes
      *
@@ -54,9 +53,10 @@ class Volumes extends Base
     }
 
     /**
-     * Creates a Volume on your Account. In order for this to complete successfully, your User must have the `add_volumes` grant. Creating a new Volume will start accruing additional charges on your account.
-Volume service may not be available in all Regions. See [/regions](/#operation/getRegions) for a list of available Regions you deploy your Volume in.
-
+     * Creates a Volume on your Account. In order for this to complete successfully, your User must have the `add_volumes`
+     * grant. Creating a new Volume will start accruing additional charges on your account.
+     * Volume service may not be available in all Regions. See [/regions](/#operation/getRegions) for a list of available
+     * Regions you deploy your Volume in.
      *
      * @link https://developers.linode.com/api/v4#operation/createVolume
      *

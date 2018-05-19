@@ -42,7 +42,6 @@ class Payments extends Base
 
     /**
      * Returns a paginated list of Payments made on this Account.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getPayments
      *
@@ -55,7 +54,6 @@ class Payments extends Base
 
     /**
      * Makes a Payment to your Account via credit card. This will charge your credit card the requested amount.
-
      *
      * @link https://developers.linode.com/api/v4#operation/createPayment
      *

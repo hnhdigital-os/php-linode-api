@@ -49,7 +49,6 @@ class Volume extends Base
 
     /**
      * Get information about a single Volume.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getVolume
      *
@@ -62,7 +61,6 @@ class Volume extends Base
 
     /**
      * Updates a Volume that you have permission to `read_write`.
-
      *
      * @param integer $volume_id ID of the Volume to look up.
      *
@@ -78,8 +76,9 @@ class Volume extends Base
     }
 
     /**
-     * Attaches a Volume on your Account to an existing Linode on your Account. In order for this request to complete successfully, your User must have `read_only` or `read_write` permission to the Volume and `read_write` permission to the Linode. Additionally, the Volume and Linode must be located in the same Region.
-
+     * Attaches a Volume on your Account to an existing Linode on your Account. In order for this request to complete
+     * successfully, your User must have `read_only` or `read_write` permission to the Volume and `read_write` permission to
+     * the Linode. Additionally, the Volume and Linode must be located in the same Region.
      *
      * @param integer $volume_id ID of the Volume to attach.
      *
@@ -95,8 +94,9 @@ class Volume extends Base
     }
 
     /**
-     * Creates a Volume on your Account. In order for this request to complete successfully, your User must have the `add_volumes` grant. The new Volume will have the same size and data as the source Volume. Creating a new Volume will incur a charge on your Account.
-
+     * Creates a Volume on your Account. In order for this request to complete successfully, your User must have the
+     * `add_volumes` grant. The new Volume will have the same size and data as the source Volume. Creating a new Volume will
+     * incur a charge on your Account.
      *
      * @param integer $volume_id ID of the Volume to clone.
      *
@@ -112,8 +112,8 @@ class Volume extends Base
     }
 
     /**
-     * Detaches a Volume on your Account from a Linode on your Account. In order for this request to complete successfully, your User must have `read_write` access to the Volume and `read_write` access to the Linode.
-
+     * Detaches a Volume on your Account from a Linode on your Account. In order for this request to complete successfully,
+     * your User must have `read_write` access to the Volume and `read_write` access to the Linode.
      *
      * @param integer $volume_id ID of the Volume to detach.
      *
@@ -129,9 +129,9 @@ class Volume extends Base
     }
 
     /**
-     * Resize an existing Volume on your Account. In order for this request to complete successfully, your User must have the `read_write` permissions to the Volume.
-* Volumes can only be resized up.
-
+     * Resize an existing Volume on your Account. In order for this request to complete successfully, your User must have the
+     * `read_write` permissions to the Volume.
+     * - Volumes can only be resized up.
      *
      * @param integer $volume_id ID of the Volume to resize.
      *
@@ -148,12 +148,11 @@ class Volume extends Base
 
     /**
      * Deletes a Volume you have permission to `read_write`.
-
-**Deleting a Volume is a destructive action and cannot be undone.**
-
-Deleting stops billing for the Volume. You will be billed for time used within
-the billing period the Volume was active.
-
+     * 
+     * --Deleting a Volume is a destructive action and cannot be undone.--
+     * 
+     * Deleting stops billing for the Volume. You will be billed for time used within
+     * the billing period the Volume was active.
      *
      * @param integer $volume_id ID of the Volume to look up.
      *

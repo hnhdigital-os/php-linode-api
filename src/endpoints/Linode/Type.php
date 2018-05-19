@@ -48,8 +48,8 @@ class Type extends Base
     }
 
     /**
-     * Returns information about a specific Linode Type, including pricing and specifications. This is used when [creating](/#operation/createLinodeInstance) or [resizing](/#operation/resizeLinodeInstance) Linodes.
-
+     * Returns information about a specific Linode Type, including pricing and specifications. This is used when
+     * [creating](/#operation/createLinodeInstance) or [resizing](/#operation/resizeLinodeInstance) Linodes.
      *
      * @link https://developers.linode.com/api/v4#operation/getLinodeType
      *

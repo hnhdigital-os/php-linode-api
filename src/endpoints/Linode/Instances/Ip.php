@@ -49,7 +49,6 @@ class Ip extends Base
 
     /**
      * View information about the specified IP address associated with the specified Linode.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getLinodeIP
      *
@@ -62,7 +61,6 @@ class Ip extends Base
 
     /**
      * Updates a particular IP Address associated with this Linode. Only allows setting/resetting reverse DNS.
-
      *
      * @param integer $linode_id The ID of the Linode to look up.
      * @param string  $address   The IP address to look up.
@@ -80,8 +78,8 @@ class Ip extends Base
     }
 
     /**
-     * Deletes a public IPv4 address associated with this Linode. This will fail if it is the Linode's last remaining public IPv4 address. Private IPv4 addresses cannot be removed via this endpoint.
-
+     * Deletes a public IPv4 address associated with this Linode. This will fail if it is the Linode's last remaining public
+     * IPv4 address. Private IPv4 addresses cannot be removed via this endpoint.
      *
      * @param integer $linode_id The ID of the Linode to look up.
      * @param string  $address   The IP address to look up.

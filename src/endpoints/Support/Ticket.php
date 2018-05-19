@@ -49,7 +49,6 @@ class Ticket extends Base
 
     /**
      * Returns a Support Ticket under your Account.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getTicket
      *
@@ -62,7 +61,6 @@ class Ticket extends Base
 
     /**
      * Returns a collection of replies to a Support Ticket on your Account.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getTicketReplies
      *
@@ -74,8 +72,9 @@ class Ticket extends Base
     }
 
     /**
-     * Adds a file attachment to an existing Support Ticket on your Account. File attachments are used to assist our Support team in resolving your Ticket. Examples of attachments are screen shots and text files that provide additional information.
-
+     * Adds a file attachment to an existing Support Ticket on your Account. File attachments are used to assist our Support
+     * team in resolving your Ticket. Examples of attachments are screen shots and text files that provide additional
+     * information.
      *
      * @param integer $ticket_id The ID of the Support Ticket.
      *
@@ -92,7 +91,6 @@ class Ticket extends Base
 
     /**
      * Adds a reply to an existing Support Ticket.
-
      *
      * @param integer $ticket_id The ID of the Support Ticket.
      *

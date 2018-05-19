@@ -42,7 +42,6 @@ class Linode-settings extends Base
 
     /**
      * Returns a paginated list of Managed Settings for your Linodes. There will be one entry per Linode on your Account.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getManagedLinodeSettings
      *

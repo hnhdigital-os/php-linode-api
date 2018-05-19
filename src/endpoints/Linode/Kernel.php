@@ -49,7 +49,6 @@ class Kernel extends Base
 
     /**
      * Returns information about a single Kernel.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getKernel
      *

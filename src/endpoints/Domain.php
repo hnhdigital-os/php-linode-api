@@ -48,8 +48,8 @@ class Domain extends Base
     }
 
     /**
-     * This is a single Domain that you have registered in Linode's DNS Manager. Linode is not a registrar, and in order for this Domain record to work you must own the domain and point your registrar at Linode's nameservers.
-
+     * This is a single Domain that you have registered in Linode's DNS Manager. Linode is not a registrar, and in order for
+     * this Domain record to work you must own the domain and point your registrar at Linode's nameservers.
      *
      * @link https://developers.linode.com/api/v4#operation/getDomain
      *
@@ -63,7 +63,6 @@ class Domain extends Base
     /**
      * Returns a paginated list of Records configured on a Domain in Linode's
 DNS Manager.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getDomainRecords
      *
@@ -76,7 +75,6 @@ DNS Manager.
 
     /**
      * Update information about a Domain in Linode's DNS Manager.
-
      *
      * @param integer $domain_id The ID of the Domain to access.
      *
@@ -93,7 +91,6 @@ DNS Manager.
 
     /**
      * Adds a new Domain Record to the zonefile this Domain represents.
-
      *
      * @param integer $domain_id The ID of the Domain we are accessing Records for.
      *
@@ -109,8 +106,8 @@ DNS Manager.
     }
 
     /**
-     * Deletes a Domain from Linode's DNS Manager. The Domain will be removed from Linode's nameservers shortly after this operation completes. This also deletes all associated Domain Records.
-
+     * Deletes a Domain from Linode's DNS Manager. The Domain will be removed from Linode's nameservers shortly after this
+     * operation completes. This also deletes all associated Domain Records.
      *
      * @param integer $domain_id The ID of the Domain to access.
      *

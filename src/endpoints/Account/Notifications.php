@@ -42,8 +42,9 @@ class Notifications extends Base
 
     /**
      * Returns a collection of Notification objects representing important, often time-sensitive items related to your Account.
-You cannot interact directly with Notifications, and a Notification will disappear when the circumstances causing it have been resolved. For example, if you have an important Ticket open, you must respond to the Ticket to dismiss the Notification.
-
+     * You cannot interact directly with Notifications, and a Notification will disappear when the circumstances causing it
+     * have been resolved. For example, if you have an important Ticket open, you must respond to the Ticket to dismiss the
+     * Notification.
      *
      * @link https://developers.linode.com/api/v4#operation/getNotifications
      *

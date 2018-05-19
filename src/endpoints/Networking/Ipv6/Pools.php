@@ -42,7 +42,6 @@ class Pools extends Base
 
     /**
      * Displays the IPv6 pools on your Account.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getIPv6Pools
      *

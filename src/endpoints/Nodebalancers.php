@@ -42,7 +42,6 @@ class Nodebalancers extends Base
 
     /**
      * Returns a paginated list of NodeBalancers you have access to.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getNodeBalancers
      *
@@ -54,8 +53,8 @@ class Nodebalancers extends Base
     }
 
     /**
-     * Creates a NodeBalancer in the requested Region. This NodeBalancer will not start serving requests until it is configured.
-
+     * Creates a NodeBalancer in the requested Region. This NodeBalancer will not start serving requests until it is
+     * configured.
      *
      * @link https://developers.linode.com/api/v4#operation/createNodeBalancer
      *

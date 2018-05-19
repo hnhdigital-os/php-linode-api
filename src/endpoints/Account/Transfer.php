@@ -42,7 +42,6 @@ class Transfer extends Base
 
     /**
      * Returns a Transfer object showing your network utilization, in GB, for the current month.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getTransfer
      *

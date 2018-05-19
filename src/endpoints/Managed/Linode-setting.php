@@ -49,7 +49,6 @@ class Linode-setting extends Base
 
     /**
      * Returns a single Linode's Managed settings.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getManagedLinodeSetting
      *
@@ -62,7 +61,6 @@ class Linode-setting extends Base
 
     /**
      * Updates a single Linode's Managed settings.
-
      *
      * @param integer $linode_id The Linode ID whose settings we are accessing.
      *

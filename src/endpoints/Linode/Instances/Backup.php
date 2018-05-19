@@ -49,7 +49,6 @@ class Backup extends Base
 
     /**
      * Returns information about a Backup.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getBackup
      *
@@ -62,7 +61,6 @@ class Backup extends Base
 
     /**
      * Restores a Linode's Backup to the specified Linode.
-
      *
      * @param integer $linode_id The ID of the Linode that the Backup belongs to.
      * @param integer $backup_id The ID of the Backup to restore.

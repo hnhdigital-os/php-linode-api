@@ -42,7 +42,6 @@ class Issues extends Base
 
     /**
      * Returns a paginated list of recent and ongoing issues detected on your Managed Services.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getManagedIssues
      *

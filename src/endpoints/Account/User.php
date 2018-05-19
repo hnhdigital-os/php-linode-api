@@ -49,7 +49,6 @@ class User extends Base
 
     /**
      * Returns information about a single User on your Account.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getUser
      *
@@ -61,8 +60,9 @@ class User extends Base
     }
 
     /**
-     * Returns the full grants structure for this User. This includes all entities on the Account alongside what level of access this User has to each of them. Individual users may view their own grants at the [/profile/grants](/#operation/getProfileGrants) endpoint, but will not see entities that they have no access to.
-
+     * Returns the full grants structure for this User. This includes all entities on the Account alongside what level of
+     * access this User has to each of them. Individual users may view their own grants at the
+     * [/profile/grants](/#operation/getProfileGrants) endpoint, but will not see entities that they have no access to.
      *
      * @link https://developers.linode.com/api/v4#operation/getUserGrants
      *
@@ -74,8 +74,9 @@ class User extends Base
     }
 
     /**
-     * Update the grants a User has. This can be used to give a User access to new entities or actions, or take access away.  You do not need to include the grant for every entity on the Account in this request; any that are not included will remain unchanged.
-
+     * Update the grants a User has. This can be used to give a User access to new entities or actions, or take access away. 
+     * You do not need to include the grant for every entity on the Account in this request; any that are not included will
+     * remain unchanged.
      *
      * @param string $username The username to look up.
      *
@@ -91,8 +92,8 @@ class User extends Base
     }
 
     /**
-     * Deletes a User. The deleted User will be immediately logged out and may no longer log in or perform any actions. All of the User's Grants will be removed.
-
+     * Deletes a User. The deleted User will be immediately logged out and may no longer log in or perform any actions. All of
+     * the User's Grants will be removed.
      *
      * @param string $username The username to look up.
      *

@@ -42,7 +42,6 @@ class Invoices extends Base
 
     /**
      * Returns a paginated list of Invoices against your Account.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getInvoices
      *

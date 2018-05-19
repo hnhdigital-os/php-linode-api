@@ -49,7 +49,6 @@ class Payment extends Base
 
     /**
      * Returns information about a specific Payment.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getPayment
      *

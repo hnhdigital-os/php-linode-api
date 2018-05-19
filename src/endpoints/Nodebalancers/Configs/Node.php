@@ -56,7 +56,6 @@ class Node extends Base
 
     /**
      * Returns information about a single Node, a backend for this NodeBalancer's configured port.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getNodeBalancerNode
      *
@@ -69,7 +68,6 @@ class Node extends Base
 
     /**
      * Updates information about a Node, a backend for this NodeBalancer's configured port.
-
      *
      * @param integer $node_balancer_id The ID of the NodeBalancer to access.
      * @param integer $config_id        The ID of the Config to access
@@ -89,10 +87,10 @@ class Node extends Base
     }
 
     /**
-     * Deletes a Node from this Config. This backend will no longer receive traffic for the configured port of this NodeBalancer.
-
-This does not change or remove the Linode whose address was used in the creation of this Node.
-
+     * Deletes a Node from this Config. This backend will no longer receive traffic for the configured port of this
+     * NodeBalancer.
+     * 
+     * This does not change or remove the Linode whose address was used in the creation of this Node.
      *
      * @param integer $node_balancer_id The ID of the NodeBalancer to access.
      * @param integer $config_id        The ID of the Config to access

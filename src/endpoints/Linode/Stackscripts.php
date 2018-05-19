@@ -42,9 +42,9 @@ class Stackscripts extends Base
 
     /**
      * If the request is not authenticated, only public StackScripts are returned.
-
-For more information on StackScripts, please read our guide: [Automate Deployment with StackScripts](https://linode.com/docs/platform/stackscripts/).
-
+     * 
+     * For more information on StackScripts, please read our guide: [Automate Deployment with
+     * StackScripts](https://linode.com/docs/platform/stackscripts/).
      *
      * @link https://developers.linode.com/api/v4#operation/getStackScripts
      *
@@ -57,7 +57,6 @@ For more information on StackScripts, please read our guide: [Automate Deploymen
 
     /**
      * Creates a StackScript in your Account.
-
      *
      * @link https://developers.linode.com/api/v4#operation/addStackScript
      *

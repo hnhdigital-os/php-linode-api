@@ -49,7 +49,6 @@ class Region extends Base
 
     /**
      * Returns a single Region.
-
      *
      * @link https://developers.linode.com/api/v4#operation/getRegion
      *
