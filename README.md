@@ -60,10 +60,10 @@ $regions = (new Regions())->get()->all();
 
 ### Region
 
-Creating a new Region instance with the last parameter set to `true` will provide a model populated with the endpoint's result.
+You can get a specific record, simply by creating the object with the required parameters. This will automatically call the endpoint and return the object ready to use.
 
 ```php
-$region = new Region('us-east-1a', true);
+$region = new Region('us-east-1a');
 
 echo $region->id.' ('.$region->country.')';
 ```
@@ -71,7 +71,7 @@ echo $region->id.' ('.$region->country.')';
 us-east-1a (US)
 ```
 
-Calling the `get` method directly returns an array from the endpoint.
+Calling the `get` method directly on this same class will return an array of the values from the same endpoint.
 
 ```php
 $result = (new Region('us-east-1a'))->get();
