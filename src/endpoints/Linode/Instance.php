@@ -199,7 +199,7 @@ class Instance extends Base
 
     /**
      * Boots a Linode you have permission to modify. If no parameters are given, a Config profile
-     * will be chosen for this boot based on the following criteria:
+     * will be chosen for this boot based on the following criteria:.
      *
      * - If there is only one Config profile for this Linode, it will be used.
      * - If there is more than one Config profile, the last booted config will be used.
@@ -329,7 +329,7 @@ class Instance extends Base
     /**
      * Rebuilds a Linode you have the `read_write` permission to modify.
      * A rebuild will first shut down the Linode, delete all disks and configs on the Linode, and then deploy a new `image` to
-     * the Linode with the given attributes. Additionally:
+     * the Linode with the given attributes. Additionally:.
      *
      *   - Requires an `image` be supplied.
      *   - Requires a `root_pass` be supplied to use for the root User's Account.
@@ -372,7 +372,7 @@ class Instance extends Base
     /**
      * Resizes a Linode you have the `read_write` permission to a different Type. If any actions are currently running or
      * queued, those actions must be completed first before you can initiate a resize. Additionally, the following criteria
-     * must be met in order to resize a Linode:
+     * must be met in order to resize a Linode:.
      *
      *   - Any pending free upgrades to the Linode's current Type must be performed
      *   before a resize can occur.
@@ -416,7 +416,7 @@ class Instance extends Base
      *
      * Deleting a Linode is a destructive action and cannot be undone.
      *
-     * Additionally, deleting a Linode:
+     * Additionally, deleting a Linode:.
      *
      *   - Gives up any IP addresses the Linode was assigned.
      *   - Deletes all Disks, Backups, Configs, etc.

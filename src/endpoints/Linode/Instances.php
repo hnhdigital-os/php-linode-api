@@ -66,7 +66,7 @@ class Instances extends Base
      * [Regions](/#operation/getRegions) for a list
      * of available Regions you can deploy your Linode in.
      *
-     * Linodes can be created in a number of ways:
+     * Linodes can be created in a number of ways:.
      *
      * - Using a Linode Linux Distribution image or an Image you created based on another Linode.
      *   - The Linode will be `running` after it completes `provisioning`.
