@@ -36,6 +36,7 @@ class Region extends Base
      * @var 
      */
     protected $region_id;
+
     /**
      * Constructor.
      *

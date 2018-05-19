@@ -36,6 +36,7 @@ class Volume extends Base
      * @var 
      */
     protected $volume_id;
+
     /**
      * Constructor.
      *

@@ -36,6 +36,7 @@ class Payment extends Base
      * @var 
      */
     protected $payment_id;
+
     /**
      * Constructor.
      *

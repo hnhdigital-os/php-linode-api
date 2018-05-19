@@ -30,6 +30,7 @@ class Users extends Base
      * @var string
      */
     protected $endpoint = 'account/users';
+
     /**
      * Constructor.
      *

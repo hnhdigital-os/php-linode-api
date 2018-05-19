@@ -36,6 +36,7 @@ class Nodebalancer extends Base
      * @var 
      */
     protected $node_balancer_id;
+
     /**
      * Constructor.
      *

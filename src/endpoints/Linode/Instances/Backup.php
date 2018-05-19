@@ -36,6 +36,7 @@ class Backup extends Base
      * @var 
      */
     protected $linode_id;
+
     /**
      * Constructor.
      *

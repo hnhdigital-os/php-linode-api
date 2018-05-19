@@ -36,6 +36,7 @@ class Service extends Base
      * @var 
      */
     protected $service_id;
+
     /**
      * Constructor.
      *

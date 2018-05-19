@@ -36,6 +36,7 @@ class User extends Base
      * @var 
      */
     protected $username;
+
     /**
      * Constructor.
      *

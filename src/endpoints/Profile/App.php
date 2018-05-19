@@ -36,6 +36,7 @@ class App extends Base
      * @var 
      */
     protected $app_id;
+
     /**
      * Constructor.
      *

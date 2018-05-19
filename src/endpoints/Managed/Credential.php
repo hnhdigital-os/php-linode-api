@@ -36,6 +36,7 @@ class Credential extends Base
      * @var 
      */
     protected $credential_id;
+
     /**
      * Constructor.
      *

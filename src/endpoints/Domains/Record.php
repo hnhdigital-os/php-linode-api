@@ -36,6 +36,7 @@ class Record extends Base
      * @var 
      */
     protected $domain_id;
+
     /**
      * Constructor.
      *

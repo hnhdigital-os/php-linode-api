@@ -30,6 +30,7 @@ class Grants extends Base
      * @var string
      */
     protected $endpoint = 'profile/grants';
+
     /**
      * Constructor.
      *

@@ -36,6 +36,7 @@ class Kernel extends Base
      * @var 
      */
     protected $kernel_id;
+
     /**
      * Constructor.
      *

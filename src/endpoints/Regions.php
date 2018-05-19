@@ -30,6 +30,7 @@ class Regions extends Base
      * @var string
      */
     protected $endpoint = 'regions';
+
     /**
      * Constructor.
      *

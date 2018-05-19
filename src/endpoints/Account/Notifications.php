@@ -30,6 +30,7 @@ class Notifications extends Base
      * @var string
      */
     protected $endpoint = 'account/notifications';
+
     /**
      * Constructor.
      *

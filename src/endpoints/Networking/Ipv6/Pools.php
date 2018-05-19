@@ -30,6 +30,7 @@ class Pools extends Base
      * @var string
      */
     protected $endpoint = 'networking/ipv6/pools';
+
     /**
      * Constructor.
      *

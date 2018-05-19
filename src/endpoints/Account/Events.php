@@ -30,6 +30,7 @@ class Events extends Base
      * @var string
      */
     protected $endpoint = 'account/events';
+
     /**
      * Constructor.
      *

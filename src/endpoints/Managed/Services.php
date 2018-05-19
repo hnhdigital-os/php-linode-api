@@ -30,6 +30,7 @@ class Services extends Base
      * @var string
      */
     protected $endpoint = 'managed/services';
+
     /**
      * Constructor.
      *

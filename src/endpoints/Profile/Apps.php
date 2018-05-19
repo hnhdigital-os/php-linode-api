@@ -30,6 +30,7 @@ class Apps extends Base
      * @var string
      */
     protected $endpoint = 'profile/apps';
+
     /**
      * Constructor.
      *

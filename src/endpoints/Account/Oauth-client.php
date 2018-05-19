@@ -36,6 +36,7 @@ class Oauth-client extends Base
      * @var 
      */
     protected $client_id;
+
     /**
      * Constructor.
      *

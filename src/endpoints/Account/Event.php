@@ -36,6 +36,7 @@ class Event extends Base
      * @var 
      */
     protected $event_id;
+
     /**
      * Constructor.
      *

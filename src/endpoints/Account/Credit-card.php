@@ -30,6 +30,7 @@ class Credit-card extends Base
      * @var string
      */
     protected $endpoint = 'account/credit-card';
+
     /**
      * Constructor.
      *

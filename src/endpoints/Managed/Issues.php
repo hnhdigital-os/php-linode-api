@@ -30,6 +30,7 @@ class Issues extends Base
      * @var string
      */
     protected $endpoint = 'managed/issues';
+
     /**
      * Constructor.
      *

@@ -36,6 +36,7 @@ class Ticket extends Base
      * @var 
      */
     protected $ticket_id;
+
     /**
      * Constructor.
      *

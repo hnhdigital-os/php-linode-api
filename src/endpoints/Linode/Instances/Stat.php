@@ -42,6 +42,7 @@ class Stat extends Base
      * @var 
      */
     protected $year;
+
     /**
      * Constructor.
      *

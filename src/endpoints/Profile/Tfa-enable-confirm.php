@@ -30,6 +30,7 @@ class Tfa-enable-confirm extends Base
      * @var string
      */
     protected $endpoint = 'profile/tfa-enable-confirm';
+
     /**
      * Constructor.
      *

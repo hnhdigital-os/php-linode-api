@@ -30,6 +30,7 @@ class Credentials extends Base
      * @var string
      */
     protected $endpoint = 'managed/credentials';
+
     /**
      * Constructor.
      *

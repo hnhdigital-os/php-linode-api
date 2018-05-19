@@ -36,6 +36,7 @@ class Type extends Base
      * @var 
      */
     protected $type_id;
+
     /**
      * Constructor.
      *

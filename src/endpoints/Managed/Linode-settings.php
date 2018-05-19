@@ -30,6 +30,7 @@ class Linode-settings extends Base
      * @var string
      */
     protected $endpoint = 'managed/linode-settings';
+
     /**
      * Constructor.
      *

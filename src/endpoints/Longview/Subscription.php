@@ -36,6 +36,7 @@ class Subscription extends Base
      * @var 
      */
     protected $subscription_id;
+
     /**
      * Constructor.
      *

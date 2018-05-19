@@ -36,6 +36,7 @@ class Client extends Base
      * @var 
      */
     protected $client_id;
+
     /**
      * Constructor.
      *

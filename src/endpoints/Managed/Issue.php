@@ -36,6 +36,7 @@ class Issue extends Base
      * @var 
      */
     protected $issue_id;
+
     /**
      * Constructor.
      *

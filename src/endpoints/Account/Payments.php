@@ -30,6 +30,7 @@ class Payments extends Base
      * @var string
      */
     protected $endpoint = 'account/payments';
+
     /**
      * Constructor.
      *

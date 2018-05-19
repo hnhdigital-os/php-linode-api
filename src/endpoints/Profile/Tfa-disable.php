@@ -30,6 +30,7 @@ class Tfa-disable extends Base
      * @var string
      */
     protected $endpoint = 'profile/tfa-disable';
+
     /**
      * Constructor.
      *

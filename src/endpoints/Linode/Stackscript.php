@@ -36,6 +36,7 @@ class Stackscript extends Base
      * @var 
      */
     protected $stackscript_id;
+
     /**
      * Constructor.
      *

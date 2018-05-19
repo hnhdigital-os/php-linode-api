@@ -30,6 +30,7 @@ class Contacts extends Base
      * @var string
      */
     protected $endpoint = 'managed/contacts';
+
     /**
      * Constructor.
      *

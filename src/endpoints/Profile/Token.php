@@ -36,6 +36,7 @@ class Token extends Base
      * @var 
      */
     protected $token_id;
+
     /**
      * Constructor.
      *

@@ -30,6 +30,7 @@ class Profile extends Base
      * @var string
      */
     protected $endpoint = 'profile';
+
     /**
      * Constructor.
      *

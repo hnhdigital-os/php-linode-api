@@ -36,6 +36,7 @@ class Image extends Base
      * @var 
      */
     protected $image_id;
+
     /**
      * Constructor.
      *

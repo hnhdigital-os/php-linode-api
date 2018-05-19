@@ -42,6 +42,7 @@ class Node extends Base
      * @var 
      */
     protected $config_id;
+
     /**
      * Constructor.
      *

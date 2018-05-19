@@ -36,6 +36,7 @@ class Invoice extends Base
      * @var 
      */
     protected $invoice_id;
+
     /**
      * Constructor.
      *

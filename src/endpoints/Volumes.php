@@ -30,6 +30,7 @@ class Volumes extends Base
      * @var string
      */
     protected $endpoint = 'volumes';
+
     /**
      * Constructor.
      *

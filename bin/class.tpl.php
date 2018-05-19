@@ -64,14 +64,14 @@ if (array_has($spec, 'fillable')) {
     /**
      * This model is fillable.
      *
-     * @type bool
+     * @var bool
      */
     protected $fillable = true;
 
     /**
      * This model's method that provides the data to fill it.
      *
-     * @type string
+     * @var string
      */
     protected $fill_method = '<?= array_get($settings, 'load-method', 'get') ?>';
 
@@ -93,6 +93,7 @@ foreach (array_get($spec, 'lists', []) as $name => $list) {
 <?php
 }
 ?>
+
     /**
      * Constructor.
      *

@@ -30,6 +30,7 @@ class Tokens extends Base
      * @var string
      */
     protected $endpoint = 'profile/tokens';
+
     /**
      * Constructor.
      *

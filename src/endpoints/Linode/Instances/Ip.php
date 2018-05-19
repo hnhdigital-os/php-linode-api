@@ -36,6 +36,7 @@ class Ip extends Base
      * @var 
      */
     protected $linode_id;
+
     /**
      * Constructor.
      *

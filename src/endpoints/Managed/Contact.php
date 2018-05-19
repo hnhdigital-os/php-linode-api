@@ -36,6 +36,7 @@ class Contact extends Base
      * @var 
      */
     protected $contact_id;
+
     /**
      * Constructor.
      *

@@ -30,6 +30,7 @@ class Oauth-clients extends Base
      * @var string
      */
     protected $endpoint = 'account/oauth-clients';
+
     /**
      * Constructor.
      *

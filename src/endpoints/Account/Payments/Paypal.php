@@ -30,6 +30,7 @@ class Paypal extends Base
      * @var string
      */
     protected $endpoint = 'account/payments/paypal';
+
     /**
      * Constructor.
      *
