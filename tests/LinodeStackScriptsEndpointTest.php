@@ -35,7 +35,7 @@ class LinodeStackScriptsEndpointTest extends BaseTest
                         'example' => 'An example value',
                         'default' => 'Default value',
                         'oneof'   => 'possible,enum,values',
-                    ]
+                    ],
                 ],
             ],
         ],

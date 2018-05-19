@@ -37,8 +37,8 @@ class DomainsEndpointTest extends BaseTest
                     'axfr_ips' => [
                         '44.55.66.77',
                     ],
-                    'group' => 'Example Display Group',
-                    'type'  => 'master',
+                    'group'    => 'Example Display Group',
+                    'type'     => 'master',
                     'zonefile' => [
                         'rendered' => '',
                         'status'   => 'setting_up',
@@ -87,8 +87,8 @@ class DomainsEndpointTest extends BaseTest
             'axfr_ips' => [
                 '44.55.66.77',
             ],
-            'group' => 'Example Display Group',
-            'type'  => 'master',
+            'group'    => 'Example Display Group',
+            'type'     => 'master',
             'zonefile' => [
                 'rendered' => '',
                 'status'   => 'setting_up',
