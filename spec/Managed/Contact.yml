@@ -2,7 +2,8 @@ endpoint: managed/contacts/%s
 url: 'https://developers.linode.com/api/v4#tag/Managed-Contacts'
 load-method: get
 parameters:
-  contact_id: {  }
+  contact_id:
+    type: integer
 get:
   get:
     summary: 'View Managed Contact'

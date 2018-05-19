@@ -2,7 +2,8 @@ endpoint: account/invoices/%s
 url: 'https://developers.linode.com/api/v4#tag/Account-Invoices'
 load-method: get
 parameters:
-  invoice_id: {  }
+  invoice_id:
+    type: integer
 get:
   get:
     summary: 'View Invoice'

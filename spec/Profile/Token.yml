@@ -2,7 +2,8 @@ endpoint: profile/tokens/%s
 url: 'https://developers.linode.com/api/v4#tag/Profile-Tokens'
 load-method: get
 parameters:
-  token_id: {  }
+  token_id:
+    type: integer
 get:
   get:
     summary: 'View Personal Access Token'

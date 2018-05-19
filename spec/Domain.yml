@@ -2,7 +2,8 @@ endpoint: domains/%s
 url: 'https://developers.linode.com/api/v4#tag/Domains'
 load-method: get
 parameters:
-  domain_id: {  }
+  domain_id:
+    type: integer
 get:
   get:
     summary: 'View Domain'

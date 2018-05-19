@@ -54,7 +54,7 @@ class Instances extends Base
     }
 
     /**
-     * Creates a Linode Instance on your Account. In order for this
+* Creates a Linode Instance on your Account. In order for this
      * request to complete successfully, your User must have the `add_linodes` grant. Creating a
      * new Linode will incur a charge on your Account.
      * 

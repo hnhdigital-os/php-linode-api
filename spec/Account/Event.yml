@@ -2,7 +2,8 @@ endpoint: account/events/%s
 url: 'https://developers.linode.com/api/v4#tag/Account-Events'
 load-method: get
 parameters:
-  event_id: {  }
+  event_id:
+    type: integer
 get:
   get:
     summary: 'View Event'

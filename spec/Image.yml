@@ -2,7 +2,8 @@ endpoint: images/%s
 url: 'https://developers.linode.com/api/v4#tag/Images'
 load-method: get
 parameters:
-  image_id: {  }
+  image_id:
+    type: string
 get:
   get:
     summary: 'View Image'

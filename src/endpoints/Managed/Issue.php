@@ -33,7 +33,7 @@ class Issue extends Base
     /**
      * Issue Id.
      *
-     * @var 
+     * @var integer
      */
     protected $issue_id;
 

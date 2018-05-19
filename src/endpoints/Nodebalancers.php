@@ -54,7 +54,7 @@ class Nodebalancers extends Base
     }
 
     /**
-     * Creates a NodeBalancer in the requested Region. This NodeBalancer will not start serving requests until it is
+* Creates a NodeBalancer in the requested Region. This NodeBalancer will not start serving requests until it is
      * configured.
      *
      * @link https://developers.linode.com/api/v4#operation/createNodeBalancer

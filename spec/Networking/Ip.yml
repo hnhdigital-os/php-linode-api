@@ -2,7 +2,8 @@ endpoint: networking/ips/%s
 url: 'https://developers.linode.com/api/v4#tag/Networking-Ips'
 load-method: get
 parameters:
-  address: {  }
+  address:
+    type: string
 get:
   get:
     summary: 'View IP Address'

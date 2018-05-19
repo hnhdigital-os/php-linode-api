@@ -42,7 +42,7 @@ class Assign extends Base
     }
 
     /**
-     * Assign multiple IPs to multiple Linodes in one Region. This allows swapping, shuffling, or otherwise reorganizing IPv4
+* Assign multiple IPs to multiple Linodes in one Region. This allows swapping, shuffling, or otherwise reorganizing IPv4
      * Addresses to your Linodes.  When the assignment is finished, all Linodes must end up with at least one public IPv4 and
      * no more than one private IPv4.
      *

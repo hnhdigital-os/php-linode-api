@@ -33,7 +33,7 @@ class Instance extends Base
     /**
      * Linode Id.
      *
-     * @var 
+     * @var integer
      */
     protected $linode_id;
 
@@ -149,7 +149,7 @@ class Instance extends Base
     }
 
     /**
-     * Creates a snapshot Backup of a Linode.
+* Creates a snapshot Backup of a Linode.
      * -- If you already have a snapshot of this Linode, this is a destructive action. The previous snapshot will be deleted.--
      *
      * @param int $linode_id The ID of the Linode the backups belong to.
@@ -198,7 +198,7 @@ class Instance extends Base
     }
 
     /**
-     * Boots a Linode you have permission to modify. If no parameters are given, a Config profile
+* Boots a Linode you have permission to modify. If no parameters are given, a Config profile
      * will be chosen for this boot based on the following criteria:
      * 
      * - If there is only one Config profile for this Linode, it will be used.
@@ -220,7 +220,7 @@ class Instance extends Base
     }
 
     /**
-     * You can clone your Linode's existing Disks or Configuration profiles to another Linode on your Account. In order for
+* You can clone your Linode's existing Disks or Configuration profiles to another Linode on your Account. In order for
      * this request to complete successfully, your User must have the `add_linodes` grant. Cloning to a new Linode will incur a
      * charge on your Account.
      * If cloning to an existing Linode, any actions currently running or queued must be completed first before you can clone
@@ -256,7 +256,7 @@ class Instance extends Base
     }
 
     /**
-     * Adds a new Disk to a Linode. You can optionally create a Disk from an Image (see [/images](/#operation/getImages) for a
+* Adds a new Disk to a Linode. You can optionally create a Disk from an Image (see [/images](/#operation/getImages) for a
      * list of available public images, or use one of your own), and optionally provide a StackScript to deploy with this Disk.
      *
      * @param int $linode_id ID of the Linode to look up.
@@ -273,7 +273,7 @@ class Instance extends Base
     }
 
     /**
-     * Allocates a public or private IPv4 address to a Linode. Public IP Addresses, after the one included with each Linode,
+* Allocates a public or private IPv4 address to a Linode. Public IP Addresses, after the one included with each Linode,
      * incur an additional monthly charge. If you need an additional public IP Address you must request one - please [open a
      * support ticket](/#operation/createTicket). You may not add more than one private IPv4 address to a single Linode.
      *
@@ -291,7 +291,7 @@ class Instance extends Base
     }
 
     /**
-     * Linodes created with now-deprecated Types are entitled to a free upgrade to the next generation. A mutating Linode will
+* Linodes created with now-deprecated Types are entitled to a free upgrade to the next generation. A mutating Linode will
      * be allocated any new resources the upgraded Type provides, and will be subsequently restarted if it was currently
      * running.
      * If any actions are currently running or queued, those actions must be completed first before you can initiate a mutate.
@@ -310,7 +310,7 @@ class Instance extends Base
     }
 
     /**
-     * Reboots a Linode you have permission to modify. If any actions are currently running or queued, those actions must be
+* Reboots a Linode you have permission to modify. If any actions are currently running or queued, those actions must be
      * completed first before you can initiate a reboot.
      *
      * @param int $linode_id ID of the linode to reboot.
@@ -327,7 +327,7 @@ class Instance extends Base
     }
 
     /**
-     * Rebuilds a Linode you have the `read_write` permission to modify.
+* Rebuilds a Linode you have the `read_write` permission to modify.
      * A rebuild will first shut down the Linode, delete all disks and configs on the Linode, and then deploy a new `image` to
      * the Linode with the given attributes. Additionally:
      * 
@@ -350,7 +350,7 @@ class Instance extends Base
     }
 
     /**
-     * Rescue Mode is a safe environment for performing many system recovery and disk management tasks. Rescue Mode is based on
+* Rescue Mode is a safe environment for performing many system recovery and disk management tasks. Rescue Mode is based on
      * the Finnix recovery distribution, a self-contained and bootable Linux distribution. You can also use Rescue Mode for
      * tasks other than disaster recovery, such as formatting disks to use different filesystems, copying data between disks,
      * and downloading files from a disk via SSH and SFTP.
@@ -370,7 +370,7 @@ class Instance extends Base
     }
 
     /**
-     * Resizes a Linode you have the `read_write` permission to a different Type. If any actions are currently running or
+* Resizes a Linode you have the `read_write` permission to a different Type. If any actions are currently running or
      * queued, those actions must be completed first before you can initiate a resize. Additionally, the following criteria
      * must be met in order to resize a Linode:
      * 
@@ -395,7 +395,7 @@ class Instance extends Base
     }
 
     /**
-     * Shuts down a Linode you have permission to modify. If any actions are currently running or queued, those actions must be
+* Shuts down a Linode you have permission to modify. If any actions are currently running or queued, those actions must be
      * completed first before you can initiate a shutdown.
      *
      * @param int $linode_id ID of the Linode to shutdown.
@@ -412,7 +412,7 @@ class Instance extends Base
     }
 
     /**
-     * Deletes a Linode you have permission to `read_write`.
+* Deletes a Linode you have permission to `read_write`.
      * 
      * --Deleting a Linode is a destructive action and cannot be undone.--
      * 

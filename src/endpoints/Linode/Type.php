@@ -33,7 +33,7 @@ class Type extends Base
     /**
      * Type Id.
      *
-     * @var 
+     * @var string
      */
     protected $type_id;
 
@@ -49,7 +49,7 @@ class Type extends Base
     }
 
     /**
-     * Returns information about a specific Linode Type, including pricing and specifications. This is used when
+* Returns information about a specific Linode Type, including pricing and specifications. This is used when
      * [creating](/#operation/createLinodeInstance) or [resizing](/#operation/resizeLinodeInstance) Linodes.
      *
      * @link https://developers.linode.com/api/v4#operation/getLinodeType

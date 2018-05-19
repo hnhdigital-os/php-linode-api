@@ -42,7 +42,7 @@ class Settings extends Base
     }
 
     /**
-     * Returns information related to your Account settings: Managed service subscription, Longview subscription, and network
+* Returns information related to your Account settings: Managed service subscription, Longview subscription, and network
      * helper.
      *
      * @link https://developers.linode.com/api/v4#operation/getAccountSettings

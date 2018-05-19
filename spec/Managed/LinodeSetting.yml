@@ -2,7 +2,8 @@ endpoint: managed/linode-settings/%s
 url: 'https://developers.linode.com/api/v4#tag/Managed-LinodeSettings'
 load-method: get
 parameters:
-  linode_id: {  }
+  linode_id:
+    type: integer
 get:
   get:
     summary: 'View Linode''s Managed Settings'

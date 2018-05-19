@@ -33,7 +33,7 @@ class Image extends Base
     /**
      * Image Id.
      *
-     * @var 
+     * @var string
      */
     protected $image_id;
 
@@ -77,7 +77,7 @@ class Image extends Base
     }
 
     /**
-     * Deletes a private Image you have permission to `read_write`.
+* Deletes a private Image you have permission to `read_write`.
      * 
      * 
      * --Deleting an Image is a destructive action and cannot be undone.--

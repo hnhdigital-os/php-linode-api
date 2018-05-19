@@ -33,13 +33,13 @@ class Stat extends Base
     /**
      * Linode Id.
      *
-     * @var 
+     * @var integer
      */
     protected $linode_id;
     /**
      * Year.
      *
-     * @var 
+     * @var integer
      */
     protected $year;
 
@@ -56,7 +56,7 @@ class Stat extends Base
     }
 
     /**
-     * Returns statistics for a specific month. The year/month values must be either a date in the past, or the current month.
+* Returns statistics for a specific month. The year/month values must be either a date in the past, or the current month.
      * If the current month, statistics will be retrieved for the past 30 days.
      *
      * @link https://developers.linode.com/api/v4#operation/getLinodeStatsByYearMonth

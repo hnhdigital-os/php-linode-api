@@ -42,7 +42,7 @@ class Paypal extends Base
     }
 
     /**
-     * This begins the process of submitting a Payment via PayPal. After calling this endpoint, you must take the resulting
+* This begins the process of submitting a Payment via PayPal. After calling this endpoint, you must take the resulting
      * `payment_id` along with the `payer_id` from your PayPal account and [POST
      * /account/payments/paypal-execute](/#operation/executePayPalPayment) to complete the Payment.
      *

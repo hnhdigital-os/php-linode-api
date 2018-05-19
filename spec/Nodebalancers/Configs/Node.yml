@@ -2,8 +2,10 @@ endpoint: nodebalancers/%s/configs/%s/nodes/%s
 url: 'https://developers.linode.com/api/v4#tag/Nodebalancers-Configs-Nodes'
 load-method: get
 parameters:
-  node_balancer_id: {  }
-  config_id: {  }
+  node_balancer_id:
+    type: integer
+  config_id:
+    type: integer
 get:
   get:
     summary: 'View Node'

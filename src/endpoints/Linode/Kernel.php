@@ -33,7 +33,7 @@ class Kernel extends Base
     /**
      * Kernel Id.
      *
-     * @var 
+     * @var string
      */
     protected $kernel_id;
 

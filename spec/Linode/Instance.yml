@@ -2,7 +2,8 @@ endpoint: linode/instances/%s
 url: 'https://developers.linode.com/api/v4#tag/Linode-Instances'
 load-method: get
 parameters:
-  linode_id: {  }
+  linode_id:
+    type: integer
 get:
   get:
     summary: 'View Linode'

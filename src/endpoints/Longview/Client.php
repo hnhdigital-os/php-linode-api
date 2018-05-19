@@ -33,7 +33,7 @@ class Client extends Base
     /**
      * Client Id.
      *
-     * @var 
+     * @var integer
      */
     protected $client_id;
 
@@ -61,7 +61,7 @@ class Client extends Base
     }
 
     /**
-     * Updates a Longview Client.  This cannot update how it monitors your server; use the Longview Client application on your
+* Updates a Longview Client.  This cannot update how it monitors your server; use the Longview Client application on your
      * Linode for monitoring configuration.
      *
      * @param int $client_id The Longview Client ID to access.
@@ -78,7 +78,7 @@ class Client extends Base
     }
 
     /**
-     * Deletes a Longview Client from your Account.
+* Deletes a Longview Client from your Account.
      * 
      * --All information stored for this client will be lost.--
      * 

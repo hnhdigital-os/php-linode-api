@@ -2,7 +2,8 @@ endpoint: account/users/%s
 url: 'https://developers.linode.com/api/v4#tag/Account-Users'
 load-method: get
 parameters:
-  username: {  }
+  username:
+    type: string
 get:
   get:
     summary: 'View User'

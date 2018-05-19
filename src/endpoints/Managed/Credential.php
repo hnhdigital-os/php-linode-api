@@ -33,7 +33,7 @@ class Credential extends Base
     /**
      * Credential Id.
      *
-     * @var 
+     * @var integer
      */
     protected $credential_id;
 
@@ -77,7 +77,7 @@ class Credential extends Base
     }
 
     /**
-     * Deletes a Managed Credential.  Linode special forces will no longer have access to this Credential when attempting to
+* Deletes a Managed Credential.  Linode special forces will no longer have access to this Credential when attempting to
      * resolve issues.
      *
      * @param int $credential_id The ID of the Credential to access.

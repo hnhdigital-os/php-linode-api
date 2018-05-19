@@ -2,7 +2,8 @@ endpoint: linode/kernels/%s
 url: 'https://developers.linode.com/api/v4#tag/Linode-Kernels'
 load-method: get
 parameters:
-  kernel_id: {  }
+  kernel_id:
+    type: string
 get:
   get:
     summary: 'View Kernel'

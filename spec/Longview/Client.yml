@@ -2,7 +2,8 @@ endpoint: longview/clients/%s
 url: 'https://developers.linode.com/api/v4#tag/Longview-Clients'
 load-method: get
 parameters:
-  client_id: {  }
+  client_id:
+    type: integer
 get:
   get:
     summary: 'View Longview Client'

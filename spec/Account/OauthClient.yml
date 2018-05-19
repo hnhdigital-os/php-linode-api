@@ -2,7 +2,8 @@ endpoint: account/oauth-clients/%s
 url: 'https://developers.linode.com/api/v4#tag/Account-OauthClients'
 load-method: get
 parameters:
-  client_id: {  }
+  client_id:
+    type: string
 get:
   get:
     summary: 'View OAuth Client'

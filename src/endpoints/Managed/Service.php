@@ -33,7 +33,7 @@ class Service extends Base
     /**
      * Service Id.
      *
-     * @var 
+     * @var integer
      */
     protected $service_id;
 

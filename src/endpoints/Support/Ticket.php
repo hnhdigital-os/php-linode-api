@@ -33,7 +33,7 @@ class Ticket extends Base
     /**
      * Ticket Id.
      *
-     * @var 
+     * @var integer
      */
     protected $ticket_id;
 
@@ -73,7 +73,7 @@ class Ticket extends Base
     }
 
     /**
-     * Adds a file attachment to an existing Support Ticket on your Account. File attachments are used to assist our Support
+* Adds a file attachment to an existing Support Ticket on your Account. File attachments are used to assist our Support
      * team in resolving your Ticket. Examples of attachments are screen shots and text files that provide additional
      * information.
      *

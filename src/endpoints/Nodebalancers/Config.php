@@ -33,7 +33,7 @@ class Config extends Base
     /**
      * Node Balancer Id.
      *
-     * @var 
+     * @var integer
      */
     protected $node_balancer_id;
 
@@ -61,7 +61,7 @@ class Config extends Base
     }
 
     /**
-     * Returns a paginated list of NodeBalancer nodes associated with this Config. These are the backends that will be sent
+* Returns a paginated list of NodeBalancer nodes associated with this Config. These are the backends that will be sent
      * traffic for this port.
      *
      * @link https://developers.linode.com/api/v4#operation/getNodeBalancerConfigNodes
@@ -92,7 +92,7 @@ class Config extends Base
     }
 
     /**
-     * Creates a NodeBalancer Node, a backend that can accept traffic for this NodeBalancer Config. Nodes are routed requests
+* Creates a NodeBalancer Node, a backend that can accept traffic for this NodeBalancer Config. Nodes are routed requests
      * on the configured port based on their status.
      *
      * @param int $node_balancer_id The ID of the NodeBalancer to access.
@@ -111,7 +111,7 @@ class Config extends Base
     }
 
     /**
-     * Deletes the Config for a port of this NodeBalancer.
+* Deletes the Config for a port of this NodeBalancer.
      * 
      * --This cannot be undone.--
      * 

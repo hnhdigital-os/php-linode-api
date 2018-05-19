@@ -33,7 +33,7 @@ class Invoice extends Base
     /**
      * Invoice Id.
      *
-     * @var 
+     * @var integer
      */
     protected $invoice_id;
 

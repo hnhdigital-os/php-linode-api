@@ -33,7 +33,7 @@ class Payment extends Base
     /**
      * Payment Id.
      *
-     * @var 
+     * @var integer
      */
     protected $payment_id;
 

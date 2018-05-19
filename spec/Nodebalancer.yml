@@ -2,7 +2,8 @@ endpoint: nodebalancers/%s
 url: 'https://developers.linode.com/api/v4#tag/Nodebalancers'
 load-method: get
 parameters:
-  node_balancer_id: {  }
+  node_balancer_id:
+    type: integer
 get:
   get:
     summary: 'View NodeBalancer'

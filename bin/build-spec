@@ -141,6 +141,13 @@ foreach ($spec_document['paths'] as $path => $details) {
             if (isset($config['parameters'][$name])) {
                 $parameters[$name]['self'] = true;
             }
+
+            // Update overall class parameter listing.
+            if ($method === 'get') {
+                if (isset($config['parameters'][$name])) {
+                    $config['parameters'][$name]['type'] = array_get($parameter, 'schema.type', '');
+                }
+            }
         }
 
         $config[$method][$endpoint_method] = [

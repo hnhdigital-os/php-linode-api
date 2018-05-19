@@ -33,7 +33,7 @@ class App extends Base
     /**
      * App Id.
      *
-     * @var 
+     * @var integer
      */
     protected $app_id;
 

@@ -2,8 +2,10 @@ endpoint: linode/instances/%s/stats/%s/%s
 url: 'https://developers.linode.com/api/v4#tag/Linode-Instances-Stats'
 load-method: get
 parameters:
-  linode_id: {  }
-  year: {  }
+  linode_id:
+    type: integer
+  year:
+    type: integer
 get:
   get:
     summary: 'View Statistics (year/month)'

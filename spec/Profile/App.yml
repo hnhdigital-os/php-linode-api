@@ -2,7 +2,8 @@ endpoint: profile/apps/%s
 url: 'https://developers.linode.com/api/v4#tag/Profile-Apps'
 load-method: get
 parameters:
-  app_id: {  }
+  app_id:
+    type: integer
 get:
   get:
     summary: 'View Authorized App'

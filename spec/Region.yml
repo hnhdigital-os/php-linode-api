@@ -2,7 +2,8 @@ endpoint: regions/%s
 url: 'https://developers.linode.com/api/v4#tag/Regions'
 load-method: get
 parameters:
-  region_id: {  }
+  region_id:
+    type: string
 get:
   get:
     summary: 'View Region'

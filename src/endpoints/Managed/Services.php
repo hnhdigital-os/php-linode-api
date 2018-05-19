@@ -42,7 +42,7 @@ class Services extends Base
     }
 
     /**
-     * Returns a paginated list of Managed Services on your Account. These are the services Linode Managed is monitoring and
+* Returns a paginated list of Managed Services on your Account. These are the services Linode Managed is monitoring and
      * will report and attempt to resolve issues with.
      *
      * @link https://developers.linode.com/api/v4#operation/getManagedServices
@@ -55,7 +55,7 @@ class Services extends Base
     }
 
     /**
-     * Creates a Managed Service. Linode Managed will being monitoring this service and reporting and attempting to resolve any
+* Creates a Managed Service. Linode Managed will being monitoring this service and reporting and attempting to resolve any
      * Issues.
      *
      * @link https://developers.linode.com/api/v4#operation/createManagedService

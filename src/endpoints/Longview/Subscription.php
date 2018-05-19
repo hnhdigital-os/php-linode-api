@@ -33,7 +33,7 @@ class Subscription extends Base
     /**
      * Subscription Id.
      *
-     * @var 
+     * @var string
      */
     protected $subscription_id;
 

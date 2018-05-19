@@ -33,7 +33,7 @@ class Nodebalancer extends Base
     /**
      * Node Balancer Id.
      *
-     * @var 
+     * @var integer
      */
     protected $node_balancer_id;
 
@@ -61,7 +61,7 @@ class Nodebalancer extends Base
     }
 
     /**
-     * Returns a paginated list of NodeBalancer Configs associated with this NodeBalancer. NodeBalancer Configs represent
+* Returns a paginated list of NodeBalancer Configs associated with this NodeBalancer. NodeBalancer Configs represent
      * individual ports that this NodeBalancer will accept traffic on, one Config per port.
      * 
      * For example, if you wanted to accept standard HTTP traffic, you would need a Config listening on port 80.
@@ -92,7 +92,7 @@ class Nodebalancer extends Base
     }
 
     /**
-     * Creates a NodeBalancer Config, which allows the NodeBalancer to accept traffic on a new port. You will need to add
+* Creates a NodeBalancer Config, which allows the NodeBalancer to accept traffic on a new port. You will need to add
      * NodeBalancer Nodes to the new Config before it can actually serve requests.
      *
      * @param int $node_balancer_id The ID of the NodeBalancer to access.
@@ -109,7 +109,7 @@ class Nodebalancer extends Base
     }
 
     /**
-     * Deletes a NodeBalancer.
+* Deletes a NodeBalancer.
      * 
      * --This is a destructive action and cannot be undone.--
      * 

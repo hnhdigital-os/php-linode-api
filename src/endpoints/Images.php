@@ -42,7 +42,7 @@ class Images extends Base
     }
 
     /**
-     * Returns a paginated list of Images.
+* Returns a paginated list of Images.
      * 
      * - Calling this endpoint without authentication returns all public Images.
      * - Authentication is required to return a combined paginated list of all public and
@@ -58,7 +58,7 @@ class Images extends Base
     }
 
     /**
-     * Creates a private gold-master Image from a Linode Disk. There is no additional charge to store Images for Linode users.
+* Creates a private gold-master Image from a Linode Disk. There is no additional charge to store Images for Linode users.
      * Images are limited to three per Account.
      *
      * @link https://developers.linode.com/api/v4#operation/createImage

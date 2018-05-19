@@ -2,7 +2,8 @@ endpoint: volumes/%s
 url: 'https://developers.linode.com/api/v4#tag/Volumes'
 load-method: get
 parameters:
-  volume_id: {  }
+  volume_id:
+    type: integer
 get:
   get:
     summary: 'View Volume'

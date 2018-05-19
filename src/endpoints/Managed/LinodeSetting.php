@@ -33,7 +33,7 @@ class LinodeSetting extends Base
     /**
      * Linode Id.
      *
-     * @var 
+     * @var integer
      */
     protected $linode_id;
 

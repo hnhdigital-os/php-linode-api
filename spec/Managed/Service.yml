@@ -2,7 +2,8 @@ endpoint: managed/services/%s
 url: 'https://developers.linode.com/api/v4#tag/Managed-Services'
 load-method: get
 parameters:
-  service_id: {  }
+  service_id:
+    type: integer
 get:
   get:
     summary: 'View Managed Service'

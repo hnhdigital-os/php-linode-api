@@ -2,7 +2,8 @@ endpoint: longview/subscriptions/%s
 url: 'https://developers.linode.com/api/v4#tag/Longview-Subscriptions'
 load-method: get
 parameters:
-  subscription_id: {  }
+  subscription_id:
+    type: string
 get:
   get:
     summary: 'View Longview Subscription'

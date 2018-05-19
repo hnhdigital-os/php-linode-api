@@ -33,7 +33,7 @@ class Contact extends Base
     /**
      * Contact Id.
      *
-     * @var 
+     * @var integer
      */
     protected $contact_id;
 

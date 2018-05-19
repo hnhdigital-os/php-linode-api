@@ -2,7 +2,8 @@ endpoint: linode/types/%s
 url: 'https://developers.linode.com/api/v4#tag/Linode-Types'
 load-method: get
 parameters:
-  type_id: {  }
+  type_id:
+    type: string
 get:
   get:
     summary: 'View Type'

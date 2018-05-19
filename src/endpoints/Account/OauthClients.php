@@ -42,7 +42,7 @@ class OauthClients extends Base
     }
 
     /**
-     * Returns a paginated list of OAuth Clients registered to your Account.  OAuth Clients allow users to log into
+* Returns a paginated list of OAuth Clients registered to your Account.  OAuth Clients allow users to log into
      * applications you write or host using their Linode Account, and may allow them to grant some level of access to their
      * Linodes or other entities to your application.
      *
@@ -56,7 +56,7 @@ class OauthClients extends Base
     }
 
     /**
-     * Creates an OAuth Client, which can be used to allow users (using their Linode account) to log in to your own
+* Creates an OAuth Client, which can be used to allow users (using their Linode account) to log in to your own
      * application, and optionally grant your application some amount of access to their Linodes or other entities.
      *
      * @link https://developers.linode.com/api/v4#operation/createClient

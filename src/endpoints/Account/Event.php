@@ -33,7 +33,7 @@ class Event extends Base
     /**
      * Event Id.
      *
-     * @var 
+     * @var integer
      */
     protected $event_id;
 

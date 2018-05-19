@@ -33,7 +33,7 @@ class Record extends Base
     /**
      * Domain Id.
      *
-     * @var 
+     * @var integer
      */
     protected $domain_id;
 

@@ -2,7 +2,8 @@ endpoint: linode/stackscripts/%s
 url: 'https://developers.linode.com/api/v4#tag/Linode-Stackscripts'
 load-method: get
 parameters:
-  stackscript_id: {  }
+  stackscript_id:
+    type: string
 get:
   get:
     summary: 'View StackScript'
