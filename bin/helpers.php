@@ -150,7 +150,7 @@ function generate_method_description($method_settings)
 {
     $description = array_get($method_settings, 'description', '@todo Add description');
 
-    if (strlen($description) < 120 && strstr($string, "\n")) {
+    if (strlen($description) < 120 && !strstr($description, "\n")) {
         return '     * '.trim($description)."\n";
     }
 
