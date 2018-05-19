@@ -52,7 +52,7 @@ class DomainsEndpointTest extends BaseTest
         $this->mockGetRequest('/domains?page=1', $data);
 
         // Create a new domains endpoint.
-        $result = (new Domains())->search()->all();
+        $result = (new Domains())->get()->all();
 
         // Create the same object that it should return.
         $domain = new Domain(357, array_get($data, 'data.0'));

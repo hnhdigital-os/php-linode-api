@@ -2,10 +2,10 @@
 
 namespace HnhDigital\LinodeApi\Tests;
 
-use HnhDigital\LinodeApi\LinodeType;
-use HnhDigital\LinodeApi\LinodeTypes;
+use HnhDigital\LinodeApi\Linode\Type;
+use HnhDigital\LinodeApi\Linode\Types;
 
-class LinodeTypesEndpointTest extends BaseTest
+class TypesEndpointTest extends BaseTest
 {
     /**
      * Test GET /linode/types.
@@ -49,10 +49,10 @@ class LinodeTypesEndpointTest extends BaseTest
         $this->mockGetRequest('/linode/types?page=1', $data);
 
         // Create a new types endpoint.
-        $result = (new LinodeTypes())->search()->all();
+        $result = (new Types())->get()->all();
 
         // Create the same object that it should return.
-        $type = new LinodeType('linode2048.5', array_get($data, 'data.0'));
+        $type = new Type('linode2048.5', array_get($data, 'data.0'));
 
         // Compare.
         $this->assertEquals($type, array_get($result, 0));
@@ -93,13 +93,13 @@ class LinodeTypesEndpointTest extends BaseTest
         $this->mockGetRequest('/linode/types/linode2048.5', $data);
 
         // Create the same object that it should return.
-        $type = new LinodeType('linode2048.5');
+        $type = new Type('linode2048.5');
 
         // Data.
         $result = $type->get();
 
         // Create the same object that it should return.
-        $populated_type = new LinodeType('linode2048.5', $data);
+        $populated_type = new Type('linode2048.5', $data);
 
         // Compare.
         $this->assertEquals($data, $result);

@@ -3,7 +3,7 @@
 namespace HnhDigital\LinodeApi\Tests;
 
 use HnhDigital\LinodeApi\Profile;
-use HnhDigital\LinodeApi\StackScript;
+use HnhDigital\LinodeApi\Linode\Stackscript;
 
 class OverallTest extends BaseTest
 {
@@ -18,7 +18,7 @@ class OverallTest extends BaseTest
             'label' => 'test',
         ];
 
-        $stack_script = new StackScript(false, $data);
+        $stack_script = new Stackscript(false, $data);
 
         // Test setting something not in the model.
         $stack_script->test = 1;

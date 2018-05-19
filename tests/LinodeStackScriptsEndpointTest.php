@@ -2,12 +2,12 @@
 
 namespace HnhDigital\LinodeApi\Tests;
 
-use HnhDigital\LinodeApi\StackScript;
-use HnhDigital\LinodeApi\StackScripts;
+use HnhDigital\LinodeApi\Linode\Stackscript;
+use HnhDigital\LinodeApi\Linode\Stackscripts;
 
-class LinodeStackScriptsEndpointTest extends BaseTest
+class LinodeStackscriptsEndpointTest extends BaseTest
 {
-    // StackScripts data.
+    // Stackscripts data.
     protected $data = [
         'pages'   => 1,
         'results' => 1,
@@ -16,7 +16,7 @@ class LinodeStackScriptsEndpointTest extends BaseTest
                 'id'               => 37,
                 'username'         => 'linode',
                 'user_gravatar_id' => '08e2a99f31420a3f38753b07e23af7d6',
-                'label'            => 'Example StackScript',
+                'label'            => 'Example Stackscript',
                 'description'      => 'Installs the Linode API bindings',
                 'images'           => [
                     'linode/debian8',
@@ -47,17 +47,17 @@ class LinodeStackScriptsEndpointTest extends BaseTest
      *
      * @return void
      */
-    public function testGetStackScripts()
+    public function testGetStackscripts()
     {
 
         // Setup test server at path and with response data.
         $this->mockGetRequest('/linode/stackscripts?page=1', $this->data);
 
         // Create a new stackscripts endpoint.
-        $result = (new StackScripts())->search()->all();
+        $result = (new Stackscripts())->get()->all();
 
         // Create the same object that it should return.
-        $stack_script = new StackScript('37', array_get($this->data, 'data.0'));
+        $stack_script = new Stackscript('37', array_get($this->data, 'data.0'));
 
         // Compare.
         $this->assertEquals($stack_script, array_get($result, 0));
@@ -68,19 +68,19 @@ class LinodeStackScriptsEndpointTest extends BaseTest
      *
      * @return void
      */
-    public function testGetStackScript()
+    public function testGetStackscript()
     {
         // Setup test server at path and with response data.
         $this->mockGetRequest('/linode/stackscripts/37', $this->data['data']);
 
         // Create the same object that it should return.
-        $stack_script = new StackScript('37');
+        $stack_script = new Stackscript('37');
 
         // Data.
         $result = $stack_script->get();
 
         // Create the same object that it should return.
-        $populated_stack_script = new StackScript('37', $this->data['data']);
+        $populated_stack_script = new Stackscript('37', $this->data['data']);
 
         // Compare.
         $this->assertEquals($this->data['data'], $result);
@@ -100,11 +100,11 @@ class LinodeStackScriptsEndpointTest extends BaseTest
         $this->mockPutRequest('/linode/stackscripts/37', $this->data['data']);
 
         $put_data = [
-            'label' => 'Example StackScript - test',
+            'label' => 'Example Stackscript - test',
         ];
 
         // Get the profile data from the endpoint.
-        $stack_script = new StackScript('37');
+        $stack_script = new Stackscript('37');
 
         // Put the changes, get the latest model back.
         $stack_script->update($put_data);
@@ -125,7 +125,7 @@ class LinodeStackScriptsEndpointTest extends BaseTest
         $this->mockDeleteRequest('/linode/stackscripts/37');
 
         // Get the profile data from the endpoint.
-        $stack_script = new StackScript('37');
+        $stack_script = new Stackscript('37');
 
         $stack_script->delete();
     }

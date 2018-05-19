@@ -2,8 +2,8 @@
 
 namespace HnhDigital\LinodeApi\Tests;
 
-use HnhDigital\LinodeApi\Kernel;
-use HnhDigital\LinodeApi\Kernels;
+use HnhDigital\LinodeApi\Linode\Kernel;
+use HnhDigital\LinodeApi\Linode\Kernels;
 
 class LinodeKernelsEndpointTest extends BaseTest
 {
@@ -36,7 +36,7 @@ class LinodeKernelsEndpointTest extends BaseTest
         $this->mockGetRequest('/linode/kernels?page=1', $data);
 
         // Create a new regions endpoint.
-        $result = (new Kernels())->search()->all();
+        $result = (new Kernels())->get()->all();
 
         // Create the same object that it should return.
         $kernel = new Kernel('linode/latest-64bit', array_get($data, 'data.0'));

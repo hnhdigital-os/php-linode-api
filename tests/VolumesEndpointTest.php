@@ -36,7 +36,7 @@ class VolumesEndpointTest extends BaseTest
         $this->mockGetRequest('/volumes?page=1', $this->data);
 
         // Create a new volumes endpoint.
-        $result = (new Volumes())->search()->all();
+        $result = (new Volumes())->get()->all();
 
         // Create the same object that it should return.
         $volume = new Volume(123, array_get($this->data, 'data.0'));
