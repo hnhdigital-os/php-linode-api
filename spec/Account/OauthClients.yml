@@ -1,5 +1,5 @@
 endpoint: account/oauth-clients
-url: 'https://developers.linode.com/api/v4#tag/Account-Oauth-clients'
+url: 'https://developers.linode.com/api/v4#tag/Account-OauthClients'
 load-method: get
 get:
   get:

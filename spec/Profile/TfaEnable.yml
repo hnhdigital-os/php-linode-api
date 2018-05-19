@@ -1,5 +1,5 @@
 endpoint: profile/tfa-enable
-url: 'https://developers.linode.com/api/v4#tag/Profile-Tfa-enable'
+url: 'https://developers.linode.com/api/v4#tag/Profile-TfaEnable'
 load-method: get
 post:
   tfaEnable:

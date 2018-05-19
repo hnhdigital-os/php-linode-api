@@ -1,5 +1,5 @@
 endpoint: account/credit-card
-url: 'https://developers.linode.com/api/v4#tag/Account-Credit-card'
+url: 'https://developers.linode.com/api/v4#tag/Account-CreditCard'
 load-method: get
 post:
   createCreditCard:

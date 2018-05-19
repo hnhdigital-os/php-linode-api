@@ -61,6 +61,9 @@ foreach ($spec_document['paths'] as $path => $details) {
         }
     }
 
+    $last_key = count($base_array)-1;
+    $base_array[$last_key] = studly_case(str_replace('-', ' ', $base_array[$last_key]));
+
     // Create class naming.
     $original_class_name = $class_name = trim(implode('/', array_map('ucfirst', $base_array)), '/');
 

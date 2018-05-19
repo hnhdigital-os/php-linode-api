@@ -1,5 +1,5 @@
 endpoint: profile/tfa-enable-confirm
-url: 'https://developers.linode.com/api/v4#tag/Profile-Tfa-enable-confirm'
+url: 'https://developers.linode.com/api/v4#tag/Profile-TfaEnableConfirm'
 load-method: get
 post:
   tfaConfirm:
