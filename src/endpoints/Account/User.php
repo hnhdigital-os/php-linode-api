@@ -75,7 +75,7 @@ class User extends Base
     }
 
     /**
-     * Update the grants a User has. This can be used to give a User access to new entities or actions, or take access away. 
+     * Update the grants a User has. This can be used to give a User access to new entities or actions, or take access away.
      * You do not need to include the grant for every entity on the Account in this request; any that are not included will
      * remain unchanged.
      *

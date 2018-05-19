@@ -158,6 +158,7 @@ function generate_method_description($method_settings)
     $result = str_replace('*', '-', $result);
     $result = preg_replace('/^(.*?)$/m', '     * $1', trim($result))."\n";
     $result = preg_replace('/^     \* $/m', '     *', $result);
+    $result = preg_replace('/^(.*?). $/m', '$1.', $result);
 
     return $result;
 }
