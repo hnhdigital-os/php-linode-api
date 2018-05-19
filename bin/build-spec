@@ -110,12 +110,17 @@ foreach ($spec_document['paths'] as $path => $details) {
         $method_details = $details[$method];
 
         // Endpoint.
-        $endpoint_method = $method_details['operationId'];
+        $original_endpoint_method = $endpoint_method = $method_details['operationId'];
+
         if (!isset($config[$method][$method]) && $method !== 'post') {
             $endpoint_method = $method == 'put' ? 'update' : $method; 
         }
 
         $endpoint_method = str_replace($replacement_array, '', $endpoint_method);
+
+        if ($endpoint_method === 'clone') {
+            $endpoint_method = $original_endpoint_method;
+        }
 
         $parameters = [];
         $optional_parameters = [];

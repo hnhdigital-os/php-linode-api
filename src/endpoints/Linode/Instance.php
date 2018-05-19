@@ -231,7 +231,7 @@ class Instance extends Base
      *
      * @return mixed
      */
-    public function clone()
+    public function cloneLinodeInstance()
     {
         return $this->apiCall('post', '/clone', ['json' => [
             'linode_id' => $linode_id,

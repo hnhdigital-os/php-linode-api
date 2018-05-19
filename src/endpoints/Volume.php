@@ -104,7 +104,7 @@ class Volume extends Base
      *
      * @return mixed
      */
-    public function clone()
+    public function cloneVolume()
     {
         return $this->apiCall('post', '/clone', ['json' => [
             'volume_id' => $volume_id,

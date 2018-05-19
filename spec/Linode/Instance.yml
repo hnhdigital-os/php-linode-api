@@ -150,7 +150,7 @@ post:
         required: true
         type: integer
         self: true
-  clone:
+  cloneLinodeInstance:
     summary: 'Clone Linode'
     description: "You can clone your Linode's existing Disks or Configuration profiles to another Linode on your Account. In order for this request to complete successfully, your User must have the `add_linodes` grant. Cloning to a new Linode will incur a charge on your Account.\nIf cloning to an existing Linode, any actions currently running or queued must be completed first before you can clone to it.\n"
     url: 'https://developers.linode.com/api/v4#operation/cloneLinodeInstance'
