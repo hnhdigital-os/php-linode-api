@@ -345,7 +345,7 @@ function api_search_parameters($method_settings)
 
     // Search returns a model as the result.
     if (array_has($method_settings, 'factory')) {
-        return ", ".factory_parameters($method_settings);
+        return ', '.factory_parameters($method_settings);
     }
 
     return $result;
@@ -467,7 +467,6 @@ function generate_post_function_payload($method_settings)
 
     return ", ['json' => ".$result.']';
 }
-
 
 /**
  * Factory parameters.
