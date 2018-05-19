@@ -2,8 +2,8 @@
 
 namespace HnhDigital\LinodeApi\Tests;
 
-use HnhDigital\LinodeApi\Profile;
 use HnhDigital\LinodeApi\Linode\Stackscript;
+use HnhDigital\LinodeApi\Profile;
 
 class OverallTest extends BaseTest
 {

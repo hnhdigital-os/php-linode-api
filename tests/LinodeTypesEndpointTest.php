@@ -5,7 +5,7 @@ namespace HnhDigital\LinodeApi\Tests;
 use HnhDigital\LinodeApi\Linode\Type;
 use HnhDigital\LinodeApi\Linode\Types;
 
-class TypesEndpointTest extends BaseTest
+class LinodeTypesEndpointTest extends BaseTest
 {
     /**
      * Test GET /linode/types.
