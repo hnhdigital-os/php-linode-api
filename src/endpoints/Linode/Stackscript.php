@@ -63,8 +63,8 @@ class Stackscript extends Base
 
     /**
      * Updates a StackScript.
-
-**Once a StackScript is made public, it cannot be made private.**
+     *
+     * --Once a StackScript is made public, it cannot be made private.--
      *
      * @param string $stackscript_id The ID of the StackScript to look up.
      *

@@ -64,7 +64,7 @@ class Domain extends Base
 
     /**
      * Returns a paginated list of Records configured on a Domain in Linode's
-DNS Manager.
+     * DNS Manager.
      *
      * @link https://developers.linode.com/api/v4#operation/getDomainRecords
      *

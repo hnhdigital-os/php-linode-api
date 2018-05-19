@@ -44,7 +44,7 @@ class Regions extends Base
 
     /**
      * Lists the Regions available for Linode services. Not all services are guaranteed to be
-available in all Regions.
+     * available in all Regions.
      *
      * @link https://developers.linode.com/api/v4#operation/getRegions
      *

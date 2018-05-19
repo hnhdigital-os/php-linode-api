@@ -121,8 +121,8 @@ class Disk extends Base
 
     /**
      * Deletes a Disk you have permission to `read_write`.
-
-**Deleting a Disk is a destructive action and cannot be undone.**
+     *
+     * --Deleting a Disk is a destructive action and cannot be undone.--
      *
      * @param int $linode_id ID of the Linode to look up.
      * @param int $disk_id   ID of the Disk to look up.
