@@ -8,7 +8,7 @@
 
 ```
 
-The v4 Linode API for PHP [BETA].
+The v4.01 Linode API for PHP [BETA].
 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) Definately a work in progress. Do not use.
 
@@ -17,6 +17,8 @@ The v4 Linode API for PHP [BETA].
 [![Build Status](https://travis-ci.org/hnhdigital-os/php-linode-api.svg?branch=master)](https://travis-ci.org/hnhdigital-os/php-linode-api) [![StyleCI](https://styleci.io/repos/119234618/shield?branch=master)](https://styleci.io/repos/119234618) [![Test Coverage](https://codeclimate.com/github/hnhdigital-os/php-linode-api/badges/coverage.svg)](https://codeclimate.com/github/hnhdigital-os/php-linode-api/coverage) [![Issue Count](https://codeclimate.com/github/hnhdigital-os/php-linode-api/badges/issue_count.svg)](https://codeclimate.com/github/hnhdigital-os/php-linode-api) [![Code Climate](https://codeclimate.com/github/hnhdigital-os/php-linode-api/badges/gpa.svg)](https://codeclimate.com/github/hnhdigital-os/php-linode-api)
 
 This package has been developed by H&H|Digital, an Australian botique developer. Visit us at [hnh.digital](http://hnh.digital).
+
+This package is built automatically using the OpenAPI specification for the Linode v4 API.
 
 ## Documentation
 
@@ -43,7 +45,7 @@ Via composer:
 
 Results returned from any search based endpoint are provided as an instance of that type. This allows you to call any endpoints immediately.
 
-Results from the `search` method are returns as an object that implements `Iterator` and `Countable`, allowing you to use this in a `foreach` and to use `count`. Linode limits search results to 25 records per page - this is overcome by automatically requesting the next page of records when the last record is reached in the current page.
+Results from the `get` method are returned as an object that implements `Iterator` and `Countable`, allowing you to use this in a `foreach` and to use `count`. Linode limits search results to 25 records per page - this is overcome by automatically requesting the next page of records when the last record is reached in the current page.
 
 ```php
 foreach ((new Regions())->get() as $region) {
