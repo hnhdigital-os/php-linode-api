@@ -1,18 +1,17 @@
 endpoint: regions/%s
-description: Return a particular region.
-url: https://developers.linode.com/v4/reference/endpoints/regions
+url: 'https://developers.linode.com/api/v4#tag/Regions'
 load-method: get
-fillable: true
-
 parameters:
-
-    region_id:
-      type: int
-
+  region_id: {  }
 get:
-
   get:
-    url: https://developers.linode.com/v4/reference/endpoints/regions/$id#GET
-    description: Returns information about this region.
-    endpoint:
-    auto-fill: true
+    summary: 'View Region'
+    description: "Returns a single Region.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getRegion'
+    endpoint: ''
+    parameters:
+      region_id:
+        description: 'ID of the Region to look up.'
+        required: true
+        type: string
+        self: true

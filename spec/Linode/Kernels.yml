@@ -1,0 +1,9 @@
+endpoint: linode/kernels
+url: 'https://developers.linode.com/api/v4#tag/Linode-Kernels'
+load-method: get
+get:
+  get:
+    summary: 'List Kernels'
+    description: "Lists available Kernels.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getKernels'
+    endpoint: ''

@@ -1,0 +1,15 @@
+endpoint: managed/contacts
+url: 'https://developers.linode.com/api/v4#tag/Managed-Contacts'
+load-method: get
+get:
+  get:
+    summary: 'List Managed Contacts'
+    description: "Returns a paginated list of Managed Contacts on your Account.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getManagedContacts'
+    endpoint: ''
+post:
+  create:
+    summary: 'Create Managed Contact'
+    description: "Creates a Managed Contact.  A Managed Contact is someone Linode special forces can contact in the course of attempting to resolve an issue with a Managed Service.\n"
+    url: 'https://developers.linode.com/api/v4#operation/createManagedContact'
+    endpoint: ''

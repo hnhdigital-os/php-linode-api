@@ -1,0 +1,28 @@
+endpoint: account/invoices/%s
+url: 'https://developers.linode.com/api/v4#tag/Account-Invoices'
+load-method: get
+parameters:
+  invoice_id: {  }
+get:
+  get:
+    summary: 'View Invoice'
+    description: 'Returns a single Invoice object.'
+    url: 'https://developers.linode.com/api/v4#operation/getInvoice'
+    endpoint: ''
+    parameters:
+      invoice_id:
+        description: 'The ID of the Invoice.'
+        required: true
+        type: integer
+        self: true
+  getInvoiceItems:
+    summary: 'List Invoice Items'
+    description: 'Returns a paginated list of Invoice items.'
+    url: 'https://developers.linode.com/api/v4#operation/getInvoiceItems'
+    endpoint: /items
+    parameters:
+      invoice_id:
+        description: 'The ID of the Invoice.'
+        required: true
+        type: integer
+        self: true

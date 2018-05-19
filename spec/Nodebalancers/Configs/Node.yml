@@ -1,0 +1,69 @@
+endpoint: nodebalancers/%s/configs/%s/nodes/%s
+url: 'https://developers.linode.com/api/v4#tag/Nodebalancers-Configs-Nodes'
+load-method: get
+parameters:
+  node_balancer_id: {  }
+  config_id: {  }
+get:
+  get:
+    summary: 'View Node'
+    description: "Returns information about a single Node, a backend for this NodeBalancer's configured port.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getNodeBalancerNode'
+    endpoint: ''
+    parameters:
+      node_balancer_id:
+        description: 'The ID of the NodeBalancer to access.'
+        required: true
+        type: integer
+        self: true
+      config_id:
+        description: 'The ID of the Config to access'
+        required: true
+        type: integer
+        self: true
+      node_id:
+        description: 'The ID of the Node to access'
+        required: true
+        type: integer
+put:
+  update:
+    summary: 'Update Node'
+    description: "Updates information about a Node, a backend for this NodeBalancer's configured port.\n"
+    url: 'https://developers.linode.com/api/v4#operation/updateNodeBalancerNode'
+    endpoint: ''
+    parameters:
+      node_balancer_id:
+        description: 'The ID of the NodeBalancer to access.'
+        required: true
+        type: integer
+        self: true
+      config_id:
+        description: 'The ID of the Config to access'
+        required: true
+        type: integer
+        self: true
+      node_id:
+        description: 'The ID of the Node to access'
+        required: true
+        type: integer
+delete:
+  delete:
+    summary: 'Delete Node'
+    description: "Deletes a Node from this Config. This backend will no longer receive traffic for the configured port of this NodeBalancer.\n\nThis does not change or remove the Linode whose address was used in the creation of this Node.\n"
+    url: 'https://developers.linode.com/api/v4#operation/deleteNodeBalancerConfigNode'
+    endpoint: ''
+    parameters:
+      node_balancer_id:
+        description: 'The ID of the NodeBalancer to access.'
+        required: true
+        type: integer
+        self: true
+      config_id:
+        description: 'The ID of the Config to access'
+        required: true
+        type: integer
+        self: true
+      node_id:
+        description: 'The ID of the Node to access'
+        required: true
+        type: integer

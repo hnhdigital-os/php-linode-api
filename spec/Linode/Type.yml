@@ -1,0 +1,17 @@
+endpoint: linode/types/%s
+url: 'https://developers.linode.com/api/v4#tag/Linode-Types'
+load-method: get
+parameters:
+  type_id: {  }
+get:
+  get:
+    summary: 'View Type'
+    description: "Returns information about a specific Linode Type, including pricing and specifications. This is used when [creating](/#operation/createLinodeInstance) or [resizing](/#operation/resizeLinodeInstance) Linodes.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getLinodeType'
+    endpoint: ''
+    parameters:
+      type_id:
+        description: 'The ID of the Linode Type to look up.'
+        required: true
+        type: string
+        self: true

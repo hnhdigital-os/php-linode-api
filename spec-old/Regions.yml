@@ -1,0 +1,21 @@
+endpoint: regions
+description: Returns collection of regions.
+url: https://developers.linode.com/v4/reference/endpoints/regions
+load-method: search
+
+get:
+
+  search:
+    url: https://developers.linode.com/v4/reference/endpoints/regions#GET
+    description: Returns a list of regions.
+    endpoint: 
+    search: true
+
+    factory:
+      class: Region
+      parameters:
+        - id
+
+    filterable:
+      country:
+        type: string

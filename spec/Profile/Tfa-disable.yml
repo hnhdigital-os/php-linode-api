@@ -1,0 +1,9 @@
+endpoint: profile/tfa-disable
+url: 'https://developers.linode.com/api/v4#tag/Profile-Tfa-disable'
+load-method: get
+post:
+  tfaDisable:
+    summary: 'Disable Two Factor Authentication'
+    description: "Disables Two Factor Authentication for your User. Once successful, login attempts from untrusted computers will only require a password before being successful. This is less secure, and is discouraged.\n"
+    url: 'https://developers.linode.com/api/v4#operation/tfaDisable'
+    endpoint: ''

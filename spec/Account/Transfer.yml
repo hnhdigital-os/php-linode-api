@@ -1,0 +1,9 @@
+endpoint: account/transfer
+url: 'https://developers.linode.com/api/v4#tag/Account-Transfer'
+load-method: get
+get:
+  get:
+    summary: 'View Network Utilization'
+    description: "Returns a Transfer object showing your network utilization, in GB, for the current month.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getTransfer'
+    endpoint: ''

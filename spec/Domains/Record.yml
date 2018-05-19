@@ -1,0 +1,53 @@
+endpoint: domains/%s/records/%s
+url: 'https://developers.linode.com/api/v4#tag/Domains-Records'
+load-method: get
+parameters:
+  domain_id: {  }
+get:
+  get:
+    summary: 'View Domain Record'
+    description: "View a single Record on this Domain.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getDomainRecord'
+    endpoint: ''
+    parameters:
+      domain_id:
+        description: 'The ID of the Domain whose Record you are accessing.'
+        required: true
+        type: integer
+        self: true
+      record_id:
+        description: 'The ID of the Record you are accessing.'
+        required: true
+        type: integer
+put:
+  update:
+    summary: 'Update Domain Record'
+    description: "Updates a single Record on this Domain.\n"
+    url: 'https://developers.linode.com/api/v4#operation/updateDomainRecord'
+    endpoint: ''
+    parameters:
+      domain_id:
+        description: 'The ID of the Domain whose Record you are accessing.'
+        required: true
+        type: integer
+        self: true
+      record_id:
+        description: 'The ID of the Record you are accessing.'
+        required: true
+        type: integer
+delete:
+  delete:
+    summary: 'Delete Domain Record'
+    description: "Deletes a Record on this Domain.\n"
+    url: 'https://developers.linode.com/api/v4#operation/deleteDomainRecord'
+    endpoint: ''
+    parameters:
+      domain_id:
+        description: 'The ID of the Domain whose Record you are accessing.'
+        required: true
+        type: integer
+        self: true
+      record_id:
+        description: 'The ID of the Record you are accessing.'
+        required: true
+        type: integer

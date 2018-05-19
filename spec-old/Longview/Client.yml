@@ -1,0 +1,36 @@
+endpoint: longview/clients/%s
+description: Manage a particular Longview client your account may access.
+url: https://developers.linode.com/v4/reference/endpoints/longview/clients/$id
+load-method: get
+
+parameters:
+
+    client_id:
+      type: int
+
+get:
+
+  get:
+    description: Returns information about this Longview client.
+    url: https://developers.linode.com/v4/reference/endpoints/longview/clients/$id#GET
+    endpoint: 
+
+put:
+
+  update:
+    description: Modifies this Longview client.
+    url: https://developers.linode.com/v4/reference/endpoints/longview/clients/$id#PUT
+    endpoint: 
+
+    optional:
+
+      label:
+        type: string
+        description: Label of the client.
+
+delete:
+
+  delete:
+    description: Deletes this Longview client. This action cannot be undone.
+    url: https://developers.linode.com/v4/reference/endpoints/longview/clients/$id#DELETE
+    endpoint: 

@@ -1,0 +1,15 @@
+endpoint: account/payments
+url: 'https://developers.linode.com/api/v4#tag/Account-Payments'
+load-method: get
+get:
+  get:
+    summary: 'List Payments'
+    description: "Returns a paginated list of Payments made on this Account.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getPayments'
+    endpoint: ''
+post:
+  createPayment:
+    summary: 'Make Payment'
+    description: "Makes a Payment to your Account via credit card. This will charge your credit card the requested amount.\n"
+    url: 'https://developers.linode.com/api/v4#operation/createPayment'
+    endpoint: ''

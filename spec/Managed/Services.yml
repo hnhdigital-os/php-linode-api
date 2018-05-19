@@ -1,0 +1,15 @@
+endpoint: managed/services
+url: 'https://developers.linode.com/api/v4#tag/Managed-Services'
+load-method: get
+get:
+  get:
+    summary: 'List Managed Services'
+    description: "Returns a paginated list of Managed Services on your Account. These are the services Linode Managed is monitoring and will report and attempt to resolve issues with.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getManagedServices'
+    endpoint: ''
+post:
+  create:
+    summary: 'Create Managed Service'
+    description: "Creates a Managed Service. Linode Managed will being monitoring this service and reporting and attempting to resolve any Issues.\n"
+    url: 'https://developers.linode.com/api/v4#operation/createManagedService'
+    endpoint: ''

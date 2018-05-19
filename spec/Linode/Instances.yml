@@ -1,0 +1,15 @@
+endpoint: linode/instances
+url: 'https://developers.linode.com/api/v4#tag/Linode-Instances'
+load-method: get
+get:
+  get:
+    summary: 'List Linodes'
+    description: "Returns a paginated list of Linodes you have permission to view.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getLinodeInstances'
+    endpoint: ''
+post:
+  create:
+    summary: 'Create Linode'
+    description: "Creates a Linode Instance on your Account. In order for this\nrequest to complete successfully, your User must have the `add_linodes` grant. Creating a\nnew Linode will incur a charge on your Account.\n\nLinodes can be created using one of the available Types. See\n[GET /linode/types](/#operation/getLinodeTypes) to get more\ninformation about each Type's specs and cost.\n\nLinodes can be created in any one of our available\n[Regions](/#operation/getRegions) for a list\nof available Regions you can deploy your Linode in.\n\nLinodes can be created in a number of ways:\n\n* Using a Linode Linux Distribution image or an Image you created based on another Linode.\n  * The Linode will be `running` after it completes `provisioning`.\n  * A default config with two Disks, one being a 512 swap disk, is created.\n    * `swap_size` can be used to customize the swap disk size.\n  * Requires a `root_pass` be supplied to use for the root User's Account.\n  * It is recommended to supply SSH keys for the root User using the `authorized_keys` field.\n\n* Using a StackScript.\n  * See [/linode/stackscripts](/#operation/getStackScripts) for\n    a list of available StackScripts.\n  * The Linode will be `running` after it completes `provisioning`.\n  * Requires a compatible Image to be supplied.\n    * See [/linode/stackscript/{stackscriptId}](/#operation/getStackScript) for compatible Images.\n  * Requires a `root_pass` be supplied to use for the root User's Account.\n  * It is recommended to supply SSH keys for the root User using the `authorized_keys` field.\n\n* Using one of your other Linode's backups.\n  * You must create a Linode large enough to accommodate the Backup's size.\n  * The Disks and Config will match that of the Linode that was backed up.\n  * The `root_pass` will match that of the Linode that was backed up.\n\n* Create an empty Linode.\n  * The Linode will remain `offline` and must be manually started.\n    * See [POST /linode/instances/{linodeId}/boot](/#operation/bootLinodeInstance).\n  * Disks and Configs must be created manually.\n  * This is only recommended for advanced use cases.\n"
+    url: 'https://developers.linode.com/api/v4#operation/createLinodeInstance'
+    endpoint: ''

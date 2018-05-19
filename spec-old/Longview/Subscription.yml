@@ -1,0 +1,16 @@
+endpoint: longview/subscriptions/%s
+description: View information on a single Longview subscription level.
+url: https://developers.linode.com/v4/reference/endpoints/longview/subscriptions/$id
+load-method: get
+
+parameters:
+
+    client_id:
+      type: int
+
+get:
+
+  get:
+    description: Returns information about this Longview client.
+    url: https://developers.linode.com/v4/reference/endpoints/longview/subscriptions/$id#GET
+    endpoint: 

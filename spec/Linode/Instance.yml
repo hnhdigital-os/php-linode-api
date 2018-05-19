@@ -1,0 +1,262 @@
+endpoint: linode/instances/%s
+url: 'https://developers.linode.com/api/v4#tag/Linode-Instances'
+load-method: get
+parameters:
+  linode_id: {  }
+get:
+  get:
+    summary: 'View Linode'
+    description: 'Get a specific Linode by ID.'
+    url: 'https://developers.linode.com/api/v4#operation/getLinodeInstance'
+    endpoint: ''
+    parameters:
+      linode_id:
+        description: 'ID of the Linode to look up'
+        required: true
+        type: integer
+        self: true
+  getBackups:
+    summary: 'List Backups'
+    description: "Returns information about this Linode's available backups.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getBackups'
+    endpoint: /backups
+    parameters:
+      linode_id:
+        description: 'The ID of the Linode the backups belong to.'
+        required: true
+        type: integer
+        self: true
+  getConfigs:
+    summary: 'List Configuration Profiles'
+    description: "Lists Configuration profiles associated with a Linode.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getLinodeConfigs'
+    endpoint: /configs
+    parameters:
+      linode_id:
+        description: 'ID of the Linode to look up Configuration profiles for.'
+        required: true
+        type: integer
+        self: true
+  getDisks:
+    summary: 'List Disks'
+    description: "View Disk information for Disks associated with this Linode.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getLinodeDisks'
+    endpoint: /disks
+    parameters:
+      linode_id:
+        description: 'ID of the Linode to look up.'
+        required: true
+        type: integer
+        self: true
+  getIPs:
+    summary: 'List Networking Information'
+    description: "Returns networking information for a single Linode.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getLinodeIPs'
+    endpoint: /ips
+    parameters:
+      linode_id:
+        description: 'ID of the Linode to look up.'
+        required: true
+        type: integer
+        self: true
+  getStats:
+    summary: 'View Current Month Statistics'
+    description: "Returns CPU, IO, IPv4, and IPv6 statistics for your Linode for the past 24 hours.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getLinodeStats'
+    endpoint: /stats
+    parameters:
+      linode_id:
+        description: 'ID of the Linode to look up.'
+        required: true
+        type: integer
+        self: true
+  getVolumes:
+    summary: 'List Linode''s Volumes'
+    description: "View Block Storage Volumes attached to this Linode.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getLinodeVolumes'
+    endpoint: /volumes
+    parameters:
+      linode_id:
+        description: 'ID of the Linode to look up.'
+        required: true
+        type: integer
+        self: true
+put:
+  update:
+    summary: 'Update Linode'
+    description: "Updates a Linode that you have permission to `read_write`.\n"
+    url: 'https://developers.linode.com/api/v4#operation/updateLinodeInstance'
+    endpoint: ''
+    parameters:
+      linode_id:
+        description: 'ID of the Linode to look up'
+        required: true
+        type: integer
+        self: true
+delete:
+  delete:
+    summary: 'Delete Linode'
+    description: "Deletes a Linode you have permission to `read_write`.\n\n**Deleting a Linode is a destructive action and cannot be undone.**\n\nAdditionally, deleting a Linode:\n\n  * Gives up any IP addresses the Linode was assigned.\n  * Deletes all Disks, Backups, Configs, etc.\n  * Stops billing for the Linode and its associated services. You will be billed for time used\n    within the billing period the Linode was active.\n"
+    url: 'https://developers.linode.com/api/v4#operation/deleteLinodeInstance'
+    endpoint: ''
+    parameters:
+      linode_id:
+        description: 'ID of the Linode to look up'
+        required: true
+        type: integer
+        self: true
+post:
+  createSnapshot:
+    summary: 'Create Snapshot'
+    description: "Creates a snapshot Backup of a Linode.\n** If you already have a snapshot of this Linode, this is a destructive action. The previous snapshot will be deleted.**\n"
+    url: 'https://developers.linode.com/api/v4#operation/createSnapshot'
+    endpoint: /backups
+    parameters:
+      linode_id:
+        description: 'The ID of the Linode the backups belong to.'
+        required: true
+        type: integer
+        self: true
+  cancelBackups:
+    summary: 'Cancel Backups'
+    description: "Cancels the Backup service on the given Linode. Deletes all of this Linode's existing backups forever.\n"
+    url: 'https://developers.linode.com/api/v4#operation/cancelBackups'
+    endpoint: /backups/cancel
+    parameters:
+      linode_id:
+        description: 'The ID of the Linode to cancel backup service for.'
+        required: true
+        type: integer
+        self: true
+  enableBackups:
+    summary: 'Enable Backups'
+    description: "Enables backups for the specified Linode.\n"
+    url: 'https://developers.linode.com/api/v4#operation/enableBackups'
+    endpoint: /backups/enable
+    parameters:
+      linode_id:
+        description: 'The ID of the Linode to enable backup service for.'
+        required: true
+        type: integer
+        self: true
+  boot:
+    summary: 'Boot Linode'
+    description: "Boots a Linode you have permission to modify. If no parameters are given, a Config profile\nwill be chosen for this boot based on the following criteria:\n\n* If there is only one Config profile for this Linode, it will be used.\n* If there is more than one Config profile, the last booted config will be used.\n* If there is more than one Config profile and none were the last to be booted (because the\n  Linode was never booted or the last booted config was deleted) an error will be returned.\n"
+    url: 'https://developers.linode.com/api/v4#operation/bootLinodeInstance'
+    endpoint: /boot
+    parameters:
+      linode_id:
+        description: 'The ID of the Linode to boot.'
+        required: true
+        type: integer
+        self: true
+  clone:
+    summary: 'Clone Linode'
+    description: "You can clone your Linode's existing Disks or Configuration profiles to another Linode on your Account. In order for this request to complete successfully, your User must have the `add_linodes` grant. Cloning to a new Linode will incur a charge on your Account.\nIf cloning to an existing Linode, any actions currently running or queued must be completed first before you can clone to it.\n"
+    url: 'https://developers.linode.com/api/v4#operation/cloneLinodeInstance'
+    endpoint: /clone
+    parameters:
+      linode_id:
+        description: 'ID of the Linode to clone.'
+        required: true
+        type: integer
+        self: true
+  addConfig:
+    summary: 'Create Configuration Profile'
+    description: "Adds a new Configuration profile to a Linode.\n"
+    url: 'https://developers.linode.com/api/v4#operation/addLinodeConfig'
+    endpoint: /configs
+    parameters:
+      linode_id:
+        description: 'ID of the Linode to look up Configuration profiles for.'
+        required: true
+        type: integer
+        self: true
+  addDisk:
+    summary: 'Create Disk'
+    description: "Adds a new Disk to a Linode. You can optionally create a Disk from an Image (see [/images](/#operation/getImages) for a list of available public images, or use one of your own), and optionally provide a StackScript to deploy with this Disk.\n"
+    url: 'https://developers.linode.com/api/v4#operation/addLinodeDisk'
+    endpoint: /disks
+    parameters:
+      linode_id:
+        description: 'ID of the Linode to look up.'
+        required: true
+        type: integer
+        self: true
+  addIP:
+    summary: 'Allocate IPv4 Address'
+    description: "Allocates a public or private IPv4 address to a Linode. Public IP Addresses, after the one included with each Linode, incur an additional monthly charge. If you need an additional public IP Address you must request one - please [open a support ticket](/#operation/createTicket). You may not add more than one private IPv4 address to a single Linode.\n"
+    url: 'https://developers.linode.com/api/v4#operation/addLinodeIP'
+    endpoint: /ips
+    parameters:
+      linode_id:
+        description: 'ID of the Linode to look up.'
+        required: true
+        type: integer
+        self: true
+  mutate:
+    summary: 'Upgrade Linode'
+    description: "Linodes created with now-deprecated Types are entitled to a free upgrade to the next generation. A mutating Linode will be allocated any new resources the upgraded Type provides, and will be subsequently restarted if it was currently running.\nIf any actions are currently running or queued, those actions must be completed first before you can initiate a mutate.\n"
+    url: 'https://developers.linode.com/api/v4#operation/mutateLinodeInstance'
+    endpoint: /mutate
+    parameters:
+      linode_id:
+        description: 'ID of the Linode to mutate.'
+        required: true
+        type: integer
+        self: true
+  reboot:
+    summary: 'Reboot Linode'
+    description: "Reboots a Linode you have permission to modify. If any actions are currently running or queued, those actions must be completed first before you can initiate a reboot.\n"
+    url: 'https://developers.linode.com/api/v4#operation/rebootLinodeInstance'
+    endpoint: /reboot
+    parameters:
+      linode_id:
+        description: 'ID of the linode to reboot.'
+        required: true
+        type: integer
+        self: true
+  rebuild:
+    summary: 'Rebuild Linode'
+    description: "Rebuilds a Linode you have the `read_write` permission to modify.\nA rebuild will first shut down the Linode, delete all disks and configs on the Linode, and then deploy a new `image` to the Linode with the given attributes. Additionally:\n\n  * Requires an `image` be supplied.\n  * Requires a `root_pass` be supplied to use for the root User's Account.\n  * It is recommended to supply SSH keys for the root User using the\n    `authorized_keys` field.\n"
+    url: 'https://developers.linode.com/api/v4#operation/rebuildLinodeInstance'
+    endpoint: /rebuild
+    parameters:
+      linode_id:
+        description: 'ID of the Linode to rebuild.'
+        required: true
+        type: integer
+        self: true
+  rescue:
+    summary: 'Boot Linode into Rescue Mode'
+    description: "Rescue Mode is a safe environment for performing many system recovery and disk management tasks. Rescue Mode is based on the Finnix recovery distribution, a self-contained and bootable Linux distribution. You can also use Rescue Mode for tasks other than disaster recovery, such as formatting disks to use different filesystems, copying data between disks, and downloading files from a disk via SSH and SFTP.\n* Note that \"sdh\" is reserved and unavailable during rescue.\n"
+    url: 'https://developers.linode.com/api/v4#operation/rescueLinodeInstance'
+    endpoint: /rescue
+    parameters:
+      linode_id:
+        description: 'ID of the Linode to rescue.'
+        required: true
+        type: integer
+        self: true
+  resize:
+    summary: 'Resize Linode'
+    description: "Resizes a Linode you have the `read_write` permission to a different Type. If any actions are currently running or queued, those actions must be completed first before you can initiate a resize. Additionally, the following criteria must be met in order to resize a Linode:\n\n  * Any pending free upgrades to the Linode's current Type must be performed\n  before a resize can occur.\n  * The Linode must not have a pending migration.\n  * Your Account cannot have an outstanding balance.\n  * The Linode must not have more disk allocation than the new Type allows.\n    * In that situation, you must first delete or resize the disk to be smaller.\n"
+    url: 'https://developers.linode.com/api/v4#operation/resizeLinodeInstance'
+    endpoint: /resize
+    parameters:
+      linode_id:
+        description: 'ID of the Linode to resize.'
+        required: true
+        type: integer
+        self: true
+  shutdown:
+    summary: 'Shut Down Linode'
+    description: "Shuts down a Linode you have permission to modify. If any actions are currently running or queued, those actions must be completed first before you can initiate a shutdown.\n"
+    url: 'https://developers.linode.com/api/v4#operation/shutdownLinodeInstance'
+    endpoint: /shutdown
+    parameters:
+      linode_id:
+        description: 'ID of the Linode to shutdown.'
+        required: true
+        type: integer
+        self: true

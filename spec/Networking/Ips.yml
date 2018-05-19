@@ -1,0 +1,15 @@
+endpoint: networking/ips
+url: 'https://developers.linode.com/api/v4#tag/Networking-Ips'
+load-method: get
+get:
+  get:
+    summary: 'List IP Addresses'
+    description: "Returns a paginated list of IP Addresses on your Account, excluding private addresses.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getIPs'
+    endpoint: ''
+post:
+  allocateIP:
+    summary: 'Allocate IP Address'
+    description: "Allocates a new IPv4 Address on your Account. The Linode must be configured to support additional addresses - please [open a support ticket](/#operation/createTicket) requesting additional addresses before attempting allocation.\n"
+    url: 'https://developers.linode.com/api/v4#operation/allocateIP'
+    endpoint: ''

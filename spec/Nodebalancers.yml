@@ -1,0 +1,15 @@
+endpoint: nodebalancers
+url: 'https://developers.linode.com/api/v4#tag/Nodebalancers'
+load-method: get
+get:
+  get:
+    summary: 'List NodeBalancers'
+    description: "Returns a paginated list of NodeBalancers you have access to.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getNodeBalancers'
+    endpoint: ''
+post:
+  createNodeBalancer:
+    summary: 'Create NodeBalancer'
+    description: "Creates a NodeBalancer in the requested Region. This NodeBalancer will not start serving requests until it is configured.\n"
+    url: 'https://developers.linode.com/api/v4#operation/createNodeBalancer'
+    endpoint: ''

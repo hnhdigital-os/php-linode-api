@@ -1,0 +1,41 @@
+endpoint: managed/contacts/%s
+url: 'https://developers.linode.com/api/v4#tag/Managed-Contacts'
+load-method: get
+parameters:
+  contact_id: {  }
+get:
+  get:
+    summary: 'View Managed Contact'
+    description: "Returns a single Managed Contact.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getManagedContact'
+    endpoint: ''
+    parameters:
+      contact_id:
+        description: 'The ID of the contact to access.'
+        required: true
+        type: integer
+        self: true
+put:
+  update:
+    summary: 'Update Managed Contact'
+    description: "Updates information about a Managed Contact.\n"
+    url: 'https://developers.linode.com/api/v4#operation/updateManagedContact'
+    endpoint: ''
+    parameters:
+      contact_id:
+        description: 'The ID of the contact to access.'
+        required: true
+        type: integer
+        self: true
+delete:
+  delete:
+    summary: 'Delete Managed Contact'
+    description: "Deletes a Managed Contact.\n"
+    url: 'https://developers.linode.com/api/v4#operation/deleteManagedContact'
+    endpoint: ''
+    parameters:
+      contact_id:
+        description: 'The ID of the contact to access.'
+        required: true
+        type: integer
+        self: true

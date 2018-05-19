@@ -1,0 +1,53 @@
+endpoint: linode/instances/%s/configs/%s
+url: 'https://developers.linode.com/api/v4#tag/Linode-Instances-Configs'
+load-method: get
+parameters:
+  linode_id: {  }
+get:
+  get:
+    summary: 'View Configuration Profile'
+    description: "Returns information about a specific Configuration profile.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getLinodeConfig'
+    endpoint: ''
+    parameters:
+      linode_id:
+        description: 'The ID of the Linode whose Configuration profile to look up.'
+        required: true
+        type: integer
+        self: true
+      config_id:
+        description: 'The ID of the Configuration profile to look up.'
+        required: true
+        type: integer
+put:
+  update:
+    summary: 'Update Configuration Profile'
+    description: "Updates a Configuration profile.\n"
+    url: 'https://developers.linode.com/api/v4#operation/updateLinodeConfig'
+    endpoint: ''
+    parameters:
+      linode_id:
+        description: 'The ID of the Linode whose Configuration profile to look up.'
+        required: true
+        type: integer
+        self: true
+      config_id:
+        description: 'The ID of the Configuration profile to look up.'
+        required: true
+        type: integer
+delete:
+  delete:
+    summary: 'Delete Configuration Profile'
+    description: "Deletes the specified Configuration profile from the specified Linode.\n"
+    url: 'https://developers.linode.com/api/v4#operation/deleteLinodeConfig'
+    endpoint: ''
+    parameters:
+      linode_id:
+        description: 'The ID of the Linode whose Configuration profile to look up.'
+        required: true
+        type: integer
+        self: true
+      config_id:
+        description: 'The ID of the Configuration profile to look up.'
+        required: true
+        type: integer

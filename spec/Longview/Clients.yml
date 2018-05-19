@@ -1,39 +1,15 @@
 endpoint: longview/clients
-description: Manage the collection of Longview client objects your account may access.
-url: https://developers.linode.com/v4/reference/endpoints/longview/clients
-load-method: search
-
+url: 'https://developers.linode.com/api/v4#tag/Longview-Clients'
+load-method: get
 get:
-
-  search:
-    url: https://developers.linode.com/v4/reference/endpoints/regions#GET
-    description: Returns a list of regions.
-    endpoint: 
-    search: true
-
-    factory:
-      class: Client
-      parameters:
-        - id
-
-    filterable:
-      country:
-        type: string
-
+  get:
+    summary: 'List Longview Clients'
+    description: "Returns a paginated list of Longview Clients you have access to. Longview Client is used to monitor stats on your Linode with the help of the Longview Client application.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getLongviewClients'
+    endpoint: ''
 post:
-
   create:
-    description: Creates a new Longview client.
-    url: https://developers.linode.com/v4/reference/endpoints/longview/clients#POST
-    endpoint: 
-
-    factory:
-      class: Client
-      parameters:
-        - id
-
-    optional:
-
-      label:
-        type: string
-        description: The label to assign this Longview client.
+    summary: 'Create Longview Client'
+    description: "Creates a Longview Client.  This Client will not begin monitoring the status of your server until you configure the Longview Client application on your Linode using the returning `install_code` and `api_key`.\n"
+    url: 'https://developers.linode.com/api/v4#operation/createLongviewClient'
+    endpoint: ''

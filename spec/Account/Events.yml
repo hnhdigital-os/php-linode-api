@@ -1,0 +1,9 @@
+endpoint: account/events
+url: 'https://developers.linode.com/api/v4#tag/Account-Events'
+load-method: get
+get:
+  get:
+    summary: 'List Events'
+    description: "Returns a collection of Event objects representing actions taken on your Account. The Events returned depends on your grants.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getEvents'
+    endpoint: ''

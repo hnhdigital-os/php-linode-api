@@ -1,0 +1,15 @@
+endpoint: images
+url: 'https://developers.linode.com/api/v4#tag/Images'
+load-method: get
+get:
+  get:
+    summary: 'List Images'
+    description: "Returns a paginated list of Images.\n\n* Calling this endpoint without authentication returns all public Images.\n* Authentication is required to return a combined paginated list of all public and\n  your private Images.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getImages'
+    endpoint: ''
+post:
+  create:
+    summary: 'Create Image'
+    description: "Creates a private gold-master Image from a Linode Disk. There is no additional charge to store Images for Linode users.\nImages are limited to three per Account.\n"
+    url: 'https://developers.linode.com/api/v4#operation/createImage'
+    endpoint: ''

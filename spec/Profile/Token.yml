@@ -1,0 +1,41 @@
+endpoint: profile/tokens/%s
+url: 'https://developers.linode.com/api/v4#tag/Profile-Tokens'
+load-method: get
+parameters:
+  token_id: {  }
+get:
+  get:
+    summary: 'View Personal Access Token'
+    description: "Returns a single Personal Access Token.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getPersonalAccessToken'
+    endpoint: ''
+    parameters:
+      token_id:
+        description: 'The ID of the token to access.'
+        required: true
+        type: integer
+        self: true
+put:
+  update:
+    summary: 'Update Personal Access Token'
+    description: "Updates a Personal Access Token.\n"
+    url: 'https://developers.linode.com/api/v4#operation/updatePersonalAccessToken'
+    endpoint: ''
+    parameters:
+      token_id:
+        description: 'The ID of the token to access.'
+        required: true
+        type: integer
+        self: true
+delete:
+  delete:
+    summary: 'Revoke Personal Access Token'
+    description: "Revokes a Personal Access Token. The token will be invalidated immediately, and requests using that token will fail with a 401. It is possible to revoke access to the token making the request to revoke a token, but keep in mind that doing so could lose you access to the api and require you to create a new token through some other means.\n"
+    url: 'https://developers.linode.com/api/v4#operation/deletePersonalAccessToken'
+    endpoint: ''
+    parameters:
+      token_id:
+        description: 'The ID of the token to access.'
+        required: true
+        type: integer
+        self: true

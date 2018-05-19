@@ -1,0 +1,37 @@
+endpoint: linode/instances/%s/backups/%s
+url: 'https://developers.linode.com/api/v4#tag/Linode-Instances-Backups'
+load-method: get
+parameters:
+  linode_id: {  }
+get:
+  get:
+    summary: 'View Backup'
+    description: "Returns information about a Backup.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getBackup'
+    endpoint: ''
+    parameters:
+      linode_id:
+        description: 'The ID of the Linode the Backup belongs to.'
+        required: true
+        type: integer
+        self: true
+      backup_id:
+        description: 'The ID of the Backup to look up.'
+        required: true
+        type: integer
+post:
+  restoreBackup:
+    summary: 'Restore Backup'
+    description: "Restores a Linode's Backup to the specified Linode.\n"
+    url: 'https://developers.linode.com/api/v4#operation/restoreBackup'
+    endpoint: /restore
+    parameters:
+      linode_id:
+        description: 'The ID of the Linode that the Backup belongs to.'
+        required: true
+        type: integer
+        self: true
+      backup_id:
+        description: 'The ID of the Backup to restore.'
+        required: true
+        type: integer

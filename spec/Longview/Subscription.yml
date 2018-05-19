@@ -1,16 +1,17 @@
 endpoint: longview/subscriptions/%s
-description: View information on a single Longview subscription level.
-url: https://developers.linode.com/v4/reference/endpoints/longview/subscriptions/$id
+url: 'https://developers.linode.com/api/v4#tag/Longview-Subscriptions'
 load-method: get
-
 parameters:
-
-    client_id:
-      type: int
-
+  subscription_id: {  }
 get:
-
   get:
-    description: Returns information about this Longview client.
-    url: https://developers.linode.com/v4/reference/endpoints/longview/subscriptions/$id#GET
-    endpoint: 
+    summary: 'View Longview Subscription'
+    description: "Returns a single LongviewSubscription object.  This is a public endpoint and requires no authentication.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getLongviewSubscription'
+    endpoint: ''
+    parameters:
+      subscription_id:
+        description: 'The Longview Subscription to look up.'
+        required: true
+        type: string
+        self: true

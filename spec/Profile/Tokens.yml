@@ -1,0 +1,15 @@
+endpoint: profile/tokens
+url: 'https://developers.linode.com/api/v4#tag/Profile-Tokens'
+load-method: get
+get:
+  get:
+    summary: 'List Personal Access Tokens'
+    description: "Returns a paginated list of Personal Access Tokens currently active for your User.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getPersonalAccessTokens'
+    endpoint: ''
+post:
+  createPersonalAccessToken:
+    summary: 'Create Personal Access Token'
+    description: "Creates a Personal Access Token for your User. The raw token will be returned in the response, but will never be returned again afterward so be sure to take note of it. You may create a token with _at most_ the scopes of your current token. The created token will be able to access your Account until the given expiry, or until it is revoked.\n"
+    url: 'https://developers.linode.com/api/v4#operation/createPersonalAccessToken'
+    endpoint: ''

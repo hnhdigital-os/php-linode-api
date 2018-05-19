@@ -1,0 +1,15 @@
+endpoint: account
+url: 'https://developers.linode.com/api/v4#tag/Account'
+load-method: get
+get:
+  get:
+    summary: 'View Account'
+    description: "Returns the contact and billing information related to your Account.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getAccount'
+    endpoint: ''
+put:
+  update:
+    summary: 'Update Account'
+    description: "Updates contact and billing information related to your Account.\n"
+    url: 'https://developers.linode.com/api/v4#operation/updateAccount'
+    endpoint: ''

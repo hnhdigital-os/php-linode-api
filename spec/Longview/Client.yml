@@ -1,36 +1,41 @@
 endpoint: longview/clients/%s
-description: Manage a particular Longview client your account may access.
-url: https://developers.linode.com/v4/reference/endpoints/longview/clients/$id
+url: 'https://developers.linode.com/api/v4#tag/Longview-Clients'
 load-method: get
-
 parameters:
-
-    client_id:
-      type: int
-
+  client_id: {  }
 get:
-
   get:
-    description: Returns information about this Longview client.
-    url: https://developers.linode.com/v4/reference/endpoints/longview/clients/$id#GET
-    endpoint: 
-
+    summary: 'View Longview Client'
+    description: "Returns a single Longview Client you can access.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getLongviewClient'
+    endpoint: ''
+    parameters:
+      client_id:
+        description: 'The Longview Client ID to access.'
+        required: true
+        type: integer
+        self: true
 put:
-
   update:
-    description: Modifies this Longview client.
-    url: https://developers.linode.com/v4/reference/endpoints/longview/clients/$id#PUT
-    endpoint: 
-
-    optional:
-
-      label:
-        type: string
-        description: Label of the client.
-
+    summary: 'Update Longview Client'
+    description: "Updates a Longview Client.  This cannot update how it monitors your server; use the Longview Client application on your Linode for monitoring configuration.\n"
+    url: 'https://developers.linode.com/api/v4#operation/updateLongviewClient'
+    endpoint: ''
+    parameters:
+      client_id:
+        description: 'The Longview Client ID to access.'
+        required: true
+        type: integer
+        self: true
 delete:
-
   delete:
-    description: Deletes this Longview client. This action cannot be undone.
-    url: https://developers.linode.com/v4/reference/endpoints/longview/clients/$id#DELETE
-    endpoint: 
+    summary: 'Delete Longview Client'
+    description: "Deletes a Longview Client from your Account.\n\n**All information stored for this client will be lost.**\n\nThis _does not_ uninstall the Longview Client application for your Linode - you must do that manually.\n"
+    url: 'https://developers.linode.com/api/v4#operation/deleteLongviewClient'
+    endpoint: ''
+    parameters:
+      client_id:
+        description: 'The Longview Client ID to access.'
+        required: true
+        type: integer
+        self: true

@@ -1,0 +1,64 @@
+endpoint: nodebalancers/%s
+url: 'https://developers.linode.com/api/v4#tag/Nodebalancers'
+load-method: get
+parameters:
+  node_balancer_id: {  }
+get:
+  get:
+    summary: 'View NodeBalancer'
+    description: "Returns a single NodeBalancer you can access.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getNodeBalancer'
+    endpoint: ''
+    parameters:
+      node_balancer_id:
+        description: 'The ID of the NodeBalancer to access.'
+        required: true
+        type: integer
+        self: true
+  getNodeBalancerConfigs:
+    summary: 'List Configs'
+    description: "Returns a paginated list of NodeBalancer Configs associated with this NodeBalancer. NodeBalancer Configs represent individual ports that this NodeBalancer will accept traffic on, one Config per port.\n\nFor example, if you wanted to accept standard HTTP traffic, you would need a Config listening on port 80.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getNodeBalancerConfigs'
+    endpoint: /configs
+    parameters:
+      node_balancer_id:
+        description: 'The ID of the NodeBalancer to access.'
+        required: true
+        type: integer
+        self: true
+put:
+  update:
+    summary: 'Update NodeBalancer'
+    description: "Updates information about a NodeBalancer you can access.\n"
+    url: 'https://developers.linode.com/api/v4#operation/updateNodeBalancer'
+    endpoint: ''
+    parameters:
+      node_balancer_id:
+        description: 'The ID of the NodeBalancer to access.'
+        required: true
+        type: integer
+        self: true
+delete:
+  delete:
+    summary: 'Delete NodeBalancer'
+    description: "Deletes a NodeBalancer.\n\n**This is a destructive action and cannot be undone.**\n\nDeleting a NodeBalancer will also delete all associated Configs and Nodes, although the backend servers represented by the Nodes will not be changed or removed. Deleting a NodeBalancer will cause you to lose access to the IP Addresses assigned to this NodeBalancer.\n"
+    url: 'https://developers.linode.com/api/v4#operation/deleteNodeBalancer'
+    endpoint: ''
+    parameters:
+      node_balancer_id:
+        description: 'The ID of the NodeBalancer to access.'
+        required: true
+        type: integer
+        self: true
+post:
+  createNodeBalancerConfig:
+    summary: 'Create Config'
+    description: "Creates a NodeBalancer Config, which allows the NodeBalancer to accept traffic on a new port. You will need to add NodeBalancer Nodes to the new Config before it can actually serve requests.\n"
+    url: 'https://developers.linode.com/api/v4#operation/createNodeBalancerConfig'
+    endpoint: /configs
+    parameters:
+      node_balancer_id:
+        description: 'The ID of the NodeBalancer to access.'
+        required: true
+        type: integer
+        self: true

@@ -1,0 +1,52 @@
+endpoint: account/users/%s
+url: 'https://developers.linode.com/api/v4#tag/Account-Users'
+load-method: get
+parameters:
+  username: {  }
+get:
+  get:
+    summary: 'View User'
+    description: "Returns information about a single User on your Account.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getUser'
+    endpoint: ''
+    parameters:
+      username:
+        description: 'The username to look up.'
+        required: true
+        type: string
+        self: true
+  getUserGrants:
+    summary: 'View User''s grants'
+    description: "Returns the full grants structure for this User. This includes all entities on the Account alongside what level of access this User has to each of them. Individual users may view their own grants at the [/profile/grants](/#operation/getProfileGrants) endpoint, but will not see entities that they have no access to.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getUserGrants'
+    endpoint: /grants
+    parameters:
+      username:
+        description: 'The username to look up.'
+        required: true
+        type: string
+        self: true
+put:
+  update:
+    summary: 'Update User''s grants'
+    description: "Update the grants a User has. This can be used to give a User access to new entities or actions, or take access away.  You do not need to include the grant for every entity on the Account in this request; any that are not included will remain unchanged.\n"
+    url: 'https://developers.linode.com/api/v4#operation/updateUserGrants'
+    endpoint: /grants
+    parameters:
+      username:
+        description: 'The username to look up.'
+        required: true
+        type: string
+        self: true
+delete:
+  delete:
+    summary: 'Delete User'
+    description: "Deletes a User. The deleted User will be immediately logged out and may no longer log in or perform any actions. All of the User's Grants will be removed.\n"
+    url: 'https://developers.linode.com/api/v4#operation/deleteUser'
+    endpoint: ''
+    parameters:
+      username:
+        description: 'The username to look up.'
+        required: true
+        type: string
+        self: true

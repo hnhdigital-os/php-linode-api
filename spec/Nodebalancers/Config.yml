@@ -1,0 +1,84 @@
+endpoint: nodebalancers/%s/configs/%s
+url: 'https://developers.linode.com/api/v4#tag/Nodebalancers-Configs'
+load-method: get
+parameters:
+  node_balancer_id: {  }
+get:
+  get:
+    summary: 'View Config'
+    description: "Returns configuration information for a single port of this NodeBalancer.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getNodeBalancerConfig'
+    endpoint: ''
+    parameters:
+      node_balancer_id:
+        description: 'The ID of the NodeBalancer to access.'
+        required: true
+        type: integer
+        self: true
+      config_id:
+        description: 'The ID of the config to access.'
+        required: true
+        type: integer
+  getNodeBalancerConfigNodes:
+    summary: 'List Nodes'
+    description: "Returns a paginated list of NodeBalancer nodes associated with this Config. These are the backends that will be sent traffic for this port.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getNodeBalancerConfigNodes'
+    endpoint: /nodes
+    parameters:
+      node_balancer_id:
+        description: 'The ID of the NodeBalancer to access.'
+        required: true
+        type: integer
+        self: true
+      config_id:
+        description: 'The ID of the NodeBalancer config to access.'
+        required: true
+        type: integer
+put:
+  update:
+    summary: 'Update Config'
+    description: "Updates the configuration for a single port on a NodeBalancer.\n"
+    url: 'https://developers.linode.com/api/v4#operation/updateNodeBalancerConfig'
+    endpoint: ''
+    parameters:
+      node_balancer_id:
+        description: 'The ID of the NodeBalancer to access.'
+        required: true
+        type: integer
+        self: true
+      config_id:
+        description: 'The ID of the config to access.'
+        required: true
+        type: integer
+delete:
+  delete:
+    summary: 'Delete Config'
+    description: "Deletes the Config for a port of this NodeBalancer.\n\n**This cannot be undone.**\n\nOnce completed, this NodeBalancer will no longer respond to requests on the given port. This also deletes all associated NodeBalancerNodes, but the Linodes they were routing traffic to will be unchanged and will not be removed.\n"
+    url: 'https://developers.linode.com/api/v4#operation/deleteNodeBalancerConfig'
+    endpoint: ''
+    parameters:
+      node_balancer_id:
+        description: 'The ID of the NodeBalancer to access.'
+        required: true
+        type: integer
+        self: true
+      config_id:
+        description: 'The ID of the config to access.'
+        required: true
+        type: integer
+post:
+  createNodeBalancerNode:
+    summary: 'Create Node'
+    description: "Creates a NodeBalancer Node, a backend that can accept traffic for this NodeBalancer Config. Nodes are routed requests on the configured port based on their status.\n"
+    url: 'https://developers.linode.com/api/v4#operation/createNodeBalancerNode'
+    endpoint: /nodes
+    parameters:
+      node_balancer_id:
+        description: 'The ID of the NodeBalancer to access.'
+        required: true
+        type: integer
+        self: true
+      config_id:
+        description: 'The ID of the NodeBalancer config to access.'
+        required: true
+        type: integer

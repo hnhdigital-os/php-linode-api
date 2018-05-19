@@ -1,0 +1,9 @@
+endpoint: profile/tfa-enable-confirm
+url: 'https://developers.linode.com/api/v4#tag/Profile-Tfa-enable-confirm'
+load-method: get
+post:
+  tfaConfirm:
+    summary: 'Confirm/Enable Two Factor Authentication'
+    description: "Confirms that you can successfully generate Two Factor codes and enables TFA on your Account. Once this is complete, login attempts from untrusted computers will be required to provide a Two Factor code before they are successful.\n"
+    url: 'https://developers.linode.com/api/v4#operation/tfaConfirm'
+    endpoint: ''

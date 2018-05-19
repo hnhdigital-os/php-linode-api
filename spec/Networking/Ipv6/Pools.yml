@@ -1,0 +1,9 @@
+endpoint: networking/ipv6/pools
+url: 'https://developers.linode.com/api/v4#tag/Networking-Ipv6-Pools'
+load-method: get
+get:
+  get:
+    summary: 'List IPv6 Pools'
+    description: "Displays the IPv6 pools on your Account.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getIPv6Pools'
+    endpoint: ''

@@ -1,0 +1,29 @@
+endpoint: managed/linode-settings/%s
+url: 'https://developers.linode.com/api/v4#tag/Managed-Linode-settings'
+load-method: get
+parameters:
+  linode_id: {  }
+get:
+  get:
+    summary: 'View Linode''s Managed Settings'
+    description: "Returns a single Linode's Managed settings.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getManagedLinodeSetting'
+    endpoint: ''
+    parameters:
+      linode_id:
+        description: 'The Linode ID whose settings we are accessing.'
+        required: true
+        type: integer
+        self: true
+put:
+  update:
+    summary: 'Update Linode''s Managed Settings'
+    description: "Updates a single Linode's Managed settings.\n"
+    url: 'https://developers.linode.com/api/v4#operation/updateManagedLinodeSetting'
+    endpoint: ''
+    parameters:
+      linode_id:
+        description: 'The Linode ID whose settings we are accessing.'
+        required: true
+        type: integer
+        self: true

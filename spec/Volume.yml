@@ -1,78 +1,86 @@
 endpoint: volumes/%s
-url: https://developers.linode.com/v4/reference/endpoints/volumes/$id
+url: 'https://developers.linode.com/api/v4#tag/Volumes'
 load-method: get
-fillable: true
-
 parameters:
-
-    volume_id:
-      type: int
-
+  volume_id: {  }
 get:
-
   get:
-    description: Returns information about this Volume.
-    url: https://developers.linode.com/v4/reference/endpoints/volumes/$id#GET
-    endpoint: 
-
+    summary: 'View Volume'
+    description: "Get information about a single Volume.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getVolume'
+    endpoint: ''
+    parameters:
+      volume_id:
+        description: 'ID of the Volume to look up.'
+        required: true
+        type: integer
+        self: true
 put:
-
   update:
-    description: Updates this volume.
-    url: https://developers.linode.com/v4/reference/endpoints/volumes/$id#PUT
-    endpoint: 
-    attributes: true
-
+    summary: 'Update Volume'
+    description: "Updates a Volume that you have permission to `read_write`.\n"
+    url: 'https://developers.linode.com/api/v4#operation/updateVolume'
+    endpoint: ''
+    parameters:
+      volume_id:
+        description: 'ID of the Volume to look up.'
+        required: true
+        type: integer
+        self: true
 delete:
-
   delete:
-    description: Removes a volume from your account.
-    url: https://developers.linode.com/v4/reference/endpoints/volumes/$id#DELETE
-    endpoint: 
-
+    summary: 'Delete Volume'
+    description: "Deletes a Volume you have permission to `read_write`.\n\n**Deleting a Volume is a destructive action and cannot be undone.**\n\nDeleting stops billing for the Volume. You will be billed for time used within\nthe billing period the Volume was active.\n"
+    url: 'https://developers.linode.com/api/v4#operation/deleteVolume'
+    endpoint: ''
+    parameters:
+      volume_id:
+        description: 'ID of the Volume to look up.'
+        required: true
+        type: integer
+        self: true
 post:
-
   attach:
-    description: Attach a Block Storage Volume to a Linode.
-    url: https://developers.linode.com/v4/reference/endpoints/volumes/$id/attach
+    summary: 'Attach Volume'
+    description: "Attaches a Volume on your Account to an existing Linode on your Account. In order for this request to complete successfully, your User must have `read_only` or `read_write` permission to the Volume and `read_write` permission to the Linode. Additionally, the Volume and Linode must be located in the same Region.\n"
+    url: 'https://developers.linode.com/api/v4#operation/attachVolume'
     endpoint: /attach
-
     parameters:
-      
-      linode_id:
-        type: int
-        description: An id to a Linode you'd like this volume to be attached to. Requires an additional scope of `linode:modify` and you must have permission to access that given Linode.
-
-    optional-parameters:
-      
-      config_id:
-        type: int
-        default: 0
-        description: An id to a Linode configuration profile to used when attaching to a Linode that has more than one configuration profile.
-
+      volume_id:
+        description: 'ID of the Volume to attach.'
+        required: true
+        type: integer
+        self: true
   clone:
-    description: Attach a Block Storage Volume to a Linode.
-    url: https://developers.linode.com/v4/reference/endpoints/volumes/$id/attach
+    summary: 'Clone Volume'
+    description: "Creates a Volume on your Account. In order for this request to complete successfully, your User must have the `add_volumes` grant. The new Volume will have the same size and data as the source Volume. Creating a new Volume will incur a charge on your Account.\n"
+    url: 'https://developers.linode.com/api/v4#operation/cloneVolume'
     endpoint: /clone
-
     parameters:
-      
-      label:
-        type: string
-        description: A unique label to identify your new clone volume.
-
+      volume_id:
+        description: 'ID of the Volume to clone.'
+        required: true
+        type: integer
+        self: true
   detach:
-    description: Detach a Block Storage Volume from a Linode.
-    url: https://developers.linode.com/v4/reference/endpoints/volumes/$id/detach
+    summary: 'Detach Volume'
+    description: "Detaches a Volume on your Account from a Linode on your Account. In order for this request to complete successfully, your User must have `read_write` access to the Volume and `read_write` access to the Linode.\n"
+    url: 'https://developers.linode.com/api/v4#operation/detachVolume'
     endpoint: /detach
-
-  resize:
-    description: Increase the size of a volume. You may not decrease the size of a volume with this endpoint.
-    url: https://developers.linode.com/v4/reference/endpoints/volumes/$id/resize
-    endpoint: /resize
-
     parameters:
-      
-      size:
-        type: int
-        description: The new size of this volume.
+      volume_id:
+        description: 'ID of the Volume to detach.'
+        required: true
+        type: integer
+        self: true
+  resize:
+    summary: 'Resize Volume'
+    description: "Resize an existing Volume on your Account. In order for this request to complete successfully, your User must have the `read_write` permissions to the Volume.\n* Volumes can only be resized up.\n"
+    url: 'https://developers.linode.com/api/v4#operation/resizeVolume'
+    endpoint: /resize
+    parameters:
+      volume_id:
+        description: 'ID of the Volume to resize.'
+        required: true
+        type: integer
+        self: true

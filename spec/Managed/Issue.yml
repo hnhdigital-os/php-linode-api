@@ -1,0 +1,17 @@
+endpoint: managed/issues/%s
+url: 'https://developers.linode.com/api/v4#tag/Managed-Issues'
+load-method: get
+parameters:
+  issue_id: {  }
+get:
+  get:
+    summary: 'View Managed Issue'
+    description: "Returns a single Issue that is impacting or did impact one of your Managed Services.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getManagedIssue'
+    endpoint: ''
+    parameters:
+      issue_id:
+        description: 'The Issue to look up.'
+        required: true
+        type: integer
+        self: true

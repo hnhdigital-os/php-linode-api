@@ -1,0 +1,9 @@
+endpoint: linode/types
+url: 'https://developers.linode.com/api/v4#tag/Linode-Types'
+load-method: get
+get:
+  get:
+    summary: 'List Types'
+    description: "Returns collection of Linode Types, including pricing and specifications for each Type. These are used when [creating](/#operation/createLinodeInstance) or [resizing](/#operation/resizeLinodeInstance) Linodes.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getLinodeTypes'
+    endpoint: ''

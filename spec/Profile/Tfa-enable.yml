@@ -1,0 +1,9 @@
+endpoint: profile/tfa-enable
+url: 'https://developers.linode.com/api/v4#tag/Profile-Tfa-enable'
+load-method: get
+post:
+  tfaEnable:
+    summary: 'Create Two Factor Secret'
+    description: "Generates a Two Factor secret for your User. TFA will not be enabled until you have successfully confirmed the code you were given with [tfa-enable-confirm](/#operation/tfaConfirm) (see below). Once enabled, logins from untrusted computers will be required to provide a TFA code before they are successful.\n"
+    url: 'https://developers.linode.com/api/v4#operation/tfaEnable'
+    endpoint: ''

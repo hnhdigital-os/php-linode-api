@@ -1,0 +1,15 @@
+endpoint: account/settings
+url: 'https://developers.linode.com/api/v4#tag/Account-Settings'
+load-method: get
+get:
+  get:
+    summary: 'View Account Settings'
+    description: "Returns information related to your Account settings: Managed service subscription, Longview subscription, and network helper.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getAccountSettings'
+    endpoint: ''
+put:
+  update:
+    summary: 'Update Account Settings'
+    description: "Updates your Account settings.\n"
+    url: 'https://developers.linode.com/api/v4#operation/updateAccountSettings'
+    endpoint: ''

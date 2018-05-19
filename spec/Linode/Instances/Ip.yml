@@ -1,0 +1,53 @@
+endpoint: linode/instances/%s/ips/%s
+url: 'https://developers.linode.com/api/v4#tag/Linode-Instances-Ips'
+load-method: get
+parameters:
+  linode_id: {  }
+get:
+  get:
+    summary: 'View IP Address'
+    description: "View information about the specified IP address associated with the specified Linode.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getLinodeIP'
+    endpoint: ''
+    parameters:
+      linode_id:
+        description: 'The ID of the Linode to look up.'
+        required: true
+        type: integer
+        self: true
+      address:
+        description: 'The IP address to look up.'
+        required: true
+        type: string
+put:
+  update:
+    summary: 'Update IP Address'
+    description: "Updates a particular IP Address associated with this Linode. Only allows setting/resetting reverse DNS.\n"
+    url: 'https://developers.linode.com/api/v4#operation/updateLinodeIP'
+    endpoint: ''
+    parameters:
+      linode_id:
+        description: 'The ID of the Linode to look up.'
+        required: true
+        type: integer
+        self: true
+      address:
+        description: 'The IP address to look up.'
+        required: true
+        type: string
+delete:
+  delete:
+    summary: 'Delete IPv4 Address'
+    description: "Deletes a public IPv4 address associated with this Linode. This will fail if it is the Linode's last remaining public IPv4 address. Private IPv4 addresses cannot be removed via this endpoint.\n"
+    url: 'https://developers.linode.com/api/v4#operation/removeLinodeIP'
+    endpoint: ''
+    parameters:
+      linode_id:
+        description: 'The ID of the Linode to look up.'
+        required: true
+        type: integer
+        self: true
+      address:
+        description: 'The IP address to look up.'
+        required: true
+        type: string

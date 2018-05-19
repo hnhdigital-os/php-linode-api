@@ -1,0 +1,39 @@
+endpoint: longview/clients
+description: Manage the collection of Longview client objects your account may access.
+url: https://developers.linode.com/v4/reference/endpoints/longview/clients
+load-method: search
+
+get:
+
+  search:
+    url: https://developers.linode.com/v4/reference/endpoints/regions#GET
+    description: Returns a list of regions.
+    endpoint: 
+    search: true
+
+    factory:
+      class: Client
+      parameters:
+        - id
+
+    filterable:
+      country:
+        type: string
+
+post:
+
+  create:
+    description: Creates a new Longview client.
+    url: https://developers.linode.com/v4/reference/endpoints/longview/clients#POST
+    endpoint: 
+
+    factory:
+      class: Client
+      parameters:
+        - id
+
+    optional:
+
+      label:
+        type: string
+        description: The label to assign this Longview client.

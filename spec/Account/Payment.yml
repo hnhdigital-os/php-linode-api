@@ -1,0 +1,17 @@
+endpoint: account/payments/%s
+url: 'https://developers.linode.com/api/v4#tag/Account-Payments'
+load-method: get
+parameters:
+  payment_id: {  }
+get:
+  get:
+    summary: 'View Payment'
+    description: "Returns information about a specific Payment.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getPayment'
+    endpoint: ''
+    parameters:
+      payment_id:
+        description: 'The ID of the Payment to look up.'
+        required: true
+        type: integer
+        self: true

@@ -1,0 +1,78 @@
+endpoint: volumes/%s
+url: https://developers.linode.com/v4/reference/endpoints/volumes/$id
+load-method: get
+fillable: true
+
+parameters:
+
+    volume_id:
+      type: int
+
+get:
+
+  get:
+    description: Returns information about this Volume.
+    url: https://developers.linode.com/v4/reference/endpoints/volumes/$id#GET
+    endpoint: 
+
+put:
+
+  update:
+    description: Updates this volume.
+    url: https://developers.linode.com/v4/reference/endpoints/volumes/$id#PUT
+    endpoint: 
+    attributes: true
+
+delete:
+
+  delete:
+    description: Removes a volume from your account.
+    url: https://developers.linode.com/v4/reference/endpoints/volumes/$id#DELETE
+    endpoint: 
+
+post:
+
+  attach:
+    description: Attach a Block Storage Volume to a Linode.
+    url: https://developers.linode.com/v4/reference/endpoints/volumes/$id/attach
+    endpoint: /attach
+
+    parameters:
+      
+      linode_id:
+        type: int
+        description: An id to a Linode you'd like this volume to be attached to. Requires an additional scope of `linode:modify` and you must have permission to access that given Linode.
+
+    optional-parameters:
+      
+      config_id:
+        type: int
+        default: 0
+        description: An id to a Linode configuration profile to used when attaching to a Linode that has more than one configuration profile.
+
+  clone:
+    description: Attach a Block Storage Volume to a Linode.
+    url: https://developers.linode.com/v4/reference/endpoints/volumes/$id/attach
+    endpoint: /clone
+
+    parameters:
+      
+      label:
+        type: string
+        description: A unique label to identify your new clone volume.
+
+  detach:
+    description: Detach a Block Storage Volume from a Linode.
+    url: https://developers.linode.com/v4/reference/endpoints/volumes/$id/detach
+    endpoint: /detach
+
+  resize:
+    description: Increase the size of a volume. You may not decrease the size of a volume with this endpoint.
+    url: https://developers.linode.com/v4/reference/endpoints/volumes/$id/resize
+    endpoint: /resize
+
+    parameters:
+      
+      size:
+        type: int
+        description: The new size of this volume.

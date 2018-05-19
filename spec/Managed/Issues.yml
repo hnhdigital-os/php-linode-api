@@ -1,0 +1,9 @@
+endpoint: managed/issues
+url: 'https://developers.linode.com/api/v4#tag/Managed-Issues'
+load-method: get
+get:
+  get:
+    summary: 'List Managed Issues'
+    description: "Returns a paginated list of recent and ongoing issues detected on your Managed Services.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getManagedIssues'
+    endpoint: ''

@@ -1,0 +1,29 @@
+endpoint: profile/apps/%s
+url: 'https://developers.linode.com/api/v4#tag/Profile-Apps'
+load-method: get
+parameters:
+  app_id: {  }
+get:
+  get:
+    summary: 'View Authorized App'
+    description: "Returns information about a single app you've authorized to access your Account.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getProfileApp'
+    endpoint: ''
+    parameters:
+      app_id:
+        description: 'The authorized app ID to manage.'
+        required: true
+        type: integer
+        self: true
+delete:
+  delete:
+    summary: 'Revoke App Access'
+    description: "Expires this app token. This token may no longer be used to access your Account.\n"
+    url: 'https://developers.linode.com/api/v4#operation/deleteProfileApp'
+    endpoint: ''
+    parameters:
+      app_id:
+        description: 'The authorized app ID to manage.'
+        required: true
+        type: integer
+        self: true

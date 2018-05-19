@@ -1,0 +1,95 @@
+endpoint: domains/%s
+description: Manage a particular Domain your account may access.
+url: https://developers.linode.com/v4/reference/endpoints/domains/$id
+load-method: get
+fillable: true
+
+parameters:
+
+    domain_id:
+      type: int
+
+get:
+
+  get:
+    description: Returns information for the Domain identified by :id.
+    url: https://developers.linode.com/v4/reference/endpoints/domains/$id#GET
+    endpoint:
+    auto-fill: true
+
+put:
+
+  clone:
+    description: Clones the provided Domain into a new Domain. You must provide a new domain for the cloned domain as Domains must be unique.
+    endpoint: /clone
+
+    parameters:
+
+      domain:
+        type: string
+        description: The Domain name for the new Domain.
+
+    optional:
+
+  update:
+    description: Modifies a given Domain.
+    url: https://developers.linode.com/v4/reference/endpoints/domains/$id#PUT
+    endpoint: 
+
+    optional:
+      
+      domain:
+        type: string
+        description: The name of the domain.
+      
+      description:
+        type: string
+        description:  A description to keep track of this Domain.
+
+      display_group:
+        type: string
+        description: A display group to keep track of this Domain.
+
+      status:
+        type: string
+        default: active
+        description: The status of the Domain. Can be "disabled", "active", or "edit_mode".
+      
+      soa_email:
+        type: string
+        description: Start of Authority (SOA) contact email.
+      
+      soa_email:
+        type: string
+        description: Start of Authority (SOA) contact email.
+
+      refresh_sec:
+        type: int
+        description: Time interval before the Domain should be refreshed, in seconds.
+
+      retry_sec:
+        type: int
+        description: Time interval that should elapse before a failed refresh should be retried, in seconds.
+
+      expire_sec:
+        type: int
+        description: Time value that specifies the upper limit on the time interval that can elapse before the Domain is no longer authoritative, in seconds.
+
+      ttl_sec:
+        type: int
+        description: Time interval that the resource record may be cached before it should be discarded, in seconds.
+
+      master_ips:
+        type: array
+        description: An array of IP addresses for this Domain.
+
+      axfr_ips:
+        type: array
+        description: An array of IP addresses allowed to AXFR the entire Domain.
+
+delete:
+
+  delete:
+    description: Deletes the Domain. This action cannot be undone.
+    url: https://developers.linode.com/v4/reference/endpoints/domains/$id#DELETE
+    endpoint: 

@@ -1,0 +1,64 @@
+endpoint: managed/services/%s
+url: 'https://developers.linode.com/api/v4#tag/Managed-Services'
+load-method: get
+parameters:
+  service_id: {  }
+get:
+  get:
+    summary: 'View Managed Service'
+    description: "Returns information about a single Managed Service on your Account.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getManagedService'
+    endpoint: ''
+    parameters:
+      service_id:
+        description: 'The ID of the Managed Service to access.'
+        required: true
+        type: integer
+        self: true
+put:
+  update:
+    summary: 'Update Managed Service'
+    description: "Updates information about a Managed Service.\n"
+    url: 'https://developers.linode.com/api/v4#operation/updateManagedService'
+    endpoint: ''
+    parameters:
+      service_id:
+        description: 'The ID of the Managed Service to access.'
+        required: true
+        type: integer
+        self: true
+delete:
+  delete:
+    summary: 'Delete Managed Service'
+    description: "Deletes a Managed Service.  This service will no longer be monitored by Linode Managed.\n"
+    url: 'https://developers.linode.com/api/v4#operation/deleteManagedService'
+    endpoint: ''
+    parameters:
+      service_id:
+        description: 'The ID of the Managed Service to access.'
+        required: true
+        type: integer
+        self: true
+post:
+  disable:
+    summary: 'Disable Managed Service'
+    description: "Temporarily disables monitoring of a Managed Service.\n"
+    url: 'https://developers.linode.com/api/v4#operation/disableManagedService'
+    endpoint: /disable
+    parameters:
+      service_id:
+        description: 'The ID of the Managed Service to disable.'
+        required: true
+        type: integer
+        self: true
+  enable:
+    summary: 'Enable Managed Service'
+    description: "Enables monitoring of a Managed Service.\n"
+    url: 'https://developers.linode.com/api/v4#operation/enableManagedService'
+    endpoint: /enable
+    parameters:
+      service_id:
+        description: 'The ID of the Managed Service to enable.'
+        required: true
+        type: integer
+        self: true

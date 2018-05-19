@@ -1,0 +1,40 @@
+endpoint: account/events/%s
+url: 'https://developers.linode.com/api/v4#tag/Account-Events'
+load-method: get
+parameters:
+  event_id: {  }
+get:
+  get:
+    summary: 'View Event'
+    description: 'Returns a single Event object.'
+    url: 'https://developers.linode.com/api/v4#operation/getEvent'
+    endpoint: ''
+    parameters:
+      event_id:
+        description: 'The ID of the Event.'
+        required: true
+        type: integer
+        self: true
+post:
+  eventRead:
+    summary: 'Mark Event as Read'
+    description: 'Marks a single Event as read.'
+    url: 'https://developers.linode.com/api/v4#operation/eventRead'
+    endpoint: /read
+    parameters:
+      event_id:
+        description: 'The ID of the Event to designate as read.'
+        required: true
+        type: integer
+        self: true
+  eventSeen:
+    summary: 'Mark Event as Seen'
+    description: "Marks all Events up to and including this Event by ID as seen.\n"
+    url: 'https://developers.linode.com/api/v4#operation/eventSeen'
+    endpoint: /seen
+    parameters:
+      event_id:
+        description: 'The ID of the Event to designate as seen.'
+        required: true
+        type: integer
+        self: true

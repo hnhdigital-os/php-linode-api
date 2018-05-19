@@ -1,0 +1,17 @@
+endpoint: linode/kernels/%s
+url: 'https://developers.linode.com/api/v4#tag/Linode-Kernels'
+load-method: get
+parameters:
+  kernel_id: {  }
+get:
+  get:
+    summary: 'View Kernel'
+    description: "Returns information about a single Kernel.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getKernel'
+    endpoint: ''
+    parameters:
+      kernel_id:
+        description: 'ID of the Kernel to look up.'
+        required: true
+        type: string
+        self: true

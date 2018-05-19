@@ -1,0 +1,9 @@
+endpoint: account/invoices
+url: 'https://developers.linode.com/api/v4#tag/Account-Invoices'
+load-method: get
+get:
+  get:
+    summary: 'List Invoices'
+    description: "Returns a paginated list of Invoices against your Account.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getInvoices'
+    endpoint: ''

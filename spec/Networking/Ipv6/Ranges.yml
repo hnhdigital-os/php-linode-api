@@ -1,0 +1,9 @@
+endpoint: networking/ipv6/ranges
+url: 'https://developers.linode.com/api/v4#tag/Networking-Ipv6-Ranges'
+load-method: get
+get:
+  get:
+    summary: 'List IPv6 Ranges'
+    description: "Displays the IPv6 ranges on your Account.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getIPv6Ranges'
+    endpoint: ''

@@ -1,0 +1,41 @@
+endpoint: linode/stackscripts/%s
+url: 'https://developers.linode.com/api/v4#tag/Linode-Stackscripts'
+load-method: get
+parameters:
+  stackscript_id: {  }
+get:
+  get:
+    summary: 'View StackScript'
+    description: "Returns all of the information about a specified StackScript, including the contents of the script.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getStackScript'
+    endpoint: ''
+    parameters:
+      stackscript_id:
+        description: 'The ID of the StackScript to look up.'
+        required: true
+        type: string
+        self: true
+put:
+  update:
+    summary: 'Update StackScript'
+    description: "Updates a StackScript.\n\n**Once a StackScript is made public, it cannot be made private.**\n"
+    url: 'https://developers.linode.com/api/v4#operation/updateStackScript'
+    endpoint: ''
+    parameters:
+      stackscript_id:
+        description: 'The ID of the StackScript to look up.'
+        required: true
+        type: string
+        self: true
+delete:
+  delete:
+    summary: 'Delete StackScript'
+    description: "Deletes a private StackScript you have permission to `read_write`. You cannot delete a public StackScript.\n"
+    url: 'https://developers.linode.com/api/v4#operation/deleteStackScript'
+    endpoint: ''
+    parameters:
+      stackscript_id:
+        description: 'The ID of the StackScript to look up.'
+        required: true
+        type: string
+        self: true

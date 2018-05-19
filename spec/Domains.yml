@@ -1,89 +1,15 @@
 endpoint: domains
-description: Manage the collection of Domains your account may access.
-url: https://developers.linode.com/v4/reference/endpoints/domains
-load-method: search
-
-lists:
-
-  type:
-    master: Master
-    slave: Slave
-
-  status:
-    disabled: Disabled
-    active: Active
-    edit_mode: Edit mode
-
+url: 'https://developers.linode.com/api/v4#tag/Domains'
+load-method: get
 get:
-
-  search:
-    url: https://developers.linode.com/v4/reference/endpoints/domains#GET
-    description: Returns a list of Domains.
-    endpoint: 
-    search: true
-
-    factory:
-      class: Domain
-      parameters:
-        - id
-
+  get:
+    summary: 'List Domains'
+    description: "This is a collection of Domains that you have registered in Linode's DNS Manager.  Linode is not a registrar, and in order for these to work you must own the domains and point your registrar at Linode's nameservers.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getDomains'
+    endpoint: ''
 post:
-
   create:
-    description: Create a Domain.
-    url: https://developers.linode.com/v4/reference/endpoints/domains#POST
-    endpoint: 
-
-    parameters:
-
-      domain:
-        type: string
-        description: The Domain name.
-
-      type:
-        type: string
-        default: master
-        description: Domain type. Can be "master" or "slave".
-
-    optional:
-      
-      soa_email:
-        type: string
-        description: Start of Authority (SOA) contact email.
-
-      description:
-        type: string
-        description: A description to keep track of this Domain.
-
-      refresh_sec:
-        type: int
-        description: Time interval before the Domain should be refreshed, in seconds.
-
-      retry_sec:
-        type: int
-        description: Time interval that should elapse before a failed refresh should be retried, in seconds.
-
-      expire_sec:
-        type: int
-        description: Time value that specifies the upper limit on the time interval that can elapse before the Domain is no longer authoritative, in seconds.
-
-      ttl_sec:
-        type: int
-        description: Time interval that the resource record may be cached before it should be discarded, in seconds.
-
-      status:
-        type: string
-        default: active
-        description: The status of the Domain. Can be "disabled", "active", or "edit_mode".
-
-      master_ips:
-        type: array
-        description: An array of IP addresses for this Domain.
-
-      axfr_ips:
-        type: array
-        description: An array of IP addresses allowed to AXFR the entire Domain.
-
-      group:
-        type: string
-        description: A display group to keep track of this Domain.
+    summary: 'Create Domain'
+    description: "Adds a new Domain to Linode's DNS Manager. Linode is not a registrar, and you must own the domain before adding it here. Be sure to point your registrar to Linode's nameservers so that the records hosted here are used.\n"
+    url: 'https://developers.linode.com/api/v4#operation/createDomain'
+    endpoint: ''

@@ -14,7 +14,7 @@
         "guzzlehttp/guzzle": "^6.3"
     },
     "require-dev": {
-        "symfony/yaml": "~3.0",
+        "symfony/yaml": "~4.0",
         "illuminate/support": "^5.5",
         "phpunit/phpunit": "^6.5",
         "internations/http-mock": "^0.10.1"

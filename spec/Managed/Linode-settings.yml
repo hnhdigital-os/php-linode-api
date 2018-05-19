@@ -1,0 +1,9 @@
+endpoint: managed/linode-settings
+url: 'https://developers.linode.com/api/v4#tag/Managed-Linode-settings'
+load-method: get
+get:
+  get:
+    summary: 'List Managed Linode Settings'
+    description: "Returns a paginated list of Managed Settings for your Linodes. There will be one entry per Linode on your Account.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getManagedLinodeSettings'
+    endpoint: ''

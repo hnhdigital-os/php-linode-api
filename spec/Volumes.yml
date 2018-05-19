@@ -1,56 +1,15 @@
 endpoint: volumes
-description: Manage your Block Storage Volumes.
-url: https://developers.linode.com/v4/reference/endpoints/volumes
-load-method: search
-
+url: 'https://developers.linode.com/api/v4#tag/Volumes'
+load-method: get
 get:
-
-  search:
-    url: https://developers.linode.com/v4/reference/endpoints/volumes#GET
-    description: Returns a list of volumes.
-    endpoint: 
-    search: true
-
-    factory:
-      class: Volume
-      parameters:
-        - id
-
+  get:
+    summary: 'List Volumes'
+    description: "Returns a paginated list of Volumes you have permission to view.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getVolumes'
+    endpoint: ''
 post:
-
   create:
-    description: Create a new Block Storage Volume
-    url: https://developers.linode.com/v4/reference/endpoints/volumes#POST
-    endpoint:
-
-    factory:
-      class: Volume
-      parameters:
-        - id
-
-    parameters:
-
-      region:
-        type: string
-        description: Which region the new volume should be created in.
-
-      label:
-        type: string
-        description: A unique label to identify your new volume with.
-
-    optional:
-
-      size:
-        type: int
-        default: 20
-        description: The size in GiBs that you wish to make your new volume. Defaults to 20 GiB, can be as large as 1024 GiB (1 TiB).
-        validation:
-          range: 1-1024
-
-      linode_id:
-        type: int
-        description: An id to a Linode you'd like this volume to be attached to after creation. Requires an additional scope of `linode:modify` and you must have permission to access that given Linode.
-
-      config_id:
-        type: int
-        description: An id to a Linode configuration profile to used when attaching to a Linode that has more than one configuration profile.
+    summary: 'Create Volume'
+    description: "Creates a Volume on your Account. In order for this to complete successfully, your User must have the `add_volumes` grant. Creating a new Volume will start accruing additional charges on your account.\nVolume service may not be available in all Regions. See [/regions](/#operation/getRegions) for a list of available Regions you deploy your Volume in.\n"
+    url: 'https://developers.linode.com/api/v4#operation/createVolume'
+    endpoint: ''

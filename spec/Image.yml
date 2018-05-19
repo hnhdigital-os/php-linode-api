@@ -1,0 +1,41 @@
+endpoint: images/%s
+url: 'https://developers.linode.com/api/v4#tag/Images'
+load-method: get
+parameters:
+  image_id: {  }
+get:
+  get:
+    summary: 'View Image'
+    description: "Get information about a single Image.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getImage'
+    endpoint: ''
+    parameters:
+      image_id:
+        description: 'ID of the Image to look up.'
+        required: true
+        type: string
+        self: true
+put:
+  update:
+    summary: 'Update Image'
+    description: "Updates a private Image that you have permission to `read_write`.\n"
+    url: 'https://developers.linode.com/api/v4#operation/updateImage'
+    endpoint: ''
+    parameters:
+      image_id:
+        description: 'ID of the Image to look up.'
+        required: true
+        type: string
+        self: true
+delete:
+  delete:
+    summary: 'Delete Image'
+    description: "Deletes a private Image you have permission to `read_write`.\n\n\n**Deleting an Image is a destructive action and cannot be undone.**\n"
+    url: 'https://developers.linode.com/api/v4#operation/deleteImage'
+    endpoint: ''
+    parameters:
+      image_id:
+        description: 'ID of the Image to look up.'
+        required: true
+        type: string
+        self: true

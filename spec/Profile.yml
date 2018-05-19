@@ -1,40 +1,15 @@
 endpoint: profile
-description: Profile.
-url: https://developers.linode.com/v4/reference/profile
+url: 'https://developers.linode.com/api/v4#tag/Profile'
 load-method: get
-fillable: true
-
 get:
-
   get:
-    description: Returns your user information.
-    url: https://developers.linode.com/v4/reference/endpoints/profile#GET
-    endpoint:
-    auto-fill: true
-
-  grants:
-    description: Return grants for your user. If your user is unrestricted, this returns an error. Hides entities that your user has no access to that would be visible to an unrestricted user.
-    url: https://developers.linode.com/v4/reference/endpoints/profile/grants#GET
-    endpoint: /grants
-    auto-fill: grants
-
+    summary: 'View Profile'
+    description: "Returns information about the current User. This can be used to see who is acting in applications where more than one token is managed. For example, in third-party OAuth applications.\n\nThis endpoint is always accessible, no matter what OAuth scopes the acting token has.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getProfile'
+    endpoint: ''
 put:
-
   update:
-    description: Edits your user's profile.
-    url: https://developers.linode.com/v4/reference/endpoints/profile#PUT
-    endpoint: 
-    attributes: true
-
-post:
-
-  password:
-    description: Edits your user's profile.
-    url: https://developers.linode.com/v4/reference/endpoints/profile/password
-    endpoint: /password
-
-    parameters:
-
-        password:
-            type: string
-            description: Password.
+    summary: 'Update Profile'
+    description: "Update information in your Profile.  This option is _not_ available to all third-party clients.\n"
+    url: 'https://developers.linode.com/api/v4#operation/updateProfile'
+    endpoint: ''

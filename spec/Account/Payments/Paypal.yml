@@ -1,0 +1,9 @@
+endpoint: account/payments/paypal
+url: 'https://developers.linode.com/api/v4#tag/Account-Payments-Paypal'
+load-method: get
+post:
+  createPayPalPayment:
+    summary: 'Stage PayPal Payment'
+    description: "This begins the process of submitting a Payment via PayPal. After calling this endpoint, you must take the resulting `payment_id` along with the `payer_id` from your PayPal account and [POST /account/payments/paypal-execute](/#operation/executePayPalPayment) to complete the Payment.\n"
+    url: 'https://developers.linode.com/api/v4#operation/createPayPalPayment'
+    endpoint: ''

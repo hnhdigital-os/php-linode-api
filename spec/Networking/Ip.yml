@@ -1,0 +1,29 @@
+endpoint: networking/ips/%s
+url: 'https://developers.linode.com/api/v4#tag/Networking-Ips'
+load-method: get
+parameters:
+  address: {  }
+get:
+  get:
+    summary: 'View IP Address'
+    description: "Returns information about a single IP Address on your Account.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getIP'
+    endpoint: ''
+    parameters:
+      address:
+        description: 'The address to operate on.'
+        required: true
+        type: string
+        self: true
+put:
+  update:
+    summary: 'Update IP Address RDNS'
+    description: "Sets RDNS on an IP Address. Forward DNS must already be set up for reverse DNS to be applied. If you set the RDNS to `null` for public IPv4 addresses, it will be reset to the default _members.linode.com_ RDNS value.\n"
+    url: 'https://developers.linode.com/api/v4#operation/updateIP'
+    endpoint: ''
+    parameters:
+      address:
+        description: 'The address to operate on.'
+        required: true
+        type: string
+        self: true

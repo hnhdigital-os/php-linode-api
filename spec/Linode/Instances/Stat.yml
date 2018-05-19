@@ -1,0 +1,27 @@
+endpoint: linode/instances/%s/stats/%s/%s
+url: 'https://developers.linode.com/api/v4#tag/Linode-Instances-Stats'
+load-method: get
+parameters:
+  linode_id: {  }
+  year: {  }
+get:
+  get:
+    summary: 'View Statistics (year/month)'
+    description: "Returns statistics for a specific month. The year/month values must be either a date in the past, or the current month. If the current month, statistics will be retrieved for the past 30 days.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getLinodeStatsByYearMonth'
+    endpoint: ''
+    parameters:
+      linode_id:
+        description: 'ID of the Linode to look up.'
+        required: true
+        type: integer
+        self: true
+      year:
+        description: 'Numeric value representing the year to look up.'
+        required: true
+        type: integer
+        self: true
+      month:
+        description: 'Numeric value representing the month to look up.'
+        required: true
+        type: integer

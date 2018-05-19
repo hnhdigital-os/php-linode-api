@@ -1,0 +1,84 @@
+endpoint: linode/instances/%s/disks/%s
+url: 'https://developers.linode.com/api/v4#tag/Linode-Instances-Disks'
+load-method: get
+parameters:
+  linode_id: {  }
+get:
+  get:
+    summary: 'View Disk'
+    description: "View Disk information for a Disk associated with this Linode.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getLinodeDisk'
+    endpoint: ''
+    parameters:
+      linode_id:
+        description: 'ID of the Linode to look up.'
+        required: true
+        type: integer
+        self: true
+      disk_id:
+        description: 'ID of the Disk to look up.'
+        required: true
+        type: integer
+put:
+  update:
+    summary: 'Update Disk'
+    description: "Updates a Disk that you have permission to `read_write`.\n"
+    url: 'https://developers.linode.com/api/v4#operation/updateDisk'
+    endpoint: ''
+    parameters:
+      linode_id:
+        description: 'ID of the Linode to look up.'
+        required: true
+        type: integer
+        self: true
+      disk_id:
+        description: 'ID of the Disk to look up.'
+        required: true
+        type: integer
+delete:
+  delete:
+    summary: 'Delete Disk'
+    description: "Deletes a Disk you have permission to `read_write`.\n\n**Deleting a Disk is a destructive action and cannot be undone.**\n"
+    url: 'https://developers.linode.com/api/v4#operation/deleteDisk'
+    endpoint: ''
+    parameters:
+      linode_id:
+        description: 'ID of the Linode to look up.'
+        required: true
+        type: integer
+        self: true
+      disk_id:
+        description: 'ID of the Disk to look up.'
+        required: true
+        type: integer
+post:
+  resetDiskPassword:
+    summary: 'Reset Disk Root Password'
+    description: "Resets the password of a Disk you have permission to `read_write`.\n"
+    url: 'https://developers.linode.com/api/v4#operation/resetDiskPassword'
+    endpoint: /password
+    parameters:
+      linode_id:
+        description: 'ID of the Linode to look up.'
+        required: true
+        type: integer
+        self: true
+      disk_id:
+        description: 'ID of the Disk to look up.'
+        required: true
+        type: integer
+  resizeDisk:
+    summary: 'Resize Disk'
+    description: "Resizes a Disk you have permission to `read_write`.\nThe Linode this Disk is attached to must be shut down for resizing to take effect.\nIf you are resizing the Disk to a smaller size, it cannot be made smaller than what is required by the total size of the files current on the Disk. The Disk must not be in use. If the Disk is in use, the request will succeed but the resize will ultimately fail.\n"
+    url: 'https://developers.linode.com/api/v4#operation/resizeDisk'
+    endpoint: /resize
+    parameters:
+      linode_id:
+        description: 'ID of the Linode to look up.'
+        required: true
+        type: integer
+        self: true
+      disk_id:
+        description: 'ID of the Disk to look up.'
+        required: true
+        type: integer

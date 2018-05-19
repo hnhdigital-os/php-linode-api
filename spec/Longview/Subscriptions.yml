@@ -1,16 +1,9 @@
 endpoint: longview/subscriptions
-description: Manage the collection of Longview client objects your account may access.
-url: https://developers.linode.com/v4/reference/endpoints/longview/subscriptions
-load-method: search
-
+url: 'https://developers.linode.com/api/v4#tag/Longview-Subscriptions'
+load-method: get
 get:
-
-  search:
-    url: https://developers.linode.com/v4/reference/endpoints/longview/subscriptions#GET
-    description: View a list of available Longview subscription levels.
-    endpoint: 
-
-    factory:
-      class: Subscription
-      parameters:
-        - id
+  get:
+    summary: 'List Longview Subscriptions'
+    description: "Returns a paginated list of available Longview Subscriptions. This is a public endpoint and requires no authentication.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getLongviewSubscriptions'
+    endpoint: ''

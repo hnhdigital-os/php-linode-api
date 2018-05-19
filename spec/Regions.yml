@@ -1,21 +1,9 @@
 endpoint: regions
-description: Returns collection of regions.
-url: https://developers.linode.com/v4/reference/endpoints/regions
-load-method: search
-
+url: 'https://developers.linode.com/api/v4#tag/Regions'
+load-method: get
 get:
-
-  search:
-    url: https://developers.linode.com/v4/reference/endpoints/regions#GET
-    description: Returns a list of regions.
-    endpoint: 
-    search: true
-
-    factory:
-      class: Region
-      parameters:
-        - id
-
-    filterable:
-      country:
-        type: string
+  get:
+    summary: 'List Regions'
+    description: "Lists the Regions available for Linode services. Not all services are guaranteed to be\navailable in all Regions.\n"
+    url: 'https://developers.linode.com/api/v4#operation/getRegions'
+    endpoint: ''

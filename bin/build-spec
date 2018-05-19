@@ -1,0 +1,161 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Yaml\Yaml;
+
+require __DIR__.'/../vendor/autoload.php';
+require __DIR__.'/helpers.php';
+
+$root_path = realpath(__DIR__.'/..');
+chdir($root_path);
+
+$source_local_path = $source_path = 'build/openapi.yml';
+
+if (!file_exists($source_path)) {
+    $source_path = 'https://developers.linode.com/openapi.yaml';
+}
+
+$yaml_api_contents = file_get_contents($source_path);
+
+// Symfony doesn't support curly.
+$yaml_api_contents = preg_replace_callback("/x-logo: {([\s\S]*?)}/", function($matches) {
+    $items = preg_replace("/^(.*?),$/m", "$1", $matches[1]);
+    return 'x-logo: '.$items;
+}, $yaml_api_contents);
+
+file_put_contents($source_local_path, $yaml_api_contents);
+
+$spec_document = Yaml::parse($yaml_api_contents);
+
+$spec = [];
+
+exec('rm -rf spec/');
+
+$docs_url = 'https://developers.linode.com/api/v4#';
+
+foreach ($spec_document['paths'] as $path => $details) {
+
+    preg_match_all("({.*?})", $path, $variable_matches);
+    $endpoint = trim(preg_replace("({.*?})", '%s', $path), '/');
+
+    // Clean the variable name.
+    foreach ($variable_matches[0] as &$parameter) {
+        $parameter = snake_case(str_replace(['{', '}'], '', $parameter));
+    }
+
+    $path_array = [];
+    $base_array = [];
+    $has_parameter = false;
+
+    foreach (explode('/', $path) as $entry) {
+        if (stripos($entry, '{') !== false) {
+            $base_array = $path_array;
+            $has_parameter = true;
+            continue;
+        }
+
+        $path_array[] = $entry;
+
+        if (!$has_parameter) {
+            $base_array[] = $entry;
+        }
+    }
+
+    // Create class naming.
+    $original_class_name = $class_name = trim(implode('/', array_map('ucfirst', $base_array)), '/');
+
+    // Remove plural.
+    if (count($variable_matches[0])) {
+        $class_name = rtrim($class_name, 's');
+    }
+
+    $replacement_array = [];
+    $replacement_strings = '';
+    $replacement_string = '';
+
+    foreach (explode('/', $class_name) as $item) {
+        $replacement_array[] = $replacement_strings.$item;
+        $replacement_strings .= $replacement_string.$item;
+
+        $replacement_array[] = $replacement_string.rtrim($item, 's');
+        $replacement_string .= rtrim($item, 's');
+    }
+
+    $replacement_array = array_reverse($replacement_array);
+       
+    $spec_path = 'spec/'.$class_name.'.yml';
+
+    if (file_exists($spec_path)) {
+        $config = Yaml::parse(file_get_contents($spec_path));
+    }
+
+    if (!isset($config)) {
+        $config = [
+            'endpoint'    => $endpoint,
+            'url'         => $docs_url.'tag/'.str_replace('/', '-', $original_class_name),
+            'load-method' => 'get',
+        ];
+
+        foreach ($variable_matches[0] as $parameter) {
+            $name = snake_case($parameter);
+            $config['parameters'][$name] = [];
+        }
+    }
+
+    foreach (['get', 'put', 'post', 'delete'] as $method) {
+        if (!array_key_exists($method, $details)) {
+            continue;
+        }
+
+        $method_details = $details[$method];
+
+        // Endpoint.
+        $endpoint_method = $method_details['operationId'];
+        if (!isset($config[$method][$method]) && $method !== 'post') {
+            $endpoint_method = $method == 'put' ? 'update' : $method; 
+        }
+
+        $endpoint_method = str_replace($replacement_array, '', $endpoint_method);
+
+        $parameters = [];
+        $optional_parameters = [];
+
+        // Parameters.
+        foreach (array_get($details, 'parameters', []) as $parameter) {
+            $name = snake_case($parameter['name']);
+
+            $parameters[$name] = [
+                'description' => array_get($parameter, 'description', ''),
+                'required'    => array_get($parameter, 'required', false),
+                'type'        => array_get($parameter, 'schema.type', ''),
+            ];
+
+            if (isset($config['parameters'][$name])) {
+                $parameters[$name]['self'] = true;
+            }
+        }
+
+        $config[$method][$endpoint_method] = [
+            'summary'             => $method_details['summary'],
+            'description'         => $method_details['description'],
+            'url'                 => $docs_url.'operation/'.$method_details['operationId'],
+            'endpoint'            => str_replace($config['endpoint'], '', $endpoint),
+            'parameters'          => $parameters,
+        ];
+
+        if (empty($config[$method][$endpoint_method]['parameters'])) {
+            unset($config[$method][$endpoint_method]['parameters']);
+        }
+    }
+
+
+
+    // Create folder if missing.
+    if (!file_exists(dirname($spec_path))) {
+        mkdir(dirname($spec_path), 0777, true);
+    }
+
+    file_put_contents($spec_path, Yaml::dump($config, 5, 2));
+
+    unset($config);
+}
