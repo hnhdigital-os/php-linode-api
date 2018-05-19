@@ -150,7 +150,7 @@ class Instance extends Base
 
     /**
      * Creates a snapshot Backup of a Linode.
-     * -- If you already have a snapshot of this Linode, this is a destructive action. The previous snapshot will be deleted.--
+     *  If you already have a snapshot of this Linode, this is a destructive action. The previous snapshot will be deleted.
      *
      * @param int $linode_id The ID of the Linode the backups belong to.
      *
@@ -414,7 +414,7 @@ class Instance extends Base
     /**
      * Deletes a Linode you have permission to `read_write`.
      *
-     * --Deleting a Linode is a destructive action and cannot be undone.--
+     * Deleting a Linode is a destructive action and cannot be undone.
      *
      * Additionally, deleting a Linode:
      *

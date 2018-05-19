@@ -80,7 +80,7 @@ class Image extends Base
      * Deletes a private Image you have permission to `read_write`.
      *
      *
-     * --Deleting an Image is a destructive action and cannot be undone.--
+     * Deleting an Image is a destructive action and cannot be undone.
      *
      * @param string $image_id ID of the Image to look up.
      *

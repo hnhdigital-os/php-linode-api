@@ -150,7 +150,7 @@ class Volume extends Base
     /**
      * Deletes a Volume you have permission to `read_write`.
      *
-     * --Deleting a Volume is a destructive action and cannot be undone.--
+     * Deleting a Volume is a destructive action and cannot be undone.
      *
      * Deleting stops billing for the Volume. You will be billed for time used within
      * the billing period the Volume was active.

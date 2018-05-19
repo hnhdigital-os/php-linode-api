@@ -113,7 +113,7 @@ class Config extends Base
     /**
      * Deletes the Config for a port of this NodeBalancer.
      *
-     * --This cannot be undone.--
+     * This cannot be undone.
      *
      * Once completed, this NodeBalancer will no longer respond to requests on the given port. This also deletes all associated
      * NodeBalancerNodes, but the Linodes they were routing traffic to will be unchanged and will not be removed.

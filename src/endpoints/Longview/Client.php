@@ -80,7 +80,7 @@ class Client extends Base
     /**
      * Deletes a Longview Client from your Account.
      *
-     * --All information stored for this client will be lost.--
+     * All information stored for this client will be lost.
      *
      * This _does not_ uninstall the Longview Client application for your Linode - you must do that manually.
      *
