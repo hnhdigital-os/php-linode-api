@@ -31,7 +31,6 @@ class Grants extends Base
      */
     protected $endpoint = 'profile/grants';
 
-
     /**
      * Constructor.
      *

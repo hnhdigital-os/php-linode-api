@@ -31,7 +31,6 @@ class Instances extends Base
      */
     protected $endpoint = 'linode/instances';
 
-
     /**
      * Constructor.
      *

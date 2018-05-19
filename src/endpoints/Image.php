@@ -30,7 +30,6 @@ class Image extends Base
      * @var string
      */
     protected $endpoint = 'images/%s';
-
     /**
      * Image Id.
      *

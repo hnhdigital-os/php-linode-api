@@ -30,7 +30,6 @@ class Instance extends Base
      * @var string
      */
     protected $endpoint = 'linode/instances/%s';
-
     /**
      * Linode Id.
      *

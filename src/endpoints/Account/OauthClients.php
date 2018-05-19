@@ -31,7 +31,6 @@ class OauthClients extends Base
      */
     protected $endpoint = 'account/oauth-clients';
 
-
     /**
      * Constructor.
      *

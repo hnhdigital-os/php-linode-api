@@ -31,7 +31,6 @@ class Types extends Base
      */
     protected $endpoint = 'linode/types';
 
-
     /**
      * Constructor.
      *

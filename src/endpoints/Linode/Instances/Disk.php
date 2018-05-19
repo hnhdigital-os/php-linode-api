@@ -30,7 +30,6 @@ class Disk extends Base
      * @var string
      */
     protected $endpoint = 'linode/instances/%s/disks/%s';
-
     /**
      * Linode Id.
      *

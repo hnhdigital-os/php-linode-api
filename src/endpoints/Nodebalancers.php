@@ -31,7 +31,6 @@ class Nodebalancers extends Base
      */
     protected $endpoint = 'nodebalancers';
 
-
     /**
      * Constructor.
      *

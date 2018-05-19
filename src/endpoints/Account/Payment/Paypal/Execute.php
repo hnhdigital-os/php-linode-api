@@ -31,7 +31,6 @@ class Execute extends Base
      */
     protected $endpoint = 'account/payment/paypal/execute';
 
-
     /**
      * Constructor.
      *

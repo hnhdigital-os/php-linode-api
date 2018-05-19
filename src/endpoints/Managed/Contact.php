@@ -30,7 +30,6 @@ class Contact extends Base
      * @var string
      */
     protected $endpoint = 'managed/contacts/%s';
-
     /**
      * Contact Id.
      *

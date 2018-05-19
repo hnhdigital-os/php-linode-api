@@ -30,7 +30,6 @@ class Config extends Base
      * @var string
      */
     protected $endpoint = 'linode/instances/%s/configs/%s';
-
     /**
      * Linode Id.
      *

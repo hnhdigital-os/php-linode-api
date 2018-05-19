@@ -30,7 +30,6 @@ class Ip extends Base
      * @var string
      */
     protected $endpoint = 'networking/ips/%s';
-
     /**
      * Address.
      *

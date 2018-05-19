@@ -31,7 +31,6 @@ class Apps extends Base
      */
     protected $endpoint = 'profile/apps';
 
-
     /**
      * Constructor.
      *

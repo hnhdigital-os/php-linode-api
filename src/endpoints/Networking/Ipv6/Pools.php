@@ -31,7 +31,6 @@ class Pools extends Base
      */
     protected $endpoint = 'networking/ipv6/pools';
 
-
     /**
      * Constructor.
      *

@@ -30,7 +30,6 @@ class Ticket extends Base
      * @var string
      */
     protected $endpoint = 'support/tickets/%s';
-
     /**
      * Ticket Id.
      *

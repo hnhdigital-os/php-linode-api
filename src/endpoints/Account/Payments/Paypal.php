@@ -31,7 +31,6 @@ class Paypal extends Base
      */
     protected $endpoint = 'account/payments/paypal';
 
-
     /**
      * Constructor.
      *

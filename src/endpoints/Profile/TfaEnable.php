@@ -31,7 +31,6 @@ class TfaEnable extends Base
      */
     protected $endpoint = 'profile/tfa-enable';
 
-
     /**
      * Constructor.
      *

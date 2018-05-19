@@ -30,7 +30,6 @@ class Stat extends Base
      * @var string
      */
     protected $endpoint = 'linode/instances/%s/stats/%s/%s';
-
     /**
      * Linode Id.
      *

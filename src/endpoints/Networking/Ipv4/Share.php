@@ -31,7 +31,6 @@ class Share extends Base
      */
     protected $endpoint = 'networking/ipv4/share';
 
-
     /**
      * Constructor.
      *

@@ -30,7 +30,6 @@ class App extends Base
      * @var string
      */
     protected $endpoint = 'profile/apps/%s';
-
     /**
      * App Id.
      *

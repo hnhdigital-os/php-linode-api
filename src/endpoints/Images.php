@@ -31,7 +31,6 @@ class Images extends Base
      */
     protected $endpoint = 'images';
 
-
     /**
      * Constructor.
      *

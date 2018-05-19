@@ -30,7 +30,6 @@ class Volume extends Base
      * @var string
      */
     protected $endpoint = 'volumes/%s';
-
     /**
      * Volume Id.
      *

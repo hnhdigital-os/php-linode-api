@@ -31,7 +31,6 @@ class Assign extends Base
      */
     protected $endpoint = 'networking/ipv4/assign';
 
-
     /**
      * Constructor.
      *

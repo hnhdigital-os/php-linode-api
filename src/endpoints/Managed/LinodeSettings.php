@@ -31,7 +31,6 @@ class LinodeSettings extends Base
      */
     protected $endpoint = 'managed/linode-settings';
 
-
     /**
      * Constructor.
      *

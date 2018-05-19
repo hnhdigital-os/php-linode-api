@@ -30,7 +30,6 @@ class Client extends Base
      * @var string
      */
     protected $endpoint = 'longview/clients/%s';
-
     /**
      * Client Id.
      *

@@ -31,7 +31,6 @@ class Services extends Base
      */
     protected $endpoint = 'managed/services';
 
-
     /**
      * Constructor.
      *

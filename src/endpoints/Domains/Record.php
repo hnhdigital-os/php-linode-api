@@ -30,7 +30,6 @@ class Record extends Base
      * @var string
      */
     protected $endpoint = 'domains/%s/records/%s';
-
     /**
      * Domain Id.
      *

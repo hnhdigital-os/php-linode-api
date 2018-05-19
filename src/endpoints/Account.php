@@ -31,7 +31,6 @@ class Account extends Base
      */
     protected $endpoint = 'account';
 
-
     /**
      * Constructor.
      *

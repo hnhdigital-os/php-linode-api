@@ -30,7 +30,6 @@ class Backup extends Base
      * @var string
      */
     protected $endpoint = 'linode/instances/%s/backups/%s';
-
     /**
      * Linode Id.
      *

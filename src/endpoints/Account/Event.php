@@ -30,7 +30,6 @@ class Event extends Base
      * @var string
      */
     protected $endpoint = 'account/events/%s';
-
     /**
      * Event Id.
      *

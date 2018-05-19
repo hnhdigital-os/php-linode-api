@@ -30,7 +30,6 @@ class Invoice extends Base
      * @var string
      */
     protected $endpoint = 'account/invoices/%s';
-
     /**
      * Invoice Id.
      *

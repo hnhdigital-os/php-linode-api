@@ -31,7 +31,6 @@ class Stackscripts extends Base
      */
     protected $endpoint = 'linode/stackscripts';
 
-
     /**
      * Constructor.
      *

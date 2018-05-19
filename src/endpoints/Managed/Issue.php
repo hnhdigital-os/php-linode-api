@@ -30,7 +30,6 @@ class Issue extends Base
      * @var string
      */
     protected $endpoint = 'managed/issues/%s';
-
     /**
      * Issue Id.
      *

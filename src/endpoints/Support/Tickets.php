@@ -31,7 +31,6 @@ class Tickets extends Base
      */
     protected $endpoint = 'support/tickets';
 
-
     /**
      * Constructor.
      *

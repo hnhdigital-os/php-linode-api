@@ -30,7 +30,6 @@ class Service extends Base
      * @var string
      */
     protected $endpoint = 'managed/services/%s';
-
     /**
      * Service Id.
      *

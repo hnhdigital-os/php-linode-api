@@ -31,7 +31,6 @@ class CreditCard extends Base
      */
     protected $endpoint = 'account/credit-card';
 
-
     /**
      * Constructor.
      *

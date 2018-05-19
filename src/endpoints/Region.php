@@ -30,7 +30,6 @@ class Region extends Base
      * @var string
      */
     protected $endpoint = 'regions/%s';
-
     /**
      * Region Id.
      *

@@ -30,7 +30,6 @@ class Type extends Base
      * @var string
      */
     protected $endpoint = 'linode/types/%s';
-
     /**
      * Type Id.
      *

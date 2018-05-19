@@ -31,7 +31,6 @@ class Ips extends Base
      */
     protected $endpoint = 'networking/ips';
 
-
     /**
      * Constructor.
      *

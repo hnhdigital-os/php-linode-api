@@ -30,7 +30,6 @@ class Payment extends Base
      * @var string
      */
     protected $endpoint = 'account/payments/%s';
-
     /**
      * Payment Id.
      *

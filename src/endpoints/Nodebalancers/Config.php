@@ -30,7 +30,6 @@ class Config extends Base
      * @var string
      */
     protected $endpoint = 'nodebalancers/%s/configs/%s';
-
     /**
      * Node Balancer Id.
      *

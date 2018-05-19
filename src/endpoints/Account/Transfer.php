@@ -31,7 +31,6 @@ class Transfer extends Base
      */
     protected $endpoint = 'account/transfer';
 
-
     /**
      * Constructor.
      *

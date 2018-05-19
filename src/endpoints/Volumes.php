@@ -31,7 +31,6 @@ class Volumes extends Base
      */
     protected $endpoint = 'volumes';
 
-
     /**
      * Constructor.
      *

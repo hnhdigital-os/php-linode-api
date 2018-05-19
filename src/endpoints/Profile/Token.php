@@ -30,7 +30,6 @@ class Token extends Base
      * @var string
      */
     protected $endpoint = 'profile/tokens/%s';
-
     /**
      * Token Id.
      *

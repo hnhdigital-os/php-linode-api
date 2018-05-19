@@ -30,7 +30,6 @@ class Kernel extends Base
      * @var string
      */
     protected $endpoint = 'linode/kernels/%s';
-
     /**
      * Kernel Id.
      *

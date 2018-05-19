@@ -31,7 +31,6 @@ class Contacts extends Base
      */
     protected $endpoint = 'managed/contacts';
 
-
     /**
      * Constructor.
      *

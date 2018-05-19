@@ -31,7 +31,6 @@ class Issues extends Base
      */
     protected $endpoint = 'managed/issues';
 
-
     /**
      * Constructor.
      *

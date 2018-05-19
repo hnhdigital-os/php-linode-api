@@ -31,7 +31,6 @@ class Profile extends Base
      */
     protected $endpoint = 'profile';
 
-
     /**
      * Constructor.
      *

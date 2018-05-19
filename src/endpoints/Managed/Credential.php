@@ -30,7 +30,6 @@ class Credential extends Base
      * @var string
      */
     protected $endpoint = 'managed/credentials/%s';
-
     /**
      * Credential Id.
      *

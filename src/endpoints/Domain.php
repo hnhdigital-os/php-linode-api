@@ -30,7 +30,6 @@ class Domain extends Base
      * @var string
      */
     protected $endpoint = 'domains/%s';
-
     /**
      * Domain Id.
      *

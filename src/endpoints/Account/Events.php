@@ -31,7 +31,6 @@ class Events extends Base
      */
     protected $endpoint = 'account/events';
 
-
     /**
      * Constructor.
      *

@@ -31,7 +31,6 @@ class Domains extends Base
      */
     protected $endpoint = 'domains';
 
-
     /**
      * Constructor.
      *

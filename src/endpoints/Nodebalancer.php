@@ -30,7 +30,6 @@ class Nodebalancer extends Base
      * @var string
      */
     protected $endpoint = 'nodebalancers/%s';
-
     /**
      * Node Balancer Id.
      *

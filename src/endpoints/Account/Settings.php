@@ -31,7 +31,6 @@ class Settings extends Base
      */
     protected $endpoint = 'account/settings';
 
-
     /**
      * Constructor.
      *
