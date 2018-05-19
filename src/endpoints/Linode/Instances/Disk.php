@@ -30,10 +30,11 @@ class Disk extends Base
      * @var string
      */
     protected $endpoint = 'linode/instances/%s/disks/%s';
+
     /**
      * Linode Id.
      *
-     * @var integer
+     * @var int
      */
     protected $linode_id;
 
@@ -97,7 +98,7 @@ class Disk extends Base
     }
 
     /**
-* Resizes a Disk you have permission to `read_write`.
+     * Resizes a Disk you have permission to `read_write`.
      * The Linode this Disk is attached to must be shut down for resizing to take effect.
      * If you are resizing the Disk to a smaller size, it cannot be made smaller than what is required by the total size of the
      * files current on the Disk. The Disk must not be in use. If the Disk is in use, the request will succeed but the resize

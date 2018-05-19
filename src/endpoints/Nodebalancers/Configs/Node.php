@@ -30,16 +30,17 @@ class Node extends Base
      * @var string
      */
     protected $endpoint = 'nodebalancers/%s/configs/%s/nodes/%s';
+
     /**
      * Node Balancer Id.
      *
-     * @var integer
+     * @var int
      */
     protected $node_balancer_id;
     /**
      * Config Id.
      *
-     * @var integer
+     * @var int
      */
     protected $config_id;
 
@@ -88,9 +89,9 @@ class Node extends Base
     }
 
     /**
-* Deletes a Node from this Config. This backend will no longer receive traffic for the configured port of this
+     * Deletes a Node from this Config. This backend will no longer receive traffic for the configured port of this
      * NodeBalancer.
-     * 
+     *
      * This does not change or remove the Linode whose address was used in the creation of this Node.
      *
      * @param int $node_balancer_id The ID of the NodeBalancer to access.

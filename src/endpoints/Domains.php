@@ -31,6 +31,7 @@ class Domains extends Base
      */
     protected $endpoint = 'domains';
 
+
     /**
      * Constructor.
      *
@@ -42,7 +43,7 @@ class Domains extends Base
     }
 
     /**
-* This is a collection of Domains that you have registered in Linode's DNS Manager.  Linode is not a registrar, and in
+     * This is a collection of Domains that you have registered in Linode's DNS Manager.  Linode is not a registrar, and in
      * order for these to work you must own the domains and point your registrar at Linode's nameservers.
      *
      * @link https://developers.linode.com/api/v4#operation/getDomains
@@ -55,7 +56,7 @@ class Domains extends Base
     }
 
     /**
-* Adds a new Domain to Linode's DNS Manager. Linode is not a registrar, and you must own the domain before adding it here.
+     * Adds a new Domain to Linode's DNS Manager. Linode is not a registrar, and you must own the domain before adding it here.
      * Be sure to point your registrar to Linode's nameservers so that the records hosted here are used.
      *
      * @link https://developers.linode.com/api/v4#operation/createDomain

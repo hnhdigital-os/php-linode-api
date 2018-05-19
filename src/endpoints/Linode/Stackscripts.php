@@ -31,6 +31,7 @@ class Stackscripts extends Base
      */
     protected $endpoint = 'linode/stackscripts';
 
+
     /**
      * Constructor.
      *
@@ -42,8 +43,8 @@ class Stackscripts extends Base
     }
 
     /**
-* If the request is not authenticated, only public StackScripts are returned.
-     * 
+     * If the request is not authenticated, only public StackScripts are returned.
+     *
      * For more information on StackScripts, please read our guide: [Automate Deployment with
      * StackScripts](https://linode.com/docs/platform/stackscripts/).
      *

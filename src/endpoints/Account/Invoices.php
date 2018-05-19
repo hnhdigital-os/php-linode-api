@@ -31,6 +31,7 @@ class Invoices extends Base
      */
     protected $endpoint = 'account/invoices';
 
+
     /**
      * Constructor.
      *

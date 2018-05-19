@@ -31,6 +31,7 @@ class Ranges extends Base
      */
     protected $endpoint = 'networking/ipv6/ranges';
 
+
     /**
      * Constructor.
      *

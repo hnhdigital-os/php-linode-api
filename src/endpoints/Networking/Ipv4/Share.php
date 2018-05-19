@@ -31,6 +31,7 @@ class Share extends Base
      */
     protected $endpoint = 'networking/ipv4/share';
 
+
     /**
      * Constructor.
      *
@@ -42,7 +43,7 @@ class Share extends Base
     }
 
     /**
-* Configure shared IPs.  A shared IP may be brought up on a Linode other than the one it lists in its response.  This can
+     * Configure shared IPs.  A shared IP may be brought up on a Linode other than the one it lists in its response.  This can
      * be used to allow one Linode to begin serving requests should another become unresponsive.
      *
      * @link https://developers.linode.com/api/v4#operation/shareIPs

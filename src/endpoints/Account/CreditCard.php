@@ -31,6 +31,7 @@ class CreditCard extends Base
      */
     protected $endpoint = 'account/credit-card';
 
+
     /**
      * Constructor.
      *
@@ -42,7 +43,7 @@ class CreditCard extends Base
     }
 
     /**
-* Adds/edit credit card information to your Account.
+     * Adds/edit credit card information to your Account.
      * Only one credit card can be associated with your Account, so using this endpoint will overwrite your currently active
      * card information with the new credit card.
      *

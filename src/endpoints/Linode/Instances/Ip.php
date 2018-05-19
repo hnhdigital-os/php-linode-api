@@ -30,10 +30,11 @@ class Ip extends Base
      * @var string
      */
     protected $endpoint = 'linode/instances/%s/ips/%s';
+
     /**
      * Linode Id.
      *
-     * @var integer
+     * @var int
      */
     protected $linode_id;
 
@@ -79,7 +80,7 @@ class Ip extends Base
     }
 
     /**
-* Deletes a public IPv4 address associated with this Linode. This will fail if it is the Linode's last remaining public
+     * Deletes a public IPv4 address associated with this Linode. This will fail if it is the Linode's last remaining public
      * IPv4 address. Private IPv4 addresses cannot be removed via this endpoint.
      *
      * @param int    $linode_id The ID of the Linode to look up.

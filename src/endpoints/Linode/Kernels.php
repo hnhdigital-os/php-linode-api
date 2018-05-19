@@ -31,6 +31,7 @@ class Kernels extends Base
      */
     protected $endpoint = 'linode/kernels';
 
+
     /**
      * Constructor.
      *

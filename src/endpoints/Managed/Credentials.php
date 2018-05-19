@@ -31,6 +31,7 @@ class Credentials extends Base
      */
     protected $endpoint = 'managed/credentials';
 
+
     /**
      * Constructor.
      *
@@ -54,7 +55,7 @@ class Credentials extends Base
     }
 
     /**
-* Creates a Managed Credential. A Managed Credential is stored securely to allow Linode special forces to access your
+     * Creates a Managed Credential. A Managed Credential is stored securely to allow Linode special forces to access your
      * Managed Services and resolve issues.
      *
      * @link https://developers.linode.com/api/v4#operation/createManagedCredential

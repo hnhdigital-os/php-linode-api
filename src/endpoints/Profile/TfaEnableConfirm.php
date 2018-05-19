@@ -31,6 +31,7 @@ class TfaEnableConfirm extends Base
      */
     protected $endpoint = 'profile/tfa-enable-confirm';
 
+
     /**
      * Constructor.
      *
@@ -42,7 +43,7 @@ class TfaEnableConfirm extends Base
     }
 
     /**
-* Confirms that you can successfully generate Two Factor codes and enables TFA on your Account. Once this is complete,
+     * Confirms that you can successfully generate Two Factor codes and enables TFA on your Account. Once this is complete,
      * login attempts from untrusted computers will be required to provide a Two Factor code before they are successful.
      *
      * @link https://developers.linode.com/api/v4#operation/tfaConfirm

@@ -30,10 +30,11 @@ class LinodeSetting extends Base
      * @var string
      */
     protected $endpoint = 'managed/linode-settings/%s';
+
     /**
      * Linode Id.
      *
-     * @var integer
+     * @var int
      */
     protected $linode_id;
 

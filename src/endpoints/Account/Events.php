@@ -31,6 +31,7 @@ class Events extends Base
      */
     protected $endpoint = 'account/events';
 
+
     /**
      * Constructor.
      *
@@ -42,7 +43,7 @@ class Events extends Base
     }
 
     /**
-* Returns a collection of Event objects representing actions taken on your Account. The Events returned depends on your
+     * Returns a collection of Event objects representing actions taken on your Account. The Events returned depends on your
      * grants.
      *
      * @link https://developers.linode.com/api/v4#operation/getEvents

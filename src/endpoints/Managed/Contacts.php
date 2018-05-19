@@ -31,6 +31,7 @@ class Contacts extends Base
      */
     protected $endpoint = 'managed/contacts';
 
+
     /**
      * Constructor.
      *
@@ -54,7 +55,7 @@ class Contacts extends Base
     }
 
     /**
-* Creates a Managed Contact.  A Managed Contact is someone Linode special forces can contact in the course of attempting
+     * Creates a Managed Contact.  A Managed Contact is someone Linode special forces can contact in the course of attempting
      * to resolve an issue with a Managed Service.
      *
      * @link https://developers.linode.com/api/v4#operation/createManagedContact

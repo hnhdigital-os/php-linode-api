@@ -157,7 +157,7 @@ function generate_method_description($method_settings)
     $result = wordwrap($description, 120)."\n";
     $result = str_replace('*', '-', $result);
     $result = preg_replace('/^(.*?)$/m', '     * $1', trim($result))."\n";
-    $result = preg_replace('/^     * $/m', '     *', trim($result))."\n";
+    $result = preg_replace('/^     \* $/m', '     *', $result);
 
     return $result;
 }

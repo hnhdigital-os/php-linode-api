@@ -31,6 +31,7 @@ class Users extends Base
      */
     protected $endpoint = 'account/users';
 
+
     /**
      * Constructor.
      *
@@ -42,7 +43,7 @@ class Users extends Base
     }
 
     /**
-* Returns a paginated list of Users on your Account. Users may access all or part of your Account based on their
+     * Returns a paginated list of Users on your Account. Users may access all or part of your Account based on their
      * restricted status and grants.  An unrestricted User may access everything on the account, whereas restricted User may
      * only access entities or perform actions they've been given specific grants to.
      *
@@ -56,7 +57,7 @@ class Users extends Base
     }
 
     /**
-* Creates a User on your Account. Once created, the User will be able to log in and access portions of your Account.
+     * Creates a User on your Account. Once created, the User will be able to log in and access portions of your Account.
      * Access is determined by whether or not they are restricted, and what grants they have been given.
      *
      * @link https://developers.linode.com/api/v4#operation/createUser

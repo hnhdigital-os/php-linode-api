@@ -30,6 +30,7 @@ class Subscription extends Base
      * @var string
      */
     protected $endpoint = 'longview/subscriptions/%s';
+
     /**
      * Subscription Id.
      *

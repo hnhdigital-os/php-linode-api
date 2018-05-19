@@ -31,6 +31,7 @@ class Instances extends Base
      */
     protected $endpoint = 'linode/instances';
 
+
     /**
      * Constructor.
      *
@@ -54,27 +55,27 @@ class Instances extends Base
     }
 
     /**
-* Creates a Linode Instance on your Account. In order for this
+     * Creates a Linode Instance on your Account. In order for this
      * request to complete successfully, your User must have the `add_linodes` grant. Creating a
      * new Linode will incur a charge on your Account.
-     * 
+     *
      * Linodes can be created using one of the available Types. See
      * [GET /linode/types](/#operation/getLinodeTypes) to get more
      * information about each Type's specs and cost.
-     * 
+     *
      * Linodes can be created in any one of our available
      * [Regions](/#operation/getRegions) for a list
      * of available Regions you can deploy your Linode in.
-     * 
+     *
      * Linodes can be created in a number of ways:
-     * 
+     *
      * - Using a Linode Linux Distribution image or an Image you created based on another Linode.
      *   - The Linode will be `running` after it completes `provisioning`.
      *   - A default config with two Disks, one being a 512 swap disk, is created.
      *     - `swap_size` can be used to customize the swap disk size.
      *   - Requires a `root_pass` be supplied to use for the root User's Account.
      *   - It is recommended to supply SSH keys for the root User using the `authorized_keys` field.
-     * 
+     *
      * - Using a StackScript.
      *   - See [/linode/stackscripts](/#operation/getStackScripts) for
      *     a list of available StackScripts.
@@ -83,12 +84,12 @@ class Instances extends Base
      *     - See [/linode/stackscript/{stackscriptId}](/#operation/getStackScript) for compatible Images.
      *   - Requires a `root_pass` be supplied to use for the root User's Account.
      *   - It is recommended to supply SSH keys for the root User using the `authorized_keys` field.
-     * 
+     *
      * - Using one of your other Linode's backups.
      *   - You must create a Linode large enough to accommodate the Backup's size.
      *   - The Disks and Config will match that of the Linode that was backed up.
      *   - The `root_pass` will match that of the Linode that was backed up.
-     * 
+     *
      * - Create an empty Linode.
      *   - The Linode will remain `offline` and must be manually started.
      *     - See [POST /linode/instances/{linodeId}/boot](/#operation/bootLinodeInstance).

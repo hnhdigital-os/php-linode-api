@@ -31,6 +31,7 @@ class Subscriptions extends Base
      */
     protected $endpoint = 'longview/subscriptions';
 
+
     /**
      * Constructor.
      *
@@ -42,7 +43,7 @@ class Subscriptions extends Base
     }
 
     /**
-* Returns a paginated list of available Longview Subscriptions. This is a public endpoint and requires no authentication.
+     * Returns a paginated list of available Longview Subscriptions. This is a public endpoint and requires no authentication.
      *
      * @link https://developers.linode.com/api/v4#operation/getLongviewSubscriptions
      *

@@ -31,6 +31,7 @@ class Regions extends Base
      */
     protected $endpoint = 'regions';
 
+
     /**
      * Constructor.
      *

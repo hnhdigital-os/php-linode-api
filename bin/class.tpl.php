@@ -33,13 +33,14 @@ class <?= $class_name ?> extends Base
      * @var string
      */
     protected $endpoint = '<?= array_get($spec, 'endpoint') ?>';
+
 <?php
 foreach (array_get($spec, 'parameters', []) as $name => $settings) {
 ?>
     /**
      * <?= title_case(str_replace('_', ' ', $name)) ?>.
      *
-     * @var <?= array_get($settings, 'type') ?>
+     * @var <?= convert_paramater_type(array_get($settings, 'type')) ?>
 
      */
     protected $<?= $name ?>;

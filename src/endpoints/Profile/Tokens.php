@@ -31,6 +31,7 @@ class Tokens extends Base
      */
     protected $endpoint = 'profile/tokens';
 
+
     /**
      * Constructor.
      *
@@ -54,7 +55,7 @@ class Tokens extends Base
     }
 
     /**
-* Creates a Personal Access Token for your User. The raw token will be returned in the response, but will never be
+     * Creates a Personal Access Token for your User. The raw token will be returned in the response, but will never be
      * returned again afterward so be sure to take note of it. You may create a token with _at most_ the scopes of your current
      * token. The created token will be able to access your Account until the given expiry, or until it is revoked.
      *

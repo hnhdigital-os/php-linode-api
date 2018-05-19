@@ -31,6 +31,7 @@ class Clients extends Base
      */
     protected $endpoint = 'longview/clients';
 
+
     /**
      * Constructor.
      *
@@ -42,7 +43,7 @@ class Clients extends Base
     }
 
     /**
-* Returns a paginated list of Longview Clients you have access to. Longview Client is used to monitor stats on your Linode
+     * Returns a paginated list of Longview Clients you have access to. Longview Client is used to monitor stats on your Linode
      * with the help of the Longview Client application.
      *
      * @link https://developers.linode.com/api/v4#operation/getLongviewClients
@@ -55,7 +56,7 @@ class Clients extends Base
     }
 
     /**
-* Creates a Longview Client.  This Client will not begin monitoring the status of your server until you configure the
+     * Creates a Longview Client.  This Client will not begin monitoring the status of your server until you configure the
      * Longview Client application on your Linode using the returning `install_code` and `api_key`.
      *
      * @link https://developers.linode.com/api/v4#operation/createLongviewClient

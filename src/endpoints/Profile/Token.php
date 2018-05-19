@@ -30,10 +30,11 @@ class Token extends Base
      * @var string
      */
     protected $endpoint = 'profile/tokens/%s';
+
     /**
      * Token Id.
      *
-     * @var integer
+     * @var int
      */
     protected $token_id;
 
@@ -77,7 +78,7 @@ class Token extends Base
     }
 
     /**
-* Revokes a Personal Access Token. The token will be invalidated immediately, and requests using that token will fail with
+     * Revokes a Personal Access Token. The token will be invalidated immediately, and requests using that token will fail with
      * a 401. It is possible to revoke access to the token making the request to revoke a token, but keep in mind that doing so
      * could lose you access to the api and require you to create a new token through some other means.
      *

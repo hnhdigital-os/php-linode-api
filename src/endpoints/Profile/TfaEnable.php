@@ -31,6 +31,7 @@ class TfaEnable extends Base
      */
     protected $endpoint = 'profile/tfa-enable';
 
+
     /**
      * Constructor.
      *
@@ -42,7 +43,7 @@ class TfaEnable extends Base
     }
 
     /**
-* Generates a Two Factor secret for your User. TFA will not be enabled until you have successfully confirmed the code you
+     * Generates a Two Factor secret for your User. TFA will not be enabled until you have successfully confirmed the code you
      * were given with [tfa-enable-confirm](/#operation/tfaConfirm) (see below). Once enabled, logins from untrusted computers
      * will be required to provide a TFA code before they are successful.
      *

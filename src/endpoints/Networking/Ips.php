@@ -31,6 +31,7 @@ class Ips extends Base
      */
     protected $endpoint = 'networking/ips';
 
+
     /**
      * Constructor.
      *
@@ -54,7 +55,7 @@ class Ips extends Base
     }
 
     /**
-* Allocates a new IPv4 Address on your Account. The Linode must be configured to support additional addresses - please
+     * Allocates a new IPv4 Address on your Account. The Linode must be configured to support additional addresses - please
      * [open a support ticket](/#operation/createTicket) requesting additional addresses before attempting allocation.
      *
      * @link https://developers.linode.com/api/v4#operation/allocateIP
