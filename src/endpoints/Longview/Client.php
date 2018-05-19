@@ -64,7 +64,7 @@ class Client extends Base
      * Updates a Longview Client.  This cannot update how it monitors your server; use the Longview Client application on your
      * Linode for monitoring configuration.
      *
-     * @param integer $client_id The Longview Client ID to access.
+     * @param int $client_id The Longview Client ID to access.
      *
      * @link https://developers.linode.com/api/v4#operation/updateLongviewClient
      *
@@ -84,7 +84,7 @@ class Client extends Base
      * 
      * This _does not_ uninstall the Longview Client application for your Linode - you must do that manually.
      *
-     * @param integer $client_id The Longview Client ID to access.
+     * @param int $client_id The Longview Client ID to access.
      *
      * @link https://developers.linode.com/api/v4#operation/deleteLongviewClient
      *

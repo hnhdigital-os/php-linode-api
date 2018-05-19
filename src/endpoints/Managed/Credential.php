@@ -63,7 +63,7 @@ class Credential extends Base
     /**
      * Updates information about a Managed Credential.
      *
-     * @param integer $credential_id The ID of the Credential to access.
+     * @param int $credential_id The ID of the Credential to access.
      *
      * @link https://developers.linode.com/api/v4#operation/updateManagedCredential
      *
@@ -80,7 +80,7 @@ class Credential extends Base
      * Deletes a Managed Credential.  Linode special forces will no longer have access to this Credential when attempting to
      * resolve issues.
      *
-     * @param integer $credential_id The ID of the Credential to access.
+     * @param int $credential_id The ID of the Credential to access.
      *
      * @link https://developers.linode.com/api/v4#operation/deleteManagedCredential
      *

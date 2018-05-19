@@ -77,7 +77,7 @@ DNS Manager.
     /**
      * Update information about a Domain in Linode's DNS Manager.
      *
-     * @param integer $domain_id The ID of the Domain to access.
+     * @param int $domain_id The ID of the Domain to access.
      *
      * @link https://developers.linode.com/api/v4#operation/updateDomain
      *
@@ -93,7 +93,7 @@ DNS Manager.
     /**
      * Adds a new Domain Record to the zonefile this Domain represents.
      *
-     * @param integer $domain_id The ID of the Domain we are accessing Records for.
+     * @param int $domain_id The ID of the Domain we are accessing Records for.
      *
      * @link https://developers.linode.com/api/v4#operation/createDomainRecord
      *
@@ -110,7 +110,7 @@ DNS Manager.
      * Deletes a Domain from Linode's DNS Manager. The Domain will be removed from Linode's nameservers shortly after this
      * operation completes. This also deletes all associated Domain Records.
      *
-     * @param integer $domain_id The ID of the Domain to access.
+     * @param int $domain_id The ID of the Domain to access.
      *
      * @link https://developers.linode.com/api/v4#operation/deleteDomain
      *

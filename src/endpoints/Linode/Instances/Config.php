@@ -63,8 +63,8 @@ class Config extends Base
     /**
      * Updates a Configuration profile.
      *
-     * @param integer $linode_id The ID of the Linode whose Configuration profile to look up.
-     * @param integer $config_id The ID of the Configuration profile to look up.
+     * @param int $linode_id The ID of the Linode whose Configuration profile to look up.
+     * @param int $config_id The ID of the Configuration profile to look up.
      *
      * @link https://developers.linode.com/api/v4#operation/updateLinodeConfig
      *
@@ -81,8 +81,8 @@ class Config extends Base
     /**
      * Deletes the specified Configuration profile from the specified Linode.
      *
-     * @param integer $linode_id The ID of the Linode whose Configuration profile to look up.
-     * @param integer $config_id The ID of the Configuration profile to look up.
+     * @param int $linode_id The ID of the Linode whose Configuration profile to look up.
+     * @param int $config_id The ID of the Configuration profile to look up.
      *
      * @link https://developers.linode.com/api/v4#operation/deleteLinodeConfig
      *

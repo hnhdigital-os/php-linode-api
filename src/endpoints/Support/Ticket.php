@@ -77,7 +77,7 @@ class Ticket extends Base
      * team in resolving your Ticket. Examples of attachments are screen shots and text files that provide additional
      * information.
      *
-     * @param integer $ticket_id The ID of the Support Ticket.
+     * @param int $ticket_id The ID of the Support Ticket.
      *
      * @link https://developers.linode.com/api/v4#operation/createTicketAttachment
      *
@@ -93,7 +93,7 @@ class Ticket extends Base
     /**
      * Adds a reply to an existing Support Ticket.
      *
-     * @param integer $ticket_id The ID of the Support Ticket.
+     * @param int $ticket_id The ID of the Support Ticket.
      *
      * @link https://developers.linode.com/api/v4#operation/createTicketReply
      *

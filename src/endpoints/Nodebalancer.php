@@ -78,7 +78,7 @@ class Nodebalancer extends Base
     /**
      * Updates information about a NodeBalancer you can access.
      *
-     * @param integer $node_balancer_id The ID of the NodeBalancer to access.
+     * @param int $node_balancer_id The ID of the NodeBalancer to access.
      *
      * @link https://developers.linode.com/api/v4#operation/updateNodeBalancer
      *
@@ -95,7 +95,7 @@ class Nodebalancer extends Base
      * Creates a NodeBalancer Config, which allows the NodeBalancer to accept traffic on a new port. You will need to add
      * NodeBalancer Nodes to the new Config before it can actually serve requests.
      *
-     * @param integer $node_balancer_id The ID of the NodeBalancer to access.
+     * @param int $node_balancer_id The ID of the NodeBalancer to access.
      *
      * @link https://developers.linode.com/api/v4#operation/createNodeBalancerConfig
      *
@@ -117,7 +117,7 @@ class Nodebalancer extends Base
      * the Nodes will not be changed or removed. Deleting a NodeBalancer will cause you to lose access to the IP Addresses
      * assigned to this NodeBalancer.
      *
-     * @param integer $node_balancer_id The ID of the NodeBalancer to access.
+     * @param int $node_balancer_id The ID of the NodeBalancer to access.
      *
      * @link https://developers.linode.com/api/v4#operation/deleteNodeBalancer
      *

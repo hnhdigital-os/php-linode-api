@@ -63,7 +63,7 @@ class App extends Base
     /**
      * Expires this app token. This token may no longer be used to access your Account.
      *
-     * @param integer $app_id The authorized app ID to manage.
+     * @param int $app_id The authorized app ID to manage.
      *
      * @link https://developers.linode.com/api/v4#operation/deleteProfileApp
      *

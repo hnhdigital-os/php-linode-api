@@ -63,7 +63,7 @@ class Event extends Base
     /**
      * Marks a single Event as read.
      *
-     * @param integer $event_id The ID of the Event to designate as read.
+     * @param int $event_id The ID of the Event to designate as read.
      *
      * @link https://developers.linode.com/api/v4#operation/eventRead
      *
@@ -79,7 +79,7 @@ class Event extends Base
     /**
      * Marks all Events up to and including this Event by ID as seen.
      *
-     * @param integer $event_id The ID of the Event to designate as seen.
+     * @param int $event_id The ID of the Event to designate as seen.
      *
      * @link https://developers.linode.com/api/v4#operation/eventSeen
      *

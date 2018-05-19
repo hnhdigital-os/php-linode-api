@@ -63,8 +63,8 @@ class Disk extends Base
     /**
      * Updates a Disk that you have permission to `read_write`.
      *
-     * @param integer $linode_id ID of the Linode to look up.
-     * @param integer $disk_id   ID of the Disk to look up.
+     * @param int $linode_id ID of the Linode to look up.
+     * @param int $disk_id   ID of the Disk to look up.
      *
      * @link https://developers.linode.com/api/v4#operation/updateDisk
      *
@@ -81,8 +81,8 @@ class Disk extends Base
     /**
      * Resets the password of a Disk you have permission to `read_write`.
      *
-     * @param integer $linode_id ID of the Linode to look up.
-     * @param integer $disk_id   ID of the Disk to look up.
+     * @param int $linode_id ID of the Linode to look up.
+     * @param int $disk_id   ID of the Disk to look up.
      *
      * @link https://developers.linode.com/api/v4#operation/resetDiskPassword
      *
@@ -103,8 +103,8 @@ class Disk extends Base
      * files current on the Disk. The Disk must not be in use. If the Disk is in use, the request will succeed but the resize
      * will ultimately fail.
      *
-     * @param integer $linode_id ID of the Linode to look up.
-     * @param integer $disk_id   ID of the Disk to look up.
+     * @param int $linode_id ID of the Linode to look up.
+     * @param int $disk_id   ID of the Disk to look up.
      *
      * @link https://developers.linode.com/api/v4#operation/resizeDisk
      *
@@ -123,8 +123,8 @@ class Disk extends Base
 
 **Deleting a Disk is a destructive action and cannot be undone.**
      *
-     * @param integer $linode_id ID of the Linode to look up.
-     * @param integer $disk_id   ID of the Disk to look up.
+     * @param int $linode_id ID of the Linode to look up.
+     * @param int $disk_id   ID of the Disk to look up.
      *
      * @link https://developers.linode.com/api/v4#operation/deleteDisk
      *

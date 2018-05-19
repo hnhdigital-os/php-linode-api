@@ -76,8 +76,8 @@ class Config extends Base
     /**
      * Updates the configuration for a single port on a NodeBalancer.
      *
-     * @param integer $node_balancer_id The ID of the NodeBalancer to access.
-     * @param integer $config_id        The ID of the config to access.
+     * @param int $node_balancer_id The ID of the NodeBalancer to access.
+     * @param int $config_id        The ID of the config to access.
      *
      * @link https://developers.linode.com/api/v4#operation/updateNodeBalancerConfig
      *
@@ -95,8 +95,8 @@ class Config extends Base
      * Creates a NodeBalancer Node, a backend that can accept traffic for this NodeBalancer Config. Nodes are routed requests
      * on the configured port based on their status.
      *
-     * @param integer $node_balancer_id The ID of the NodeBalancer to access.
-     * @param integer $config_id        The ID of the NodeBalancer config to access.
+     * @param int $node_balancer_id The ID of the NodeBalancer to access.
+     * @param int $config_id        The ID of the NodeBalancer config to access.
      *
      * @link https://developers.linode.com/api/v4#operation/createNodeBalancerNode
      *
@@ -118,8 +118,8 @@ class Config extends Base
      * Once completed, this NodeBalancer will no longer respond to requests on the given port. This also deletes all associated
      * NodeBalancerNodes, but the Linodes they were routing traffic to will be unchanged and will not be removed.
      *
-     * @param integer $node_balancer_id The ID of the NodeBalancer to access.
-     * @param integer $config_id        The ID of the config to access.
+     * @param int $node_balancer_id The ID of the NodeBalancer to access.
+     * @param int $config_id        The ID of the config to access.
      *
      * @link https://developers.linode.com/api/v4#operation/deleteNodeBalancerConfig
      *

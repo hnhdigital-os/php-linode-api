@@ -178,7 +178,7 @@ function generate_parameter_comments($method_settings)
     // Required parameters.
     foreach (array_get($method_settings, 'parameters', []) as $name => $settings) {
         $entries[] = [
-            '     * @param '.array_get($settings, 'type'),
+            '     * @param '.convert_paramater_type(array_get($settings, 'type')),
             "\$$name",
             array_get($settings, 'description'),
         ];
@@ -189,7 +189,7 @@ function generate_parameter_comments($method_settings)
     foreach (array_get($method_settings, 'optional-parameters', []) as $name => $settings) {
         $default_value = get_default_value($settings, ['with-equal' => true, 'exclude-null' => true]);
         $entries[] = [
-            '     * @param '.array_get($settings, 'type'),
+            '     * @param '.convert_paramater_type(array_get($settings, 'type')),
             "\$$name".$default_value,
             '(optional)'.array_get($settings, 'description'),
         ];
@@ -561,4 +561,21 @@ function code_alignment($data)
         $part2_length,
         $result,
     ];
+}
+
+/**
+ * Standardizes variable types.
+ *
+ * @param string $type
+ *
+ * @return string
+ */
+function convert_paramater_type($type)
+{
+    switch ($type) {
+        case 'integer':
+            return 'int';
+    }
+
+    return $type;
 }

@@ -63,7 +63,7 @@ class LinodeSetting extends Base
     /**
      * Updates a single Linode's Managed settings.
      *
-     * @param integer $linode_id The Linode ID whose settings we are accessing.
+     * @param int $linode_id The Linode ID whose settings we are accessing.
      *
      * @link https://developers.linode.com/api/v4#operation/updateManagedLinodeSetting
      *

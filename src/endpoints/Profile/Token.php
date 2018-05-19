@@ -63,7 +63,7 @@ class Token extends Base
     /**
      * Updates a Personal Access Token.
      *
-     * @param integer $token_id The ID of the token to access.
+     * @param int $token_id The ID of the token to access.
      *
      * @link https://developers.linode.com/api/v4#operation/updatePersonalAccessToken
      *
@@ -81,7 +81,7 @@ class Token extends Base
      * a 401. It is possible to revoke access to the token making the request to revoke a token, but keep in mind that doing so
      * could lose you access to the api and require you to create a new token through some other means.
      *
-     * @param integer $token_id The ID of the token to access.
+     * @param int $token_id The ID of the token to access.
      *
      * @link https://developers.linode.com/api/v4#operation/deletePersonalAccessToken
      *

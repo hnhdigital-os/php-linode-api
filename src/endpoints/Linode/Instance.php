@@ -135,7 +135,7 @@ class Instance extends Base
     /**
      * Updates a Linode that you have permission to `read_write`.
      *
-     * @param integer $linode_id ID of the Linode to look up
+     * @param int $linode_id ID of the Linode to look up
      *
      * @link https://developers.linode.com/api/v4#operation/updateLinodeInstance
      *
@@ -152,7 +152,7 @@ class Instance extends Base
      * Creates a snapshot Backup of a Linode.
      * -- If you already have a snapshot of this Linode, this is a destructive action. The previous snapshot will be deleted.--
      *
-     * @param integer $linode_id The ID of the Linode the backups belong to.
+     * @param int $linode_id The ID of the Linode the backups belong to.
      *
      * @link https://developers.linode.com/api/v4#operation/createSnapshot
      *
@@ -168,7 +168,7 @@ class Instance extends Base
     /**
      * Cancels the Backup service on the given Linode. Deletes all of this Linode's existing backups forever.
      *
-     * @param integer $linode_id The ID of the Linode to cancel backup service for.
+     * @param int $linode_id The ID of the Linode to cancel backup service for.
      *
      * @link https://developers.linode.com/api/v4#operation/cancelBackups
      *
@@ -184,7 +184,7 @@ class Instance extends Base
     /**
      * Enables backups for the specified Linode.
      *
-     * @param integer $linode_id The ID of the Linode to enable backup service for.
+     * @param int $linode_id The ID of the Linode to enable backup service for.
      *
      * @link https://developers.linode.com/api/v4#operation/enableBackups
      *
@@ -206,7 +206,7 @@ class Instance extends Base
      * - If there is more than one Config profile and none were the last to be booted (because the
      *   Linode was never booted or the last booted config was deleted) an error will be returned.
      *
-     * @param integer $linode_id The ID of the Linode to boot.
+     * @param int $linode_id The ID of the Linode to boot.
      *
      * @link https://developers.linode.com/api/v4#operation/bootLinodeInstance
      *
@@ -226,7 +226,7 @@ class Instance extends Base
      * If cloning to an existing Linode, any actions currently running or queued must be completed first before you can clone
      * to it.
      *
-     * @param integer $linode_id ID of the Linode to clone.
+     * @param int $linode_id ID of the Linode to clone.
      *
      * @link https://developers.linode.com/api/v4#operation/cloneLinodeInstance
      *
@@ -242,7 +242,7 @@ class Instance extends Base
     /**
      * Adds a new Configuration profile to a Linode.
      *
-     * @param integer $linode_id ID of the Linode to look up Configuration profiles for.
+     * @param int $linode_id ID of the Linode to look up Configuration profiles for.
      *
      * @link https://developers.linode.com/api/v4#operation/addLinodeConfig
      *
@@ -259,7 +259,7 @@ class Instance extends Base
      * Adds a new Disk to a Linode. You can optionally create a Disk from an Image (see [/images](/#operation/getImages) for a
      * list of available public images, or use one of your own), and optionally provide a StackScript to deploy with this Disk.
      *
-     * @param integer $linode_id ID of the Linode to look up.
+     * @param int $linode_id ID of the Linode to look up.
      *
      * @link https://developers.linode.com/api/v4#operation/addLinodeDisk
      *
@@ -277,7 +277,7 @@ class Instance extends Base
      * incur an additional monthly charge. If you need an additional public IP Address you must request one - please [open a
      * support ticket](/#operation/createTicket). You may not add more than one private IPv4 address to a single Linode.
      *
-     * @param integer $linode_id ID of the Linode to look up.
+     * @param int $linode_id ID of the Linode to look up.
      *
      * @link https://developers.linode.com/api/v4#operation/addLinodeIP
      *
@@ -296,7 +296,7 @@ class Instance extends Base
      * running.
      * If any actions are currently running or queued, those actions must be completed first before you can initiate a mutate.
      *
-     * @param integer $linode_id ID of the Linode to mutate.
+     * @param int $linode_id ID of the Linode to mutate.
      *
      * @link https://developers.linode.com/api/v4#operation/mutateLinodeInstance
      *
@@ -313,7 +313,7 @@ class Instance extends Base
      * Reboots a Linode you have permission to modify. If any actions are currently running or queued, those actions must be
      * completed first before you can initiate a reboot.
      *
-     * @param integer $linode_id ID of the linode to reboot.
+     * @param int $linode_id ID of the linode to reboot.
      *
      * @link https://developers.linode.com/api/v4#operation/rebootLinodeInstance
      *
@@ -336,7 +336,7 @@ class Instance extends Base
      *   - It is recommended to supply SSH keys for the root User using the
      *     `authorized_keys` field.
      *
-     * @param integer $linode_id ID of the Linode to rebuild.
+     * @param int $linode_id ID of the Linode to rebuild.
      *
      * @link https://developers.linode.com/api/v4#operation/rebuildLinodeInstance
      *
@@ -356,7 +356,7 @@ class Instance extends Base
      * and downloading files from a disk via SSH and SFTP.
      * - Note that "sdh" is reserved and unavailable during rescue.
      *
-     * @param integer $linode_id ID of the Linode to rescue.
+     * @param int $linode_id ID of the Linode to rescue.
      *
      * @link https://developers.linode.com/api/v4#operation/rescueLinodeInstance
      *
@@ -381,7 +381,7 @@ class Instance extends Base
      *   - The Linode must not have more disk allocation than the new Type allows.
      *     - In that situation, you must first delete or resize the disk to be smaller.
      *
-     * @param integer $linode_id ID of the Linode to resize.
+     * @param int $linode_id ID of the Linode to resize.
      *
      * @link https://developers.linode.com/api/v4#operation/resizeLinodeInstance
      *
@@ -398,7 +398,7 @@ class Instance extends Base
      * Shuts down a Linode you have permission to modify. If any actions are currently running or queued, those actions must be
      * completed first before you can initiate a shutdown.
      *
-     * @param integer $linode_id ID of the Linode to shutdown.
+     * @param int $linode_id ID of the Linode to shutdown.
      *
      * @link https://developers.linode.com/api/v4#operation/shutdownLinodeInstance
      *
@@ -423,7 +423,7 @@ class Instance extends Base
      *   - Stops billing for the Linode and its associated services. You will be billed for time used
      *     within the billing period the Linode was active.
      *
-     * @param integer $linode_id ID of the Linode to look up
+     * @param int $linode_id ID of the Linode to look up
      *
      * @link https://developers.linode.com/api/v4#operation/deleteLinodeInstance
      *
