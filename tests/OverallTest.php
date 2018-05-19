@@ -4,11 +4,9 @@ namespace HnhDigital\LinodeApi\Tests;
 
 use HnhDigital\LinodeApi\Profile;
 use HnhDigital\LinodeApi\StackScript;
-use HnhDigital\LinodeApi\Foundation\Auth;
 
 class OverallTest extends BaseTest
 {
-
     /**
      * Test setting, getting attributes.
      *
@@ -30,10 +28,10 @@ class OverallTest extends BaseTest
         $region = $stack_script->region;
         $this->assertEquals($region, null);
 
-        // Get the attributes.        
+        // Get the attributes.
         $this->assertEquals($data, $stack_script->getAttributes());
 
-        // Get the original attributes.        
+        // Get the original attributes.
         $this->assertEquals($data, $stack_script->getOriginalAttributes());
     }
 

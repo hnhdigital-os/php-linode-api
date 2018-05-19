@@ -3,7 +3,6 @@
 namespace HnhDigital\LinodeApi\Tests;
 
 use HnhDigital\LinodeApi\Profile;
-use HnhDigital\LinodeApi\Profiles;
 
 class ProfileEndpointTest extends BaseTest
 {
@@ -18,7 +17,7 @@ class ProfileEndpointTest extends BaseTest
         'email'               => 'person@place.com',
         'timezone'            => 'US/Eastern',
         'email_notifications' => true,
-        'referrals' => [
+        'referrals'           => [
             'code'      => 'rcg3340777c21fa49a5beb971ca1aec44bc584333',
             'url'       => 'https://www.linode.com/?r=rcg3340777c21fa49a5beb971ca1aec44bc584333',
             'total'     => 10,
@@ -55,49 +54,49 @@ class ProfileEndpointTest extends BaseTest
             [
                 'id'          => 456,
                 'label'       => 'Wordpress',
-                'permissions' => 'read_only'
+                'permissions' => 'read_only',
             ],
         ],
         'nodebalancer' => [
             [
                 'id'          => 567,
                 'label'       => 'linode123',
-                'permissions' => 'read_only'
+                'permissions' => 'read_only',
             ],
         ],
         'linode' => [
             [
                 'id'          => 123,
                 'label'       => 'linode123',
-                'permissions' => 'read_write'
+                'permissions' => 'read_write',
             ],
         ],
         'domain' => [
             [
                 'id'          => 432,
                 'label'       => 'example.com',
-                'permissions' => 'read_write'
+                'permissions' => 'read_write',
             ],
         ],
         'volume' => [
             [
                 'id'          => 987,
                 'label'       => 'example.com',
-                'permissions' => null
+                'permissions' => null,
             ],
         ],
         'image' => [
             [
                 'id'          => 903,
                 'label'       => 'example.com',
-                'permissions' => 'read_write'
+                'permissions' => 'read_write',
             ],
         ],
         'longview' => [
             [
                 'id'          => 231,
                 'label'       => 'example.com',
-                'permissions' => 'read_write'
+                'permissions' => 'read_write',
             ],
         ]
     ];
