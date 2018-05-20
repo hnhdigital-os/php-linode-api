@@ -16,6 +16,7 @@ get:
         required: true
         type: string
         self: true
+    auto-fill: true
 put:
   update:
     summary: 'Update IP Address RDNS'

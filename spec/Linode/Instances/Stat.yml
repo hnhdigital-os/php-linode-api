@@ -27,4 +27,5 @@ get:
         description: 'Numeric value representing the month to look up.'
         required: true
         type: integer
+    auto-fill: true
 fillable: true

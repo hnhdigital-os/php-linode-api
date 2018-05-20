@@ -16,6 +16,7 @@ get:
         required: true
         type: integer
         self: true
+    auto-fill: true
 fillable: true
 post:
   eventRead:

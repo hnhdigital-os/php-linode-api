@@ -16,6 +16,7 @@ get:
         required: true
         type: integer
         self: true
+    auto-fill: true
   getNodeBalancerConfigs:
     summary: 'List Configs'
     description: "Returns a paginated list of NodeBalancer Configs associated with this NodeBalancer. NodeBalancer Configs represent individual ports that this NodeBalancer will accept traffic on, one Config per port.\n\nFor example, if you wanted to accept standard HTTP traffic, you would need a Config listening on port 80.\n"

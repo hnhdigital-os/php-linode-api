@@ -7,3 +7,4 @@ get:
     description: "Displays the IPv6 pools on your Account.\n"
     url: 'https://developers.linode.com/api/v4#operation/getIPv6Pools'
     endpoint: ''
+    auto-fill: true

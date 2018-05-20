@@ -16,6 +16,7 @@ get:
         required: true
         type: integer
         self: true
+    auto-fill: true
   getRecords:
     summary: 'List Domain Records'
     description: "Returns a paginated list of Records configured on a Domain in Linode's\nDNS Manager.\n"

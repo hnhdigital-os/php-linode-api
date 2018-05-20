@@ -72,7 +72,7 @@ class User extends Base
      */
     public function get()
     {
-        return $this->apiCall('get', '');
+        return $this->apiCall('get', '', [], ['auto-fill' => true]);
     }
 
     /**
@@ -86,7 +86,7 @@ class User extends Base
      */
     public function getUserGrants()
     {
-        return $this->apiCall('get', '/grants');
+        return $this->apiCall('get', '/grants', [], ['auto-fill' => true]);
     }
 
     /**

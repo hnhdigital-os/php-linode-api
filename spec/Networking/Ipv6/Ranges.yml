@@ -7,3 +7,4 @@ get:
     description: "Displays the IPv6 ranges on your Account.\n"
     url: 'https://developers.linode.com/api/v4#operation/getIPv6Ranges'
     endpoint: ''
+    auto-fill: true

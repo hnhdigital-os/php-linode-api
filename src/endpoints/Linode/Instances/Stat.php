@@ -80,6 +80,6 @@ class Stat extends Base
      */
     public function get($month)
     {
-        return $this->apiCall('get', '');
+        return $this->apiCall('get', '', [], ['auto-fill' => true]);
     }
 }

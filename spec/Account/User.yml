@@ -16,6 +16,7 @@ get:
         required: true
         type: string
         self: true
+    auto-fill: true
   getUserGrants:
     summary: 'View User''s grants'
     description: "Returns the full grants structure for this User. This includes all entities on the Account alongside what level of access this User has to each of them. Individual users may view their own grants at the [/profile/grants](/#operation/getProfileGrants) endpoint, but will not see entities that they have no access to.\n"
@@ -27,6 +28,7 @@ get:
         required: true
         type: string
         self: true
+    auto-fill: true
 put:
   update:
     summary: 'Update User''s grants'

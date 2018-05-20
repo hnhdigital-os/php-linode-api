@@ -16,6 +16,7 @@ get:
         required: true
         type: string
         self: true
+    auto-fill: true
   getClientThumbnail:
     summary: 'View OAuth Client Thumbnail'
     description: "Returns the thumbnail for this OAuth Client.  This is a publicly-viewable endpoint, and can be accessed without authentication.\n"
@@ -27,6 +28,7 @@ get:
         required: true
         type: string
         self: true
+    auto-fill: true
 put:
   update:
     summary: 'Update OAuth Client Thumbnail'

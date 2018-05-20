@@ -20,6 +20,7 @@ get:
         description: 'The ID of the config to access.'
         required: true
         type: integer
+    auto-fill: true
   getNodeBalancerConfigNodes:
     summary: 'List Nodes'
     description: "Returns a paginated list of NodeBalancer nodes associated with this Config. These are the backends that will be sent traffic for this port.\n"

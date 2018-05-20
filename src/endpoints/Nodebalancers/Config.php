@@ -72,7 +72,7 @@ class Config extends Base
      */
     public function get($config_id)
     {
-        return $this->apiCall('get', '');
+        return $this->apiCall('get', '', [], ['auto-fill' => true]);
     }
 
     /**

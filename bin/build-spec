@@ -188,6 +188,8 @@ foreach ($spec_document['paths'] as $path => $details) {
                     'id',
                 ],
             ];
+        } elseif ($method === 'get') {
+            $config[$method][$endpoint_method]['auto-fill'] = true;
         }
 
         if (empty($config[$method][$endpoint_method]['parameters'])) {

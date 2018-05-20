@@ -72,7 +72,7 @@ class Ip extends Base
      */
     public function get($address)
     {
-        return $this->apiCall('get', '');
+        return $this->apiCall('get', '', [], ['auto-fill' => true]);
     }
 
     /**

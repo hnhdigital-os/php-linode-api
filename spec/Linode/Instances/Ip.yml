@@ -20,6 +20,7 @@ get:
         description: 'The IP address to look up.'
         required: true
         type: string
+    auto-fill: true
 put:
   update:
     summary: 'Update IP Address'

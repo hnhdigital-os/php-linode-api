@@ -72,7 +72,7 @@ class Disk extends Base
      */
     public function get($disk_id)
     {
-        return $this->apiCall('get', '');
+        return $this->apiCall('get', '', [], ['auto-fill' => true]);
     }
 
     /**

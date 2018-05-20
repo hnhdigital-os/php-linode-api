@@ -16,6 +16,7 @@ get:
         required: true
         type: integer
         self: true
+    auto-fill: true
   getBackups:
     summary: 'List Backups'
     description: "Returns information about this Linode's available backups.\n"
@@ -27,6 +28,7 @@ get:
         required: true
         type: integer
         self: true
+    auto-fill: true
   getConfigs:
     summary: 'List Configuration Profiles'
     description: "Lists Configuration profiles associated with a Linode.\n"
@@ -54,6 +56,7 @@ get:
         required: true
         type: integer
         self: true
+    auto-fill: true
   getIPs:
     summary: 'List Networking Information'
     description: "Returns networking information for a single Linode.\n"
@@ -65,6 +68,7 @@ get:
         required: true
         type: integer
         self: true
+    auto-fill: true
   getStats:
     summary: 'View Current Month Statistics'
     description: "Returns CPU, IO, IPv4, and IPv6 statistics for your Linode for the past 24 hours.\n"
@@ -76,6 +80,7 @@ get:
         required: true
         type: integer
         self: true
+    auto-fill: true
   getVolumes:
     summary: 'List Linode''s Volumes'
     description: "View Block Storage Volumes attached to this Linode.\n"
@@ -87,6 +92,7 @@ get:
         required: true
         type: integer
         self: true
+    auto-fill: true
 put:
   update:
     summary: 'Update Linode'

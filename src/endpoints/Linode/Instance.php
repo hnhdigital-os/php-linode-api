@@ -72,7 +72,7 @@ class Instance extends Base
      */
     public function get()
     {
-        return $this->apiCall('get', '');
+        return $this->apiCall('get', '', [], ['auto-fill' => true]);
     }
 
     /**
@@ -84,7 +84,7 @@ class Instance extends Base
      */
     public function getBackups()
     {
-        return $this->apiCall('get', '/backups');
+        return $this->apiCall('get', '/backups', [], ['auto-fill' => true]);
     }
 
     /**
@@ -108,7 +108,7 @@ class Instance extends Base
      */
     public function getDisks()
     {
-        return $this->apiCall('get', '/disks');
+        return $this->apiCall('get', '/disks', [], ['auto-fill' => true]);
     }
 
     /**
@@ -120,7 +120,7 @@ class Instance extends Base
      */
     public function getIPs()
     {
-        return $this->apiCall('get', '/ips');
+        return $this->apiCall('get', '/ips', [], ['auto-fill' => true]);
     }
 
     /**
@@ -132,7 +132,7 @@ class Instance extends Base
      */
     public function getStats()
     {
-        return $this->apiCall('get', '/stats');
+        return $this->apiCall('get', '/stats', [], ['auto-fill' => true]);
     }
 
     /**
@@ -144,7 +144,7 @@ class Instance extends Base
      */
     public function getVolumes()
     {
-        return $this->apiCall('get', '/volumes');
+        return $this->apiCall('get', '/volumes', [], ['auto-fill' => true]);
     }
 
     /**

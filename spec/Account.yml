@@ -7,6 +7,7 @@ get:
     description: "Returns the contact and billing information related to your Account.\n"
     url: 'https://developers.linode.com/api/v4#operation/getAccount'
     endpoint: ''
+    auto-fill: true
 put:
   update:
     summary: 'Update Account'

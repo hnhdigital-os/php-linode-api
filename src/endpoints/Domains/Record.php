@@ -72,7 +72,7 @@ class Record extends Base
      */
     public function get($record_id)
     {
-        return $this->apiCall('get', '');
+        return $this->apiCall('get', '', [], ['auto-fill' => true]);
     }
 
     /**

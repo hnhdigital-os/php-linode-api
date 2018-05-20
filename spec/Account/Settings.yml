@@ -7,6 +7,7 @@ get:
     description: "Returns information related to your Account settings: Managed service subscription, Longview subscription, and network helper.\n"
     url: 'https://developers.linode.com/api/v4#operation/getAccountSettings'
     endpoint: ''
+    auto-fill: true
 put:
   update:
     summary: 'Update Account Settings'

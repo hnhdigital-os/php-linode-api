@@ -20,6 +20,7 @@ get:
         description: 'ID of the Disk to look up.'
         required: true
         type: integer
+    auto-fill: true
 put:
   update:
     summary: 'Update Disk'

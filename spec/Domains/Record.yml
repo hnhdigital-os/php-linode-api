@@ -20,6 +20,7 @@ get:
         description: 'The ID of the Record you are accessing.'
         required: true
         type: integer
+    auto-fill: true
 put:
   update:
     summary: 'Update Domain Record'

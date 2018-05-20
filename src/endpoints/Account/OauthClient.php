@@ -72,7 +72,7 @@ class OauthClient extends Base
      */
     public function get()
     {
-        return $this->apiCall('get', '');
+        return $this->apiCall('get', '', [], ['auto-fill' => true]);
     }
 
     /**
@@ -85,7 +85,7 @@ class OauthClient extends Base
      */
     public function getClientThumbnail()
     {
-        return $this->apiCall('get', '/thumbnail');
+        return $this->apiCall('get', '/thumbnail', [], ['auto-fill' => true]);
     }
 
     /**
