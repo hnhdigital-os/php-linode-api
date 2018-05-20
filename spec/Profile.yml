@@ -14,3 +14,4 @@ put:
     url: 'https://developers.linode.com/api/v4#operation/updateProfile'
     endpoint: ''
     attributes: true
+fillable: true

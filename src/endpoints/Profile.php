@@ -32,13 +32,28 @@ class Profile extends Base
     protected $endpoint = 'profile';
 
     /**
+     * This model is fillable.
+     *
+     * @var bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @var string
+     */
+    protected $fill_method = 'get';
+
+
+    /**
      * Constructor.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($fill = [])
     {
-        parent::__construct();
+        parent::__construct($fill);
     }
 
     /**
