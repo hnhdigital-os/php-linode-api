@@ -7,6 +7,11 @@ get:
     description: "This is a collection of Domains that you have registered in Linode's DNS Manager.  Linode is not a registrar, and in order for these to work you must own the domains and point your registrar at Linode's nameservers.\n"
     url: 'https://developers.linode.com/api/v4#operation/getDomains'
     endpoint: ''
+    search: true
+    factory:
+      class: Domain
+      parameters:
+        - id
 post:
   create:
     summary: 'Create Domain'

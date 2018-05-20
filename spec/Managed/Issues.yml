@@ -7,3 +7,8 @@ get:
     description: "Returns a paginated list of recent and ongoing issues detected on your Managed Services.\n"
     url: 'https://developers.linode.com/api/v4#operation/getManagedIssues'
     endpoint: ''
+    search: true
+    factory:
+      class: Managed/Issue
+      parameters:
+        - id

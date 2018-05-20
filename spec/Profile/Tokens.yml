@@ -7,6 +7,11 @@ get:
     description: "Returns a paginated list of Personal Access Tokens currently active for your User.\n"
     url: 'https://developers.linode.com/api/v4#operation/getPersonalAccessTokens'
     endpoint: ''
+    search: true
+    factory:
+      class: Personal/Access/Token
+      parameters:
+        - id
 post:
   createPersonalAccessToken:
     summary: 'Create Personal Access Token'

@@ -7,6 +7,11 @@ get:
     description: "Returns a paginated list of Images.\n\n* Calling this endpoint without authentication returns all public Images.\n* Authentication is required to return a combined paginated list of all public and\n  your private Images.\n"
     url: 'https://developers.linode.com/api/v4#operation/getImages'
     endpoint: ''
+    search: true
+    factory:
+      class: Image
+      parameters:
+        - id
 post:
   create:
     summary: 'Create Image'

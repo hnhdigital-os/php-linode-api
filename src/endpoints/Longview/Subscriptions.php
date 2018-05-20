@@ -50,6 +50,6 @@ class Subscriptions extends Base
      */
     public function get()
     {
-        return $this->apiCall('get', '');
+        return $this->apiSearch($this->endpoint, ['class' => 'Longview/Subscription', 'parameters' => ['id']]);
     }
 }

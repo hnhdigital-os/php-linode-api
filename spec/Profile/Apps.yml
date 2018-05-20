@@ -7,3 +7,8 @@ get:
     description: "This is a collection of OAuth apps that you've given access to your Account, and includes the level of access granted.\n"
     url: 'https://developers.linode.com/api/v4#operation/getProfileApps'
     endpoint: ''
+    search: true
+    factory:
+      class: Profile/App
+      parameters:
+        - id

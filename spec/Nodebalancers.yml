@@ -7,6 +7,11 @@ get:
     description: "Returns a paginated list of NodeBalancers you have access to.\n"
     url: 'https://developers.linode.com/api/v4#operation/getNodeBalancers'
     endpoint: ''
+    search: true
+    factory:
+      class: Node/Balancer
+      parameters:
+        - id
 post:
   createNodeBalancer:
     summary: 'Create NodeBalancer'

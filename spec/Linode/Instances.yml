@@ -7,6 +7,11 @@ get:
     description: "Returns a paginated list of Linodes you have permission to view.\n"
     url: 'https://developers.linode.com/api/v4#operation/getLinodeInstances'
     endpoint: ''
+    search: true
+    factory:
+      class: Linode/Instance
+      parameters:
+        - id
 post:
   create:
     summary: 'Create Linode'

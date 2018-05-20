@@ -27,6 +27,11 @@ get:
         required: true
         type: integer
         self: true
+    search: true
+    factory:
+      class: Node/Balancer/Config
+      parameters:
+        - id
 put:
   update:
     summary: 'Update NodeBalancer'

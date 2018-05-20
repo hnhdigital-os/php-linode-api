@@ -27,4 +27,9 @@ get:
         required: true
         type: integer
         self: true
+    search: true
+    factory:
+      class: Invoice/Item
+      parameters:
+        - id
 fillable: true

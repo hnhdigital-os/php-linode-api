@@ -158,6 +158,23 @@ foreach ($spec_document['paths'] as $path => $details) {
             'parameters'          => $parameters,
         ];
 
+        // This method provides a collection/paginated results, so we'll force search mode.
+        if (stripos(array_get($config[$method][$endpoint_method], 'description', ''), 'paginated') !== false
+            || stripos(array_get($config[$method][$endpoint_method], 'description', ''), 'collection') !== false) {
+            $config[$method][$endpoint_method]['search'] = true;
+
+            // Searches should create models for each result.
+            $factory_class = rtrim(ltrim($original_endpoint_method, 'get'), 's');
+            $factory_class = str_replace(' ', '/', title_case(str_replace('_', ' ', snake_case($factory_class))));
+
+            $config[$method][$endpoint_method]['factory'] = [
+                'class' => $factory_class,
+                'parameters' => [
+                    'id',
+                ],
+            ];
+        }
+
         if (empty($config[$method][$endpoint_method]['parameters'])) {
             unset($config[$method][$endpoint_method]['parameters']);
         }

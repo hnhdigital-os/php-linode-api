@@ -7,3 +7,8 @@ get:
     description: "Returns a paginated list of available Longview Subscriptions. This is a public endpoint and requires no authentication.\n"
     url: 'https://developers.linode.com/api/v4#operation/getLongviewSubscriptions'
     endpoint: ''
+    search: true
+    factory:
+      class: Longview/Subscription
+      parameters:
+        - id

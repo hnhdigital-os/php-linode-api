@@ -35,6 +35,11 @@ get:
         description: 'The ID of the NodeBalancer config to access.'
         required: true
         type: integer
+    search: true
+    factory:
+      class: Node/Balancer/Config/Node
+      parameters:
+        - id
 put:
   update:
     summary: 'Update Config'

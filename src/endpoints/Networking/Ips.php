@@ -50,7 +50,7 @@ class Ips extends Base
      */
     public function get()
     {
-        return $this->apiCall('get', '');
+        return $this->apiSearch($this->endpoint, ['class' => 'I/P', 'parameters' => ['id']]);
     }
 
     /**

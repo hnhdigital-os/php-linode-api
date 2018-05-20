@@ -85,7 +85,7 @@ class Config extends Base
      */
     public function getNodeBalancerConfigNodes($config_id)
     {
-        return $this->apiCall('get', '/nodes');
+        return $this->apiSearch($this->endpoint.'/nodes', ['class' => 'Node/Balancer/Config/Node', 'parameters' => ['id']]);
     }
 
     /**

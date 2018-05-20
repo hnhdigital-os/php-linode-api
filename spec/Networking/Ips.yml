@@ -7,6 +7,11 @@ get:
     description: "Returns a paginated list of IP Addresses on your Account, excluding private addresses.\n"
     url: 'https://developers.linode.com/api/v4#operation/getIPs'
     endpoint: ''
+    search: true
+    factory:
+      class: I/P
+      parameters:
+        - id
 post:
   allocateIP:
     summary: 'Allocate IP Address'

@@ -7,6 +7,11 @@ get:
     description: "Returns a paginated list of Managed Services on your Account. These are the services Linode Managed is monitoring and will report and attempt to resolve issues with.\n"
     url: 'https://developers.linode.com/api/v4#operation/getManagedServices'
     endpoint: ''
+    search: true
+    factory:
+      class: Managed/Service
+      parameters:
+        - id
 post:
   create:
     summary: 'Create Managed Service'

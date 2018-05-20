@@ -7,3 +7,8 @@ get:
     description: "Returns a paginated list of Invoices against your Account.\n"
     url: 'https://developers.linode.com/api/v4#operation/getInvoices'
     endpoint: ''
+    search: true
+    factory:
+      class: Invoice
+      parameters:
+        - id

@@ -50,6 +50,6 @@ class Apps extends Base
      */
     public function get()
     {
-        return $this->apiCall('get', '');
+        return $this->apiSearch($this->endpoint, ['class' => 'Profile/App', 'parameters' => ['id']]);
     }
 }

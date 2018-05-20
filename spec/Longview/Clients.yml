@@ -7,6 +7,11 @@ get:
     description: "Returns a paginated list of Longview Clients you have access to. Longview Client is used to monitor stats on your Linode with the help of the Longview Client application.\n"
     url: 'https://developers.linode.com/api/v4#operation/getLongviewClients'
     endpoint: ''
+    search: true
+    factory:
+      class: Longview/Client
+      parameters:
+        - id
 post:
   create:
     summary: 'Create Longview Client'

@@ -27,6 +27,11 @@ get:
         required: true
         type: integer
         self: true
+    search: true
+    factory:
+      class: Ticket/Replie
+      parameters:
+        - id
 fillable: true
 post:
   createTicketAttachment:

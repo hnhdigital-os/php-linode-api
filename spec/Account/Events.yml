@@ -7,3 +7,8 @@ get:
     description: "Returns a collection of Event objects representing actions taken on your Account. The Events returned depends on your grants.\n"
     url: 'https://developers.linode.com/api/v4#operation/getEvents'
     endpoint: ''
+    search: true
+    factory:
+      class: Event
+      parameters:
+        - id

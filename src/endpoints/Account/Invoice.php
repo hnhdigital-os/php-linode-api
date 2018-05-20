@@ -84,6 +84,6 @@ class Invoice extends Base
      */
     public function getInvoiceItems()
     {
-        return $this->apiCall('get', '/items');
+        return $this->apiSearch($this->endpoint.'/items', ['class' => 'Invoice/Item', 'parameters' => ['id']]);
     }
 }

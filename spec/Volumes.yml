@@ -7,6 +7,11 @@ get:
     description: "Returns a paginated list of Volumes you have permission to view.\n"
     url: 'https://developers.linode.com/api/v4#operation/getVolumes'
     endpoint: ''
+    search: true
+    factory:
+      class: Volume
+      parameters:
+        - id
 post:
   create:
     summary: 'Create Volume'
