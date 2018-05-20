@@ -78,7 +78,7 @@ class Volumes extends Base
      *                         Ticket](/#operation/createTicket) to resolve the issue.
      *                         - [size=null] (integer) The Volume's size, in GiB. Minimum size is 10GiB,
      *                         maximum size is 10240GiB.
-     *                         - [region=null] () 
+     *                         - [region=null]
      *                         - [linode_id=null] (integer) If a Volume is attached to a specific Linode, the ID of
      *                         that Linode will be displayed here.
      *                         - [created=null] (string) When this Volume was created.

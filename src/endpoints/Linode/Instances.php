@@ -96,11 +96,11 @@ class Instances extends Base
      *   - This is only recommended for advanced use cases.
      *
      * @param array $optional
-     *                        - [image=null] () 
-     *                        - [root_pass=null] () 
-     *                        - [authorized_keys=null] () 
-     *                        - [stackscript_id=null] () 
-     *                        - [stackscript_data=null] () 
+     *                        - [image=null]
+     *                        - [root_pass=null]
+     *                        - [authorized_keys=null]
+     *                        - [stackscript_id=null]
+     *                        - [stackscript_data=null]
      *                        - [booted=null] (boolean) This field defaults to `true` if the Linode is created
      *                        with an Image or from a Backup.
      *                        If it is deployed from an Image or a Backup and you wish
@@ -116,8 +116,8 @@ class Instances extends Base
      *                        (`__`) in a row.
      *                        - [group=null] (string) A deprecated property denoting a group label for this
      *                        Linode.
-     *                        - [type=null] () 
-     *                        - [region=null] () 
+     *                        - [type=null]
+     *                        - [region=null]
      *                        - [backup_id=null] (integer) A Backup ID from another Linode's available backups.
      *                        Your User must have
      *                        `read_write` access to that Linode, the Backup must have

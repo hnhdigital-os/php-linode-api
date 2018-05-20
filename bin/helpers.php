@@ -202,17 +202,6 @@ function generate_parameter_comments($method_settings)
 
     [$part1_length, $part2_length, $result] = code_alignment($entries);
 
-    /*
-    if (is_array($optional) && count($optional) > 0) {
-        foreach ($optional as $name => $settings) {
-            $default_value = get_default_value($settings, ['with-equal' => true, 'exclude-null' => true]);
-
-            $result .= '     *'.str_repeat(' ', $part1_length + $part2_length - 4)."- [$name".$default_value.'] ('.array_get($settings, 'type').') '.array_get($settings, 'description');
-            $result .= "\n";
-        }
-    }
-    */
-
     $whitespace_length = $part1_length + $part2_length - 4;
     $whitespace = str_repeat(' ', $whitespace_length > 0 ? $whitespace_length : 0);
 
@@ -223,9 +212,19 @@ function generate_parameter_comments($method_settings)
 
             $description = str_replace('*', '', trim(preg_replace('/\s\s+/', ' ', array_get($settings, 'description'))));
             $description = wordwrap($description, 80 - $whitespace_length);
-            $description = "- [$name".$default_value.'] ('.array_get($settings, 'type').') '.$description;
+
+            if (strlen($description)) {
+                $description = ' '.$description;
+            }
+
+            $type = '';
+            if (array_has($settings, 'type') && array_get($settings, 'type')) {
+                $type = ' ('.array_get($settings, 'type').')';
+            }
+
+            $description = "- [$name".$default_value.']'.$type.$description;
             $description = preg_replace('/^\- (.*?)$/m', '     *'.$whitespace.'- $1', $description);
-            $description = preg_replace('/^(?!\     *)(?!\- )(.*?)$/m', '     *'.$whitespace.'$1', $description);
+            $description = preg_replace('/^(?!\     *)(?!\- )(?:\s*)(.*?)$/m', '     *'.$whitespace.'$1', $description);
 
             $result .= $description;
             $result .= "\n";
@@ -593,7 +592,7 @@ function convert_paramater_type($type)
 /**
  * Load properties list.
  *
- * @param array  $spec 
+ * @param array  $spec
  * @param string $path
  *
  * @return array

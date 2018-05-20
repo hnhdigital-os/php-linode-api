@@ -123,11 +123,11 @@ class Config extends Base
      *                                with a higher weight will receive more traffic.
      *                                - [mode=null] (string) The mode this NodeBalancer should use when
      *                                sending traffic to this backend.
-     *                                 If set to `accept` this backend is accepting
+     *                                If set to `accept` this backend is accepting
      *                                traffic.
-     *                                 If set to `reject` this backend will not
+     *                                If set to `reject` this backend will not
      *                                receive traffic.
-     *                                 If set to `drain` this backend will not receive
+     *                                If set to `drain` this backend will not receive
      *                                _new_ traffic, but connections already pinned to
      *                                it will continue to be routed to it.
      *                                - [nodebalancer_id=null] (integer) The NodeBalancer ID that this Node belongs to.
