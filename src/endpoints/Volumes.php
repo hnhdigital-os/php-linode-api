@@ -66,13 +66,13 @@ class Volumes extends Base
      *                         Volume's label. Path is
      *                         /dev/disk/by-id/scsi-0Linode_Volume_ + Volume label.
      *                         - [status=null] (string) Can be one of `creating`, `active`, `resizing`,
-     *                         `deleting`, `deleted`, and `contact_support`: 
+     *                         `deleting`, `deleted`, and `contact_support`:
      *                         `creating` - the Volume is being created and is not yet
      *                         available for use.  `active` - the Volume is online and
      *                         available for use.  `resizing` - the Volume is in the
      *                         process of upgrading its current capacity.  `deleting`
      *                         - the Volume is being deleted and is unavailable for
-     *                         use.  `deleted` - the Volume has been deleted. 
+     *                         use.  `deleted` - the Volume has been deleted.
      *                         `contact_support` - there is a problem with your
      *                         Volume. Please [open a Support
      *                         Ticket](/#operation/createTicket) to resolve the issue.

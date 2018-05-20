@@ -224,7 +224,7 @@ function generate_parameter_comments($method_settings)
 
             $description = "- [$name".$default_value.']'.$type.$description;
             $description = preg_replace('/^\- (.*?)$/m', '     *'.$whitespace.'- $1', $description);
-            $description = preg_replace('/^(?!\     *)(?!\- )(?:\s*)(.*?)$/m', '     *'.$whitespace.'$1', $description);
+            $description = preg_replace('/^(?!\     *)(?!\- )(?:\s*)(.*?)(?:\s*)$/m', '     *'.$whitespace.'$1', $description);
 
             $result .= $description;
             $result .= "\n";
