@@ -82,7 +82,7 @@ class VolumesEndpointTest extends BaseTest
         $this->mockPostRequest('/volumes', array_get($this->data, 'data.0'));
 
         $response = (new Volumes())->create('my-volume', [
-            'region' =>'us-east-1a', 
+            'region' => 'us-east-1a', 
         ]);
 
         $request_body = $this->getRequestBody();

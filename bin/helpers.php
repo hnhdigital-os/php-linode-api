@@ -176,6 +176,7 @@ function generate_parameter_comments($method_settings)
 {
     $result = '';
     $count = 0;
+    $count_optional = 0;
 
     $entries = [];
 
@@ -185,33 +186,48 @@ function generate_parameter_comments($method_settings)
             $entries[] = [
                 '     * @param '.convert_paramater_type(array_get($settings, 'type')),
                 "\$$name",
-                array_get($settings, 'description'),
+                trim(array_get($settings, 'description')),
             ];
+            $count++;
         } else {
-            $default_value = get_default_value($settings, ['with-equal' => true, 'exclude-null' => true]);
-            $entries[] = [
-                '     * @param '.convert_paramater_type(array_get($settings, 'type')),
-                "\$$name".$default_value,
-                '(optional)'.array_get($settings, 'description'),
-            ];
+            $count_optional++;
         }
-        $count++;
     }
 
     // Really optional paramters provided via array.
-    $optional = array_get($method_settings, 'optional', []);
-    if (is_array($optional) && count($optional) > 0) {
+    if ($count_optional) {
         $entries[] = ['     * @param array', '$optional', ''];
         $count++;
     }
 
     [$part1_length, $part2_length, $result] = code_alignment($entries);
 
+    /*
     if (is_array($optional) && count($optional) > 0) {
         foreach ($optional as $name => $settings) {
             $default_value = get_default_value($settings, ['with-equal' => true, 'exclude-null' => true]);
 
             $result .= '     *'.str_repeat(' ', $part1_length + $part2_length - 4)."- [$name".$default_value.'] ('.array_get($settings, 'type').') '.array_get($settings, 'description');
+            $result .= "\n";
+        }
+    }
+    */
+
+    $whitespace_length = $part1_length + $part2_length - 4;
+    $whitespace = str_repeat(' ', $whitespace_length > 0 ? $whitespace_length : 0);
+
+    // Required parameters.
+    foreach (array_get($method_settings, 'parameters', []) as $name => $settings) {
+        if (!array_get($settings, 'required', false)) {
+            $default_value = get_default_value($settings, ['with-equal' => true, 'exclude-null' => true]);
+
+            $description = str_replace('*', '', trim(preg_replace('/\s\s+/', ' ',array_get($settings, 'description'))));
+            $description = wordwrap($description, 80 - $whitespace_length);
+            $description = "- [$name".$default_value.'] ('.array_get($settings, 'type').') '.$description;
+            $description = preg_replace('/^\- (.*?)$/m', '     *'.$whitespace.'- $1', $description);
+            $description = preg_replace('/^(?!\     *)(?!\- )(.*?)$/m', '     *'.$whitespace.'  $1', $description);
+
+            $result .= $description;
             $result .= "\n";
         }
     }

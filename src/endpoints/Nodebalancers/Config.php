@@ -107,26 +107,30 @@ class Config extends Base
      * Creates a NodeBalancer Node, a backend that can accept traffic for this NodeBalancer Config. Nodes are routed requests
      * on the configured port based on their status.
      *
-     * @param int    $node_balancer_id     The ID of the NodeBalancer to access.
-     * @param int    $config_id=null       (optional)The NodeBalancer Config ID that this Node belongs to.
-
-     * @param int    $id=null              (optional)This node's unique ID.
-     * @param string $address=null         (optional)The private IP Address where this backend can be reached. This _must_ be a private IP address.
-
-     * @param string $label=null           (optional)The label for this node.  This is for display purposes only.
-
-     * @param string $status=null          (optional)The current status of this node, based on the configured checks of its NodeBalancer Config.
-
-     * @param int    $weight=null          (optional)Used when picking a backend to serve a request and is not pinned to a single backend yet.  Nodes with a higher weight will receive more traffic.
-
-     * @param string $mode=null            (optional)The mode this NodeBalancer should use when sending traffic to this backend.
-* If set to `accept` this backend is accepting traffic.
-* If set to `reject` this backend will not receive traffic.
-* If set to `drain` this backend will not receive _new_ traffic, but connections already
-  pinned to it will continue to be routed to it.
-
-     * @param int    $nodebalancer_id=null (optional)The NodeBalancer ID that this Node belongs to.
-
+     * @param int   $node_balancer_id The ID of the NodeBalancer to access.
+     * @param array $optional
+     *                                - [config_id=null] (integer) The NodeBalancer Config ID that this Node
+     *                                  belongs to.
+     *                                - [id=null] (integer) This node's unique ID.
+     *                                - [address=null] (string) The private IP Address where this backend can be
+     *                                  reached. This _must_ be a private IP address.
+     *                                - [label=null] (string) The label for this node. This is for display
+     *                                  purposes only.
+     *                                - [status=null] (string) The current status of this node, based on the
+     *                                  configured checks of its NodeBalancer Config.
+     *                                - [weight=null] (integer) Used when picking a backend to serve a request
+     *                                  and is not pinned to a single backend yet. Nodes
+     *                                  with a higher weight will receive more traffic.
+     *                                - [mode=null] (string) The mode this NodeBalancer should use when
+     *                                  sending traffic to this backend.
+     *                                   If set to `accept` this backend is accepting
+     *                                  traffic.
+     *                                   If set to `reject` this backend will not
+     *                                  receive traffic.
+     *                                   If set to `drain` this backend will not receive
+     *                                  _new_ traffic, but connections already pinned to
+     *                                  it will continue to be routed to it.
+     *                                - [nodebalancer_id=null] (integer) The NodeBalancer ID that this Node belongs to.
      *
      * @link https://developers.linode.com/api/v4#operation/createNodeBalancerNode
      *

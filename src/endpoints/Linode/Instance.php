@@ -349,15 +349,18 @@ class Instance extends Base
      *   - It is recommended to supply SSH keys for the root User using the
      *     `authorized_keys` field.
      *
-     * @param int     $linode_id             ID of the Linode to rebuild.
-     * @param         $image=null            (optional)
-     * @param         $root_pass=null        (optional)
-     * @param         $authorized_keys=null  (optional)
-     * @param         $stackscript_id=null   (optional)
-     * @param         $stackscript_data=null (optional)
-     * @param boolean $booted=null           (optional)This field defaults to `true` if the Linode is created with an Image or from a Backup.
-If it is deployed from an Image or a Backup and you wish it to remain `offline` after deployment, set this to `false`.
-
+     * @param int   $linode_id ID of the Linode to rebuild.
+     * @param array $optional
+     *                         - [image=null] () 
+     *                         - [root_pass=null] () 
+     *                         - [authorized_keys=null] () 
+     *                         - [stackscript_id=null] () 
+     *                         - [stackscript_data=null] () 
+     *                         - [booted=null] (boolean) This field defaults to `true` if the Linode is created
+     *                           with an Image or from a Backup.
+     *                           If it is deployed from an Image or a Backup and you
+     *                           wish it to remain `offline` after deployment, set this
+     *                           to `false`.
      *
      * @link https://developers.linode.com/api/v4#operation/rebuildLinodeInstance
      *
