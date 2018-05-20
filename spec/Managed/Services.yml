@@ -9,7 +9,7 @@ get:
     endpoint: ''
     search: true
     factory:
-      class: Managed\Managed\Service
+      class: Managed\Service
       parameters:
         - id
 post:

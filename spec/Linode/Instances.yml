@@ -9,7 +9,7 @@ get:
     endpoint: ''
     search: true
     factory:
-      class: Linode\Linode\Instance
+      class: Linode\Instance
       parameters:
         - id
 post:

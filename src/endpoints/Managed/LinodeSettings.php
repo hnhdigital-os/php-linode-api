@@ -50,6 +50,6 @@ class LinodeSettings extends Base
      */
     public function get()
     {
-        return $this->apiSearch($this->endpoint, ['class' => 'Managed\Managed\Linode\Setting', 'parameters' => ['id']]);
+        return $this->apiSearch($this->endpoint, ['class' => 'Managed\LinodeSetting', 'parameters' => ['id']]);
     }
 }

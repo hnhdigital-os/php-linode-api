@@ -51,6 +51,6 @@ class Types extends Base
      */
     public function get()
     {
-        return $this->apiSearch($this->endpoint, ['class' => 'Linode\Linode\Type', 'parameters' => ['id']]);
+        return $this->apiSearch($this->endpoint, ['class' => 'Linode\Type', 'parameters' => ['id']]);
     }
 }

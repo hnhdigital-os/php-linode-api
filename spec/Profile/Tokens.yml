@@ -9,7 +9,7 @@ get:
     endpoint: ''
     search: true
     factory:
-      class: Profile\Personal\Access\Token
+      class: Profile\Token
       parameters:
         - id
 post:

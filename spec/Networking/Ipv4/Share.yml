@@ -9,6 +9,6 @@ post:
     endpoint: ''
     search: true
     factory:
-      class: Networking/Ipv4\Share\I\P
+      class: Share\I\P
       parameters:
         - id

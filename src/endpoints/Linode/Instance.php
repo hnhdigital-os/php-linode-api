@@ -96,7 +96,7 @@ class Instance extends Base
      */
     public function getConfigs()
     {
-        return $this->apiSearch($this->endpoint.'/configs', ['class' => 'Linode\Linode\Config', 'parameters' => ['id']]);
+        return $this->apiSearch($this->endpoint.'/configs', ['class' => 'Linode\Config', 'parameters' => ['id']]);
     }
 
     /**

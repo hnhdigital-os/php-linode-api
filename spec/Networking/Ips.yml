@@ -9,7 +9,7 @@ get:
     endpoint: ''
     search: true
     factory:
-      class: Networking\I\P
+      class: Networking\Ip
       parameters:
         - id
 post:

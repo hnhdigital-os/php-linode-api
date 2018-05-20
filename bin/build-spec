@@ -171,11 +171,15 @@ foreach ($spec_document['paths'] as $path => $details) {
             $config[$method][$endpoint_method]['search'] = true;
 
             // Searches should create models for each result.
-            $factory_class = rtrim(ltrim($original_endpoint_method, 'get'), 's');
-            $factory_class = str_replace(' ', '\\', title_case(str_replace('_', ' ', snake_case($factory_class))));
+            if ($endpoint_method === 'get') {
+                $factory_class = str_replace('/', '\\', rtrim($class_name, 's'));
+            } else {
+                $factory_class = rtrim(ltrim($original_endpoint_method, 'get'), 's');
+                $factory_class = str_replace(' ', '\\', title_case(str_replace('_', ' ', snake_case($factory_class))));
+            }
 
             $config[$method][$endpoint_method]['factory'] = [
-                'class' => ($namespace_path ? $namespace_path.'\\' : '').$factory_class,
+                'class' => $factory_class,
                 'parameters' => [
                     'id',
                 ],

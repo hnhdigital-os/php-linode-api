@@ -9,6 +9,6 @@ get:
     endpoint: ''
     search: true
     factory:
-      class: Profile\Profile\App
+      class: Profile\App
       parameters:
         - id

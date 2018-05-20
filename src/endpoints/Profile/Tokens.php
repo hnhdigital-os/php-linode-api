@@ -50,7 +50,7 @@ class Tokens extends Base
      */
     public function get()
     {
-        return $this->apiSearch($this->endpoint, ['class' => 'Profile\Personal\Access\Token', 'parameters' => ['id']]);
+        return $this->apiSearch($this->endpoint, ['class' => 'Profile\Token', 'parameters' => ['id']]);
     }
 
     /**

@@ -50,7 +50,7 @@ class Credentials extends Base
      */
     public function get()
     {
-        return $this->apiSearch($this->endpoint, ['class' => 'Managed\Managed\Credential', 'parameters' => ['id']]);
+        return $this->apiSearch($this->endpoint, ['class' => 'Managed\Credential', 'parameters' => ['id']]);
     }
 
     /**

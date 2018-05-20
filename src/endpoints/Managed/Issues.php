@@ -50,6 +50,6 @@ class Issues extends Base
      */
     public function get()
     {
-        return $this->apiSearch($this->endpoint, ['class' => 'Managed\Managed\Issue', 'parameters' => ['id']]);
+        return $this->apiSearch($this->endpoint, ['class' => 'Managed\Issue', 'parameters' => ['id']]);
     }
 }

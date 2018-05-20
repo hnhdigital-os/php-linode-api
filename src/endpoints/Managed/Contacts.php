@@ -50,7 +50,7 @@ class Contacts extends Base
      */
     public function get()
     {
-        return $this->apiSearch($this->endpoint, ['class' => 'Managed\Managed\Contact', 'parameters' => ['id']]);
+        return $this->apiSearch($this->endpoint, ['class' => 'Managed\Contact', 'parameters' => ['id']]);
     }
 
     /**

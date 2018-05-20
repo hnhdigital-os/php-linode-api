@@ -40,7 +40,7 @@ get:
         self: true
     search: true
     factory:
-      class: Linode\Linode\Config
+      class: Linode\Config
       parameters:
         - id
   getDisks:

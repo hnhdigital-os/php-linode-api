@@ -51,7 +51,7 @@ class Services extends Base
      */
     public function get()
     {
-        return $this->apiSearch($this->endpoint, ['class' => 'Managed\Managed\Service', 'parameters' => ['id']]);
+        return $this->apiSearch($this->endpoint, ['class' => 'Managed\Service', 'parameters' => ['id']]);
     }
 
     /**
