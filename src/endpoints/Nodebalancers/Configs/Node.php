@@ -37,6 +37,7 @@ class Node extends Base
      * @var int
      */
     protected $node_balancer_id;
+
     /**
      * Config Id.
      *

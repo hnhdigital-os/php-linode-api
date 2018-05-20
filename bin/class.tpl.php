@@ -44,24 +44,24 @@ foreach (array_get($spec, 'parameters', []) as $name => $settings) {
 
      */
     protected $<?= $name ?>;
+
 <?php
 }
 foreach (array_get($spec, 'get', []) as $name => $settings) {
     if (array_has($settings, 'auto-fill') && is_string(array_get($settings, 'auto-fill'))) {
 ?>
-
     /**
      * <?= title_case(str_replace('_', ' ', array_get($settings, 'auto-fill'))) ?>.
      *
      * @var array
      */
     public $<?= array_get($settings, 'auto-fill') ?> = [];
+
 <?php
     }
 }
 if (array_has($spec, 'fillable')) {
 ?>
-
     /**
      * This model is fillable.
      *

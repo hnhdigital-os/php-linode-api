@@ -37,6 +37,7 @@ class Stat extends Base
      * @var int
      */
     protected $linode_id;
+
     /**
      * Year.
      *
