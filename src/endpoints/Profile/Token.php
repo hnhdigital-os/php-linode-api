@@ -84,11 +84,9 @@ class Token extends Base
      *
      * @return void
      */
-    public function update()
+    public function update($optional = [])
     {
-        return $this->apiCall('put', '', ['json' => [
-            'token_id' => $token_id,
-        ]]);
+        return $this->apiCall('put', '', ['json' => $this->getDirty($optional)]);
     }
 
     /**

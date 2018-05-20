@@ -98,11 +98,9 @@ class OauthClient extends Base
      *
      * @return void
      */
-    public function update()
+    public function update($optional = [])
     {
-        return $this->apiCall('put', '/thumbnail', ['json' => [
-            'client_id' => $client_id,
-        ]]);
+        return $this->apiCall('put', '/thumbnail', ['json' => $this->getDirty($optional)]);
     }
 
     /**

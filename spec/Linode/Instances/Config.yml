@@ -36,6 +36,7 @@ put:
         description: 'The ID of the Configuration profile to look up.'
         required: true
         type: integer
+    attributes: true
 delete:
   delete:
     summary: 'Delete Configuration Profile'

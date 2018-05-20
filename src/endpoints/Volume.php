@@ -84,11 +84,9 @@ class Volume extends Base
      *
      * @return void
      */
-    public function update()
+    public function update($optional = [])
     {
-        return $this->apiCall('put', '', ['json' => [
-            'volume_id' => $volume_id,
-        ]]);
+        return $this->apiCall('put', '', ['json' => $this->getDirty($optional)]);
     }
 
     /**

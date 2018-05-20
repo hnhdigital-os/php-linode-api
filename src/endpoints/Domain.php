@@ -98,11 +98,9 @@ class Domain extends Base
      *
      * @return void
      */
-    public function update()
+    public function update($optional = [])
     {
-        return $this->apiCall('put', '', ['json' => [
-            'domain_id' => $domain_id,
-        ]]);
+        return $this->apiCall('put', '', ['json' => $this->getDirty($optional)]);
     }
 
     /**

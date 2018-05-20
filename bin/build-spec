@@ -164,6 +164,10 @@ foreach ($spec_document['paths'] as $path => $details) {
             'parameters'          => $parameters,
         ];
 
+        if ($method == 'put') {
+            $config[$method][$endpoint_method]['attributes'] = true;
+        }
+
         // This method provides a collection/paginated results, so we'll force search mode.
         if (stripos(array_get($config[$method][$endpoint_method], 'description', ''), 'paginated') !== false
             || stripos(array_get($config[$method][$endpoint_method], 'description', ''), 'collection') !== false

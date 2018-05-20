@@ -39,6 +39,7 @@ put:
         required: true
         type: string
         self: true
+    attributes: true
 delete:
   delete:
     summary: 'Delete User'

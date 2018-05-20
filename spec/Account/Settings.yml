@@ -13,3 +13,4 @@ put:
     description: "Updates your Account settings.\n"
     url: 'https://developers.linode.com/api/v4#operation/updateAccountSettings'
     endpoint: ''
+    attributes: true

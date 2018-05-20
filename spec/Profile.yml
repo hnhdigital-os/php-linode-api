@@ -13,3 +13,4 @@ put:
     description: "Update information in your Profile.  This option is _not_ available to all third-party clients.\n"
     url: 'https://developers.linode.com/api/v4#operation/updateProfile'
     endpoint: ''
+    attributes: true

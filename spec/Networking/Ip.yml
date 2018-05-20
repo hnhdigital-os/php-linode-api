@@ -28,4 +28,5 @@ put:
         required: true
         type: string
         self: true
+    attributes: true
 fillable: true

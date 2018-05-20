@@ -84,11 +84,9 @@ class Service extends Base
      *
      * @return void
      */
-    public function update()
+    public function update($optional = [])
     {
-        return $this->apiCall('put', '', ['json' => [
-            'service_id' => $service_id,
-        ]]);
+        return $this->apiCall('put', '', ['json' => $this->getDirty($optional)]);
     }
 
     /**

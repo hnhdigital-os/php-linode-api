@@ -85,12 +85,9 @@ class Record extends Base
      *
      * @return void
      */
-    public function update($record_id)
+    public function update($record_id, $optional = [])
     {
-        return $this->apiCall('put', '', ['json' => [
-            'domain_id' => $domain_id,
-            'record_id' => $record_id,
-        ]]);
+        return $this->apiCall('put', '', ['json' => $this->getDirty($optional)]);
     }
 
     /**

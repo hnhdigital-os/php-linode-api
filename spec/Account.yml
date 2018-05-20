@@ -13,3 +13,4 @@ put:
     description: "Updates contact and billing information related to your Account.\n"
     url: 'https://developers.linode.com/api/v4#operation/updateAccount'
     endpoint: ''
+    attributes: true

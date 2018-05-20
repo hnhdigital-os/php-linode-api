@@ -36,6 +36,7 @@ put:
         description: 'ID of the Disk to look up.'
         required: true
         type: integer
+    attributes: true
 delete:
   delete:
     summary: 'Delete Disk'

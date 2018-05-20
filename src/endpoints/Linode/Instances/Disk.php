@@ -85,12 +85,9 @@ class Disk extends Base
      *
      * @return void
      */
-    public function update($disk_id)
+    public function update($disk_id, $optional = [])
     {
-        return $this->apiCall('put', '', ['json' => [
-            'linode_id' => $linode_id,
-            'disk_id'   => $disk_id,
-        ]]);
+        return $this->apiCall('put', '', ['json' => $this->getDirty($optional)]);
     }
 
     /**

@@ -85,12 +85,9 @@ class Ip extends Base
      *
      * @return void
      */
-    public function update($address)
+    public function update($address, $optional = [])
     {
-        return $this->apiCall('put', '', ['json' => [
-            'linode_id' => $linode_id,
-            'address'   => $address,
-        ]]);
+        return $this->apiCall('put', '', ['json' => $this->getDirty($optional)]);
     }
 
     /**

@@ -28,4 +28,5 @@ put:
         required: true
         type: integer
         self: true
+    attributes: true
 fillable: true

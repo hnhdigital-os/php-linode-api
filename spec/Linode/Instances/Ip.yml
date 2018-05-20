@@ -36,6 +36,7 @@ put:
         description: 'The IP address to look up.'
         required: true
         type: string
+    attributes: true
 delete:
   delete:
     summary: 'Delete IPv4 Address'

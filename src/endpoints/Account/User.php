@@ -100,11 +100,9 @@ class User extends Base
      *
      * @return void
      */
-    public function update()
+    public function update($optional = [])
     {
-        return $this->apiCall('put', '/grants', ['json' => [
-            'username' => $username,
-        ]]);
+        return $this->apiCall('put', '/grants', ['json' => $this->getDirty($optional)]);
     }
 
     /**

@@ -28,6 +28,7 @@ put:
         required: true
         type: integer
         self: true
+    attributes: true
 delete:
   delete:
     summary: 'Delete Volume'

@@ -85,12 +85,9 @@ class Config extends Base
      *
      * @return void
      */
-    public function update($config_id)
+    public function update($config_id, $optional = [])
     {
-        return $this->apiCall('put', '', ['json' => [
-            'linode_id' => $linode_id,
-            'config_id' => $config_id,
-        ]]);
+        return $this->apiCall('put', '', ['json' => $this->getDirty($optional)]);
     }
 
     /**
