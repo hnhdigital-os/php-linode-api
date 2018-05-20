@@ -357,10 +357,10 @@ class Instance extends Base
      *                         - [stackscript_id=null] () 
      *                         - [stackscript_data=null] () 
      *                         - [booted=null] (boolean) This field defaults to `true` if the Linode is created
-     *                           with an Image or from a Backup.
-     *                           If it is deployed from an Image or a Backup and you
-     *                           wish it to remain `offline` after deployment, set this
-     *                           to `false`.
+     *                         with an Image or from a Backup.
+     *                         If it is deployed from an Image or a Backup and you
+     *                         wish it to remain `offline` after deployment, set this
+     *                         to `false`.
      *
      * @link https://developers.linode.com/api/v4#operation/rebuildLinodeInstance
      *

@@ -61,27 +61,27 @@ class OauthClients extends Base
      *
      * @param array $optional
      *                        - [id=null] (string) The OAuth Client ID. This is used to identify the
-     *                          client, and is a publicly-known value (it is not a
-     *                          secret).
+     *                        client, and is a publicly-known value (it is not a
+     *                        secret).
      *                        - [redirect_uri=null] (string) The location a successful log in from
-     *                          https://login.linode.com should be redirected to for
-     *                          this client. The receiver of this redirect should be
-     *                          ready to accept an OAuth exchange code and finish the
-     *                          OAuth exchange.
+     *                        https://login.linode.com should be redirected to for
+     *                        this client. The receiver of this redirect should be
+     *                        ready to accept an OAuth exchange code and finish the
+     *                        OAuth exchange.
      *                        - [label=null] (string) The name of this application. This will be presented to
-     *                          users when they are asked to grant it access to their
-     *                          Account.
+     *                        users when they are asked to grant it access to their
+     *                        Account.
      *                        - [status=null] (string) The status of this application. `active` by default.
      *                        - [secret=null] (string) The OAuth Client secret, used in the OAuth exchange.
-     *                          This is returned as `<REDACTED>` except when an OAuth
-     *                          Client is created or its secret is reset. This is a
-     *                          secret, and should not be shared or disclosed publicly.
+     *                        This is returned as `<REDACTED>` except when an OAuth
+     *                        Client is created or its secret is reset. This is a
+     *                        secret, and should not be shared or disclosed publicly.
      *                        - [thumbnail_url=null] (string) The URL where this client's thumbnail may be viewed, or
-     *                          `null` if this client does not have a thumbnail set.
+     *                        `null` if this client does not have a thumbnail set.
      *                        - [public=null] (boolean) If this is a public or private OAuth Client. Public
-     *                          clients have a slightly different authentication
-     *                          workflow than private clients. See the [OAuth
-     *                          spec](https://oauth.net/2/) for more details.
+     *                        clients have a slightly different authentication
+     *                        workflow than private clients. See the [OAuth
+     *                        spec](https://oauth.net/2/) for more details.
      *
      * @link https://developers.linode.com/api/v4#operation/createClient
      *

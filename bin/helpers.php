@@ -221,11 +221,11 @@ function generate_parameter_comments($method_settings)
         if (!array_get($settings, 'required', false)) {
             $default_value = get_default_value($settings, ['with-equal' => true, 'exclude-null' => true]);
 
-            $description = str_replace('*', '', trim(preg_replace('/\s\s+/', ' ',array_get($settings, 'description'))));
+            $description = str_replace('*', '', trim(preg_replace('/\s\s+/', ' ', array_get($settings, 'description'))));
             $description = wordwrap($description, 80 - $whitespace_length);
             $description = "- [$name".$default_value.'] ('.array_get($settings, 'type').') '.$description;
             $description = preg_replace('/^\- (.*?)$/m', '     *'.$whitespace.'- $1', $description);
-            $description = preg_replace('/^(?!\     *)(?!\- )(.*?)$/m', '     *'.$whitespace.'  $1', $description);
+            $description = preg_replace('/^(?!\     *)(?!\- )(.*?)$/m', '     *'.$whitespace.'$1', $description);
 
             $result .= $description;
             $result .= "\n";
@@ -593,7 +593,7 @@ function convert_paramater_type($type)
 /**
  * Load properties list.
  *
- * @param array $spec 
+ * @param array  $spec 
  * @param string $path
  *
  * @return array

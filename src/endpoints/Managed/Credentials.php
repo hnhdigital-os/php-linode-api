@@ -60,7 +60,7 @@ class Credentials extends Base
      * @param array $optional
      *                        - [id=null] (integer) This Credential's unique ID.
      *                        - [label=null] (string) The unique label for this Credential. This is for
-     *                          display purposes only.
+     *                        display purposes only.
      *                        - [username=null] (string) The username to use when accessing the Managed Service.
      *                        - [password=null] (string) The password to use when accessing the Managed Service.
      *

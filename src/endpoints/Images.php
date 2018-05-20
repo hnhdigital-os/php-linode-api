@@ -64,22 +64,22 @@ class Images extends Base
      * @param array $optional
      *                        - [id=null] (string) The unique ID of this Image.
      *                        - [label=null] (string) A short description of the Image. Labels cannot contain
-     *                          special characters.
+     *                        special characters.
      *                        - [created=null] (string) When this Image was created.
      *                        - [created_by=null] (string) The name of the User who created this Image.
      *                        - [deprecated=null] (boolean) Whether or not this Image is deprecated. Will only be
-     *                          True for deprecated public Images.
+     *                        True for deprecated public Images.
      *                        - [description=null] (string) An optional detailed description of this Image.
      *                        - [is_public=null] (boolean) True if the Image is public.
      *                        - [size=null] (integer) The minimum size this Image needs to deploy. Size is in
-     *                          MB.
+     *                        MB.
      *                        - [type=null] (string) How the Image was created. "Manual" Images can be
-     *                          created at any time. "Automatic" images are created
-     *                          automatically from a deleted Linode.
+     *                        created at any time. "Automatic" images are created
+     *                        automatically from a deleted Linode.
      *                        - [vendor=null] (string) The upstream distribution vendor. `None` for private
-     *                          Images.
+     *                        Images.
      *                        - [disk_id=null] (integer) The ID of the Linode Disk that this Image will be
-     *                          created from.
+     *                        created from.
      *
      * @link https://developers.linode.com/api/v4#operation/createImage
      *

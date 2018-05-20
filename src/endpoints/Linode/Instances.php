@@ -102,43 +102,43 @@ class Instances extends Base
      *                        - [stackscript_id=null] () 
      *                        - [stackscript_data=null] () 
      *                        - [booted=null] (boolean) This field defaults to `true` if the Linode is created
-     *                          with an Image or from a Backup.
-     *                          If it is deployed from an Image or a Backup and you wish
-     *                          it to remain `offline` after deployment, set this to
-     *                          `false`.
+     *                        with an Image or from a Backup.
+     *                        If it is deployed from an Image or a Backup and you wish
+     *                        it to remain `offline` after deployment, set this to
+     *                        `false`.
      *                        - [label=null] (string) The Linode's label is for display purposes only. If no
-     *                          label is provided for a Linode, a default will be
-     *                          assigned.
-     *                          Linode labels have the following constraints:  Must
-     *                          start with an alpha character.  Must consist of
-     *                          alphanumeric characters, dashes (`-`), and underscores
-     *                          (`_`).  Cannot have two dashes (`--`) or underscores
-     *                          (`__`) in a row.
+     *                        label is provided for a Linode, a default will be
+     *                        assigned.
+     *                        Linode labels have the following constraints:  Must
+     *                        start with an alpha character.  Must consist of
+     *                        alphanumeric characters, dashes (`-`), and underscores
+     *                        (`_`).  Cannot have two dashes (`--`) or underscores
+     *                        (`__`) in a row.
      *                        - [group=null] (string) A deprecated property denoting a group label for this
-     *                          Linode.
+     *                        Linode.
      *                        - [type=null] () 
      *                        - [region=null] () 
      *                        - [backup_id=null] (integer) A Backup ID from another Linode's available backups.
-     *                          Your User must have
-     *                          `read_write` access to that Linode, the Backup must have
-     *                          a `status` of
-     *                          `successful`, and the Linode must be deployed to the
-     *                          same `region` as the Backup.
-     *                          See
-     *                          [/linode/instances/{linodeId}/backups](/#operation/getBackups)
-     *                          for a Linode's available backups. This field and the
-     *                          `image` field are mutually exclusive.
+     *                        Your User must have
+     *                        `read_write` access to that Linode, the Backup must have
+     *                        a `status` of
+     *                        `successful`, and the Linode must be deployed to the
+     *                        same `region` as the Backup.
+     *                        See
+     *                        [/linode/instances/{linodeId}/backups](/#operation/getBackups)
+     *                        for a Linode's available backups. This field and the
+     *                        `image` field are mutually exclusive.
      *                        - [backups_enabled=null] (boolean) If this field is set to `true`, the created Linode will
-     *                          automatically be
-     *                          enrolled in the Linode Backup service. This will incur
-     *                          an additional charge.
-     *                          The cost for the Backup service is dependent on the Type
-     *                          of Linode deployed. Backup pricing is included in the
-     *                          response from
-     *                          [/linodes/types](/#operation/getLinodeTypes)
+     *                        automatically be
+     *                        enrolled in the Linode Backup service. This will incur
+     *                        an additional charge.
+     *                        The cost for the Backup service is dependent on the Type
+     *                        of Linode deployed. Backup pricing is included in the
+     *                        response from
+     *                        [/linodes/types](/#operation/getLinodeTypes)
      *                        - [swap_size=null] (integer) When deploying from an Image, this field is optional,
-     *                          otherwise it is ignored. This is used to set the swap
-     *                          disk size for the newly-created Linode.
+     *                        otherwise it is ignored. This is used to set the swap
+     *                        disk size for the newly-created Linode.
      *
      * @link https://developers.linode.com/api/v4#operation/createLinodeInstance
      *

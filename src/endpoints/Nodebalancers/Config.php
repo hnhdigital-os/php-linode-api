@@ -110,26 +110,26 @@ class Config extends Base
      * @param int   $node_balancer_id The ID of the NodeBalancer to access.
      * @param array $optional
      *                                - [config_id=null] (integer) The NodeBalancer Config ID that this Node
-     *                                  belongs to.
+     *                                belongs to.
      *                                - [id=null] (integer) This node's unique ID.
      *                                - [address=null] (string) The private IP Address where this backend can be
-     *                                  reached. This _must_ be a private IP address.
+     *                                reached. This _must_ be a private IP address.
      *                                - [label=null] (string) The label for this node. This is for display
-     *                                  purposes only.
+     *                                purposes only.
      *                                - [status=null] (string) The current status of this node, based on the
-     *                                  configured checks of its NodeBalancer Config.
+     *                                configured checks of its NodeBalancer Config.
      *                                - [weight=null] (integer) Used when picking a backend to serve a request
-     *                                  and is not pinned to a single backend yet. Nodes
-     *                                  with a higher weight will receive more traffic.
+     *                                and is not pinned to a single backend yet. Nodes
+     *                                with a higher weight will receive more traffic.
      *                                - [mode=null] (string) The mode this NodeBalancer should use when
-     *                                  sending traffic to this backend.
-     *                                   If set to `accept` this backend is accepting
-     *                                  traffic.
-     *                                   If set to `reject` this backend will not
-     *                                  receive traffic.
-     *                                   If set to `drain` this backend will not receive
-     *                                  _new_ traffic, but connections already pinned to
-     *                                  it will continue to be routed to it.
+     *                                sending traffic to this backend.
+     *                                 If set to `accept` this backend is accepting
+     *                                traffic.
+     *                                 If set to `reject` this backend will not
+     *                                receive traffic.
+     *                                 If set to `drain` this backend will not receive
+     *                                _new_ traffic, but connections already pinned to
+     *                                it will continue to be routed to it.
      *                                - [nodebalancer_id=null] (integer) The NodeBalancer ID that this Node belongs to.
      *
      * @link https://developers.linode.com/api/v4#operation/createNodeBalancerNode

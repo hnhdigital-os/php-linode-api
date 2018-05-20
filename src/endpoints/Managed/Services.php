@@ -63,22 +63,22 @@ class Services extends Base
      *                        - [status=null] (string) The current status of this Service.
      *                        - [service_type=null] (string) How this Service is monitored.
      *                        - [label=null] (string) The label for this Service. This is for display purposes
-     *                          only.
+     *                        only.
      *                        - [address=null] (string) The URL at which this Service is monitored.
      *                        - [timeout=null] (integer) How long to wait, in seconds, for a response before
-     *                          considering the Service to be down.
+     *                        considering the Service to be down.
      *                        - [body=null] (string) What to expect to find in the response body for the
-     *                          Service to be considered up.
+     *                        Service to be considered up.
      *                        - [consultation_group=null] (string) The group of ManagedContacts who should be notified or
-     *                          consulted with when an Issue is detected.
+     *                        consulted with when an Issue is detected.
      *                        - [notes=null] (string) Any information relevant to the Service that Linode
-     *                          special forces should know when attempting to resolve
-     *                          Issues.
+     *                        special forces should know when attempting to resolve
+     *                        Issues.
      *                        - [region=null] (string) The Region in which this Service is located. This is
-     *                          required if address is a private IP, and may not be set
-     *                          otherwise.
+     *                        required if address is a private IP, and may not be set
+     *                        otherwise.
      *                        - [credentials=[]] (array) An array of ManagedCredential IDs that should be used
-     *                          when attempting to resolve issues with this Service.
+     *                        when attempting to resolve issues with this Service.
      *                        - [created=null] (string) When this Managed Service was created.
      *                        - [updated=null] (string) When this Managed Service was last updated.
      *

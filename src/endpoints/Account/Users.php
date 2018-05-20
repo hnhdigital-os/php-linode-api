@@ -61,17 +61,17 @@ class Users extends Base
      *
      * @param array $optional
      *                        - [username=null] (string) This User's username. This is used for logging in, and
-     *                          may also be displayed alongside actions the User
-     *                          performs (for example, in Events or public
-     *                          StackScripts).
+     *                        may also be displayed alongside actions the User
+     *                        performs (for example, in Events or public
+     *                        StackScripts).
      *                        - [email=null] (string) The email address for this User, for account management
-     *                          communications, and may be used for other communications
-     *                          as configured.
+     *                        communications, and may be used for other communications
+     *                        as configured.
      *                        - [restricted=null] (boolean) If true, this User must be granted access to perform
-     *                          actions or access entities on this Account. See
-     *                          [/account/users/{username}/grants](/#operation/getUserGrants)
-     *                          for details on how to configure grants for a restricted
-     *                          User.
+     *                        actions or access entities on this Account. See
+     *                        [/account/users/{username}/grants](/#operation/getUserGrants)
+     *                        for details on how to configure grants for a restricted
+     *                        User.
      *
      * @link https://developers.linode.com/api/v4#operation/createUser
      *
