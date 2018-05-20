@@ -50,7 +50,7 @@ class Payments extends Base
      */
     public function get()
     {
-        return $this->apiSearch($this->endpoint, ['class' => 'Payment', 'parameters' => ['id']]);
+        return $this->apiSearch($this->endpoint, ['class' => 'Account\Payment', 'parameters' => ['id']]);
     }
 
     /**

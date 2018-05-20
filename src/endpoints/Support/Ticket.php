@@ -84,7 +84,7 @@ class Ticket extends Base
      */
     public function getTicketReplies()
     {
-        return $this->apiSearch($this->endpoint.'/replies', ['class' => 'Ticket/Replie', 'parameters' => ['id']]);
+        return $this->apiSearch($this->endpoint.'/replies', ['class' => 'Support\Ticket\Replie', 'parameters' => ['id']]);
     }
 
     /**

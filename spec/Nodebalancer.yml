@@ -29,7 +29,7 @@ get:
         self: true
     search: true
     factory:
-      class: Node/Balancer/Config
+      class: Node\Balancer\Config
       parameters:
         - id
 put:

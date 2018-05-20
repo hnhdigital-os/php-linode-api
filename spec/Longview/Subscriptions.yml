@@ -9,6 +9,6 @@ get:
     endpoint: ''
     search: true
     factory:
-      class: Longview/Subscription
+      class: Longview\Longview\Subscription
       parameters:
         - id

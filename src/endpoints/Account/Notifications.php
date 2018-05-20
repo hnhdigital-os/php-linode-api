@@ -53,6 +53,6 @@ class Notifications extends Base
      */
     public function get()
     {
-        return $this->apiSearch($this->endpoint, ['class' => 'Notification', 'parameters' => ['id']]);
+        return $this->apiSearch($this->endpoint, ['class' => 'Account\Notification', 'parameters' => ['id']]);
     }
 }

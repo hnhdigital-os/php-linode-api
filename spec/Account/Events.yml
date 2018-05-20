@@ -9,6 +9,6 @@ get:
     endpoint: ''
     search: true
     factory:
-      class: Event
+      class: Account\Event
       parameters:
         - id

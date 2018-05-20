@@ -38,6 +38,11 @@ get:
         required: true
         type: integer
         self: true
+    search: true
+    factory:
+      class: Linode\Linode\Config
+      parameters:
+        - id
   getDisks:
     summary: 'List Disks'
     description: "View Disk information for Disks associated with this Linode.\n"

@@ -9,6 +9,6 @@ get:
     endpoint: ''
     search: true
     factory:
-      class: Managed/Linode/Setting
+      class: Managed\Managed\Linode\Setting
       parameters:
         - id

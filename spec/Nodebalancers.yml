@@ -9,7 +9,7 @@ get:
     endpoint: ''
     search: true
     factory:
-      class: Node/Balancer
+      class: Node\Balancer
       parameters:
         - id
 post:

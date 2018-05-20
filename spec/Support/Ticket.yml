@@ -29,7 +29,7 @@ get:
         self: true
     search: true
     factory:
-      class: Ticket/Replie
+      class: Support\Ticket\Replie
       parameters:
         - id
 fillable: true

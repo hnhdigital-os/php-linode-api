@@ -29,7 +29,7 @@ get:
         self: true
     search: true
     factory:
-      class: Invoice/Item
+      class: Account\Invoice\Item
       parameters:
         - id
 fillable: true

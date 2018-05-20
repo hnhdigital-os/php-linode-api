@@ -9,7 +9,7 @@ get:
     endpoint: ''
     search: true
     factory:
-      class: User
+      class: Account\User
       parameters:
         - id
 post:

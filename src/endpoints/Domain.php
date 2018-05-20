@@ -86,7 +86,7 @@ class Domain extends Base
      */
     public function getRecords()
     {
-        return $this->apiSearch($this->endpoint.'/records', ['class' => 'Domain/Record', 'parameters' => ['id']]);
+        return $this->apiSearch($this->endpoint.'/records', ['class' => 'Domain\Record', 'parameters' => ['id']]);
     }
 
     /**

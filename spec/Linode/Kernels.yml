@@ -7,3 +7,8 @@ get:
     description: "Lists available Kernels.\n"
     url: 'https://developers.linode.com/api/v4#operation/getKernels'
     endpoint: ''
+    search: true
+    factory:
+      class: Linode\Kernel
+      parameters:
+        - id

@@ -52,7 +52,7 @@ class OauthClients extends Base
      */
     public function get()
     {
-        return $this->apiSearch($this->endpoint, ['class' => 'Client', 'parameters' => ['id']]);
+        return $this->apiSearch($this->endpoint, ['class' => 'Account\Client', 'parameters' => ['id']]);
     }
 
     /**

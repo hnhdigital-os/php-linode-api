@@ -85,6 +85,12 @@ foreach ($spec_document['paths'] as $path => $details) {
     }
 
     $replacement_array = array_reverse($replacement_array);
+
+    $namespace_path = dirname($class_name);
+
+    if ($namespace_path == '.') {
+        $namespace_path = '';
+    }
        
     $spec_path = 'spec/'.$class_name.'.yml';
 
@@ -160,15 +166,16 @@ foreach ($spec_document['paths'] as $path => $details) {
 
         // This method provides a collection/paginated results, so we'll force search mode.
         if (stripos(array_get($config[$method][$endpoint_method], 'description', ''), 'paginated') !== false
-            || stripos(array_get($config[$method][$endpoint_method], 'description', ''), 'collection') !== false) {
+            || stripos(array_get($config[$method][$endpoint_method], 'description', ''), 'collection') !== false
+            || stripos(array_get($config[$method][$endpoint_method], 'description', ''), 'lists') !== false) {
             $config[$method][$endpoint_method]['search'] = true;
 
             // Searches should create models for each result.
             $factory_class = rtrim(ltrim($original_endpoint_method, 'get'), 's');
-            $factory_class = str_replace(' ', '/', title_case(str_replace('_', ' ', snake_case($factory_class))));
+            $factory_class = str_replace(' ', '\\', title_case(str_replace('_', ' ', snake_case($factory_class))));
 
             $config[$method][$endpoint_method]['factory'] = [
-                'class' => $factory_class,
+                'class' => ($namespace_path ? $namespace_path.'\\' : '').$factory_class,
                 'parameters' => [
                     'id',
                 ],

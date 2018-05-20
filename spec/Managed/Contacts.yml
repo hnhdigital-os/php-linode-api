@@ -9,7 +9,7 @@ get:
     endpoint: ''
     search: true
     factory:
-      class: Managed/Contact
+      class: Managed\Managed\Contact
       parameters:
         - id
 post:

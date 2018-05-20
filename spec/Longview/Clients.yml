@@ -9,7 +9,7 @@ get:
     endpoint: ''
     search: true
     factory:
-      class: Longview/Client
+      class: Longview\Longview\Client
       parameters:
         - id
 post:

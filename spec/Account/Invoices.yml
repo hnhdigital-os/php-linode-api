@@ -9,6 +9,6 @@ get:
     endpoint: ''
     search: true
     factory:
-      class: Invoice
+      class: Account\Invoice
       parameters:
         - id

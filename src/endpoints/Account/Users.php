@@ -52,7 +52,7 @@ class Users extends Base
      */
     public function get()
     {
-        return $this->apiSearch($this->endpoint, ['class' => 'User', 'parameters' => ['id']]);
+        return $this->apiSearch($this->endpoint, ['class' => 'Account\User', 'parameters' => ['id']]);
     }
 
     /**

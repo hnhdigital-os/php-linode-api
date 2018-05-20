@@ -50,6 +50,6 @@ class Kernels extends Base
      */
     public function get()
     {
-        return $this->apiCall('get', '');
+        return $this->apiSearch($this->endpoint, ['class' => 'Linode\Kernel', 'parameters' => ['id']]);
     }
 }

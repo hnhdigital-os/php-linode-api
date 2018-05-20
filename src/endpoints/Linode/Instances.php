@@ -50,7 +50,7 @@ class Instances extends Base
      */
     public function get()
     {
-        return $this->apiSearch($this->endpoint, ['class' => 'Linode/Instance', 'parameters' => ['id']]);
+        return $this->apiSearch($this->endpoint, ['class' => 'Linode\Linode\Instance', 'parameters' => ['id']]);
     }
 
     /**

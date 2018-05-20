@@ -9,6 +9,6 @@ get:
     endpoint: ''
     search: true
     factory:
-      class: Linode/Type
+      class: Linode\Linode\Type
       parameters:
         - id

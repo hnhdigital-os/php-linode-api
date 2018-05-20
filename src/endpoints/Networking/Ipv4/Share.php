@@ -51,6 +51,8 @@ class Share extends Base
      */
     public function shareIPs()
     {
-        return $this->apiCall('post', '');
+        $result = $this->apiCall('post', '');
+
+        return $this->factory($result, ['class' => 'Networking/Ipv4\Share\I\P', 'parameters' => ['id']]);
     }
 }

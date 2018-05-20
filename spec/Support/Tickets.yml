@@ -9,7 +9,7 @@ get:
     endpoint: ''
     search: true
     factory:
-      class: Ticket
+      class: Support\Ticket
       parameters:
         - id
 post:

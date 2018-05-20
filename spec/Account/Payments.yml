@@ -9,7 +9,7 @@ get:
     endpoint: ''
     search: true
     factory:
-      class: Payment
+      class: Account\Payment
       parameters:
         - id
 post:

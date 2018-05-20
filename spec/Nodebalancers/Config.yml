@@ -37,7 +37,7 @@ get:
         type: integer
     search: true
     factory:
-      class: Node/Balancer/Config/Node
+      class: Nodebalancers\Node\Balancer\Config\Node
       parameters:
         - id
 put:

@@ -51,7 +51,7 @@ class Clients extends Base
      */
     public function get()
     {
-        return $this->apiSearch($this->endpoint, ['class' => 'Longview/Client', 'parameters' => ['id']]);
+        return $this->apiSearch($this->endpoint, ['class' => 'Longview\Longview\Client', 'parameters' => ['id']]);
     }
 
     /**

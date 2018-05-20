@@ -7,3 +7,8 @@ get:
     description: "Lists the Regions available for Linode services. Not all services are guaranteed to be\navailable in all Regions.\n"
     url: 'https://developers.linode.com/api/v4#operation/getRegions'
     endpoint: ''
+    search: true
+    factory:
+      class: Region
+      parameters:
+        - id

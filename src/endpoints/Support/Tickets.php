@@ -52,7 +52,7 @@ class Tickets extends Base
      */
     public function get()
     {
-        return $this->apiSearch($this->endpoint, ['class' => 'Ticket', 'parameters' => ['id']]);
+        return $this->apiSearch($this->endpoint, ['class' => 'Support\Ticket', 'parameters' => ['id']]);
     }
 
     /**

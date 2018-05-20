@@ -7,3 +7,8 @@ post:
     description: "Configure shared IPs.  A shared IP may be brought up on a Linode other than the one it lists in its response.  This can be used to allow one Linode to begin serving requests should another become unresponsive.\n"
     url: 'https://developers.linode.com/api/v4#operation/shareIPs'
     endpoint: ''
+    search: true
+    factory:
+      class: Networking/Ipv4\Share\I\P
+      parameters:
+        - id

@@ -29,7 +29,7 @@ get:
         self: true
     search: true
     factory:
-      class: Domain/Record
+      class: Domain\Record
       parameters:
         - id
 put:

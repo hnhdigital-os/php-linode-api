@@ -51,6 +51,6 @@ class Events extends Base
      */
     public function get()
     {
-        return $this->apiSearch($this->endpoint, ['class' => 'Event', 'parameters' => ['id']]);
+        return $this->apiSearch($this->endpoint, ['class' => 'Account\Event', 'parameters' => ['id']]);
     }
 }
