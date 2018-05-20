@@ -7,6 +7,11 @@ get:
     description: "If the request is not authenticated, only public StackScripts are returned.\n\nFor more information on StackScripts, please read our guide: [Automate Deployment with StackScripts](https://linode.com/docs/platform/stackscripts/).\n"
     url: 'https://developers.linode.com/api/v4#operation/getStackScripts'
     endpoint: ''
+    search: true
+    factory:
+      class: Linode\Stackscript
+      parameters:
+        - id
 post:
   addStackScript:
     summary: 'Create StackScript'

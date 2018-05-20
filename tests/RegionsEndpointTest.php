@@ -31,7 +31,7 @@ class RegionsEndpointTest extends BaseTest
         $this->mockGetRequest('/regions?page=1', $data);
 
         // Create a new regions endpoint.
-        $result = (new Regions())->search()->all();
+        $result = (new Regions())->get()->all();
 
         // Create the same object that it should return.
         $region = new Region('us-east-1a', array_get($data, 'data.0'));

@@ -1,0 +1,7 @@
+get:
+  get:
+    search: true
+    factory:
+      class: Linode\Stackscript
+      parameters:
+        - id

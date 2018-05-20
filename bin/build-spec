@@ -201,6 +201,12 @@ foreach ($spec_document['paths'] as $path => $details) {
         mkdir(dirname($spec_path), 0777, true);
     }
 
+    $spec_fixes_path = 'spec-fixes/'.$class_name.'.yml';
+    if (file_exists($spec_fixes_path)) {
+        $config_fixes = Yaml::parse(file_get_contents($spec_fixes_path));
+        $config = array_replace_recursive($config, $config_fixes);
+    }
+
     file_put_contents($spec_path, Yaml::dump($config, 5, 2));
 
     unset($config);
