@@ -30,6 +30,7 @@ class Nodebalancer extends Base
      * @var string
      */
     protected $endpoint = 'nodebalancers/%s';
+
     /**
      * Node Balancer Id.
      *
@@ -50,7 +51,6 @@ class Nodebalancer extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.
@@ -114,11 +114,11 @@ class Nodebalancer extends Base
      *
      * @return mixed
      */
-    public function createNodeBalancerConfig()
+    public function createNodeBalancerConfig($optional = [])
     {
-        return $this->apiCall('post', '/configs', ['json' => [
+        return $this->apiCall('post', '/configs', ['json' => array_merge([
             'node_balancer_id' => $node_balancer_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**

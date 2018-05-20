@@ -1,0 +1,9 @@
+post:
+  create:    
+    factory:
+      class: Volume
+      parameters: 
+        - id
+    parameters:
+      label:
+        required: true

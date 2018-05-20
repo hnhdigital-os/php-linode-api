@@ -18,3 +18,34 @@ post:
     description: "Creates an OAuth Client, which can be used to allow users (using their Linode account) to log in to your own application, and optionally grant your application some amount of access to their Linodes or other entities.\n"
     url: 'https://developers.linode.com/api/v4#operation/createClient'
     endpoint: ''
+    parameters:
+      id:
+        description: "The OAuth Client ID.  This is used to identify the client, and is a publicly-known value (it is not a secret).\n"
+        type: string
+        required: false
+      redirect_uri:
+        description: "The location a successful log in from https://login.linode.com should be redirected to for this client.  The receiver of this redirect should be ready to accept an OAuth exchange code and finish the OAuth exchange.\n"
+        type: string
+        required: false
+      label:
+        description: "The name of this application.  This will be presented to users when they are asked to grant it access to their Account.\n"
+        type: string
+        required: false
+      status:
+        description: "The status of this application.  `active` by default.\n"
+        type: string
+        required: false
+      secret:
+        description: "The OAuth Client secret, used in the OAuth exchange.  This is returned as `<REDACTED>` except when an OAuth Client is created or its secret is reset.  This is a secret, and should not be shared or disclosed publicly.\n"
+        type: string
+        required: false
+      thumbnail_url:
+        description: "The URL where this client's thumbnail may be viewed, or `null` if this client does not have a thumbnail set.\n"
+        type: string
+        required: false
+      public:
+        description: "If this is a public or private OAuth Client.  Public clients have a slightly different authentication workflow than private clients.  See the [OAuth spec](https://oauth.net/2/) for more details.\n"
+        type: boolean
+        required: false
+    attributes: true
+    optional: true

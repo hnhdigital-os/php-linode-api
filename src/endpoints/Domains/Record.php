@@ -30,6 +30,7 @@ class Record extends Base
      * @var string
      */
     protected $endpoint = 'domains/%s/records/%s';
+
     /**
      * Domain Id.
      *
@@ -50,7 +51,6 @@ class Record extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.

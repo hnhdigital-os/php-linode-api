@@ -7,3 +7,5 @@ post:
     description: "Adds/edit credit card information to your Account.\nOnly one credit card can be associated with your Account, so using this endpoint will overwrite your currently active card information with the new credit card.\n"
     url: 'https://developers.linode.com/api/v4#operation/createCreditCard'
     endpoint: ''
+    attributes: true
+    optional: true

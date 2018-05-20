@@ -30,6 +30,7 @@ class Service extends Base
      * @var string
      */
     protected $endpoint = 'managed/services/%s';
+
     /**
      * Service Id.
      *
@@ -50,7 +51,6 @@ class Service extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.
@@ -98,11 +98,11 @@ class Service extends Base
      *
      * @return mixed
      */
-    public function disable()
+    public function disable($optional = [])
     {
-        return $this->apiCall('post', '/disable', ['json' => [
+        return $this->apiCall('post', '/disable', ['json' => array_merge([
             'service_id' => $service_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**
@@ -114,11 +114,11 @@ class Service extends Base
      *
      * @return mixed
      */
-    public function enable()
+    public function enable($optional = [])
     {
-        return $this->apiCall('post', '/enable', ['json' => [
+        return $this->apiCall('post', '/enable', ['json' => array_merge([
             'service_id' => $service_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**

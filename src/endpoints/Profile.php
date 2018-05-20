@@ -31,6 +31,7 @@ class Profile extends Base
      */
     protected $endpoint = 'profile';
 
+
     /**
      * This model is fillable.
      *
@@ -44,7 +45,6 @@ class Profile extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.

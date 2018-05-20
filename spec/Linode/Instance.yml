@@ -106,6 +106,7 @@ put:
         type: integer
         self: true
     attributes: true
+    optional: true
 delete:
   delete:
     summary: 'Delete Linode'
@@ -131,6 +132,8 @@ post:
         required: true
         type: integer
         self: true
+    attributes: true
+    optional: true
   cancelBackups:
     summary: 'Cancel Backups'
     description: "Cancels the Backup service on the given Linode. Deletes all of this Linode's existing backups forever.\n"
@@ -142,6 +145,8 @@ post:
         required: true
         type: integer
         self: true
+    attributes: true
+    optional: true
   enableBackups:
     summary: 'Enable Backups'
     description: "Enables backups for the specified Linode.\n"
@@ -153,6 +158,8 @@ post:
         required: true
         type: integer
         self: true
+    attributes: true
+    optional: true
   boot:
     summary: 'Boot Linode'
     description: "Boots a Linode you have permission to modify. If no parameters are given, a Config profile\nwill be chosen for this boot based on the following criteria:\n\n* If there is only one Config profile for this Linode, it will be used.\n* If there is more than one Config profile, the last booted config will be used.\n* If there is more than one Config profile and none were the last to be booted (because the\n  Linode was never booted or the last booted config was deleted) an error will be returned.\n"
@@ -164,6 +171,8 @@ post:
         required: true
         type: integer
         self: true
+    attributes: true
+    optional: true
   cloneLinodeInstance:
     summary: 'Clone Linode'
     description: "You can clone your Linode's existing Disks or Configuration profiles to another Linode on your Account. In order for this request to complete successfully, your User must have the `add_linodes` grant. Cloning to a new Linode will incur a charge on your Account.\nIf cloning to an existing Linode, any actions currently running or queued must be completed first before you can clone to it.\n"
@@ -175,6 +184,8 @@ post:
         required: true
         type: integer
         self: true
+    attributes: true
+    optional: true
   addConfig:
     summary: 'Create Configuration Profile'
     description: "Adds a new Configuration profile to a Linode.\n"
@@ -186,6 +197,8 @@ post:
         required: true
         type: integer
         self: true
+    attributes: true
+    optional: true
   addDisk:
     summary: 'Create Disk'
     description: "Adds a new Disk to a Linode. You can optionally create a Disk from an Image (see [/images](/#operation/getImages) for a list of available public images, or use one of your own), and optionally provide a StackScript to deploy with this Disk.\n"
@@ -197,6 +210,8 @@ post:
         required: true
         type: integer
         self: true
+    attributes: true
+    optional: true
   addIP:
     summary: 'Allocate IPv4 Address'
     description: "Allocates a public or private IPv4 address to a Linode. Public IP Addresses, after the one included with each Linode, incur an additional monthly charge. If you need an additional public IP Address you must request one - please [open a support ticket](/#operation/createTicket). You may not add more than one private IPv4 address to a single Linode.\n"
@@ -208,6 +223,8 @@ post:
         required: true
         type: integer
         self: true
+    attributes: true
+    optional: true
   mutate:
     summary: 'Upgrade Linode'
     description: "Linodes created with now-deprecated Types are entitled to a free upgrade to the next generation. A mutating Linode will be allocated any new resources the upgraded Type provides, and will be subsequently restarted if it was currently running.\nIf any actions are currently running or queued, those actions must be completed first before you can initiate a mutate.\n"
@@ -219,6 +236,8 @@ post:
         required: true
         type: integer
         self: true
+    attributes: true
+    optional: true
   reboot:
     summary: 'Reboot Linode'
     description: "Reboots a Linode you have permission to modify. If any actions are currently running or queued, those actions must be completed first before you can initiate a reboot.\n"
@@ -230,6 +249,8 @@ post:
         required: true
         type: integer
         self: true
+    attributes: true
+    optional: true
   rebuild:
     summary: 'Rebuild Linode'
     description: "Rebuilds a Linode you have the `read_write` permission to modify.\nA rebuild will first shut down the Linode, delete all disks and configs on the Linode, and then deploy a new `image` to the Linode with the given attributes. Additionally:\n\n  * Requires an `image` be supplied.\n  * Requires a `root_pass` be supplied to use for the root User's Account.\n  * It is recommended to supply SSH keys for the root User using the\n    `authorized_keys` field.\n"
@@ -241,6 +262,32 @@ post:
         required: true
         type: integer
         self: true
+      image:
+        description: ''
+        type: ''
+        required: false
+      root_pass:
+        description: ''
+        type: ''
+        required: false
+      authorized_keys:
+        description: ''
+        type: ''
+        required: false
+      stackscript_id:
+        description: ''
+        type: ''
+        required: false
+      stackscript_data:
+        description: ''
+        type: ''
+        required: false
+      booted:
+        description: "This field defaults to `true` if the Linode is created with an Image or from a Backup.\nIf it is deployed from an Image or a Backup and you wish it to remain `offline` after deployment, set this to `false`.\n"
+        type: boolean
+        required: false
+    attributes: true
+    optional: true
   rescue:
     summary: 'Boot Linode into Rescue Mode'
     description: "Rescue Mode is a safe environment for performing many system recovery and disk management tasks. Rescue Mode is based on the Finnix recovery distribution, a self-contained and bootable Linux distribution. You can also use Rescue Mode for tasks other than disaster recovery, such as formatting disks to use different filesystems, copying data between disks, and downloading files from a disk via SSH and SFTP.\n* Note that \"sdh\" is reserved and unavailable during rescue.\n"
@@ -252,6 +299,8 @@ post:
         required: true
         type: integer
         self: true
+    attributes: true
+    optional: true
   resize:
     summary: 'Resize Linode'
     description: "Resizes a Linode you have the `read_write` permission to a different Type. If any actions are currently running or queued, those actions must be completed first before you can initiate a resize. Additionally, the following criteria must be met in order to resize a Linode:\n\n  * Any pending free upgrades to the Linode's current Type must be performed\n  before a resize can occur.\n  * The Linode must not have a pending migration.\n  * Your Account cannot have an outstanding balance.\n  * The Linode must not have more disk allocation than the new Type allows.\n    * In that situation, you must first delete or resize the disk to be smaller.\n"
@@ -263,6 +312,8 @@ post:
         required: true
         type: integer
         self: true
+    attributes: true
+    optional: true
   shutdown:
     summary: 'Shut Down Linode'
     description: "Shuts down a Linode you have permission to modify. If any actions are currently running or queued, those actions must be completed first before you can initiate a shutdown.\n"
@@ -274,3 +325,5 @@ post:
         required: true
         type: integer
         self: true
+    attributes: true
+    optional: true

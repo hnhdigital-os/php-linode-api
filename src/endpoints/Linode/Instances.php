@@ -95,12 +95,49 @@ class Instances extends Base
      *   - Disks and Configs must be created manually.
      *   - This is only recommended for advanced use cases.
      *
+     * @param         $image=null            (optional)
+     * @param         $root_pass=null        (optional)
+     * @param         $authorized_keys=null  (optional)
+     * @param         $stackscript_id=null   (optional)
+     * @param         $stackscript_data=null (optional)
+     * @param boolean $booted=null           (optional)This field defaults to `true` if the Linode is created with an Image or from a Backup.
+If it is deployed from an Image or a Backup and you wish it to remain `offline` after deployment, set this to `false`.
+
+     * @param string  $label=null            (optional)The Linode's label is for display purposes only. If no label is provided for a Linode, a default will be assigned.
+Linode labels have the following constraints:
+
+  * Must start with an alpha character.
+  * Must consist of alphanumeric characters, dashes (`-`), and underscores (`_`).
+  * Cannot have two dashes (`--`) or underscores (`__`) in a row.
+
+     * @param string  $group=null            (optional)A deprecated property denoting a group label for this Linode.
+
+     * @param         $type=null             (optional)
+     * @param         $region=null           (optional)
+     * @param int     $backup_id=null        (optional)A Backup ID from another Linode's available backups. Your User must have
+`read_write` access to that Linode, the Backup must have a `status` of
+`successful`, and the Linode must be deployed to the same `region` as the Backup.
+See [/linode/instances/{linodeId}/backups](/#operation/getBackups)
+for a Linode's available backups.
+
+This field and the `image` field are mutually exclusive.
+
+     * @param boolean $backups_enabled=null  (optional)If this field is set to `true`, the created Linode will automatically be
+enrolled in the Linode Backup service. This will incur an additional charge.
+The cost for the Backup service is dependent on the Type of Linode deployed.
+
+Backup pricing is included in the response from [/linodes/types](/#operation/getLinodeTypes)
+
+     * @param int     $swap_size=null        (optional)When deploying from an Image, this field is optional, otherwise it is ignored. This is used to set the swap disk size for the newly-created Linode.
+
+     *
      * @link https://developers.linode.com/api/v4#operation/createLinodeInstance
      *
      * @return mixed
      */
-    public function create()
+    public function create($optional = [])
     {
-        return $this->apiCall('post', '');
+        return $this->apiCall('post', '', ['json' => array_merge([
+        ], $optional)]);
     }
 }

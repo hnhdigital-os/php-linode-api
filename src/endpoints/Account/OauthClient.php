@@ -30,6 +30,7 @@ class OauthClient extends Base
      * @var string
      */
     protected $endpoint = 'account/oauth-clients/%s';
+
     /**
      * Client Id.
      *
@@ -50,7 +51,6 @@ class OauthClient extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.
@@ -115,11 +115,11 @@ class OauthClient extends Base
      *
      * @return mixed
      */
-    public function resetClientSecret()
+    public function resetClientSecret($optional = [])
     {
-        return $this->apiCall('post', '/reset-secret', ['json' => [
+        return $this->apiCall('post', '/reset-secret', ['json' => array_merge([
             'client_id' => $client_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**

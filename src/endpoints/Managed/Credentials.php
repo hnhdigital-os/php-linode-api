@@ -57,12 +57,22 @@ class Credentials extends Base
      * Creates a Managed Credential. A Managed Credential is stored securely to allow Linode special forces to access your
      * Managed Services and resolve issues.
      *
+     * @param int    $id=null       (optional)This Credential's unique ID.
+
+     * @param string $label=null    (optional)The unique label for this Credential. This is for display purposes only.
+
+     * @param string $username=null (optional)The username to use when accessing the Managed Service.
+
+     * @param string $password=null (optional)The password to use when accessing the Managed Service.
+
+     *
      * @link https://developers.linode.com/api/v4#operation/createManagedCredential
      *
      * @return mixed
      */
-    public function create()
+    public function create($optional = [])
     {
-        return $this->apiCall('post', '');
+        return $this->apiCall('post', '', ['json' => array_merge([
+        ], $optional)]);
     }
 }

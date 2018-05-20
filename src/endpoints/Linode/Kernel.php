@@ -30,6 +30,7 @@ class Kernel extends Base
      * @var string
      */
     protected $endpoint = 'linode/kernels/%s';
+
     /**
      * Kernel Id.
      *
@@ -50,7 +51,6 @@ class Kernel extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.

@@ -30,6 +30,7 @@ class Stackscript extends Base
      * @var string
      */
     protected $endpoint = 'linode/stackscripts/%s';
+
     /**
      * Stackscript Id.
      *
@@ -50,7 +51,6 @@ class Stackscript extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.

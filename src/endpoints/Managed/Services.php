@@ -58,12 +58,38 @@ class Services extends Base
      * Creates a Managed Service. Linode Managed will being monitoring this service and reporting and attempting to resolve any
      * Issues.
      *
+     * @param int    $id=null                 (optional)This Service's unique ID.
+
+     * @param string $status=null             (optional)The current status of this Service.
+
+     * @param string $service_type=null       (optional)How this Service is monitored.
+
+     * @param string $label=null              (optional)The label for this Service. This is for display purposes only.
+
+     * @param string $address=null            (optional)The URL at which this Service is monitored.
+
+     * @param int    $timeout=null            (optional)How long to wait, in seconds, for a response before considering the Service to be down.
+
+     * @param string $body=null               (optional)What to expect to find in the response body for the Service to be considered up.
+
+     * @param string $consultation_group=null (optional)The group of ManagedContacts who should be notified or consulted with when an Issue is detected.
+
+     * @param string $notes=null              (optional)Any information relevant to the Service that Linode special forces should know when attempting to resolve Issues.
+
+     * @param string $region=null             (optional)The Region in which this Service is located. This is required if address is a private IP, and may not be set otherwise.
+
+     * @param array  $credentials=[]          (optional)An array of ManagedCredential IDs that should be used when attempting to resolve issues with this Service.
+
+     * @param string $created=null            (optional)When this Managed Service was created.
+     * @param string $updated=null            (optional)When this Managed Service was last updated.
+     *
      * @link https://developers.linode.com/api/v4#operation/createManagedService
      *
      * @return mixed
      */
-    public function create()
+    public function create($optional = [])
     {
-        return $this->apiCall('post', '');
+        return $this->apiCall('post', '', ['json' => array_merge([
+        ], $optional)]);
     }
 }

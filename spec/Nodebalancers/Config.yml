@@ -58,6 +58,7 @@ put:
         required: true
         type: integer
     attributes: true
+    optional: true
 delete:
   delete:
     summary: 'Delete Config'
@@ -88,6 +89,36 @@ post:
         type: integer
         self: true
       config_id:
-        description: 'The ID of the NodeBalancer config to access.'
-        required: true
+        description: "The NodeBalancer Config ID that this Node belongs to.\n"
         type: integer
+        required: false
+      id:
+        description: 'This node''s unique ID.'
+        type: integer
+        required: false
+      address:
+        description: "The private IP Address where this backend can be reached. This _must_ be a private IP address.\n"
+        type: string
+        required: false
+      label:
+        description: "The label for this node.  This is for display purposes only.\n"
+        type: string
+        required: false
+      status:
+        description: "The current status of this node, based on the configured checks of its NodeBalancer Config.\n"
+        type: string
+        required: false
+      weight:
+        description: "Used when picking a backend to serve a request and is not pinned to a single backend yet.  Nodes with a higher weight will receive more traffic.\n"
+        type: integer
+        required: false
+      mode:
+        description: "The mode this NodeBalancer should use when sending traffic to this backend.\n* If set to `accept` this backend is accepting traffic.\n* If set to `reject` this backend will not receive traffic.\n* If set to `drain` this backend will not receive _new_ traffic, but connections already\n  pinned to it will continue to be routed to it.\n"
+        type: string
+        required: false
+      nodebalancer_id:
+        description: "The NodeBalancer ID that this Node belongs to.\n"
+        type: integer
+        required: false
+    attributes: true
+    optional: true

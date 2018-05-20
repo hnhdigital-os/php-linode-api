@@ -61,8 +61,9 @@ class Contacts extends Base
      *
      * @return mixed
      */
-    public function create()
+    public function create($optional = [])
     {
-        return $this->apiCall('post', '');
+        return $this->apiCall('post', '', ['json' => array_merge([
+        ], $optional)]);
     }
 }

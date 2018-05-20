@@ -18,3 +18,5 @@ post:
     description: "Creates a NodeBalancer in the requested Region. This NodeBalancer will not start serving requests until it is configured.\n"
     url: 'https://developers.linode.com/api/v4#operation/createNodeBalancer'
     endpoint: ''
+    attributes: true
+    optional: true

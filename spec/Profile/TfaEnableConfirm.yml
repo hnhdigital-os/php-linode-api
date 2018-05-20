@@ -7,3 +7,5 @@ post:
     description: "Confirms that you can successfully generate Two Factor codes and enables TFA on your Account. Once this is complete, login attempts from untrusted computers will be required to provide a Two Factor code before they are successful.\n"
     url: 'https://developers.linode.com/api/v4#operation/tfaConfirm'
     endpoint: ''
+    attributes: true
+    optional: true

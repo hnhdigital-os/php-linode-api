@@ -181,22 +181,20 @@ function generate_parameter_comments($method_settings)
 
     // Required parameters.
     foreach (array_get($method_settings, 'parameters', []) as $name => $settings) {
-        $entries[] = [
-            '     * @param '.convert_paramater_type(array_get($settings, 'type')),
-            "\$$name",
-            array_get($settings, 'description'),
-        ];
-        $count++;
-    }
-
-    // Optional parameters with default values.
-    foreach (array_get($method_settings, 'optional-parameters', []) as $name => $settings) {
-        $default_value = get_default_value($settings, ['with-equal' => true, 'exclude-null' => true]);
-        $entries[] = [
-            '     * @param '.convert_paramater_type(array_get($settings, 'type')),
-            "\$$name".$default_value,
-            '(optional)'.array_get($settings, 'description'),
-        ];
+        if (array_get($settings, 'required', false)) {
+            $entries[] = [
+                '     * @param '.convert_paramater_type(array_get($settings, 'type')),
+                "\$$name",
+                array_get($settings, 'description'),
+            ];
+        } else {
+            $default_value = get_default_value($settings, ['with-equal' => true, 'exclude-null' => true]);
+            $entries[] = [
+                '     * @param '.convert_paramater_type(array_get($settings, 'type')),
+                "\$$name".$default_value,
+                '(optional)'.array_get($settings, 'description'),
+            ];
+        }
         $count++;
     }
 
@@ -243,12 +241,9 @@ function generate_parameter_list($method_settings)
             continue;
         }
 
-        $result[] = "\$$name";
-    }
-
-    // Optional parameters with default values.
-    foreach (array_get($method_settings, 'optional-parameters', []) as $name => $settings) {
-        $result[] = "\$$name = ".get_default_value($settings);
+        if (array_get($settings, 'required', false)) {
+            $result[] = "\$$name";
+        }
     }
 
     if (array_has($method_settings, 'attributes') || array_has($method_settings, 'optional')) {
@@ -283,7 +278,7 @@ function get_default_value($parameter_setting, $options = [])
             break;
     }
 
-    if (!$no_quotes && empty($default_value)) {
+    if ((!$no_quotes && empty($default_value)) || $default_value === 'null') {
         $default_value = 'null';
         $no_quotes = true;
     }
@@ -366,11 +361,11 @@ function generate_new_class_parameter_list($method_settings)
     $result = [];
 
     foreach (array_get($method_settings, 'parameters', []) as $name => $settings) {
-        $result[] = '$'.(array_get($settings, 'self', false) ? 'this->' : '')."$name";
-    }
-
-    foreach (array_get($method_settings, 'optional-parameters', []) as $name => $settings) {
-        $result[] = "\$$name";
+        if (array_get($settings, 'required', false)) {
+            $result[] = '$'.(array_get($settings, 'self', false) ? 'this->' : '')."$name";
+        } else {
+            $result[] = "\$$name";
+        }
     }
 
     return implode(', ', $result);
@@ -415,11 +410,9 @@ function generate_put_function_payload($method_settings)
     $entries = [];
 
     foreach (array_get($method_settings, 'parameters', []) as $name => $settings) {
-        $entries[] = ["            '".$name."'", "=> \$$name,"];
-    }
-
-    foreach (array_get($method_settings, 'optional-parameters', []) as $name => $settings) {
-        $entries[] = ["            '".$name."'", "=> \$$name,"];
+        if (array_get($settings, 'required', false)) {
+            $entries[] = ["            '".$name."'", "=> \$$name,"];
+        }
     }
 
     if (count($entries)) {
@@ -449,11 +442,9 @@ function generate_post_function_payload($method_settings)
     $entries = [];
 
     foreach (array_get($method_settings, 'parameters', []) as $name => $settings) {
-        $entries[] = ["            '".$name."'", "=> \$$name,"];
-    }
-
-    foreach (array_get($method_settings, 'optional-parameters', []) as $name => $settings) {
-        $entries[] = ["            '".$name."'", "=> \$$name,"];
+        if (array_get($settings, 'required', false)) {
+            $entries[] = ["            '".$name."'", "=> \$$name,"];
+        }
     }
 
     [$part1_length, $part2_length, $result] = code_alignment($entries);
@@ -485,7 +476,7 @@ function factory_parameters($method_settings)
     // Search returns a model as the result.
     if (array_has($method_settings, 'factory')) {
         $class = array_get($method_settings, 'factory.class');
-        $parameters = implode("', '", array_get($method_settings, 'factory.parameters'));
+        $parameters = implode("', '", array_get($method_settings, 'factory.parameters', []));
 
         return "['class' => '$class', 'parameters' => ['$parameters']]";
     }
@@ -581,4 +572,19 @@ function convert_paramater_type($type)
     }
 
     return $type;
+}
+
+/**
+ * Load properties list.
+ *
+ * @param array $spec 
+ * @param string $path
+ *
+ * @return array
+ */
+function load_spec_properties($spec, $path)
+{
+    $path = str_replace('/', '.', ltrim($path, '#/'));
+
+    return array_get($spec, $path.'.properties', []);
 }

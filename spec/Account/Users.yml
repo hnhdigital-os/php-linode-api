@@ -18,3 +18,18 @@ post:
     description: "Creates a User on your Account. Once created, the User will be able to log in and access portions of your Account. Access is determined by whether or not they are restricted, and what grants they have been given.\n"
     url: 'https://developers.linode.com/api/v4#operation/createUser'
     endpoint: ''
+    parameters:
+      username:
+        description: "This User's username. This is used for logging in, and may also be displayed alongside actions the User performs (for example, in Events or public StackScripts).\n"
+        type: string
+        required: false
+      email:
+        description: "The email address for this User, for account management communications, and may be used for other communications as configured.\n"
+        type: string
+        required: false
+      restricted:
+        description: "If true, this User must be granted access to perform actions or access entities on this Account. See [/account/users/{username}/grants](/#operation/getUserGrants) for details on how to configure grants for a restricted User.\n"
+        type: boolean
+        required: false
+    attributes: true
+    optional: true

@@ -49,8 +49,9 @@ class TfaDisable extends Base
      *
      * @return mixed
      */
-    public function tfaDisable()
+    public function tfaDisable($optional = [])
     {
-        return $this->apiCall('post', '');
+        return $this->apiCall('post', '', ['json' => array_merge([
+        ], $optional)]);
     }
 }

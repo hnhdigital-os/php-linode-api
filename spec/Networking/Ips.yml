@@ -18,3 +18,5 @@ post:
     description: "Allocates a new IPv4 Address on your Account. The Linode must be configured to support additional addresses - please [open a support ticket](/#operation/createTicket) requesting additional addresses before attempting allocation.\n"
     url: 'https://developers.linode.com/api/v4#operation/allocateIP'
     endpoint: ''
+    attributes: true
+    optional: true

@@ -30,6 +30,7 @@ class Backup extends Base
      * @var string
      */
     protected $endpoint = 'linode/instances/%s/backups/%s';
+
     /**
      * Linode Id.
      *
@@ -50,7 +51,6 @@ class Backup extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.
@@ -85,11 +85,11 @@ class Backup extends Base
      *
      * @return mixed
      */
-    public function restoreBackup($backup_id)
+    public function restoreBackup($backup_id, $optional = [])
     {
-        return $this->apiCall('post', '/restore', ['json' => [
+        return $this->apiCall('post', '/restore', ['json' => array_merge([
             'linode_id' => $linode_id,
             'backup_id' => $backup_id,
-        ]]);
+        ], $optional)]);
     }
 }

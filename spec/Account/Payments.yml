@@ -18,3 +18,5 @@ post:
     description: "Makes a Payment to your Account via credit card. This will charge your credit card the requested amount.\n"
     url: 'https://developers.linode.com/api/v4#operation/createPayment'
     endpoint: ''
+    attributes: true
+    optional: true

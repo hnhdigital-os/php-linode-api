@@ -30,6 +30,7 @@ class Region extends Base
      * @var string
      */
     protected $endpoint = 'regions/%s';
+
     /**
      * Region Id.
      *
@@ -50,7 +51,6 @@ class Region extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.

@@ -30,6 +30,7 @@ class Ticket extends Base
      * @var string
      */
     protected $endpoint = 'support/tickets/%s';
+
     /**
      * Ticket Id.
      *
@@ -50,7 +51,6 @@ class Ticket extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.
@@ -98,11 +98,11 @@ class Ticket extends Base
      *
      * @return mixed
      */
-    public function createTicketAttachment()
+    public function createTicketAttachment($optional = [])
     {
-        return $this->apiCall('post', '/attachments', ['json' => [
+        return $this->apiCall('post', '/attachments', ['json' => array_merge([
             'ticket_id' => $ticket_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**
@@ -114,10 +114,10 @@ class Ticket extends Base
      *
      * @return mixed
      */
-    public function createTicketReply()
+    public function createTicketReply($optional = [])
     {
-        return $this->apiCall('post', '/replies', ['json' => [
+        return $this->apiCall('post', '/replies', ['json' => array_merge([
             'ticket_id' => $ticket_id,
-        ]]);
+        ], $optional)]);
     }
 }

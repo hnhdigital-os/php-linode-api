@@ -30,6 +30,7 @@ class Image extends Base
      * @var string
      */
     protected $endpoint = 'images/%s';
+
     /**
      * Image Id.
      *
@@ -50,7 +51,6 @@ class Image extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.

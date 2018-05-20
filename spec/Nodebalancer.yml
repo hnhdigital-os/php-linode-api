@@ -46,6 +46,7 @@ put:
         type: integer
         self: true
     attributes: true
+    optional: true
 delete:
   delete:
     summary: 'Delete NodeBalancer'
@@ -71,3 +72,5 @@ post:
         required: true
         type: integer
         self: true
+    attributes: true
+    optional: true

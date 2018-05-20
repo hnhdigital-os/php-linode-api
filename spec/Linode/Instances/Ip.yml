@@ -38,6 +38,7 @@ put:
         required: true
         type: string
     attributes: true
+    optional: true
 delete:
   delete:
     summary: 'Delete IPv4 Address'

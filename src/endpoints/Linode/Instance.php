@@ -30,6 +30,7 @@ class Instance extends Base
      * @var string
      */
     protected $endpoint = 'linode/instances/%s';
+
     /**
      * Linode Id.
      *
@@ -50,7 +51,6 @@ class Instance extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.
@@ -171,11 +171,11 @@ class Instance extends Base
      *
      * @return mixed
      */
-    public function createSnapshot()
+    public function createSnapshot($optional = [])
     {
-        return $this->apiCall('post', '/backups', ['json' => [
+        return $this->apiCall('post', '/backups', ['json' => array_merge([
             'linode_id' => $linode_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**
@@ -187,11 +187,11 @@ class Instance extends Base
      *
      * @return mixed
      */
-    public function cancelBackups()
+    public function cancelBackups($optional = [])
     {
-        return $this->apiCall('post', '/backups/cancel', ['json' => [
+        return $this->apiCall('post', '/backups/cancel', ['json' => array_merge([
             'linode_id' => $linode_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**
@@ -203,11 +203,11 @@ class Instance extends Base
      *
      * @return mixed
      */
-    public function enableBackups()
+    public function enableBackups($optional = [])
     {
-        return $this->apiCall('post', '/backups/enable', ['json' => [
+        return $this->apiCall('post', '/backups/enable', ['json' => array_merge([
             'linode_id' => $linode_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**
@@ -225,11 +225,11 @@ class Instance extends Base
      *
      * @return mixed
      */
-    public function boot()
+    public function boot($optional = [])
     {
-        return $this->apiCall('post', '/boot', ['json' => [
+        return $this->apiCall('post', '/boot', ['json' => array_merge([
             'linode_id' => $linode_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**
@@ -245,11 +245,11 @@ class Instance extends Base
      *
      * @return mixed
      */
-    public function cloneLinodeInstance()
+    public function cloneLinodeInstance($optional = [])
     {
-        return $this->apiCall('post', '/clone', ['json' => [
+        return $this->apiCall('post', '/clone', ['json' => array_merge([
             'linode_id' => $linode_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**
@@ -261,11 +261,11 @@ class Instance extends Base
      *
      * @return mixed
      */
-    public function addConfig()
+    public function addConfig($optional = [])
     {
-        return $this->apiCall('post', '/configs', ['json' => [
+        return $this->apiCall('post', '/configs', ['json' => array_merge([
             'linode_id' => $linode_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**
@@ -278,11 +278,11 @@ class Instance extends Base
      *
      * @return mixed
      */
-    public function addDisk()
+    public function addDisk($optional = [])
     {
-        return $this->apiCall('post', '/disks', ['json' => [
+        return $this->apiCall('post', '/disks', ['json' => array_merge([
             'linode_id' => $linode_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**
@@ -296,11 +296,11 @@ class Instance extends Base
      *
      * @return mixed
      */
-    public function addIP()
+    public function addIP($optional = [])
     {
-        return $this->apiCall('post', '/ips', ['json' => [
+        return $this->apiCall('post', '/ips', ['json' => array_merge([
             'linode_id' => $linode_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**
@@ -315,11 +315,11 @@ class Instance extends Base
      *
      * @return mixed
      */
-    public function mutate()
+    public function mutate($optional = [])
     {
-        return $this->apiCall('post', '/mutate', ['json' => [
+        return $this->apiCall('post', '/mutate', ['json' => array_merge([
             'linode_id' => $linode_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**
@@ -332,11 +332,11 @@ class Instance extends Base
      *
      * @return mixed
      */
-    public function reboot()
+    public function reboot($optional = [])
     {
-        return $this->apiCall('post', '/reboot', ['json' => [
+        return $this->apiCall('post', '/reboot', ['json' => array_merge([
             'linode_id' => $linode_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**
@@ -349,17 +349,25 @@ class Instance extends Base
      *   - It is recommended to supply SSH keys for the root User using the
      *     `authorized_keys` field.
      *
-     * @param int $linode_id ID of the Linode to rebuild.
+     * @param int     $linode_id             ID of the Linode to rebuild.
+     * @param         $image=null            (optional)
+     * @param         $root_pass=null        (optional)
+     * @param         $authorized_keys=null  (optional)
+     * @param         $stackscript_id=null   (optional)
+     * @param         $stackscript_data=null (optional)
+     * @param boolean $booted=null           (optional)This field defaults to `true` if the Linode is created with an Image or from a Backup.
+If it is deployed from an Image or a Backup and you wish it to remain `offline` after deployment, set this to `false`.
+
      *
      * @link https://developers.linode.com/api/v4#operation/rebuildLinodeInstance
      *
      * @return mixed
      */
-    public function rebuild()
+    public function rebuild($optional = [])
     {
-        return $this->apiCall('post', '/rebuild', ['json' => [
+        return $this->apiCall('post', '/rebuild', ['json' => array_merge([
             'linode_id' => $linode_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**
@@ -375,11 +383,11 @@ class Instance extends Base
      *
      * @return mixed
      */
-    public function rescue()
+    public function rescue($optional = [])
     {
-        return $this->apiCall('post', '/rescue', ['json' => [
+        return $this->apiCall('post', '/rescue', ['json' => array_merge([
             'linode_id' => $linode_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**
@@ -400,11 +408,11 @@ class Instance extends Base
      *
      * @return mixed
      */
-    public function resize()
+    public function resize($optional = [])
     {
-        return $this->apiCall('post', '/resize', ['json' => [
+        return $this->apiCall('post', '/resize', ['json' => array_merge([
             'linode_id' => $linode_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**
@@ -417,11 +425,11 @@ class Instance extends Base
      *
      * @return mixed
      */
-    public function shutdown()
+    public function shutdown($optional = [])
     {
-        return $this->apiCall('post', '/shutdown', ['json' => [
+        return $this->apiCall('post', '/shutdown', ['json' => array_merge([
             'linode_id' => $linode_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**

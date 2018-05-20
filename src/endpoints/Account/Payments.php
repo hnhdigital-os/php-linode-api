@@ -60,8 +60,9 @@ class Payments extends Base
      *
      * @return mixed
      */
-    public function createPayment()
+    public function createPayment($optional = [])
     {
-        return $this->apiCall('post', '');
+        return $this->apiCall('post', '', ['json' => array_merge([
+        ], $optional)]);
     }
 }

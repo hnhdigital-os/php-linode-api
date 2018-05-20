@@ -50,6 +50,7 @@ put:
         required: true
         type: integer
     attributes: true
+    optional: true
 delete:
   delete:
     summary: 'Delete Node'

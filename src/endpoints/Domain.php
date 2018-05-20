@@ -30,6 +30,7 @@ class Domain extends Base
      * @var string
      */
     protected $endpoint = 'domains/%s';
+
     /**
      * Domain Id.
      *
@@ -50,7 +51,6 @@ class Domain extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.
@@ -112,11 +112,11 @@ class Domain extends Base
      *
      * @return mixed
      */
-    public function createRecord()
+    public function createRecord($optional = [])
     {
-        return $this->apiCall('post', '/records', ['json' => [
+        return $this->apiCall('post', '/records', ['json' => array_merge([
             'domain_id' => $domain_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**

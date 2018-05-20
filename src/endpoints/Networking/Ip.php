@@ -30,6 +30,7 @@ class Ip extends Base
      * @var string
      */
     protected $endpoint = 'networking/ips/%s';
+
     /**
      * Address.
      *
@@ -50,7 +51,6 @@ class Ip extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.

@@ -30,6 +30,7 @@ class Payment extends Base
      * @var string
      */
     protected $endpoint = 'account/payments/%s';
+
     /**
      * Payment Id.
      *
@@ -50,7 +51,6 @@ class Payment extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.

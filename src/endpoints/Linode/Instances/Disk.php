@@ -30,6 +30,7 @@ class Disk extends Base
      * @var string
      */
     protected $endpoint = 'linode/instances/%s/disks/%s';
+
     /**
      * Linode Id.
      *
@@ -50,7 +51,6 @@ class Disk extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.
@@ -100,12 +100,12 @@ class Disk extends Base
      *
      * @return mixed
      */
-    public function resetDiskPassword($disk_id)
+    public function resetDiskPassword($disk_id, $optional = [])
     {
-        return $this->apiCall('post', '/password', ['json' => [
+        return $this->apiCall('post', '/password', ['json' => array_merge([
             'linode_id' => $linode_id,
             'disk_id'   => $disk_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**
@@ -122,12 +122,12 @@ class Disk extends Base
      *
      * @return mixed
      */
-    public function resizeDisk($disk_id)
+    public function resizeDisk($disk_id, $optional = [])
     {
-        return $this->apiCall('post', '/resize', ['json' => [
+        return $this->apiCall('post', '/resize', ['json' => array_merge([
             'linode_id' => $linode_id,
             'disk_id'   => $disk_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**

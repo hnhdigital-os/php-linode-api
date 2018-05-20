@@ -61,8 +61,9 @@ class Ips extends Base
      *
      * @return mixed
      */
-    public function allocateIP()
+    public function allocateIP($optional = [])
     {
-        return $this->apiCall('post', '');
+        return $this->apiCall('post', '', ['json' => array_merge([
+        ], $optional)]);
     }
 }

@@ -18,3 +18,50 @@ post:
     description: "Creates a private gold-master Image from a Linode Disk. There is no additional charge to store Images for Linode users.\nImages are limited to three per Account.\n"
     url: 'https://developers.linode.com/api/v4#operation/createImage'
     endpoint: ''
+    parameters:
+      id:
+        description: 'The unique ID of this Image.'
+        type: string
+        required: false
+      label:
+        description: "A short description of the Image. Labels cannot contain special characters.\n"
+        type: string
+        required: false
+      created:
+        description: 'When this Image was created.'
+        type: string
+        required: false
+      created_by:
+        description: "The name of the User who created this Image.\n"
+        type: string
+        required: false
+      deprecated:
+        description: "Whether or not this Image is deprecated. Will only be True for deprecated public Images.\n"
+        type: boolean
+        required: false
+      description:
+        description: 'An optional detailed description of this Image.'
+        type: string
+        required: false
+      is_public:
+        description: 'True if the Image is public.'
+        type: boolean
+        required: false
+      size:
+        description: "The minimum size this Image needs to deploy. Size is in MB.\n"
+        type: integer
+        required: false
+      type:
+        description: "How the Image was created. \"Manual\" Images can be created at any time. \"Automatic\" images are created automatically from a deleted Linode.\n"
+        type: string
+        required: false
+      vendor:
+        description: "The upstream distribution vendor. `None` for private Images.\n"
+        type: string
+        required: false
+      disk_id:
+        description: "The ID of the Linode Disk that this Image will be created from.\n"
+        type: integer
+        required: false
+    attributes: true
+    optional: true

@@ -18,3 +18,5 @@ post:
     description: "Open a Support Ticket.\nOnly one of the ID attributes (`linode_id`, `domain_id`, etc.) can be set on a single Support Ticket.\n"
     url: 'https://developers.linode.com/api/v4#operation/createTicket'
     endpoint: ''
+    attributes: true
+    optional: true

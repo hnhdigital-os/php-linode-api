@@ -30,6 +30,7 @@ class Type extends Base
      * @var string
      */
     protected $endpoint = 'linode/types/%s';
+
     /**
      * Type Id.
      *
@@ -50,7 +51,6 @@ class Type extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.

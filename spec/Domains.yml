@@ -18,3 +18,5 @@ post:
     description: "Adds a new Domain to Linode's DNS Manager. Linode is not a registrar, and you must own the domain before adding it here. Be sure to point your registrar to Linode's nameservers so that the records hosted here are used.\n"
     url: 'https://developers.linode.com/api/v4#operation/createDomain'
     endpoint: ''
+    attributes: true
+    optional: true

@@ -61,12 +61,32 @@ class Images extends Base
      * Creates a private gold-master Image from a Linode Disk. There is no additional charge to store Images for Linode users.
      * Images are limited to three per Account.
      *
+     * @param string  $id=null          (optional)The unique ID of this Image.
+     * @param string  $label=null       (optional)A short description of the Image. Labels cannot contain special characters.
+
+     * @param string  $created=null     (optional)When this Image was created.
+     * @param string  $created_by=null  (optional)The name of the User who created this Image.
+
+     * @param boolean $deprecated=null  (optional)Whether or not this Image is deprecated. Will only be True for deprecated public Images.
+
+     * @param string  $description=null (optional)An optional detailed description of this Image.
+     * @param boolean $is_public=null   (optional)True if the Image is public.
+     * @param int     $size=null        (optional)The minimum size this Image needs to deploy. Size is in MB.
+
+     * @param string  $type=null        (optional)How the Image was created. "Manual" Images can be created at any time. "Automatic" images are created automatically from a deleted Linode.
+
+     * @param string  $vendor=null      (optional)The upstream distribution vendor. `None` for private Images.
+
+     * @param int     $disk_id=null     (optional)The ID of the Linode Disk that this Image will be created from.
+
+     *
      * @link https://developers.linode.com/api/v4#operation/createImage
      *
      * @return mixed
      */
-    public function create()
+    public function create($optional = [])
     {
-        return $this->apiCall('post', '');
+        return $this->apiCall('post', '', ['json' => array_merge([
+        ], $optional)]);
     }
 }

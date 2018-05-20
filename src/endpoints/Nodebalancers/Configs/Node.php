@@ -30,6 +30,7 @@ class Node extends Base
      * @var string
      */
     protected $endpoint = 'nodebalancers/%s/configs/%s/nodes/%s';
+
     /**
      * Node Balancer Id.
      *
@@ -56,7 +57,6 @@ class Node extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.

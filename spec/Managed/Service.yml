@@ -30,6 +30,7 @@ put:
         type: integer
         self: true
     attributes: true
+    optional: true
 delete:
   delete:
     summary: 'Delete Managed Service'
@@ -55,6 +56,8 @@ post:
         required: true
         type: integer
         self: true
+    attributes: true
+    optional: true
   enable:
     summary: 'Enable Managed Service'
     description: "Enables monitoring of a Managed Service.\n"
@@ -66,3 +69,5 @@ post:
         required: true
         type: integer
         self: true
+    attributes: true
+    optional: true

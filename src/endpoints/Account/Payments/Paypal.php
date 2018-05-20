@@ -50,8 +50,9 @@ class Paypal extends Base
      *
      * @return mixed
      */
-    public function createPayPalPayment()
+    public function createPayPalPayment($optional = [])
     {
-        return $this->apiCall('post', '');
+        return $this->apiCall('post', '', ['json' => array_merge([
+        ], $optional)]);
     }
 }

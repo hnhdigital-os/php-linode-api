@@ -30,6 +30,7 @@ class Volume extends Base
      * @var string
      */
     protected $endpoint = 'volumes/%s';
+
     /**
      * Volume Id.
      *
@@ -50,7 +51,6 @@ class Volume extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.
@@ -100,11 +100,11 @@ class Volume extends Base
      *
      * @return mixed
      */
-    public function attach()
+    public function attach($optional = [])
     {
-        return $this->apiCall('post', '/attach', ['json' => [
+        return $this->apiCall('post', '/attach', ['json' => array_merge([
             'volume_id' => $volume_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**
@@ -118,11 +118,11 @@ class Volume extends Base
      *
      * @return mixed
      */
-    public function cloneVolume()
+    public function cloneVolume($optional = [])
     {
-        return $this->apiCall('post', '/clone', ['json' => [
+        return $this->apiCall('post', '/clone', ['json' => array_merge([
             'volume_id' => $volume_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**
@@ -135,11 +135,11 @@ class Volume extends Base
      *
      * @return mixed
      */
-    public function detach()
+    public function detach($optional = [])
     {
-        return $this->apiCall('post', '/detach', ['json' => [
+        return $this->apiCall('post', '/detach', ['json' => array_merge([
             'volume_id' => $volume_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**
@@ -153,11 +153,11 @@ class Volume extends Base
      *
      * @return mixed
      */
-    public function resize()
+    public function resize($optional = [])
     {
-        return $this->apiCall('post', '/resize', ['json' => [
+        return $this->apiCall('post', '/resize', ['json' => array_merge([
             'volume_id' => $volume_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**

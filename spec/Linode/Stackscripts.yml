@@ -19,3 +19,5 @@ post:
     description: "Creates a StackScript in your Account.\n"
     url: 'https://developers.linode.com/api/v4#operation/addStackScript'
     endpoint: ''
+    attributes: true
+    optional: true

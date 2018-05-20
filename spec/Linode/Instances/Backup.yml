@@ -38,3 +38,5 @@ post:
         description: 'The ID of the Backup to restore.'
         required: true
         type: integer
+    attributes: true
+    optional: true

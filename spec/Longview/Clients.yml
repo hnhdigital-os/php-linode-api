@@ -18,3 +18,5 @@ post:
     description: "Creates a Longview Client.  This Client will not begin monitoring the status of your server until you configure the Longview Client application on your Linode using the returning `install_code` and `api_key`.\n"
     url: 'https://developers.linode.com/api/v4#operation/createLongviewClient'
     endpoint: ''
+    attributes: true
+    optional: true

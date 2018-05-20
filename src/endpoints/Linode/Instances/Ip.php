@@ -30,6 +30,7 @@ class Ip extends Base
      * @var string
      */
     protected $endpoint = 'linode/instances/%s/ips/%s';
+
     /**
      * Linode Id.
      *
@@ -50,7 +51,6 @@ class Ip extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.

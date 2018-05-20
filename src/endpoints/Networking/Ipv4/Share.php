@@ -49,9 +49,10 @@ class Share extends Base
      *
      * @return mixed
      */
-    public function shareIPs()
+    public function shareIPs($optional = [])
     {
-        $result = $this->apiCall('post', '');
+        $result = $this->apiCall('post', '', ['json' => array_merge([
+        ], $optional)]);
 
         return $this->factory($result, ['class' => 'Share\I\P', 'parameters' => ['id']]);
     }

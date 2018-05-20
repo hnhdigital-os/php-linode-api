@@ -30,6 +30,7 @@ put:
         type: integer
         self: true
     attributes: true
+    optional: true
 delete:
   delete:
     summary: 'Delete Longview Client'

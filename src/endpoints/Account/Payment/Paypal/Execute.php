@@ -49,8 +49,9 @@ class Execute extends Base
      *
      * @return mixed
      */
-    public function executePayPalPayment()
+    public function executePayPalPayment($optional = [])
     {
-        return $this->apiCall('post', '');
+        return $this->apiCall('post', '', ['json' => array_merge([
+        ], $optional)]);
     }
 }

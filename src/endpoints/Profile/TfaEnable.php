@@ -50,8 +50,9 @@ class TfaEnable extends Base
      *
      * @return mixed
      */
-    public function tfaEnable()
+    public function tfaEnable($optional = [])
     {
-        return $this->apiCall('post', '');
+        return $this->apiCall('post', '', ['json' => array_merge([
+        ], $optional)]);
     }
 }

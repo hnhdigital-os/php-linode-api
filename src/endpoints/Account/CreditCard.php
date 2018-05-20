@@ -50,8 +50,9 @@ class CreditCard extends Base
      *
      * @return mixed
      */
-    public function createCreditCard()
+    public function createCreditCard($optional = [])
     {
-        return $this->apiCall('post', '');
+        return $this->apiCall('post', '', ['json' => array_merge([
+        ], $optional)]);
     }
 }

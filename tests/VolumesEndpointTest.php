@@ -81,8 +81,9 @@ class VolumesEndpointTest extends BaseTest
         // Setup test server at path and with response data.
         $this->mockPostRequest('/volumes', array_get($this->data, 'data.0'));
 
-        $volumes = new Volumes();
-        $response = $volumes->create('us-east-1a', 'my-volume');
+        $response = (new Volumes())->create('my-volume', [
+            'region' =>'us-east-1a', 
+        ]);
 
         $request_body = $this->getRequestBody();
 

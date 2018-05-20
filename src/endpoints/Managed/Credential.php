@@ -30,6 +30,7 @@ class Credential extends Base
      * @var string
      */
     protected $endpoint = 'managed/credentials/%s';
+
     /**
      * Credential Id.
      *
@@ -50,7 +51,6 @@ class Credential extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.
@@ -99,10 +99,10 @@ class Credential extends Base
      *
      * @return mixed
      */
-    public function delete()
+    public function delete($optional = [])
     {
-        return $this->apiCall('post', '/revoke', ['json' => [
+        return $this->apiCall('post', '/revoke', ['json' => array_merge([
             'credential_id' => $credential_id,
-        ]]);
+        ], $optional)]);
     }
 }

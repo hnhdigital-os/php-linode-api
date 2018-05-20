@@ -30,4 +30,5 @@ put:
         type: string
         self: true
     attributes: true
+    optional: true
 fillable: true

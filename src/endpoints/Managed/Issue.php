@@ -30,6 +30,7 @@ class Issue extends Base
      * @var string
      */
     protected $endpoint = 'managed/issues/%s';
+
     /**
      * Issue Id.
      *
@@ -50,7 +51,6 @@ class Issue extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.

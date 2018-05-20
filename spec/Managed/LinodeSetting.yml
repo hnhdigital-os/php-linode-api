@@ -30,4 +30,5 @@ put:
         type: integer
         self: true
     attributes: true
+    optional: true
 fillable: true

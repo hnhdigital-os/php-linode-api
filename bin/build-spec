@@ -132,7 +132,6 @@ foreach ($spec_document['paths'] as $path => $details) {
         }
 
         $parameters = [];
-        $optional_parameters = [];
 
         // Parameters.
         foreach (array_get($details, 'parameters', []) as $parameter) {
@@ -156,6 +155,42 @@ foreach ($spec_document['paths'] as $path => $details) {
             }
         }
 
+
+        if ($method === 'post') {
+
+            $schema = array_get($method_details, 'requestBody.content.application/json.schema', '');
+            $required = [];
+            $properties = [];
+
+            if (array_has($schema, '$ref')) {
+                $properties = load_spec_properties($schema, array_get($schema, '$ref', ''));
+            } else {
+
+                foreach (array_get($schema, 'allOf', []) as $entry) {
+
+                    if (array_has($entry, '$ref')) {
+                        $properties += load_spec_properties($spec_document, array_get($entry, '$ref', ''));
+                    }
+
+                    if (array_has($entry, 'properties')) {
+                        $properties += array_get($entry, 'properties', []);
+                    }
+
+                    if (array_has($entry, 'required')) {
+                        $required += array_get($entry, 'required', []);
+                    }
+                }
+            }
+
+            foreach ($properties as $property_name => $property_details) {
+                $parameters[$property_name] = [
+                    'description' => array_get($property_details, 'description', ''),
+                    'type'        => array_get($property_details, 'type', ''),
+                    'required'    => in_array($property_name, $required),
+                ];
+            }
+        }
+
         $config[$method][$endpoint_method] = [
             'summary'             => $method_details['summary'],
             'description'         => $method_details['description'],
@@ -164,8 +199,9 @@ foreach ($spec_document['paths'] as $path => $details) {
             'parameters'          => $parameters,
         ];
 
-        if ($method == 'put') {
+        if ($method == 'put' || $method == 'post') {
             $config[$method][$endpoint_method]['attributes'] = true;
+            $config[$method][$endpoint_method]['optional'] = true;
         }
 
         // This method provides a collection/paginated results, so we'll force search mode.

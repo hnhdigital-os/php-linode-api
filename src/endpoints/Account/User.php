@@ -30,6 +30,7 @@ class User extends Base
      * @var string
      */
     protected $endpoint = 'account/users/%s';
+
     /**
      * Username.
      *
@@ -50,7 +51,6 @@ class User extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.

@@ -30,6 +30,7 @@ class App extends Base
      * @var string
      */
     protected $endpoint = 'profile/apps/%s';
+
     /**
      * App Id.
      *
@@ -50,7 +51,6 @@ class App extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.

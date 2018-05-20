@@ -30,6 +30,7 @@ class Invoice extends Base
      * @var string
      */
     protected $endpoint = 'account/invoices/%s';
+
     /**
      * Invoice Id.
      *
@@ -50,7 +51,6 @@ class Invoice extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.

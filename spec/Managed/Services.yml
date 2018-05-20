@@ -18,3 +18,58 @@ post:
     description: "Creates a Managed Service. Linode Managed will being monitoring this service and reporting and attempting to resolve any Issues.\n"
     url: 'https://developers.linode.com/api/v4#operation/createManagedService'
     endpoint: ''
+    parameters:
+      id:
+        description: "This Service's unique ID.\n"
+        type: integer
+        required: false
+      status:
+        description: "The current status of this Service.\n"
+        type: string
+        required: false
+      service_type:
+        description: "How this Service is monitored.\n"
+        type: string
+        required: false
+      label:
+        description: "The label for this Service. This is for display purposes only.\n"
+        type: string
+        required: false
+      address:
+        description: "The URL at which this Service is monitored.\n"
+        type: string
+        required: false
+      timeout:
+        description: "How long to wait, in seconds, for a response before considering the Service to be down.\n"
+        type: integer
+        required: false
+      body:
+        description: "What to expect to find in the response body for the Service to be considered up.\n"
+        type: string
+        required: false
+      consultation_group:
+        description: "The group of ManagedContacts who should be notified or consulted with when an Issue is detected.\n"
+        type: string
+        required: false
+      notes:
+        description: "Any information relevant to the Service that Linode special forces should know when attempting to resolve Issues.\n"
+        type: string
+        required: false
+      region:
+        description: "The Region in which this Service is located. This is required if address is a private IP, and may not be set otherwise.\n"
+        type: string
+        required: false
+      credentials:
+        description: "An array of ManagedCredential IDs that should be used when attempting to resolve issues with this Service.\n"
+        type: array
+        required: false
+      created:
+        description: 'When this Managed Service was created.'
+        type: string
+        required: false
+      updated:
+        description: 'When this Managed Service was last updated.'
+        type: string
+        required: false
+    attributes: true
+    optional: true

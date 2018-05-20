@@ -30,6 +30,7 @@ class Event extends Base
      * @var string
      */
     protected $endpoint = 'account/events/%s';
+
     /**
      * Event Id.
      *
@@ -50,7 +51,6 @@ class Event extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.
@@ -84,11 +84,11 @@ class Event extends Base
      *
      * @return mixed
      */
-    public function eventRead()
+    public function eventRead($optional = [])
     {
-        return $this->apiCall('post', '/read', ['json' => [
+        return $this->apiCall('post', '/read', ['json' => array_merge([
             'event_id' => $event_id,
-        ]]);
+        ], $optional)]);
     }
 
     /**
@@ -100,10 +100,10 @@ class Event extends Base
      *
      * @return mixed
      */
-    public function eventSeen()
+    public function eventSeen($optional = [])
     {
-        return $this->apiCall('post', '/seen', ['json' => [
+        return $this->apiCall('post', '/seen', ['json' => array_merge([
             'event_id' => $event_id,
-        ]]);
+        ], $optional)]);
     }
 }

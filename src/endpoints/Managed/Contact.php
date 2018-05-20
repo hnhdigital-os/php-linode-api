@@ -30,6 +30,7 @@ class Contact extends Base
      * @var string
      */
     protected $endpoint = 'managed/contacts/%s';
+
     /**
      * Contact Id.
      *
@@ -50,7 +51,6 @@ class Contact extends Base
      * @var string
      */
     protected $fill_method = 'get';
-
 
     /**
      * Constructor.

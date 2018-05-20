@@ -33,6 +33,7 @@ class <?= $class_name ?> extends Base
      * @var string
      */
     protected $endpoint = '<?= array_get($spec, 'endpoint') ?>';
+
 <?php
 foreach (array_get($spec, 'parameters', []) as $name => $settings) {
 ?>
@@ -93,7 +94,6 @@ foreach (array_get($spec, 'lists', []) as $name => $list) {
 <?php
 }
 ?>
-
     /**
      * Constructor.
      *

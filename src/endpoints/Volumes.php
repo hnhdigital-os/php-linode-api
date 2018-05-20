@@ -59,12 +59,43 @@ class Volumes extends Base
      * Volume service may not be available in all Regions. See [/regions](/#operation/getRegions) for a list of available
      * Regions you deploy your Volume in.
      *
+     * @param int    $id=null              (optional)The unique ID of this Volume.
+     * @param string $label                The Volume's label is for display purposes only.
+
+     * @param string $filesystem_path=null (optional)The full filesystem path for the Volume based on the Volume's label. Path is /dev/disk/by-id/scsi-0Linode_Volume_ + Volume label.
+
+     * @param string $status=null          (optional)Can be one of `creating`, `active`, `resizing`, `deleting`, `deleted`, and `contact_support`:
+
+  * `creating` - the Volume is being created and is not yet available
+    for use.
+  * `active` - the Volume is online and available for use.
+  * `resizing` - the Volume is in the process of upgrading
+    its current capacity.
+  * `deleting` - the Volume is being deleted and is unavailable for use.
+  * `deleted` - the Volume has been deleted.
+  * `contact_support` - there is a problem with your Volume. Please
+    [open a Support Ticket](/#operation/createTicket) to resolve the issue.
+
+     * @param int    $size=null            (optional)The Volume's size, in GiB. Minimum size is 10GiB, maximum size is 10240GiB.
+
+     * @param        $region=null          (optional)
+     * @param int    $linode_id=null       (optional)If a Volume is attached to a specific Linode, the ID of that Linode will be displayed here.
+
+     * @param string $created=null         (optional)When this Volume was created.
+     * @param string $updated=null         (optional)When this Volume was last updated.
+     * @param int    $config_id=null       (optional)When creating a Volume attached to a Linode, the ID of the Linode Config to include the new Volume in. This Config must belong to the Linode referenced by `linode_id`. Must _not_ be provided if `linode_id` is not sent.
+
+     *
      * @link https://developers.linode.com/api/v4#operation/createVolume
      *
      * @return mixed
      */
-    public function create()
+    public function create($label, $optional = [])
     {
-        return $this->apiCall('post', '');
+        $result = $this->apiCall('post', '', ['json' => array_merge([
+            'label' => $label,
+        ], $optional)]);
+
+        return $this->factory($result, ['class' => 'Volume', 'parameters' => ['id']]);
     }
 }
