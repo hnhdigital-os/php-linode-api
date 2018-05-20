@@ -44,15 +44,30 @@ class Stat extends Base
     protected $year;
 
     /**
+     * This model is fillable.
+     *
+     * @var bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @var string
+     */
+    protected $fill_method = 'get';
+
+
+    /**
      * Constructor.
      *
      * @return void
      */
-    public function __construct($linode_id, $year)
+    public function __construct($linode_id, $year, $fill = [])
     {
         $this->linode_id = $linode_id;
         $this->year = $year;
-        parent::__construct($linode_id, $year);
+        parent::__construct($linode_id, $year, $fill);
     }
 
     /**

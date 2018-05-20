@@ -38,14 +38,29 @@ class Ip extends Base
     protected $address;
 
     /**
+     * This model is fillable.
+     *
+     * @var bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @var string
+     */
+    protected $fill_method = 'get';
+
+
+    /**
      * Constructor.
      *
      * @return void
      */
-    public function __construct($address)
+    public function __construct($address, $fill = [])
     {
         $this->address = $address;
-        parent::__construct($address);
+        parent::__construct($address, $fill);
     }
 
     /**

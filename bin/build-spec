@@ -163,7 +163,10 @@ foreach ($spec_document['paths'] as $path => $details) {
         }
     }
 
-
+    // Assume this class is fillable.
+    if (count($variable_matches[0])) {
+        $config['fillable'] = true;
+    }
 
     // Create folder if missing.
     if (!file_exists(dirname($spec_path))) {

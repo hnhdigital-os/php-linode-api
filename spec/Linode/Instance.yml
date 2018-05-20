@@ -106,6 +106,7 @@ delete:
         required: true
         type: integer
         self: true
+fillable: true
 post:
   createSnapshot:
     summary: 'Create Snapshot'

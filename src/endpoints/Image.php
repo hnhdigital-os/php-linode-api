@@ -38,14 +38,29 @@ class Image extends Base
     protected $image_id;
 
     /**
+     * This model is fillable.
+     *
+     * @var bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @var string
+     */
+    protected $fill_method = 'get';
+
+
+    /**
      * Constructor.
      *
      * @return void
      */
-    public function __construct($image_id)
+    public function __construct($image_id, $fill = [])
     {
         $this->image_id = $image_id;
-        parent::__construct($image_id);
+        parent::__construct($image_id, $fill);
     }
 
     /**

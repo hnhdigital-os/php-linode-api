@@ -1,0 +1,6 @@
+#!/bin/bash
+
+PWD=$(pwd)
+ROOT="$( cd "$( dirname "$0" )" && cd ./../ && pwd )"
+
+bin/build-spec && bin/build-classes

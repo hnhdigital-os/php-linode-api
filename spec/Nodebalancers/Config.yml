@@ -67,6 +67,7 @@ delete:
         description: 'The ID of the config to access.'
         required: true
         type: integer
+fillable: true
 post:
   createNodeBalancerNode:
     summary: 'Create Node'

@@ -40,3 +40,4 @@ delete:
         required: true
         type: string
         self: true
+fillable: true

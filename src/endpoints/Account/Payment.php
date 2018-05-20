@@ -38,14 +38,29 @@ class Payment extends Base
     protected $payment_id;
 
     /**
+     * This model is fillable.
+     *
+     * @var bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @var string
+     */
+    protected $fill_method = 'get';
+
+
+    /**
      * Constructor.
      *
      * @return void
      */
-    public function __construct($payment_id)
+    public function __construct($payment_id, $fill = [])
     {
         $this->payment_id = $payment_id;
-        parent::__construct($payment_id);
+        parent::__construct($payment_id, $fill);
     }
 
     /**

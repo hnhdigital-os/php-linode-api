@@ -38,14 +38,29 @@ class Service extends Base
     protected $service_id;
 
     /**
+     * This model is fillable.
+     *
+     * @var bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @var string
+     */
+    protected $fill_method = 'get';
+
+
+    /**
      * Constructor.
      *
      * @return void
      */
-    public function __construct($service_id)
+    public function __construct($service_id, $fill = [])
     {
         $this->service_id = $service_id;
-        parent::__construct($service_id);
+        parent::__construct($service_id, $fill);
     }
 
     /**

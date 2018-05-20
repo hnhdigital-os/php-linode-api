@@ -38,14 +38,29 @@ class Event extends Base
     protected $event_id;
 
     /**
+     * This model is fillable.
+     *
+     * @var bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @var string
+     */
+    protected $fill_method = 'get';
+
+
+    /**
      * Constructor.
      *
      * @return void
      */
-    public function __construct($event_id)
+    public function __construct($event_id, $fill = [])
     {
         $this->event_id = $event_id;
-        parent::__construct($event_id);
+        parent::__construct($event_id, $fill);
     }
 
     /**

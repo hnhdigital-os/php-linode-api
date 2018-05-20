@@ -52,3 +52,4 @@ delete:
         description: 'The ID of the Record you are accessing.'
         required: true
         type: integer
+fillable: true

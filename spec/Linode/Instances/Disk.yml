@@ -52,6 +52,7 @@ delete:
         description: 'ID of the Disk to look up.'
         required: true
         type: integer
+fillable: true
 post:
   resetDiskPassword:
     summary: 'Reset Disk Root Password'

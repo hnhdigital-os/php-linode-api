@@ -38,14 +38,29 @@ class App extends Base
     protected $app_id;
 
     /**
+     * This model is fillable.
+     *
+     * @var bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @var string
+     */
+    protected $fill_method = 'get';
+
+
+    /**
      * Constructor.
      *
      * @return void
      */
-    public function __construct($app_id)
+    public function __construct($app_id, $fill = [])
     {
         $this->app_id = $app_id;
-        parent::__construct($app_id);
+        parent::__construct($app_id, $fill);
     }
 
     /**

@@ -38,14 +38,29 @@ class Invoice extends Base
     protected $invoice_id;
 
     /**
+     * This model is fillable.
+     *
+     * @var bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @var string
+     */
+    protected $fill_method = 'get';
+
+
+    /**
      * Constructor.
      *
      * @return void
      */
-    public function __construct($invoice_id)
+    public function __construct($invoice_id, $fill = [])
     {
         $this->invoice_id = $invoice_id;
-        parent::__construct($invoice_id);
+        parent::__construct($invoice_id, $fill);
     }
 
     /**

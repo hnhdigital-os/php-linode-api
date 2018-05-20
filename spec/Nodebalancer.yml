@@ -51,6 +51,7 @@ delete:
         required: true
         type: integer
         self: true
+fillable: true
 post:
   createNodeBalancerConfig:
     summary: 'Create Config'

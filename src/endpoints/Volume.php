@@ -38,14 +38,29 @@ class Volume extends Base
     protected $volume_id;
 
     /**
+     * This model is fillable.
+     *
+     * @var bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @var string
+     */
+    protected $fill_method = 'get';
+
+
+    /**
      * Constructor.
      *
      * @return void
      */
-    public function __construct($volume_id)
+    public function __construct($volume_id, $fill = [])
     {
         $this->volume_id = $volume_id;
-        parent::__construct($volume_id);
+        parent::__construct($volume_id, $fill);
     }
 
     /**

@@ -27,6 +27,7 @@ get:
         required: true
         type: integer
         self: true
+fillable: true
 post:
   createTicketAttachment:
     summary: 'Create Ticket Attachment'

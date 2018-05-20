@@ -38,14 +38,29 @@ class Config extends Base
     protected $linode_id;
 
     /**
+     * This model is fillable.
+     *
+     * @var bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @var string
+     */
+    protected $fill_method = 'get';
+
+
+    /**
      * Constructor.
      *
      * @return void
      */
-    public function __construct($linode_id)
+    public function __construct($linode_id, $fill = [])
     {
         $this->linode_id = $linode_id;
-        parent::__construct($linode_id);
+        parent::__construct($linode_id, $fill);
     }
 
     /**

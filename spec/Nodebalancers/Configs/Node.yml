@@ -69,3 +69,4 @@ delete:
         description: 'The ID of the Node to access'
         required: true
         type: integer
+fillable: true

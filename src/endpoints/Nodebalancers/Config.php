@@ -38,14 +38,29 @@ class Config extends Base
     protected $node_balancer_id;
 
     /**
+     * This model is fillable.
+     *
+     * @var bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @var string
+     */
+    protected $fill_method = 'get';
+
+
+    /**
      * Constructor.
      *
      * @return void
      */
-    public function __construct($node_balancer_id)
+    public function __construct($node_balancer_id, $fill = [])
     {
         $this->node_balancer_id = $node_balancer_id;
-        parent::__construct($node_balancer_id);
+        parent::__construct($node_balancer_id, $fill);
     }
 
     /**

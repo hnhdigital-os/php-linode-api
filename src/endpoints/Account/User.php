@@ -38,14 +38,29 @@ class User extends Base
     protected $username;
 
     /**
+     * This model is fillable.
+     *
+     * @var bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @var string
+     */
+    protected $fill_method = 'get';
+
+
+    /**
      * Constructor.
      *
      * @return void
      */
-    public function __construct($username)
+    public function __construct($username, $fill = [])
     {
         $this->username = $username;
-        parent::__construct($username);
+        parent::__construct($username, $fill);
     }
 
     /**

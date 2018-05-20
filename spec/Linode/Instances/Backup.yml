@@ -20,6 +20,7 @@ get:
         description: 'The ID of the Backup to look up.'
         required: true
         type: integer
+fillable: true
 post:
   restoreBackup:
     summary: 'Restore Backup'

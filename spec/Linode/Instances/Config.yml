@@ -52,3 +52,4 @@ delete:
         description: 'The ID of the Configuration profile to look up.'
         required: true
         type: integer
+fillable: true

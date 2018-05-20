@@ -16,6 +16,7 @@ get:
         required: true
         type: integer
         self: true
+fillable: true
 post:
   eventRead:
     summary: 'Mark Event as Read'

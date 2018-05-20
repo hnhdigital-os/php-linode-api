@@ -52,3 +52,4 @@ delete:
         description: 'The IP address to look up.'
         required: true
         type: string
+fillable: true

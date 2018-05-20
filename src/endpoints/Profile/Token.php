@@ -38,14 +38,29 @@ class Token extends Base
     protected $token_id;
 
     /**
+     * This model is fillable.
+     *
+     * @var bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @var string
+     */
+    protected $fill_method = 'get';
+
+
+    /**
      * Constructor.
      *
      * @return void
      */
-    public function __construct($token_id)
+    public function __construct($token_id, $fill = [])
     {
         $this->token_id = $token_id;
-        parent::__construct($token_id);
+        parent::__construct($token_id, $fill);
     }
 
     /**

@@ -44,15 +44,30 @@ class Node extends Base
     protected $config_id;
 
     /**
+     * This model is fillable.
+     *
+     * @var bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @var string
+     */
+    protected $fill_method = 'get';
+
+
+    /**
      * Constructor.
      *
      * @return void
      */
-    public function __construct($node_balancer_id, $config_id)
+    public function __construct($node_balancer_id, $config_id, $fill = [])
     {
         $this->node_balancer_id = $node_balancer_id;
         $this->config_id = $config_id;
-        parent::__construct($node_balancer_id, $config_id);
+        parent::__construct($node_balancer_id, $config_id, $fill);
     }
 
     /**

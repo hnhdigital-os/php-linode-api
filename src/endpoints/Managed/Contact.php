@@ -38,14 +38,29 @@ class Contact extends Base
     protected $contact_id;
 
     /**
+     * This model is fillable.
+     *
+     * @var bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @var string
+     */
+    protected $fill_method = 'get';
+
+
+    /**
      * Constructor.
      *
      * @return void
      */
-    public function __construct($contact_id)
+    public function __construct($contact_id, $fill = [])
     {
         $this->contact_id = $contact_id;
-        parent::__construct($contact_id);
+        parent::__construct($contact_id, $fill);
     }
 
     /**

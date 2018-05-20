@@ -40,6 +40,7 @@ delete:
         required: true
         type: integer
         self: true
+fillable: true
 post:
   attach:
     summary: 'Attach Volume'

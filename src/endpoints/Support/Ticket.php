@@ -38,14 +38,29 @@ class Ticket extends Base
     protected $ticket_id;
 
     /**
+     * This model is fillable.
+     *
+     * @var bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @var string
+     */
+    protected $fill_method = 'get';
+
+
+    /**
      * Constructor.
      *
      * @return void
      */
-    public function __construct($ticket_id)
+    public function __construct($ticket_id, $fill = [])
     {
         $this->ticket_id = $ticket_id;
-        parent::__construct($ticket_id);
+        parent::__construct($ticket_id, $fill);
     }
 
     /**

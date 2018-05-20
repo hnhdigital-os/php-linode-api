@@ -38,14 +38,29 @@ class Subscription extends Base
     protected $subscription_id;
 
     /**
+     * This model is fillable.
+     *
+     * @var bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @var string
+     */
+    protected $fill_method = 'get';
+
+
+    /**
      * Constructor.
      *
      * @return void
      */
-    public function __construct($subscription_id)
+    public function __construct($subscription_id, $fill = [])
     {
         $this->subscription_id = $subscription_id;
-        parent::__construct($subscription_id);
+        parent::__construct($subscription_id, $fill);
     }
 
     /**

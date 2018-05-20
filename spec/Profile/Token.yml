@@ -40,3 +40,4 @@ delete:
         required: true
         type: integer
         self: true
+fillable: true

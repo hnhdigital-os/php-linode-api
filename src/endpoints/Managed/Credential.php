@@ -38,14 +38,29 @@ class Credential extends Base
     protected $credential_id;
 
     /**
+     * This model is fillable.
+     *
+     * @var bool
+     */
+    protected $fillable = true;
+
+    /**
+     * This model's method that provides the data to fill it.
+     *
+     * @var string
+     */
+    protected $fill_method = 'get';
+
+
+    /**
      * Constructor.
      *
      * @return void
      */
-    public function __construct($credential_id)
+    public function __construct($credential_id, $fill = [])
     {
         $this->credential_id = $credential_id;
-        parent::__construct($credential_id);
+        parent::__construct($credential_id, $fill);
     }
 
     /**
