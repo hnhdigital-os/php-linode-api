@@ -60,10 +60,10 @@ $regions = (new Regions())->get()->all();
 
 ### Region
 
-You can get a specific record, simply by creating the object with the required parameters. This will automatically call the endpoint and return the object ready to use.
+You can get a specific record, simply by creating the object with the required parameters. This will automatically call the endpoint and return the object ready to use. The record will auto-load by setting the last parameter to true.
 
 ```php
-$region = new Region('us-east-1a');
+$region = new Region('us-east-1a', true);
 
 echo $region->id.' ('.$region->country.')';
 ```
@@ -71,7 +71,7 @@ echo $region->id.' ('.$region->country.')';
 us-east-1a (US)
 ```
 
-Calling the `get` method directly on this same class will return an array of the values from the same endpoint.
+Calling the `get` method directly on this same class will return an array of the values from the same endpoint. This will also auto-fill the object (the same as above, passing the true actually just calls the get method).
 
 ```php
 $result = (new Region('us-east-1a'))->get();
